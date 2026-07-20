@@ -276,7 +276,7 @@ def main():
                     items[text_hash(v)] = v
     if glossary is not None:
         for g in glossary:
-            for k in ('term', 'definition'):
+            for k in ('term', 'definition', 'says', 'means'):
                 v = g.get(k)
                 if v and isinstance(v, str) and v.strip():
                     items[text_hash(v)] = v
@@ -341,7 +341,7 @@ def main():
         for p in phases:
             apply(progress['done'], p.get('lessons', []), ['name', 'summary', 'keywords'])
     apply(progress['done'], artifacts, ['name', 'description'])
-    apply(progress['done'], glossary, ['term', 'definition'])
+    apply(progress['done'], glossary, ['term', 'definition', 'says', 'means'])
 
     # 重组成 data.zh.js
     def to_js(value, indent=2) -> str:

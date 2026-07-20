@@ -677,15 +677,6 @@ p.dropcap::first-letter {
   border-color: var(--ink-mute);
 }
 
-.modal-lesson-lang {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  color: var(--ink-mute);
-  min-width: 80px;
-  text-align: right;
-}
-
 .modal-lesson-type {
   font-family: var(--font-mono);
   font-size: 0.62rem;
@@ -730,6 +721,26 @@ p.dropcap::first-letter {
 }
 
 .modal-lesson .modal-lesson-read:hover {
+  color: var(--blueprint);
+  border-color: var(--blueprint);
+  border-bottom: 1px solid var(--blueprint);
+}
+
+.modal-lesson .modal-lesson-code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule-soft);
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.modal-lesson .modal-lesson-code:hover {
   color: var(--blueprint);
   border-color: var(--blueprint);
   border-bottom: 1px solid var(--blueprint);
@@ -985,11 +996,6 @@ body.js-anim .toc-row.in-view {
     column-gap: 8px;
     padding: 10px 0;
     font-size: 0.88rem;
-  }
-
-  .modal-lesson-lang {
-    min-width: 0;
-    font-size: 0.62rem;
   }
 
   .modal-lesson-type {
