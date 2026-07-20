@@ -43,4 +43,4 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/). Each ent
 - Initial scaffolding for all 20 phases (`phases/00-*` through `phases/19-*`).
 - `LESSON_TEMPLATE.md`, `CONTRIBUTING.md`, `ROADMAP.md`, `README.md`.
 
-[Unreleased]: https://github.com/rohitg00/ai-engineering-from-scratch/compare/HEAD...HEAD
+[Unreleased]: https://github.com/liangdabiao/ai-engineering-from-scratch/compare/HEAD...HEAD

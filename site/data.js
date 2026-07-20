@@ -13,7 +13,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/01-dev-environment/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/01-dev-environment/",
         "summary": "Your tools shape your thinking. Set them up once, set them up right.",
         "keywords": "Step 1: System Foundation · Step 2: Python with uv · Step 3: Node.js with pnpm · Step 4: Rust · Step 5: Julia (Optional) · Step 6: GPU Setup (If You Have One) · Step 7: Verify Everything"
       },
@@ -22,7 +22,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "—",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/02-git-and-collaboration/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/02-git-and-collaboration/",
         "summary": "Version control is not optional. Every experiment, every model, every lesson you build here gets tracked.",
         "keywords": "Step 1: Configure git · Step 2: The daily workflow · Step 3: Branching for experiments · Step 4: Working with this course repo"
       },
@@ -31,7 +31,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/03-gpu-setup-and-cloud/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/03-gpu-setup-and-cloud/",
         "summary": "Training on CPU is fine for learning. Training for real needs a GPU.",
         "keywords": "Option 1: Local NVIDIA GPU · Option 2: Google Colab · Option 3: Cloud GPU · No GPU? No problem."
       },
@@ -40,7 +40,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/04-apis-and-keys/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/04-apis-and-keys/",
         "summary": "Every AI API works the same way: send a request, get a response. The details change, the pattern doesn't.",
         "keywords": "Step 1: Store API keys safely · Step 2: First API call (Python) · Step 3: First API call (TypeScript) · Step 4: Raw HTTP (no SDK)"
       },
@@ -49,7 +49,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/05-jupyter-notebooks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/05-jupyter-notebooks/",
         "summary": "Notebooks are the lab bench of AI engineering. You prototype here, then move what works into production.",
         "keywords": "Step 1: Pick your interface · Step 2: Keyboard shortcuts that matter · Step 3: Cell types · Step 4: Magic commands · Step 5: Display rich output inline · Step 6: Google Colab · Notebooks vs Scripts: When to use which · Common traps"
       },
@@ -58,7 +58,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Shell",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/06-python-environments/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/06-python-environments/",
         "summary": "Dependency hell is real. Virtual environments are the cure.",
         "keywords": "Option 1: uv venv (Recommended) · Option 2: venv (Built-in) · Option 3: conda (When You Need It) · For This Course: Per-Phase Strategy · 1. Installing globally · 2. Mixing pip and conda · 3. Forgetting to activate · 4. Committing .venv to git · 5. CUDA version mismatch"
       },
@@ -67,7 +67,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Docker",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/07-docker-for-ai/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/07-docker-for-ai/",
         "summary": "Containers make \"works on my machine\" a thing of the past.",
         "keywords": "Why AI projects need Docker more than most · Key vocabulary · Common container patterns in AI · Step 1: Install Docker · Step 2: Install NVIDIA Container Toolkit (Linux with NVIDIA GPU) · Step 3: Understand base images · Step 4: Write a Dockerfile for AI development · Step 5: Volume mounts for data and models · Step 6: Docker Compose for multi-service AI apps · Step 7: Useful Docker commands for AI work · No GPU?"
       },
@@ -76,7 +76,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "—",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/08-editor-setup/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/08-editor-setup/",
         "summary": "Your editor is your co-pilot. Configure it once so it stays out of your way and starts pulling its weight.",
         "keywords": "Step 1: Install VS Code · Step 2: Install Essential Extensions · Step 3: Configure Settings · Step 4: Terminal Integration · Step 5: Remote Development (SSH into GPU Boxes) · Cursor · Windsurf · Vim/Neovim"
       },
@@ -85,7 +85,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/09-data-management/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/09-data-management/",
         "summary": "Data is the fuel. How you manage it determines how fast you go.",
         "keywords": "Step 1: Install the datasets library · Step 2: Load a dataset · Step 3: Stream large datasets · Step 4: Dataset formats · Step 5: Data splits · Step 6: Download and cache models · Step 7: Handle large files · Step 8: Storage patterns"
       },
@@ -94,7 +94,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "—",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/10-terminal-and-shell/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/10-terminal-and-shell/",
         "summary": "The terminal is where AI engineers live. Get comfortable here.",
         "keywords": "Step 1: Know your shell · Step 2: Piping and redirects · Step 3: Background processes · Step 4: tmux · Step 5: Monitoring with htop and nvtop · Step 6: SSH for remote GPU boxes · Step 7: Useful aliases for AI work · Step 8: Common AI terminal patterns"
       },
@@ -103,7 +103,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "—",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/11-linux-for-ai/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/11-linux-for-ai/",
         "summary": "Most AI runs on Linux. You need to know enough to not be stuck.",
         "keywords": "Moving Around · Files and Directories · Reading Files · Searching"
       },
@@ -112,7 +112,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/12-debugging-and-profiling/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/00-setup-and-tooling/12-debugging-and-profiling/",
         "summary": "The worst AI bugs don't crash. They train silently on garbage and report a beautiful loss curve.",
         "keywords": "Part 1: Print Debugging (Yes, It Works) · Part 2: Python Debugger (pdb and breakpoint) · Part 3: Python Logging · Part 4: Timing Code Sections · Part 5: cProfile and line_profiler · Part 6: Memory Profiling · Part 7: Common AI Bugs and How to Catch Them · Part 8: TensorBoard Basics · Part 9: VS Code Debugger"
       }
@@ -129,7 +129,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python, Julia",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/01-linear-algebra-intuition/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/01-linear-algebra-intuition/",
         "summary": "Every AI model is just matrix math wearing a fancy hat.",
         "keywords": "Vectors Are Points (and Directions) · Matrices Are Transformations · The Dot Product Measures Similarity · Linear Independence · Basis and Rank · Projection · Gram-Schmidt Process · Step 1: Vectors from scratch (Python) · Step 2: Matrices from scratch (Python) · Step 3: Why this matters for AI · Step 4: Julia version · Step 5: Linear independence and projection from scratch (Python) · Rank, Projection, and QR with NumPy · PyTorch -- Tensors Are Vectors with Autodiff"
       },
@@ -138,7 +138,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python, Julia",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/02-vectors-matrices-operations/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/02-vectors-matrices-operations/",
         "summary": "Every neural network is just matrix multiplication with extra steps.",
         "keywords": "Vectors: ordered lists of numbers · Matrices: grids of numbers · Why shapes matter · The operations map · Element-wise vs matrix multiplication · Broadcasting · Step 1: Vector class · Step 2: Matrix class with core operations · Step 3: See it work · Step 4: Connect to neural networks"
       },
@@ -147,7 +147,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python, Julia",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/03-matrix-transformations/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/03-matrix-transformations/",
         "summary": "A matrix is a machine that reshapes space. Learn what it does to every point, and you understand the whole transformation.",
         "keywords": "Transformations as matrices · Rotation · Scaling · Shearing · Reflection · Composition: chaining transformations · Eigenvalues and eigenvectors · Eigendecomposition · Why eigenvalues matter · Determinant as volume scaling factor · Step 1: Transformation matrices from scratch (Python) · Step 2: Composition of transformations · Step 3: Eigenvalues from scratch (2x2) · Step 4: Determinant as volume scaling factor · 3D rotations with NumPy"
       },
@@ -156,7 +156,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/04-calculus-for-ml/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/04-calculus-for-ml/",
         "summary": "Derivatives tell you which way is downhill. That is all a neural network needs to learn.",
         "keywords": "What is a derivative? · Partial derivatives: one variable at a time · The gradient: vector of all partial derivatives · The connection to optimization · Numerical vs analytical derivatives · Derivatives by hand for simple functions · The chain rule · The Hessian Matrix · Taylor Series Approximation · Integrals in ML · Multivariable Chain Rule in a Computation Graph · The Jacobian matrix · Why this matters for neural networks · Step 1: Numerical derivative from scratch · Step 2: Partial derivatives and gradients · Step 3: Gradient descent to find the minimum of f(x) = x^2 · Step 4: Gradient descent on a 2D function · Step 5: Comparing numerical and analytical derivatives · Step 6: Computing the Hessian numerically · Step 7: Taylor approximation in action · Step 8: Why this matters for a neural network"
       },
@@ -165,7 +165,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/05-chain-rule-and-autodiff/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/05-chain-rule-and-autodiff/",
         "summary": "The chain rule is the engine behind every neural network that learns.",
         "keywords": "The Chain Rule · Computational Graphs · Forward Mode vs Reverse Mode · Dual Numbers for Forward Mode · Building an Autograd Engine · How PyTorch Autograd Works Under the Hood · Step 1: The Value class · Step 2: Arithmetic operations with gradient tracking · Step 3: The backward pass · Step 4: More operations for a complete engine · Step 5: Mini MLP from scratch · Step 6: Gradient checking · Step 7: Verify against manual calculation · Verify against PyTorch · A more complex expression"
       },
@@ -174,7 +174,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/06-probability-and-distributions/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/06-probability-and-distributions/",
         "summary": "Probability is the language AI uses to express uncertainty.",
         "keywords": "Events, Sample Spaces, and Probability · Conditional Probability and Independence · Probability Mass Functions vs Probability Density Functions · Common Distributions · Expected Value and Variance · Joint and Marginal Distributions · Why the Normal Distribution Shows Up Everywhere · Log Probabilities · Softmax as a Probability Distribution · Sampling · Step 1: Probability basics · Step 2: PMF and PDF from scratch · Step 3: Expected value and variance · Step 4: Sampling from distributions · Step 5: Softmax and log probabilities · Step 6: Central Limit Theorem demonstration · Step 7: Visualization"
       },
@@ -183,7 +183,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/07-bayes-theorem/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/07-bayes-theorem/",
         "summary": "Probability is about what you expect. Bayes' theorem is about what you learn.",
         "keywords": "From joint probability to Bayes · The four parts · Medical test example · Spam filter example · Naive Bayes: independence assumption · Maximum likelihood estimation (MLE) · Maximum a posteriori (MAP) · Bayesian vs frequentist: the practical difference · Why Bayesian thinking matters for ML · Step 1: Bayes theorem function · Step 2: Naive Bayes classifier · Step 3: Train on spam data · Step 4: Inspect the learned probabilities · Conjugate Priors · Sequential Bayesian Updating · Connection to A/B Testing"
       },
@@ -192,7 +192,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/08-optimization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/08-optimization/",
         "summary": "Training a neural network is nothing more than finding the bottom of a valley.",
         "keywords": "What optimization means · Gradient descent (vanilla) · Learning rate: the most important hyperparameter · SGD vs batch vs mini-batch · Momentum: the ball rolling downhill · Adam: adaptive learning rates · Learning rate schedules · Convex vs non-convex · Loss landscape visualization · Step 1: Define a test function · Step 2: Vanilla gradient descent · Step 3: SGD with momentum · Step 4: Adam · Step 5: Run and compare"
       },
@@ -201,7 +201,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/09-information-theory/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/09-information-theory/",
         "summary": "Information theory measures surprise. Loss functions are built on it.",
         "keywords": "Information Content (Surprise) · Entropy (Average Surprise) · Cross-Entropy (The Loss Function You Use Every Day) · KL Divergence (Distance Between Distributions) · Mutual Information · Conditional Entropy · Joint Entropy · Mutual Information (Deep Dive) · Label Smoothing and Cross-Entropy · Why Cross-Entropy Is THE Classification Loss · Bits vs Nats · Perplexity · Step 1: Information content and entropy · Step 2: Cross-entropy and KL divergence · Step 3: Cross-entropy as classification loss · Step 4: Cross-entropy equals negative log-likelihood · Step 5: Mutual information"
       },
@@ -210,7 +210,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/10-dimensionality-reduction/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/10-dimensionality-reduction/",
         "summary": "High-dimensional data has structure. You find it by looking from the right angle.",
         "keywords": "The curse of dimensionality · PCA: find the directions that matter · Explained variance ratio · Choosing the number of components · t-SNE: preserve neighborhoods · UMAP: faster, better global structure · When to use which · Kernel PCA · Reconstruction Error · Step 1: PCA from scratch · Step 2: Test on synthetic data · Step 3: MNIST digits in 2D · Step 4: Compare with sklearn · Step 5: UMAP comparison"
       },
@@ -219,7 +219,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python, Julia",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/11-singular-value-decomposition/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/11-singular-value-decomposition/",
         "summary": "SVD is the Swiss Army knife of linear algebra. Every matrix has one. Every data scientist needs one.",
         "keywords": "What SVD does geometrically · The full decomposition · Left singular vectors, singular values, right singular vectors · Outer product form · Relationship to eigendecomposition · Truncated SVD: low-rank approximation · Image compression with SVD · SVD for recommendation systems · SVD in NLP: Latent Semantic Analysis · SVD for noise reduction · Pseudoinverse via SVD · Numerical stability advantages · Connection to PCA · Step 1: SVD from scratch using power iteration · Step 2: Test and compare with NumPy · Step 3: Image compression demo · Step 4: Noise reduction · Step 5: Pseudoinverse"
       },
@@ -228,7 +228,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/12-tensor-operations/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/12-tensor-operations/",
         "summary": "Tensors are the common language between data and deep learning. Every image, every sentence, every gradient flows through them.",
         "keywords": "What a tensor is · Tensor shapes in deep learning · How memory layout works · Broadcasting rules · Einsum: the universal tensor operation · Step 1: Tensor storage and strides · Step 2: Reshape, squeeze, unsqueeze · Step 3: Transpose and permute · Step 4: Element-wise operations and reductions · Step 5: Broadcasting with NumPy · Step 6: Einsum operations · Step 7: Attention mechanism via einsum · Scratch vs NumPy · Scratch vs PyTorch · Every neural network layer as a tensor operation"
       },
@@ -237,7 +237,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/13-numerical-stability/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/13-numerical-stability/",
         "summary": "Floating point is a leaky abstraction. It will bite you during training, and you will not see it coming.",
         "keywords": "IEEE 754: How Computers Store Real Numbers · Why 0.1 + 0.2 != 0.3 · Catastrophic Cancellation · Overflow and Underflow · The Log-Sum-Exp Trick · Why Softmax Needs the Max-Subtraction Trick · NaN and Inf: Detection and Prevention · Numerical Gradient Checking · Mixed Precision Training · bfloat16 vs float16: Why bfloat16 Wins for Training · Gradient Clipping · Normalization Layers as Numerical Stabilizers · Common ML Numerical Bugs · Step 1: Demonstrate floating point precision limits · Step 2: Implement naive vs stable softmax · Step 3: Implement stable log-sum-exp · Step 4: Implement stable cross-entropy · Step 5: Gradient checking · Mixed precision simulation · Gradient clipping · NaN/Inf detection"
       },
@@ -246,7 +246,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/14-norms-and-distances/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/14-norms-and-distances/",
         "summary": "Your distance function defines what \"similar\" means. Choose wrong and everything downstream breaks.",
         "keywords": "Norms: measuring vector magnitude · L1 Norm (Manhattan distance) · L2 Norm (Euclidean distance) · Lp Norms: the general family · L-infinity Norm (Chebyshev distance) · Cosine Similarity and Cosine Distance · Dot Product Similarity vs Cosine Similarity · Mahalanobis Distance · Jaccard Similarity (for sets) · Edit Distance (Levenshtein Distance) · KL Divergence (not a distance, but used like one) · Wasserstein Distance (Earth Mover's Distance) · Why Different Tasks Need Different Distances · Connection to Loss Functions · Connection to Regularization · Nearest Neighbor Search · Step 1: All norm and distance functions · Step 2: Same data, different distances, different neighbors · Step 3: Embedding similarity search"
       },
@@ -255,7 +255,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/15-statistics-for-ml/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/15-statistics-for-ml/",
         "summary": "Statistics is how you know if your model actually works or just got lucky.",
         "keywords": "Descriptive Statistics: Summarizing Your Data · Correlation: How Variables Move Together · Covariance Matrix · Hypothesis Testing · The t-test · Chi-squared Test · A/B Testing for ML Models · Statistical Significance vs Practical Significance · Multiple Comparison Problem · Bootstrap Methods · Parametric vs Non-parametric Tests · Central Limit Theorem: Practical Implications · Common Statistical Mistakes in ML Papers"
       },
@@ -264,7 +264,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/16-sampling-methods/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/16-sampling-methods/",
         "summary": "Sampling is how AI explores the space of possibilities.",
         "keywords": "Why Sampling Matters · Uniform Random Sampling · Inverse CDF Method (Inverse Transform Sampling) · Rejection Sampling · Importance Sampling · Monte Carlo Estimation · Markov Chain Monte Carlo (MCMC): Metropolis-Hastings · Gibbs Sampling · Temperature Sampling (Used in LLMs) · Top-k Sampling · Top-p (Nucleus) Sampling · Reparameterization Trick (Used in VAEs) · Gumbel-Softmax (Differentiable Categorical Sampling) · Stratified Sampling · Connection to Diffusion Models · Step 1: Uniform and inverse CDF sampling · Step 2: Rejection sampling · Step 3: Importance sampling · Step 4: Monte Carlo estimation of pi · Step 5: Metropolis-Hastings MCMC · Step 6: Gibbs sampling · Step 7: Temperature sampling · Step 8: Top-k and top-p sampling · Step 9: Reparameterization trick · Step 10: Gumbel-Softmax"
       },
@@ -273,7 +273,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/17-linear-systems/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/17-linear-systems/",
         "summary": "Solving Ax = b is the oldest problem in mathematics that still runs your neural network.",
         "keywords": "What Ax = b means geometrically · Column picture vs row picture · Gaussian elimination · Partial pivoting: why it matters · LU decomposition · QR decomposition · Cholesky decomposition · Least squares: when Ax = b has no exact solution · Normal equations = linear regression · Pseudoinverse (Moore-Penrose) · Condition number · Iterative methods: conjugate gradient · The full picture: which method when · Connection to ML · Step 1: Gaussian elimination with partial pivoting · Step 2: LU decomposition · Step 3: Cholesky decomposition · Step 4: Least squares via normal equations · Step 5: Condition number"
       },
@@ -282,7 +282,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/18-convex-optimization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/18-convex-optimization/",
         "summary": "Convex problems have one valley. Neural networks have millions. Knowing the difference matters.",
         "keywords": "Convex sets · Convex functions · Testing for convexity · Why convexity matters · Convex vs non-convex in ML · The Hessian matrix · Newton's method · Constrained optimization · Lagrange multipliers · KKT conditions · Regularization as constrained optimization · Duality · Why deep learning works despite non-convexity · Second-order methods in practice · Step 1: Convexity checker · Step 2: Newton's method for 2D · Step 3: Lagrange multiplier solver · Step 4: Compare first-order vs second-order"
       },
@@ -291,7 +291,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/19-complex-numbers/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/19-complex-numbers/",
         "summary": "The square root of -1 is not imaginary. It is the key to rotations, frequencies, and half of signal processing.",
         "keywords": "What is a complex number? · Complex arithmetic · The complex plane · Polar form · Euler's formula · Why Euler's formula matters for ML · Connection to 2D rotations · Phasors and rotating signals · Roots of unity · Connection to the DFT · Why i is not imaginary · Complex exponentials vs trigonometric functions · Connection to transformers · Step 1: Complex class · Step 2: Polar conversion and Euler's formula · Step 3: Rotation · Step 4: DFT from complex arithmetic · Step 5: Inverse DFT · Step 6: Roots of unity"
       },
@@ -300,7 +300,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/20-fourier-transform/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/20-fourier-transform/",
         "summary": "Every signal is a sum of sine waves. The Fourier transform tells you which ones.",
         "keywords": "The DFT definition · What each coefficient means · Inverse DFT · The FFT: making it fast · Spectral analysis · Frequency resolution · The convolution theorem · Windowing · DFT properties · Connection to positional encodings · Connection to CNNs · Spectrograms and the Short-Time Fourier Transform · Aliasing · Zero-padding does not increase resolution · Step 1: DFT from scratch · Step 2: Inverse DFT · Step 3: FFT (Cooley-Tukey) · Step 4: Spectral analysis helpers"
       },
@@ -309,7 +309,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/21-graph-theory/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/21-graph-theory/",
         "summary": "Graphs are the data structure of relationships. If your data has connections, you need graph theory.",
         "keywords": "Graphs: Nodes and Edges · The Adjacency Matrix · Degree · BFS and DFS · The Graph Laplacian · Spectral Properties · Message Passing · Concepts and ML Applications · Step 1: Graph class from scratch · Step 2: BFS and DFS · Step 3: Connected components and Laplacian eigenvalues · Step 4: Spectral clustering · Step 5: Message passing · numpy spectral analysis"
       },
@@ -318,7 +318,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/22-stochastic-processes/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/01-math-foundations/22-stochastic-processes/",
         "summary": "Randomness with structure. The math behind random walks, Markov chains, and diffusion models.",
         "keywords": "Random Walks · Markov Chains · Connection to Language Models · Brownian Motion · Langevin Dynamics · MCMC: Markov Chain Monte Carlo · Stochastic Processes in AI · Step 1: Random walk simulator · Step 2: Markov chain · Step 3: Langevin dynamics · Step 4: Metropolis-Hastings · numpy for transition matrices · Connections to real frameworks · Verifying Markov chain convergence"
       }
@@ -335,7 +335,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/01-what-is-machine-learning/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/01-what-is-machine-learning/",
         "summary": "Machine learning is teaching computers to find patterns in data instead of writing rules by hand.",
         "keywords": "Learning From Data, Not Rules · The Three Types of Machine Learning · Beyond the Big Three · Classification vs Regression · The ML Workflow · Training, Validation, and Test Splits · Overfitting vs Underfitting · The Bias-Variance Tradeoff · No Free Lunch Theorem · When NOT to Use Machine Learning · Step 1: Nearest Centroid Classifier from Scratch · Step 2: Train on Synthetic Data · Step 3: Compare Against a Baseline · Why This Matters · Step 4: What the Centroid Classifier Cannot Do"
       },
@@ -344,7 +344,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/02-linear-regression/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/02-linear-regression/",
         "summary": "Linear regression draws the best straight line through your data. It is the \"hello world\" of machine learning.",
         "keywords": "The Model · The Cost Function (Mean Squared Error) · Gradient Descent · The Normal Equation (Closed-Form Solution) · Multiple Linear Regression · Polynomial Regression · R-Squared Score · Regularization Preview (Ridge Regression) · Step 1: Generate sample data · Step 2: Linear regression from scratch with gradient descent · Step 3: Normal equation (closed-form solution) · Step 4: Multiple linear regression · Step 5: Polynomial regression · Step 6: Ridge regression (L2 regularization)"
       },
@@ -353,7 +353,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/03-logistic-regression/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/03-logistic-regression/",
         "summary": "Logistic regression bends a straight line into an S-curve to answer yes-or-no questions with probabilities.",
         "keywords": "Why Linear Regression Fails for Classification · The Sigmoid Function · Logistic Regression = Linear Model + Sigmoid · Binary Cross-Entropy Loss · Gradient Descent for Logistic Regression · The Decision Boundary · Multi-Class Classification with Softmax · Evaluation Metrics · Step 1: Sigmoid function and data generation · Step 2: Logistic regression from scratch · Step 3: Confusion matrix and metrics from scratch · Step 4: Decision boundary analysis · Step 5: Multi-class with softmax · Step 6: Threshold tuning"
       },
@@ -362,7 +362,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/04-decision-trees/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/04-decision-trees/",
         "summary": "A decision tree is just a flowchart. But a forest of them is one of the most powerful tools in ML.",
         "keywords": "What a decision tree does · Split criteria: measuring impurity · How splitting works · Stopping conditions · Decision trees for regression · Random forests: the power of ensembles · Feature importance · When trees beat neural networks · Step 1: Gini impurity and entropy · Step 2: Find the best split · Step 3: Build the DecisionTree class · Step 4: Build the RandomForest class"
       },
@@ -371,7 +371,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/05-support-vector-machines/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/05-support-vector-machines/",
         "summary": "Find the widest street between two classes. That is the entire idea.",
         "keywords": "The maximum margin classifier · Support vectors: the critical few · Soft margin: handling noise with the C parameter · Hinge loss: the SVM loss function · Training a linear SVM with gradient descent · The dual formulation and the kernel trick · SVM for regression (SVR) · Why SVMs lost to deep learning (and when they still win) · Step 1: Hinge loss and gradient · Step 2: Linear SVM via gradient descent · Step 3: Kernel functions · Step 4: Margin and support vector identification"
       },
@@ -380,7 +380,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/06-knn-and-distances/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/06-knn-and-distances/",
         "summary": "Store everything. Predict by looking at your neighbors. The simplest algorithm that actually works.",
         "keywords": "How KNN works · Choosing K · Distance metrics · Weighted KNN · The curse of dimensionality · KD-trees: fast nearest neighbor search · Ball trees: better for moderate dimensions · Lazy learning vs eager learning · KNN for regression · Step 1: Distance functions · Step 2: KNN classifier and regressor · Step 3: KD-tree for efficient search · Step 4: Feature scaling"
       },
@@ -389,7 +389,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/07-unsupervised-learning/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/07-unsupervised-learning/",
         "summary": "No labels, no teacher. The algorithm finds structure on its own.",
         "keywords": "Clustering: Grouping Similar Things Together · K-Means: The Workhorse · Choosing K · DBSCAN: Density-Based Clustering · Hierarchical Clustering · Gaussian Mixture Models (GMM) · When to Use Which · Anomaly Detection with Clustering · Step 1: K-Means from scratch · Step 2: Elbow method and silhouette score · Step 3: DBSCAN from scratch · Step 4: Gaussian Mixture Model (EM algorithm) · Step 5: Generate test data and run everything"
       },
@@ -398,7 +398,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/08-feature-engineering/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/08-feature-engineering/",
         "summary": "A good feature is worth a thousand data points.",
         "keywords": "The Feature Pipeline · Numerical Features · Categorical Features · Text Features · Missing Values · Feature Interaction · Feature Selection · Step 1: Numerical transforms from scratch · Step 2: Categorical encoding from scratch · Step 3: Text features from scratch · Step 4: Missing value imputation from scratch · Step 5: Feature selection from scratch · Step 6: Full pipeline and demo"
       },
@@ -407,7 +407,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/09-model-evaluation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/09-model-evaluation/",
         "summary": "A model is only as good as the way you measure it.",
         "keywords": "Train, Validation, Test · K-Fold Cross-Validation · Classification Metrics · Regression Metrics · Learning Curves · Validation Curves · Common Evaluation Mistakes · Step 1: Train/validation/test split · Step 2: K-fold and stratified K-fold cross-validation · Step 3: Confusion matrix and classification metrics · Step 4: Regression metrics · Step 5: Learning curves · Step 6: A simple classifier for testing, plus the full demo"
       },
@@ -416,7 +416,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/10-bias-variance/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/10-bias-variance/",
         "summary": "Every model error comes from one of three sources: bias, variance, or noise. You can only control the first two.",
         "keywords": "Bias: Systematic Error · Variance: Sensitivity to Training Data · The Decomposition · Model Complexity vs Error · Regularization as Bias-Variance Control · Double Descent: The Modern Perspective · Diagnosing Your Model · Practical Strategies · Ensemble Methods and Variance Reduction · Learning Curves · How to Generate Learning Curves · Step 1: Generate Synthetic Data from a Known Function · Step 2: Bootstrap Sampling and Polynomial Fitting · Step 3: Computing Bias^2, Variance Decomposition · Step 4: Learning Curves · Step 5: Regularization Sweep · Validation Curve: Sweep Model Complexity · Learning Curve: Sweep Training Set Size · Cross-Validation with Regularization Sweep · Putting It All Together: A Complete Diagnostic Workflow"
       },
@@ -425,7 +425,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/11-ensemble-methods/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/11-ensemble-methods/",
         "summary": "A group of weak learners, combined correctly, becomes a strong learner. This is not a metaphor. It is a theorem.",
         "keywords": "Why Ensembles Work · Bagging (Bootstrap Aggregating) · Boosting (Sequential Error Correction) · AdaBoost · Gradient Boosting · XGBoost: Why It Dominates Tabular Data · Stacking (Meta-Learning) · Voting · Step 1: Decision Stump (Base Learner) · Step 2: AdaBoost from Scratch · Step 3: Gradient Boosting from Scratch · Step 4: Compare against sklearn · When to Use Each Method · The Production Stack for Tabular Data"
       },
@@ -434,7 +434,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/12-hyperparameter-tuning/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/12-hyperparameter-tuning/",
         "summary": "Hyperparameters are the knobs you turn before training starts. Turning them well is the difference between a mediocre model and a great one.",
         "keywords": "Parameters vs Hyperparameters · Grid Search · Random Search · Bayesian Optimization · Early Stopping · Learning Rate Schedulers · Hyperparameter Importance · Practical Strategy · Cross-Validation Integration · Practical Tips · Step 1: Grid Search from Scratch · Step 2: Random Search from Scratch · Step 3: Bayesian Optimization (Simplified) · Step 4: Compare All Methods · Optuna in Practice · Optuna with Pruning · sklearn's Built-in Tuners · Common Mistakes in Hyperparameter Tuning"
       },
@@ -443,7 +443,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/13-ml-pipelines/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/13-ml-pipelines/",
         "summary": "A model is not a product. A pipeline is. The pipeline is everything from raw data to deployed prediction, and every step must be reproducible.",
         "keywords": "What a Pipeline Is · Data Leakage: The Silent Killer · sklearn Pipeline · ColumnTransformer: Different Pipelines for Different Columns · Experiment Tracking · Model Versioning · Data Versioning with DVC · Reproducible Experiments · From Notebook to Production Pipeline · Common Pipeline Mistakes · Step 1: Custom Transformer · Step 2: Pipeline from Scratch · Step 3: Cross-Validation with Pipeline · Step 4: Full Production Pipeline with sklearn"
       },
@@ -452,7 +452,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/14-naive-bayes/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/14-naive-bayes/",
         "summary": "The \"naive\" assumption is wrong, and it works anyway. That's the beauty of it.",
         "keywords": "Bayes' Theorem (Quick Review) · The Naive Independence Assumption · Why It Still Works · The Math Step by Step · Three Variants · When to Use Each Variant · Laplace Smoothing · Log-Space Computation · Naive Bayes vs Logistic Regression · Classification Pipeline · MultinomialNB · GaussianNB · Demo: Text Classification · Demo: Continuous Features · Prediction Speed · TF-IDF with Naive Bayes · BernoulliNB for Short Text · Calibrating NB Probabilities · Common Gotchas · When Naive Bayes Fails"
       },
@@ -461,7 +461,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/15-time-series/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/15-time-series/",
         "summary": "Past performance does predict future results -- if you check for stationarity first.",
         "keywords": "What Makes Time Series Different · Components of a Time Series · Stationarity · Autocorrelation · Lag Features: Turning Time Series into Supervised Learning · Walk-Forward Validation · ARIMA Intuition · When to Use What · Forecasting Horizons and Strategies · Common Mistakes in Time Series · Lag Feature Creator · Walk-Forward Cross-Validation · Simple Autoregressive Model · Stationarity Check · Autocorrelation · sklearn TimeSeriesSplit · Evaluation Metrics · Rolling Features · Baselines You Must Beat · Practical Tips"
       },
@@ -470,7 +470,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/16-anomaly-detection/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/16-anomaly-detection/",
         "summary": "Normal is easy to define. Abnormal is whatever doesn't fit.",
         "keywords": "Types of Anomalies · The Unsupervised Framing · Supervised vs Unsupervised: The Tradeoff · Z-Score Method · IQR Method · Isolation Forest · Local Outlier Factor (LOF) · Comparison · Evaluation Challenges · Anomaly Detection Pipeline · Z-Score Detector · IQR Detector · Isolation Forest from Scratch · Demo Scenarios · sklearn Contamination Parameter · One-Class SVM · Autoencoder Approach (Preview) · Ensemble Anomaly Detection · Production Considerations · Choosing a Threshold · Scaling to Production"
       },
@@ -479,7 +479,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/17-imbalanced-data/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/17-imbalanced-data/",
         "summary": "When 99% of your data is \"normal,\" accuracy is a lie.",
         "keywords": "Why Accuracy Fails · Better Metrics · The Imbalanced Data Pipeline · SMOTE: Synthetic Minority Oversampling Technique · Sampling Strategies Compared · Class Weights · Threshold Tuning · Cost-Sensitive Learning · Decision Flowchart · Step 1: Generate an imbalanced dataset · Step 2: SMOTE from scratch · Step 3: Random oversampling and undersampling · Step 4: Logistic regression with class weights · Step 5: Threshold tuning · Step 6: Evaluation functions · Step 7: Compare all approaches"
       },
@@ -488,7 +488,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/18-feature-selection/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/02-ml-fundamentals/18-feature-selection/",
         "summary": "More features is not better. The right features is better.",
         "keywords": "Three Categories of Feature Selection · Variance Threshold · Mutual Information · Recursive Feature Elimination (RFE) · L1 (Lasso) Regularization · Tree-Based Feature Importance · Permutation Importance · Comparison Table · Decision Flowchart · Step 1: Generate synthetic data with known feature structure · Step 2: Variance threshold · Step 3: Mutual information (discrete) · Step 4: Recursive Feature Elimination · Step 5: L1 feature selection · Step 6: Tree-based importance (simple decision tree) · Step 7: Run all methods and compare"
       }
@@ -505,7 +505,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/01-the-perceptron/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/01-the-perceptron/",
         "summary": "The perceptron is the atom of neural networks. Split it open and you find weights, a bias, and a decision.",
         "keywords": "One Neuron, One Decision · The Decision Boundary · The Learning Rule · The XOR Problem · Step 1: The Perceptron class · Step 2: Train on logic gates · Step 3: Watch XOR fail · Step 4: Solve XOR with two layers · Step 5: Train a Two-Layer Network"
       },
@@ -514,7 +514,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/02-multi-layer-networks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/02-multi-layer-networks/",
         "summary": "One neuron draws a line. Stack them, and you can draw anything.",
         "keywords": "Layers: Input, Hidden, Output · Neurons and Activations · Forward Pass: How Data Flows · Matrix Dimensions · Universal Approximation Theorem · Composability · Step 1: Sigmoid Activation · Step 2: Layer Class · Step 3: Network Class · Step 4: XOR with Hand-Tuned Weights · Step 5: Circle Classification"
       },
@@ -523,7 +523,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/03-backpropagation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/03-backpropagation/",
         "summary": "Backpropagation is the algorithm that makes learning possible. Without it, neural networks are just expensive random number generators.",
         "keywords": "The Chain Rule, Applied to Networks · Computational Graphs · Forward vs Backward · Gradient Flow Through a Network · Vanishing Gradients · Deriving Gradients for a 2-Layer Network · Step 1: The Value Node · Step 2: Operations with Backward Functions · Step 3: Sigmoid and Loss · Step 4: Backward Pass · Step 5: Layer and Network · Step 6: Train on XOR · Step 7: Circle Classification"
       },
@@ -532,7 +532,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/04-activation-functions/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/04-activation-functions/",
         "summary": "Without nonlinearity, your 100-layer network is a fancy matrix multiply. Activations are the gates that let neural networks think in curves.",
         "keywords": "Why Nonlinearity Is Necessary · Sigmoid · Tanh · ReLU: The Breakthrough · Leaky ReLU · GELU: The Modern Default · Swish / SiLU · Softmax: The Output Activation · Comparison of Shapes · Gradient Flow Comparison · Which Activation When · Step 1: Implement All Activation Functions with Derivatives · Step 2: Visualize Where Gradients Die · Step 3: Vanishing Gradient Experiment · Step 4: Dead Neuron Detector · Step 5: Training Comparison -- Sigmoid vs ReLU vs GELU"
       },
@@ -541,7 +541,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/05-loss-functions/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/05-loss-functions/",
         "summary": "Your network makes a prediction. The ground truth says otherwise. How wrong is it? That number is the loss. Pick the wrong loss function and your model optimizes for the wrong t…",
         "keywords": "Mean Squared Error (MSE) · Cross-Entropy Loss · Why MSE Fails for Classification · Label Smoothing · Contrastive Loss · Focal Loss · Loss Function Decision Tree · Loss Landscape · Step 1: MSE and Its Gradient · Step 2: Binary Cross-Entropy · Step 3: Categorical Cross-Entropy with Softmax · Step 4: Label Smoothing · Step 5: Contrastive Loss (Simplified InfoNCE) · Step 6: MSE vs Cross-Entropy on Classification"
       },
@@ -550,7 +550,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/06-optimizers/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/06-optimizers/",
         "summary": "Gradient descent tells you which direction to move. It says nothing about how far or how fast. SGD is a compass. Adam is GPS with traffic data.",
         "keywords": "Stochastic Gradient Descent (SGD) · Momentum · RMSProp · Adam: Momentum + RMSProp · AdamW: Weight Decay Done Right · Learning Rate: The Most Important Hyperparameter · Optimizer Comparison · When Each Optimizer Wins · Step 1: Vanilla SGD · Step 2: SGD with Momentum · Step 3: Adam · Step 4: AdamW · Step 5: Training Comparison"
       },
@@ -559,7 +559,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/07-regularization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/07-regularization/",
         "summary": "Your model gets 99% on training data and 60% on test data. It memorized instead of learning. Regularization is the tax you impose on complexity to force generalization.",
         "keywords": "The Overfitting Spectrum · Dropout · Weight Decay (L2 Regularization) · Batch Normalization · Layer Normalization · RMSNorm · Normalization Comparison · Data Augmentation as Regularization · Early Stopping · When to Apply What · Step 1: Dropout (Train and Eval Mode) · Step 2: L2 Weight Decay · Step 3: Batch Normalization · Step 4: Layer Normalization · Step 5: RMSNorm · Step 6: Training With and Without Regularization"
       },
@@ -568,7 +568,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/08-weight-initialization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/08-weight-initialization/",
         "summary": "Initialize wrong and training never starts. Initialize right and 50 layers train as smoothly as 3.",
         "keywords": "The Symmetry Problem · Variance Propagation Through Layers · Xavier/Glorot Initialization · Kaiming/He Initialization · Transformer Initialization · Activation Magnitude Through 50 Layers · Choosing the Right Init · Step 1: Initialization Strategies · Step 2: Activation Functions · Step 3: Forward Pass Through 50 Layers · Step 4: The Experiment · Step 5: Symmetry Demonstration · Step 6: Layer-by-Layer Magnitude Report"
       },
@@ -577,7 +577,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/09-learning-rate-schedules/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/09-learning-rate-schedules/",
         "summary": "The learning rate is the single most important hyperparameter. Not the architecture. Not the dataset size. Not the activation function. The learning rate. If you tune nothing el…",
         "keywords": "Constant Learning Rate · Step Decay · Cosine Annealing · Warmup: Why You Start Small · Linear Warmup + Cosine Decay · 1cycle Policy · Schedule Shapes · Decision Flowchart · Real Numbers from Published Models · Step 1: Schedule Functions · Step 2: Visualize All Schedules · Step 3: Training Network · Step 4: Compare All Schedules · Step 5: LR Too High vs Too Low"
       },
@@ -586,7 +586,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/10-mini-framework/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/10-mini-framework/",
         "summary": "You have built neurons, layers, networks, backprop, activations, loss functions, optimizers, regularization, initialization, and LR schedules. All as separate pieces. Now wire t…",
         "keywords": "The Module Abstraction · Sequential Container · Training vs Evaluation Mode · Optimizer · DataLoader · Framework Architecture · Training Loop · Module Hierarchy · Step 1: Module Base Class · Step 2: Linear Layer · Step 3: Activation Modules · Step 4: Dropout Module · Step 5: BatchNorm Module · Step 6: Sequential Container · Step 7: Loss Functions · Step 8: SGD and Adam Optimizers · Step 9: DataLoader · Step 10: Train a 4-Layer Network on Circle Classification"
       },
@@ -595,7 +595,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/11-intro-to-pytorch/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/11-intro-to-pytorch/",
         "summary": "You built the engine from pistons and crankshafts. Now learn the one everyone actually drives.",
         "keywords": "Why PyTorch Won · Tensors · Autograd · nn.Module · Loss Functions and Optimizers · The Training Loop · Dataset and DataLoader · GPU Training · Comparison: Mini Framework vs PyTorch vs JAX · Step 1: Load MNIST From Raw Files · Step 2: Define the Model · Step 3: Training Loop · Step 4: Wire Everything Together · Quick Comparison: Mini Framework vs PyTorch · Saving and Loading Models · Learning Rate Scheduling"
       },
@@ -604,7 +604,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/12-intro-to-jax/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/12-intro-to-jax/",
         "summary": "PyTorch mutates tensors. TensorFlow builds graphs. JAX compiles pure functions. That last one changes how you think about deep learning.",
         "keywords": "The JAX Philosophy · jax.numpy: The Familiar Surface · jax.grad: Functional Autodiff · jit: Compile to XLA · vmap: Automatic Vectorization · pmap: Data Parallelism Across Devices · Pytrees: The Universal Data Structure · Functional vs Object-Oriented · The JAX Ecosystem · When to Use JAX vs PyTorch · Random Numbers in JAX · Step 1: Setup and Data · Step 2: Initialize Parameters · Step 3: Forward Pass · Step 4: JIT-Compiled Training Step · Step 5: Training Loop · Flax: The Google Standard · Equinox: The Pythonic Alternative · Optax: Composable Optimizers"
       },
@@ -613,7 +613,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/13-debugging-neural-networks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/03-deep-learning-core/13-debugging-neural-networks/",
         "summary": "Your network compiled. It ran. It produced a number. The number is wrong and nothing crashed. Welcome to the hardest kind of debugging -- the kind where there is no error message.",
         "keywords": "The Debugging Mindset · Symptom 1: Loss Not Decreasing · Symptom 2: Loss Decreasing But Model is Bad · Symptom 3: NaN or Inf in Loss · Technique 1: Gradient Checking · Technique 2: Activation Statistics · Technique 3: Gradient Flow Visualization · Technique 4: The Overfit-One-Batch Test · Technique 5: Learning Rate Finder · Common PyTorch Bugs · The Master Debugging Table · Step 1: The NetworkDebugger Class · Step 2: The Overfit-One-Batch Test · Step 3: Learning Rate Finder · Step 4: Gradient Checker · Step 5: Deliberately Broken Networks · PyTorch Built-in Tools · Weights & Biases Integration · TensorBoard · The Debug Checklist (Before Full Training)"
       }
@@ -630,7 +630,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/01-image-fundamentals/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/01-image-fundamentals/",
         "summary": "An image is a tensor of light samples. Every vision model you will ever use starts from this one fact.",
         "keywords": "The full preprocessing pipeline at a glance · A pixel is a sample, not a square · Why three channels · Two layout conventions: HWC and CHW · Byte ranges and dtype · Color spaces and why they exist · Aspect ratio, resizing, and interpolation · Step 1: Load an image and inspect its shape · Step 2: Split channels and re-order layout · Step 3: Grayscale and HSV conversions · Step 4: Normalize, standardize, and reverse it · Step 5: Resize with three interpolation methods"
       },
@@ -639,7 +639,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/02-convolutions-from-scratch/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/02-convolutions-from-scratch/",
         "summary": "A convolution is a tiny dense layer you slide across an image, sharing the same weights at every location.",
         "keywords": "One kernel, sliding · Output size formula · Padding · Stride · Multiple input channels · The im2col trick · Receptive field · Step 1: Pad an array · Step 2: 2D convolution with nested loops · Step 3: Verify with a hand-designed kernel · Step 4: im2col · Step 5: Fast conv via im2col + matmul · Step 6: A bank of hand-designed kernels"
       },
@@ -648,7 +648,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/03-cnns-lenet-to-resnet/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/03-cnns-lenet-to-resnet/",
         "summary": "Every major CNN of the last thirty years is the same conv–nonlinearity–downsample recipe with one new idea bolted on. Learn the ideas in order.",
         "keywords": "The four ideas that changed vision · LeNet-5 (1998) · AlexNet (2012) · VGG (2014) · Inception (2014, same year) · The degradation problem · ResNet (2015) · Why residuals matter beyond vision · Step 1: LeNet-5 · Step 2: A VGG block · Step 3: A ResNet BasicBlock · Step 4: A tiny ResNet · Step 5: Compare parameter-to-feature efficiency"
       },
@@ -657,7 +657,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/04-image-classification/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/04-image-classification/",
         "summary": "A classifier is a function from pixels to a probability distribution over classes. Everything else is plumbing.",
         "keywords": "The classification pipeline · Cross-entropy, logits, and softmax · Why augmentation works · Mixup and cutmix · Label smoothing · Evaluation beyond accuracy · Step 1: A deterministic synthetic dataset · Step 2: Normalisation and augmentation · Step 3: Mixup · Step 4: The training loop · Step 5: Put it together · Step 6: Read the confusion matrix"
       },
@@ -666,7 +666,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/05-transfer-learning/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/05-transfer-learning/",
         "summary": "Somebody else spent a million GPU hours teaching a network what edges, textures, and object parts look like. You should borrow those features before training your own.",
         "keywords": "Feature extraction vs fine-tuning · Why freezing works at all · Discriminative learning rates · The BatchNorm problem · Head design · Layer-wise LR decay · What to evaluate · Step 1: Load a pretrained backbone and inspect it · Step 2: Feature extraction — freeze everything, replace the head · Step 3: Discriminative fine-tuning · Step 4: BatchNorm handling · Step 5: A minimal end-to-end fine-tuning loop · Step 6: Progressive unfreezing"
       },
@@ -675,7 +675,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/06-object-detection-yolo/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/06-object-detection-yolo/",
         "summary": "Detection is classification plus regression, run at every position in a feature map, then cleaned up with non-maximum suppression.",
         "keywords": "Detection as dense prediction · Why grids and anchors · Decoding predictions · IoU · Non-maximum suppression · The loss · Detection metrics · Step 1: IoU · Step 2: Non-max suppression · Step 3: Box encoding and decoding · Step 4: A minimal YOLO head · Step 5: Ground-truth assignment · Step 6: The three losses · Step 7: Inference pipeline"
       },
@@ -684,7 +684,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/07-semantic-segmentation-unet/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/07-semantic-segmentation-unet/",
         "summary": "Segmentation is classification at every pixel. U-Net makes it work by pairing a downsampling encoder with an upsampling decoder and wiring skip connections between them.",
         "keywords": "Semantic vs instance vs panoptic · The U-Net shape · Transposed vs bilinear upsample · Cross-entropy on a pixel grid · Dice loss and why you need it · Evaluation metrics · Input resolution trade-off · Step 1: Encoder block · Step 2: Down and up blocks · Step 3: The U-Net · Step 4: Losses · Step 5: IoU metric · Step 6: Synthetic dataset for end-to-end verification · Step 7: Training loop"
       },
@@ -693,7 +693,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/08-instance-segmentation-mask-rcnn/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/08-instance-segmentation-mask-rcnn/",
         "summary": "Add a tiny mask branch to a Faster R-CNN detector and you have instance segmentation. The hard part is RoIAlign, and it is harder than it looks.",
         "keywords": "The architecture · Why RoIAlign, not RoIPool · The RPN in one paragraph · The mask head · Losses · Output format · Step 1: RoIAlign from scratch · Step 2: Compare to torchvision's RoIAlign · Step 3: Load a pretrained Mask R-CNN · Step 4: Run inference · Step 5: Swap the heads for a custom class count · Step 6: Freeze what does not need training"
       },
@@ -702,7 +702,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/09-image-generation-gans/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/09-image-generation-gans/",
         "summary": "A GAN is two neural networks in a fixed game. One draws, one critiques. They get better together until the drawings fool the critic.",
         "keywords": "The two networks · The game · Non-saturating loss · DCGAN architecture rules · Failure modes and their signatures · Evaluation · Step 1: Generator · Step 2: Discriminator · Step 3: Training step · Step 4: Full training loop on synthetic shapes · Step 5: Sampling · Step 6: Spectral normalisation"
       },
@@ -711,7 +711,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/10-image-generation-diffusion/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/10-image-generation-diffusion/",
         "summary": "A diffusion model learns to denoise. Train it to remove a tiny bit of noise from a noisy image, repeat that backwards a thousand times, and you have an image generator.",
         "keywords": "The forward process · The closed-form jump · The reverse process · The training loss · The sampler (DDPM) · Why 1000 steps · DDIM: 20x faster sampling · Time conditioning · Step 1: Noise schedule · Step 2: Forward diffusion (q_sample) · Step 3: A tiny time-conditioned U-Net · Step 4: Training loop · Step 5: Sampler (DDPM) · Step 6: DDIM sampler (deterministic, ~20x faster)"
       },
@@ -720,7 +720,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/11-stable-diffusion/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/11-stable-diffusion/",
         "summary": "Stable Diffusion is a DDPM that runs in the latent space of a pretrained VAE, conditioned on text via cross-attention, sampled with a fast deterministic ODE solver, and steered …",
         "keywords": "The pipeline · Classifier-free guidance (CFG) · Latent space geometry · The U-Net architecture · LoRA fine-tuning · Schedulers you will see · Step 1: Text-to-image · Step 2: Swap the scheduler · Step 3: Image-to-image · Step 4: Inpainting · Step 5: LoRA loading · Step 6: LoRA training (sketch)"
       },
@@ -729,7 +729,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/12-video-understanding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/12-video-understanding/",
         "summary": "A video is a sequence of images plus the physics that connects them. Every video model either treats time as an extra axis (3D conv), a sequence to attend over (transformer), or…",
         "keywords": "The three architectural families · 2D + pool · 3D convolutions · Spatio-temporal transformers · Frame sampling · Evaluation · Datasets you will meet · Step 1: Frame sampler · Step 2: A 2D+pool baseline · Step 3: An I3D-style inflated 3D conv · Step 4: Factorised (2+1)D conv"
       },
@@ -738,7 +738,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/13-3d-vision-nerf/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/13-3d-vision-nerf/",
         "summary": "3D vision comes in two flavours. Point clouds are the sensor's raw output. NeRFs are the learned volumetric field. Both answer \"what is where in space.\"",
         "keywords": "Point clouds · The PointNet architecture · Neural Radiance Fields (NeRFs) · Positional encoding in NeRF · Volumetric rendering · What replaced NeRFs · Datasets and benchmarks · Step 1: PointNet classifier · Step 2: Positional encoding · Step 3: Tiny NeRF MLP · Step 4: Volumetric rendering along a ray"
       },
@@ -747,7 +747,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/14-vision-transformers/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/14-vision-transformers/",
         "summary": "Cut the image into patches, treat each patch as a word, run a standard transformer. Don't look back.",
         "keywords": "The pipeline · Patch embedding · Class token · Positional embedding · Transformer encoder block · Why pre-LN · Patch size trade-off · DeiT's recipe for training ViT on ImageNet-1k · Swin vs ConvNeXt · MAE pretraining · Step 1: Patch embedding · Step 2: Transformer block · Step 3: The ViT · Step 4: Sanity check — single image inference"
       },
@@ -756,7 +756,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/15-real-time-edge/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/15-real-time-edge/",
         "summary": "Edge inference is the discipline of getting a 90-accuracy model to run at 30 fps on a device with 2 GB of RAM. Every percentage point of accuracy is traded against milliseconds …",
         "keywords": "The three budgets · Measurement discipline · FLOPs as a proxy · Quantisation in one paragraph · Pruning and distillation · The inference runtimes · Edge architecture picker · Step 1: Measure latency correctly · Step 2: Parameter and FLOP counts · Step 3: Post-training static quantisation · Step 4: Export to ONNX · Step 5: Benchmark and compare regimes"
       },
@@ -765,7 +765,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/16-vision-pipeline-capstone/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/16-vision-pipeline-capstone/",
         "summary": "A production vision system is a chain of models and rules stitched with data contracts. The pieces are already in this phase; the capstone wires them together end-to-end.",
         "keywords": "The pipeline · Data contracts with Pydantic · Where latency goes · Failure modes · Batching · Step 1: Data contracts · Step 2: A minimal Pipeline class · Step 3: Wire a detector and a classifier · Step 4: FastAPI service · Step 5: Benchmark the pipeline"
       },
@@ -774,7 +774,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/17-self-supervised-vision/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/17-self-supervised-vision/",
         "summary": "Labels are the bottleneck of supervised vision. Self-supervised pretraining removes them: learn visual features from 100M unlabelled images, fine-tune on 10k labelled ones.",
         "keywords": "Three families · Contrastive learning (SimCLR) · Teacher-student (DINO) · Masked reconstruction (MAE) · Why 75% and not 15% · Linear-probe evaluation · Step 1: Two-view augmentation pipeline · Step 2: InfoNCE loss · Step 3: Sanity check InfoNCE · Step 4: MAE-style masking"
       },
@@ -783,7 +783,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/18-open-vocab-clip/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/18-open-vocab-clip/",
         "summary": "Train an image encoder and a text encoder together so that matching (image, caption) pairs land at the same point in a shared space. That is the whole trick.",
         "keywords": "Two towers · The objective · SigLIP: a better loss · Zero-shot classification · Where CLIP-style models are used in 2026 · Step 1: A tiny two-tower model · Step 2: Contrastive loss · Step 3: Zero-shot classifier · Step 4: Sanity check"
       },
@@ -792,7 +792,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/19-ocr-document-understanding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/19-ocr-document-understanding/",
         "summary": "OCR is a three-stage pipeline — detect text boxes, recognise the characters, then lay them out. Every modern OCR system reorders these stages or merges them.",
         "keywords": "The classical pipeline · CTC in one paragraph · Modern end-to-end models · Layout parsing · Evaluation metrics · Step 1: CTC loss + greedy decoder · Step 2: Tiny CRNN recogniser · Step 3: Synthetic OCR · Step 4: Training sketch"
       },
@@ -801,7 +801,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/20-image-retrieval-metric/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/20-image-retrieval-metric/",
         "summary": "A retrieval system ranks candidates by a distance in embedding space. Metric learning is the discipline of shaping that space so the distances mean what you want.",
         "keywords": "Retrieval at a glance · The four loss families · Triplet loss formally · Cosine similarity vs L2 · Recall@K · FAISS in one paragraph · Instance-level vs category-level retrieval · Step 1: Triplet loss · Step 2: Semi-hard mining · Step 3: Recall@K · Step 4: Putting it together"
       },
@@ -810,7 +810,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/21-keypoint-pose/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/21-keypoint-pose/",
         "summary": "A pose is a set of ordered keypoints. A keypoint detector is a heatmap regressor. Everything else is bookkeeping.",
         "keywords": "Top-down vs bottom-up · Heatmap regression · Sub-pixel localisation · Part Affinity Fields (PAFs) · COCO keypoints · 2D vs 3D · Step 1: Gaussian heatmap target · Step 2: Tiny keypoint head · Step 3: Inference — extract keypoint coordinates · Step 4: Synthetic keypoint dataset · Step 5: Training"
       },
@@ -819,7 +819,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/22-3d-gaussian-splatting/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/22-3d-gaussian-splatting/",
         "summary": "A scene is a cloud of millions of 3D Gaussians. Each one has a position, orientation, scale, opacity, and a colour that depends on viewing direction. Rasterise them, backprop th…",
         "keywords": "What a Gaussian carries · Rasterisation, not ray marching · The projection step · The alpha-compositing rule · Why this is differentiable · Densification and pruning · Spherical harmonics in one paragraph · The 2026 production stack · 4D and generative variants · Step 1: A 2D Gaussian · Step 2: 2D splatting rasteriser · Step 3: A trainable 2D splat scene · Step 4: Fit 2D Gaussians to a target image · Step 5: From 2D to 3D · Step 6: Spherical harmonics evaluation"
       },
@@ -828,7 +828,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/23-diffusion-transformers-rectified-flow/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/23-diffusion-transformers-rectified-flow/",
         "summary": "The U-Net is not the secret of diffusion. Replace it with a transformer, swap the noise schedule for a straight-line flow, and suddenly you have SD3, FLUX, and every 2026 text-t…",
         "keywords": "From U-Net to transformer · Rectified flow in one paragraph · AdaLN conditioning · Text encoders in SD3 and FLUX · Classifier-free guidance still holds · Consistency, Turbo, Schnell, LCM · Model landscape in 2026 · Why this phase shift matters · Step 1: A DiT block with AdaLN · Step 2: A tiny DiT · Step 3: Rectified flow training · Step 4: Euler sampler · Step 5: End-to-end smoke test"
       },
@@ -837,7 +837,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/24-sam3-open-vocab-segmentation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/24-sam3-open-vocab-segmentation/",
         "summary": "Give a model a text prompt and an image and get masks for every matching object. SAM 3 made that a single forward pass.",
         "keywords": "The three generations · Promptable Concept Segmentation · Key architectural pieces · Training at scale · SAM 3.1 Object Multiplex · Where Grounded SAM still matters in 2026 · YOLO-World vs SAM 3 · SAM-MI efficiency · Output format for the three models · Step 1: Prompt construction · Step 2: Post-processing helpers · Step 3: A unified open-vocab segmentation interface · Step 4: Hugging Face SAM 3 usage (reference) · Step 5: Measure what Grounded SAM 2 gave you for free"
       },
@@ -846,7 +846,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/25-vision-language-models/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/25-vision-language-models/",
         "summary": "A vision encoder converts an image into tokens. An MLP projector maps those tokens into the LLM's embedding space. A language model does the rest. That pattern — ViT-MLP-LLM — i…",
         "keywords": "The ViT-MLP-LLM architecture · DeepStack · Three training stages · Model family comparison (early 2026) · Visual agents · Agentic capabilities + RoPE variants · The alignment problem · Fine-tuning with LoRA / QLoRA · Spatial reasoning is still weak · Step 1: The projector · Step 2: Assemble ViT-MLP-LLM end-to-end · Step 3: CMER computation · Step 4: Toy VLM classifier (runnable)"
       },
@@ -855,7 +855,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/26-monocular-depth/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/26-monocular-depth/",
         "summary": "A depth map is a single-channel image where each pixel is a distance from the camera. Predicting it from one RGB frame used to be impossible without stereo or LiDAR. In 2026 a f…",
         "keywords": "Relative vs metric depth · The encoder-decoder pattern · Why a single image produces depth at all · What monocular depth cannot do · Depth Anything V3 in 2026 · Marigold — diffusion for depth · Intrinsics and the pinhole camera · Evaluation · Step 1: Depth metrics · Step 2: Scale-and-shift alignment · Step 3: Lift depth to a point cloud · Step 4: Smoke test with a synthetic depth scene · Step 5: Depth Anything V3 usage (reference)"
       },
@@ -864,7 +864,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/27-multi-object-tracking/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/27-multi-object-tracking/",
         "summary": "Tracking is detection plus association. Detect every frame. Match this frame's detections to last frame's tracks by ID.",
         "keywords": "Tracking-by-detection · Kalman filter in one paragraph · The Hungarian algorithm · ByteTrack's key idea · SAM 2 memory-based tracking · SAM 3.1 Object Multiplex · Three metrics to know · Step 1: IoU-based cost matrix · Step 2: Minimal SORT-style tracker · Step 3: Synthetic trajectory test · Step 4: ID-switch metric"
       },
@@ -873,7 +873,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/28-world-models-video-diffusion/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/04-computer-vision/28-world-models-video-diffusion/",
         "summary": "A video model that predicts the next seconds of a scene is a world simulator. Condition that prediction on actions and you have a learned game engine.",
         "keywords": "Three families of world-modelling · Video DiT architecture · Conditioning on actions: latent action models · Physical plausibility · Autonomous driving world models · Robotics stack: VLM + video model + inverse dynamics · Evaluation · Model landscape in 2026 · Step 1: 3D patchify for video · Step 2: 3D rotary position encoding · Step 3: Divided attention block · Step 4: Compose a tiny video DiT · Step 5: Check shapes"
       }
@@ -890,7 +890,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/01-text-processing/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/01-text-processing/",
         "summary": "Language is continuous. Models are discrete. Preprocessing is the bridge.",
         "keywords": "Step 1: a regex word tokenizer · Step 2: a Porter stemmer (step 1a only) · Step 3: a lookup-based lemmatizer · Step 4: pipe them together · NLTK · spaCy · When to pick which · The two failure modes nobody warns you about"
       },
@@ -899,7 +899,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/02-bag-of-words-tfidf/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/02-bag-of-words-tfidf/",
         "summary": "Count first, think later. TF-IDF still beats embeddings on well-defined tasks in 2026.",
         "keywords": "Step 1: build the vocabulary · Step 2: bag of words · Step 3: term frequency and document frequency · Step 4: TF-IDF · Step 5: L2-normalize rows · When TF-IDF still wins (as of 2026) · When TF-IDF fails · Hybrid: TF-IDF weighted embeddings"
       },
@@ -908,7 +908,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/03-word-embeddings-word2vec/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/03-word-embeddings-word2vec/",
         "summary": "A word is the company it keeps. Train a shallow net on that idea and geometry falls out.",
         "keywords": "Step 1: training pairs from a corpus · Step 2: embedding tables · Step 3: negative sampling objective · Step 4: train on a toy corpus · Step 5: the analogy trick · When Word2Vec still wins in 2026 · Where Word2Vec fails"
       },
@@ -917,7 +917,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/04-glove-fasttext-subword/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/04-glove-fasttext-subword/",
         "summary": "Word2Vec trained one embedding per word. GloVe factorized the co-occurrence matrix. FastText embedded the pieces. BPE bridged to transformers.",
         "keywords": "GloVe: factorize the co-occurrence matrix · FastText: subword-aware embeddings · BPE: learned subword vocabulary · When to pick which"
       },
@@ -926,7 +926,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/05-sentiment-analysis/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/05-sentiment-analysis/",
         "summary": "The canonical NLP task. Most of what you need to know about classical text classification shows up here.",
         "keywords": "Step 1: a real mini-dataset · Step 2: multinomial Naive Bayes from scratch · Step 3: logistic regression from scratch · Step 4: handling negation (the failure mode) · Step 5: evaluation metrics that matter · When to reach for a transformer · The reproducibility trap (again)"
       },
@@ -935,7 +935,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/06-named-entity-recognition/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/06-named-entity-recognition/",
         "summary": "Pull the names out. Sounds easy until you deal with ambiguous boundaries, nested entities, and domain jargon.",
         "keywords": "Step 1: BIO tagging helpers · Step 2: hand-crafted features · Step 3: a simple rule-based + dictionary baseline · Step 4: the CRF step (sketch, not full impl) · Step 5: what a BiLSTM-CRF adds · LLM-based NER (the 2026 option) · Where classical NER still wins · Where it falls apart"
       },
@@ -944,7 +944,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/07-pos-tagging-parsing/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/07-pos-tagging-parsing/",
         "summary": "Grammar was unfashionable for a while. Then every LLM pipeline needed to validate structured extraction, and it came back.",
         "keywords": "Step 1: most-frequent-tag baseline · Step 2: bigram HMM tagger · Step 3: why modern taggers beat this · Step 4: dependency parsing sketch · Where this still matters in 2026"
       },
@@ -953,7 +953,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/08-cnns-rnns-for-text/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/08-cnns-rnns-for-text/",
         "summary": "Convolutions learn n-grams. Recurrences remember. Both are superseded by attention. Both still matter on constrained hardware.",
         "keywords": "Step 1: TextCNN in PyTorch · Step 2: LSTM classifier · Step 3: the vanishing gradient demo (intuition) · Step 4: why this still was not enough"
       },
@@ -962,7 +962,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/09-sequence-to-sequence/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/09-sequence-to-sequence/",
         "summary": "Two RNNs pretending to be a translator. The bottleneck they hit is the reason attention exists.",
         "keywords": "Step 1: an encoder · Step 2: a decoder · Step 3: training loop with teacher forcing · Step 4: inference loop (greedy) · Step 5: the bottleneck, demonstrated · When to still reach for RNN-based seq2seq · Exposure bias and its mitigations"
       },
@@ -971,7 +971,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/10-attention-mechanism/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/10-attention-mechanism/",
         "summary": "The decoder stops squinting at a compressed summary and starts looking at the whole source. Everything after this is attention plus engineering.",
         "keywords": "Step 1: additive (Bahdanau) attention · Step 2: Luong dot and general · Step 3: a worked numerical example · Step 4: why this is the bridge to transformers · When classical attention still matters · The attention-weight-as-explanation trap"
       },
@@ -980,7 +980,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/11-machine-translation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/11-machine-translation/",
         "summary": "Translation is the task that paid for NLP research for thirty years and keeps paying now.",
         "keywords": "Step 1: a pretrained MT call · Step 2: BLEU and chrF · The three-tier evaluation hierarchy (2026) · Step 3: what breaks in production · Step 4: fine-tuning for a domain"
       },
@@ -989,7 +989,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/12-text-summarization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/12-text-summarization/",
         "summary": "Extractive systems tell you what the document said. Abstractive systems tell you what the author meant. Different tasks, different pitfalls.",
         "keywords": "Step 1: TextRank (extractive) · Step 2: abstractive with BART · Step 3: ROUGE evaluation · Beyond ROUGE (2026 summarization eval) · Step 4: the factuality problem"
       },
@@ -998,7 +998,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/13-question-answering/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/13-question-answering/",
         "summary": "Three systems shaped modern QA. Extractive found spans. Retrieval-augmented grounded them in documents. Generative produced answers. Every modern AI assistant is a mix of the th…",
         "keywords": "Step 1: extractive QA with a pretrained model · Step 2: a retrieval-augmented pipeline (sketch) · Step 3: generative with RAG · Step 4: evaluation that reflects the real world · RAGAS: the 2026 production eval framework"
       },
@@ -1007,7 +1007,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/14-information-retrieval-search/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/14-information-retrieval-search/",
         "summary": "BM25 is precise but brittle. Dense casts a wide net but misses keywords. Hybrid is the 2026 default. Everything else is tuning.",
         "keywords": "Step 1: BM25 from scratch · Step 2: dense retrieval with a bi-encoder · Step 3: Reciprocal Rank Fusion · Step 4: hybrid search + rerank · Step 5: evaluation · The hard-won lessons from 2026 production RAG"
       },
@@ -1016,7 +1016,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/15-topic-modeling/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/15-topic-modeling/",
         "summary": "LDA: documents are mixtures of topics, topics are distributions over words. BERTopic: documents cluster in embedding space, clusters are topics. Same goal, different decompositi…",
         "keywords": "Step 1: LDA via scikit-learn · Step 2: BERTopic (production) · Step 3: evaluation"
       },
@@ -1025,7 +1025,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/16-text-generation-pre-transformer/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/16-text-generation-pre-transformer/",
         "summary": "If a word is surprising, the model is bad. Perplexity makes surprise a number. Smoothing keeps it finite.",
         "keywords": "Step 1: trigram counts · Step 2: Laplace smoothing · Step 3: Kneser-Ney (bigram, interpolated) · Step 4: generating text with sampling · Step 5: perplexity"
       },
@@ -1034,7 +1034,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/17-chatbots-rule-to-neural/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/17-chatbots-rule-to-neural/",
         "summary": "ELIZA replied with pattern matches. DialogFlow mapped intents. GPT answered from weights. Claude runs tools and verifies. Each era solved the previous one's worst failure.",
         "keywords": "Step 1: rule-based pattern matching · Step 2: retrieval-based (FAQ) · Step 3: neural generation (baseline) · Step 4: LLM agent loop · Step 5: hybrid routing"
       },
@@ -1043,7 +1043,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/18-multilingual-nlp/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/18-multilingual-nlp/",
         "summary": "One model, 100+ languages, zero training data for most of them. Cross-lingual transfer is the practical miracle of the 2020s.",
         "keywords": "Step 1: zero-shot cross-lingual classification · Step 2: multilingual embedding space · Step 3: few-shot fine-tuning strategy · The tokenization tax (what goes wrong for low-resource languages)"
       },
@@ -1052,7 +1052,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/19-subword-tokenization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/19-subword-tokenization/",
         "summary": "Word tokenizers choke on unseen words. Character tokenizers blow up sequence length. Subword tokenizers split the difference. Every modern LLM ships on one.",
         "keywords": "Step 1: BPE from scratch · Step 2: encode with the learned merges · Step 3: SentencePiece in practice · Step 4: tiktoken for OpenAI-compatible vocabs"
       },
@@ -1061,7 +1061,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/20-structured-outputs-constrained-decoding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/20-structured-outputs-constrained-decoding/",
         "summary": "Ask an LLM for JSON. Get JSON most of the time. In production, \"most\" is the problem. Constrained decoding turns \"most\" into \"always\" by editing the logits before sampling.",
         "keywords": "The counterintuitive result · The pitfall that costs you · Step 1: regex-constrained generation from scratch · Step 2: Outlines for JSON Schema · Step 3: Instructor for provider-agnostic Pydantic · Step 4: native vendor APIs"
       },
@@ -1070,7 +1070,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/21-nli-textual-entailment/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/21-nli-textual-entailment/",
         "summary": "\"t entails h\" means a human reading t would conclude h is true. NLI is the task of predicting entailment / contradiction / neutral. Boring on the surface, load-bearing in produc…",
         "keywords": "Step 1: run a pretrained NLI model · Step 2: zero-shot classification · Step 3: faithfulness check for RAG · Step 4: hand-rolled NLI classifier (conceptual)"
       },
@@ -1079,7 +1079,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/22-embedding-models-deep-dive/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/22-embedding-models-deep-dive/",
         "summary": "Word2Vec gave you a vector per word. Modern embedding models give you a vector per passage, cross-lingual, with sparse, dense, and multi-vector views, sized to fit your index. P…",
         "keywords": "The MTEB leaderboard tells a partial story · The three-tier pattern · Step 1: baseline — dense embeddings with Sentence-BERT · Step 2: Matryoshka truncation · Step 3: BGE-M3 multi-functionality · Step 4: MTEB eval on a custom task · Step 5: hand-rolled cosine from scratch"
       },
@@ -1088,7 +1088,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/23-chunking-strategies-rag/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/23-chunking-strategies-rag/",
         "summary": "Chunking configuration influences retrieval quality as much as the choice of embedding model (Vectara NAACL 2025). Get chunking wrong and no amount of reranking saves you.",
         "keywords": "The rule that beats every default · Step 1: fixed and recursive chunking · Step 2: semantic chunking · Step 3: parent-document · Step 4: contextual retrieval (Anthropic pattern) · Step 5: evaluate"
       },
@@ -1097,7 +1097,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/24-coreference-resolution/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/24-coreference-resolution/",
         "summary": "\"She called him. He did not answer. The doctor was at lunch.\" Three references to two people and nobody is named. Coreference resolution figures out who is who.",
         "keywords": "Step 1: pretrained neural coreference (AllenNLP / spaCy-experimental) · Step 2: rule-based pronoun resolver (teaching) · Step 3: using LLMs for coreference · Step 4: evaluation"
       },
@@ -1106,7 +1106,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/25-entity-linking/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/25-entity-linking/",
         "summary": "NER found \"Paris.\" Entity linking decides: Paris, France? Paris Hilton? Paris, Texas? Paris (the Trojan prince)? Without linking, your knowledge graph stays ambiguous.",
         "keywords": "The two measurements · Step 1: build an alias index from Wikipedia redirects · Step 2: context-based disambiguation · Step 3: embedding-based (BLINK-style) · Step 4: generative entity linking (concept) · Step 5: evaluate on AIDA-CoNLL"
       },
@@ -1115,7 +1115,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/26-relation-extraction-kg/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/26-relation-extraction-kg/",
         "summary": "NER found the entities. Entity linking anchored them. Relation extraction finds the edges between them. A knowledge graph is the sum of nodes, edges, and their provenance.",
         "keywords": "Step 1: pattern-based extraction · Step 2: supervised relation classification · Step 3: LLM-prompted extraction with anchoring · Step 4: canonicalize onto a closed ontology · Step 5: build a small graph and query"
       },
@@ -1124,7 +1124,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/27-llm-evaluation-frameworks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/27-llm-evaluation-frameworks/",
         "summary": "Exact-match and F1 miss semantic equivalence. Human review does not scale. LLM-as-judge is the production answer — with enough calibration to trust the number.",
         "keywords": "Step 1: faithfulness with NLI (RAGAS-style) · Step 2: answer relevance · Step 3: G-Eval custom metric · Step 4: CI gate · Step 5: toy eval from scratch"
       },
@@ -1133,7 +1133,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/28-long-context-evaluation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/28-long-context-evaluation/",
         "summary": "Gemini 3 Pro advertises 10M tokens of context. At 1M tokens, 8-needle MRCR drops to 26.3%. Advertised ≠ usable. Long-context evaluation tells you the actual capacity of the mode…",
         "keywords": "What to actually report · Step 1: a custom NIAH for your domain · Step 2: a multi-needle variant · Step 3: multi-hop variable tracing (RULER-style) · Step 4: LongBench v2 on your stack"
       },
@@ -1142,7 +1142,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/29-dialogue-state-tracking/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/05-nlp-foundations-to-advanced/29-dialogue-state-tracking/",
         "summary": "\"I want a cheap restaurant in the north... actually make it moderate... and add Italian.\" Three turns, three state updates. DST keeps the slot-value dict in sync so the booking …",
         "keywords": "The classic failure modes · Step 1: rule-based slot extractor · Step 2: state update loop · Step 3: LLM-driven DST with structured output · Step 4: JGA evaluation · Step 5: handling correction"
       }
@@ -1159,7 +1159,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/01-audio-fundamentals",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/01-audio-fundamentals",
         "summary": "Waveforms are the raw signal. Spectrograms are the representation. Mel features are the ML-friendly form. Every modern ASR and TTS pipeline walks this ladder, and the first rung…",
         "keywords": "Step 1: read a clip and plot the waveform · Step 2: synthesize a sine wave from first principles · Step 3: compute the DFT by hand · Step 4: find the dominant frequency · Step 5: demonstrate aliasing"
       },
@@ -1168,7 +1168,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/02-spectrograms-mel-features",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/02-spectrograms-mel-features",
         "summary": "Neural nets do not consume raw waveforms well. They consume spectrograms. They consume mel spectrograms even better. Every ASR, TTS, and audio classifier in 2026 lives or dies b…",
         "keywords": "Step 1: frame the waveform · Step 2: Hann window · Step 3: STFT magnitude · Step 4: mel filterbank · Step 5: log-mel · Step 6: MFCCs"
       },
@@ -1177,7 +1177,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/03-audio-classification",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/03-audio-classification",
         "summary": "Everything from \"dog barking vs siren\" to \"which language is this\" is audio classification. The features are mels. The architecture moves each decade. The evaluation stays AUC, …",
         "keywords": "Class imbalance is the real challenge · Evaluation · Step 1: featurize · Step 2: fixed-length summary · Step 3: k-NN · Step 4: upgrade to CNN on log-mels · Step 5: the 2026 default — fine-tune BEATs"
       },
@@ -1186,7 +1186,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/04-speech-recognition-asr",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/04-speech-recognition-asr",
         "summary": "Speech recognition is audio classification at every timestep, glued together by a sequence model that knows English and silence. CTC, RNN-T, and attention are the three ways to …",
         "keywords": "WER: the one number · Step 1: greedy CTC decode · Step 2: beam-search CTC · Step 3: WER · Step 4: inference against Whisper · Step 5: streaming with Parakeet or wav2vec 2.0"
       },
@@ -1195,7 +1195,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/05-whisper-architecture-finetuning",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/05-whisper-architecture-finetuning",
         "summary": "Whisper is a 30-second-window transformer encoder-decoder, trained on 680k hours of multilingual weakly-supervised audio-text pairs. One architecture, multiple tasks, robust acr…",
         "keywords": "Variants in 2026 · Fine-tuning · Step 1: run Whisper out of the box · Step 2: chunked long-form · Step 3: fine-tune with LoRA · Step 4: inspect what each layer learns"
       },
@@ -1204,7 +1204,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/06-speaker-recognition-verification",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/06-speaker-recognition-verification",
         "summary": "ASR asks \"what did they say?\" Speaker recognition asks \"who said it?\" The math looks the same — embeddings plus cosine — but every production decision hinges on a single EER num…",
         "keywords": "Scoring · Numbers you should know (2026) · Diarization · Step 1: toy embedding from MFCC statistics · Step 2: cosine similarity + threshold · Step 3: EER from similarity pairs · Step 4: production with SpeechBrain · Step 5: diarize with pyannote"
       },
@@ -1213,7 +1213,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/07-text-to-speech",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/07-text-to-speech",
         "summary": "ASR inverts speech to text; TTS inverts text to speech. The 2026 stack is three parts: text → tokens, tokens → mel, mel → waveform. Each part has a default model that fits in a …",
         "keywords": "Vocoder evolution · Evaluation · Step 1: phonemize input · Step 2: run Kokoro (2026 CPU default) · Step 3: run F5-TTS with voice cloning · Step 4: HiFi-GAN vocoder from scratch · Step 5: the full pipeline (pseudocode)"
       },
@@ -1222,7 +1222,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/08-voice-cloning-conversion",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/08-voice-cloning-conversion",
         "summary": "Voice cloning reads your text in someone else's voice. Voice conversion rewrites your voice into someone else's while preserving what you said. Both hang on the same decompositi…",
         "keywords": "The ethics bit, not a bolt-on · Numbers (2026) · Step 1: decompose with recognition-synthesis (code-only demo in main.py) · Step 2: zero-shot clone with F5-TTS · Step 3: voice conversion with KNN-VC · Step 4: embed a watermark · Step 5: consent gate"
       },
@@ -1231,7 +1231,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/09-music-generation",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/09-music-generation",
         "summary": "2026 music generation: Suno v5 and Udio v4 dominate commercial; MusicGen, Stable Audio Open, and ACE-Step lead open-source. The technical problem is mostly solved. The legal pro…",
         "keywords": "Token LM over neural-codec tokens · Diffusion over mels or latents · Hybrid (production) — Suno, Udio, Lyria · Evaluation · Step 1: generate with MusicGen · Step 2: melody conditioning · Step 3: FAD evaluation · Step 4: adding to the LLM-music workflow"
       },
@@ -1240,7 +1240,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/10-audio-language-models",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/10-audio-language-models",
         "summary": "2026 audio-language models reason over speech + environmental sound + music. Qwen2.5-Omni-7B matches GPT-4o Audio on MMAU-Pro. Audio Flamingo Next beats Gemini 2.5 Pro on LongAu…",
         "keywords": "The three-component template · The 2026 model map · Benchmark reality check (2026) · Where LALMs are useful in 2026 · Where they are NOT (yet) useful · Step 1: query Qwen2.5-Omni · Step 2: the projector pattern · Step 3: benchmarking MMAU / LongAudioBench"
       },
@@ -1249,7 +1249,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/11-real-time-audio-processing",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/11-real-time-audio-processing",
         "summary": "Batch pipelines process a file. Real-time pipelines process the next 20 milliseconds before the next 20 arrive. Every conversational AI, broadcast studio, and telephony bot live…",
         "keywords": "Common gotchas · Step 1: ring buffer · Step 2: VAD gate · Step 3: streaming ASR · Step 4: interruption handler"
       },
@@ -1258,7 +1258,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/12-voice-assistant-pipeline",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/12-voice-assistant-pipeline",
         "summary": "Everything from lessons 01-11, stitched together. Build a voice assistant that listens, reasons, and talks back. In 2026 that is a solved engineering problem, not a research pro…",
         "keywords": "The seven components · The three failure modes you will hit · 2026 production reference stacks · Step 1: mic capture with chunking (pseudocode) · Step 2: VAD-gated turn capture · Step 3: streaming STT → LLM → TTS · Step 4: tool calling inside the LLM loop · Step 5: interruption handling"
       },
@@ -1267,7 +1267,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/13-neural-audio-codecs",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/13-neural-audio-codecs",
         "summary": "2026 audio generation is almost all tokens. EnCodec, SNAC, Mimi, and DAC turn continuous waveforms into discrete sequences that a transformer can predict. The semantic-vs-acoust…",
         "keywords": "The core trick: Residual Vector Quantization (RVQ) · The four codecs that matter in 2026 · Frame rates matter for language modeling · Semantic vs acoustic tokens · 2026 reconstruction quality (bits per sec, lower bitrate is better) · Step 1: encode with EnCodec · Step 2: decode and measure reconstruction · Step 3: the semantic-acoustic split (Mimi-style) · Step 4: why AR LM over codec tokens works"
       },
@@ -1276,7 +1276,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/14-voice-activity-detection-turn-taking",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/14-voice-activity-detection-turn-taking",
         "summary": "Every voice agent lives or dies on two decisions: is the user speaking now, and are they done? VAD answers the first. Turn-detection (VAD + silence-hangover + semantic endpoint …",
         "keywords": "The three-tier VAD cascade · Key parameters and their defaults · The flush trick (Kyutai 2025) · 2026 VAD comparison · Step 1: the energy gate · Step 2: Silero VAD in Python · Step 3: turn-end state machine · Step 4: the flush trick skeleton"
       },
@@ -1285,7 +1285,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/15-streaming-speech-to-speech-moshi-hibiki",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/15-streaming-speech-to-speech-moshi-hibiki",
         "summary": "2024-2026 redefined voice AI. Moshi ships a single model that listens and speaks simultaneously at 200 ms latency. Hibiki does speech-to-speech translation chunk-by-chunk. Both …",
         "keywords": "The Moshi architecture · Why inner-monologue text helps · Hibiki: streaming speech-to-speech translation · The broader Kyutai stack (2026) · Sesame CSM — the cousin · 2026 performance numbers · Step 1: the interface · Step 2: the full-duplex loop · Step 3: the training objective (conceptual) · Step 4: where Moshi wins and where it doesn't"
       },
@@ -1294,7 +1294,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/16-anti-spoofing-audio-watermarking",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/16-anti-spoofing-audio-watermarking",
         "summary": "Voice cloning shipped faster than defenses. 2026 production voice systems need two things: a detector (AASIST, RawNet2) that classifies real vs fake speech, and a watermark (Aud…",
         "keywords": "ASVspoof 5 — the 2024-2025 benchmark · AASIST and RawNet2 — detection model families · AudioSeal — the 2024 watermark default · WavMark · WaveVerify (July 2025) · The gap adversaries exploit · C2PA / Content Authenticity Initiative · Step 1: a simple spectral-feature detector (toy) · Step 2: AudioSeal embed + detect · Step 3: evaluation — EER · Step 4: the production integration"
       },
@@ -1303,7 +1303,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/17-audio-evaluation-metrics",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/06-speech-and-audio/17-audio-evaluation-metrics",
         "summary": "You cannot ship what you cannot measure. This lesson names the 2026 metrics for every audio task: ASR (WER, CER, RTFx), TTS (MOS, UTMOS, SECS, WER-on-ASR-round-trip), audio-lang…",
         "keywords": "ASR metrics · TTS metrics · Voice-cloning-specific · Speaker verification · Diarization · Audio classification · Music generation · Audio-language benchmarks · Streaming speech-to-speech · The 2026 leaderboards · Step 1: WER with normalization · Step 2: TTS round-trip WER · Step 3: SECS for voice cloning · Step 4: FAD for music generation · Step 5: EER for speaker verification (same code as Lesson 6)"
       }
@@ -1320,7 +1320,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/01-why-transformers/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/01-why-transformers/",
         "summary": "RNNs process tokens one at a time. Transformers process all tokens at once. That single architectural bet changed every scaling curve in deep learning after 2017.",
         "keywords": "Step 1: measure serial depth · Step 2: count theoretical operations · Step 3: empirical scaling on long sequences"
       },
@@ -1329,7 +1329,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/02-self-attention-from-scratch/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/02-self-attention-from-scratch/",
         "summary": "Attention is a lookup table where every word asks \"who matters to me?\" - and learns the answer.",
         "keywords": "The Database Lookup Analogy · Q, K, V Computation · The Attention Matrix · Why Scale? · Softmax Turns Scores into Weights · Weighted Sum of Values · Full Pipeline · Step 1: Softmax from scratch · Step 2: Scaled dot-product attention · Step 3: Self-attention class with learned projections · Step 4: Run it on a sentence · Step 5: Visualize attention with ASCII heatmap"
       },
@@ -1338,7 +1338,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/03-multi-head-attention/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/03-multi-head-attention/",
         "summary": "One attention head learns one relation at a time. Eight heads learn eight. Heads are free. Take more of them.",
         "keywords": "Step 1: split heads from the single-head attention we already have · Step 2: run scaled-dot-product attention per head · Step 3: Grouped-Query Attention variant · Step 4: probe what each head learned"
       },
@@ -1347,7 +1347,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/04-positional-encoding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/04-positional-encoding/",
         "summary": "Attention is permutation-invariant. \"The cat sat on the mat\" and \"mat the on sat cat the\" produce the same output without positional signal. Three algorithms fix it — each with …",
         "keywords": "Absolute sinusoidal · RoPE · ALiBi · What to pick in 2026 · Step 1: sinusoidal encoding · Step 2: RoPE applied to Q, K · Step 3: ALiBi slopes and bias · Step 4: verify relative-distance property of RoPE"
       },
@@ -1356,7 +1356,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/05-full-transformer/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/05-full-transformer/",
         "summary": "Attention is the star. Everything else — residuals, normalization, feed-forward, cross-attention — is the scaffolding that lets you stack it deep.",
         "keywords": "The six pieces · Encoder block (used by BERT, T5 encoder) · Decoder block (used by GPT, T5 decoder) · Pre-norm vs post-norm · The 2026 modernized block · Parameter count · Step 1: the building blocks · Step 2: wire a 2-layer encoder and a 2-layer decoder · Step 3: run forward on a toy example · Step 4: swap in RMSNorm + SwiGLU"
       },
@@ -1365,7 +1365,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/06-bert-masked-language-modeling/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/06-bert-masked-language-modeling/",
         "summary": "GPT predicts the next word. BERT predicts a missing word. One sentence of difference — and half a decade of everything embedding-shaped.",
         "keywords": "The training signal · The BERT mask rules · Next Sentence Prediction (NSP) — and why it was dropped · What changed in 2026: ModernBERT · Use cases that still pick an encoder in 2026 · Step 1: masking logic · Step 2: run MLM prediction on a tiny corpus · Step 3: compare mask types · Step 4: fine-tune head"
       },
@@ -1374,7 +1374,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/07-gpt-causal-language-modeling/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/07-gpt-causal-language-modeling/",
         "summary": "BERT sees both sides. GPT sees only the past. The triangle mask is the most consequential single line of code in modern AI.",
         "keywords": "The mask · Parallel training, serial inference · The loss — shift-by-one · Decoding strategies · What made the \"GPT recipe\" work · Step 1: the causal mask · Step 2: a 2-layer GPT-ish model · Step 3: next-token prediction, end-to-end · Step 4: sampling"
       },
@@ -1383,7 +1383,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/08-t5-bart-encoder-decoder/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/08-t5-bart-encoder-decoder/",
         "summary": "Encoders understand. Decoders generate. Put them back together and you get a model built for input → output tasks: translate, summarize, rewrite, transcribe.",
         "keywords": "The forward loop · T5 pretraining — span corruption · BART pretraining — multi-noise denoising · Inference · When to pick each variant in 2026 · Step 1: span corruption · Step 2: verify round-trip · Step 3: BART noising"
       },
@@ -1392,7 +1392,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/09-vision-transformers/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/09-vision-transformers/",
         "summary": "An image is a grid of patches. A sentence is a grid of tokens. The same transformer eats both.",
         "keywords": "Step 1 — patchify · Step 2 — linear embedding · Step 3 — prepend `[CLS]` token, add positional embeddings · Step 4 — standard transformer encoder · Step 5 — head · Variants that mattered · Why it took a while · Step 1: fake image · Step 2: patchify · Step 3: linear embed · Step 4: count parameters for a realistic ViT"
       },
@@ -1401,7 +1401,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/10-audio-transformers-whisper/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/10-audio-transformers-whisper/",
         "summary": "Audio is an image of frequency over time. Whisper is a ViT that eats mel spectrograms and speaks back.",
         "keywords": "Step 1 — resample + window · Step 2 — convolutional stem · Step 3 — encoder · Step 4 — decoder · Step 5 — task tokens · Step 6 — output · Whisper sizes · What Whisper does not do · 2026 landscape · Step 1: synthesize audio · Step 2: log-mel spectrogram (simplified) · Step 3: pad to 30 s · Step 4: build the prompt tokens"
       },
@@ -1410,7 +1410,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/11-mixture-of-experts/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/11-mixture-of-experts/",
         "summary": "A dense 70B transformer activates every parameter for every token. A 671B MoE activates only 37B per token and beats it on every benchmark. Sparsity is the most important scalin…",
         "keywords": "The FFN swap · The load-balancing problem · Shared experts · Fine-grained experts · The cost profile · The catch: memory · Step 1: the router · Step 2: run 100 tokens through the router · Step 3: param count comparison"
       },
@@ -1419,7 +1419,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/12-kv-cache-flash-attention/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/12-kv-cache-flash-attention/",
         "summary": "Training is parallel and FLOP-bound. Inference is serial and memory-bound. Different bottleneck, different tricks.",
         "keywords": "KV cache math · Flash Attention — the tiling trick · Speculative decoding — the other latency win · Continuous batching · PagedAttention — KV cache as virtual memory · Step 1: KV cache · Step 2: tiled softmax · Step 3: compare naive vs cached decoding on 100-token generation"
       },
@@ -1428,7 +1428,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/13-scaling-laws/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/13-scaling-laws/",
         "summary": "The 2020 Kaplan paper said: bigger model, lower loss. The 2022 Hoffmann paper said: you were under-training. Compute goes into two buckets — parameters and tokens — and the spli…",
         "keywords": "The Hoffmann law · Why over-training anyway · Emergence vs smoothness · The 2026 picture · Step 1: Chinchilla loss · Step 2: compute-optimal frontier · Step 3: over-training cost · Step 4: compare to real models"
       },
@@ -1437,7 +1437,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/14-build-a-transformer-capstone/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/14-build-a-transformer-capstone/",
         "summary": "Thirteen lessons. One model. No shortcuts.",
         "keywords": "What we ship · What we don't ship · Target metrics · Step 1: data · Step 2: model · Step 3: training loop · Step 4: sample · Step 5: read the output"
       },
@@ -1446,7 +1446,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/15-attention-variants/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/15-attention-variants/",
         "summary": "Full attention is a circle. Every token sees every token, and memory pays the price. Four variants bend the shape of the circle and recover half the cost.",
         "keywords": "Sliding Window Attention (SWA) · Sparse / Block Attention · Differential Attention (DIFF Transformer, 2024) · Variant Comparison · Step 1: full causal mask (baseline) · Step 2: sliding window causal mask · Step 3: local + strided sparse mask · Step 4: differential attention · Step 5: KV cache sizes"
       },
@@ -1455,7 +1455,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/16-speculative-decoding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/07-transformers-deep-dive/16-speculative-decoding/",
         "summary": "Autoregressive decoding is serial. Each token waits for the previous one. Speculative decoding breaks the chain: a cheap model drafts N tokens, the expensive model verifies all …",
         "keywords": "The core algorithm · What determines speedup · Medusa — drafts without a draft model · EAGLE — better draft by reusing hidden states · The KV cache dance · Step 1: the rejection step · Step 2: residual distribution · Step 3: one speculative step · Step 4: measure acceptance rate · Step 5: verify distribution equivalence"
       }
@@ -1472,7 +1472,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/01-generative-models-taxonomy-history/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/01-generative-models-taxonomy-history/",
         "summary": "Every image model, text model, video model, and 3D model fits in one of five buckets. Pick the wrong bucket and you will fight the math for weeks. Pick the right one and the fie…"
       },
       {
@@ -1480,7 +1480,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/02-autoencoders-vae/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/02-autoencoders-vae/",
         "summary": "A plain autoencoder compresses then reconstructs. It memorizes. It does not generate. Add one trick — force the code to look Gaussian — and you get a sampler. That single trick,…",
         "keywords": "Step 1: encoder forward · Step 2: reparameterize and decode · Step 3: the ELBO · Step 4: generate"
       },
@@ -1489,7 +1489,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/03-gans-generator-discriminator/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/03-gans-generator-discriminator/",
         "summary": "Goodfellow's trick in 2014 was to skip density entirely. Two networks. One makes fakes. One catches them. They fight until the fakes are indistinguishable from real. It shouldn'…",
         "keywords": "Step 1: non-saturating loss · Step 2: one discriminator step per generator step · Step 3: watch for mode collapse"
       },
@@ -1498,7 +1498,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/04-conditional-gans-pix2pix/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/04-conditional-gans-pix2pix/",
         "summary": "The first big unlock of 2014-2017 was controlling what a GAN makes. Attach a label, or an image, or a sentence. Pix2Pix did the image version and it still beats every generic te…",
         "keywords": "Step 1: append condition to both G and D inputs · Step 2: train conditional · Step 3: verify per-class output"
       },
@@ -1507,7 +1507,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/05-stylegan/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/05-stylegan/",
         "summary": "Most generators stir `z` into every layer at the same time. StyleGAN split it apart: first map `z` to an intermediate `w`, then *inject* `w` at every resolution level through Ad…",
         "keywords": "Step 1: mapping network · Step 2: adaptive instance normalization · Step 3: per-layer noise"
       },
@@ -1516,7 +1516,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/06-diffusion-ddpm-from-scratch/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/06-diffusion-ddpm-from-scratch/",
         "summary": "Ho, Jain, Abbeel (2020) gave the field a recipe it could not quit. Destroy the data with noise over a thousand small steps. Train one neural net to predict the noise. Reverse th…",
         "keywords": "Step 1: the forward schedule (closed form) · Step 2: sample `x_t` in one shot · Step 3: one training step · Step 4: reverse sampling"
       },
@@ -1525,7 +1525,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/07-latent-diffusion-stable-diffusion/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/07-latent-diffusion-stable-diffusion/",
         "summary": "Pixel-space diffusion on 512×512 images is a computational war crime. Rombach et al. (2022) noticed that you do not need all 786k dimensions to generate an image — you need enou…",
         "keywords": "Step 1: encoder/decoder · Step 2: diffusion in `z`-space · Step 3: classifier-free guidance · Step 4: text conditioning (concept, not code)"
       },
@@ -1534,7 +1534,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/08-controlnet-lora-conditioning/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/08-controlnet-lora-conditioning/",
         "summary": "Text alone is a clumsy control signal. ControlNet lets you clone a pretrained diffusion model and steer it with a depth map, pose skeleton, scribble, or edge image. LoRA lets yo…",
         "keywords": "ControlNet (Zhang et al., 2023) · LoRA (Hu et al., 2021) · IP-Adapter (Ye et al., 2023) · Step 1: LoRA math · Step 2: zero-init side network"
       },
@@ -1543,7 +1543,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/09-inpainting-outpainting-editing/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/09-inpainting-outpainting-editing/",
         "summary": "Text-to-image makes new things. Inpainting fixes old ones. In production, 70% of billable image work is editing — swap a background, remove a logo, extend the canvas, regenerate…",
         "keywords": "The naive approach (and why it's wrong) · The proper inpainting model · SDEdit (Meng et al., 2022) — free editing · InstructPix2Pix (Brooks et al., 2023) · RePaint (Lugmayr et al., 2022) · Step 1: 5-D DDPM data · Step 2: train denoiser over all 5 dims · Step 3: at inference, mask-aware reverse · Step 4: outpainting"
       },
@@ -1552,7 +1552,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/10-video-generation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/10-video-generation/",
         "summary": "An image is a 2-D tensor. A video is a 3-D one. The theory is the same; the compute is 10-100x harder. OpenAI's Sora (Feb 2024) proved it was possible. By 2026 Veo 2, Kling 1.5,…",
         "keywords": "Patchify · Spatiotemporal DiT · Text conditioning · Training · Step 1: patchify a synthetic 1-D \"video\" · Step 2: position embedding per frame · Step 3: denoiser sees the whole sequence · Step 4: temporal coherence test"
       },
@@ -1561,7 +1561,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/11-audio-generation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/11-audio-generation/",
         "summary": "Audio is a 1-D signal at 16-48 kHz. A five-second clip is 80-240k samples. No transformer attends to that sequence directly. The solution for every production audio model in 202…",
         "keywords": "Neural audio codecs · Two generative paradigms on top · Step 1: synthetic audio tokens · Step 2: train a tiny token predictor · Step 3: sample conditionally"
       },
@@ -1570,7 +1570,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/12-3d-generation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/12-3d-generation/",
         "summary": "3D is the modality where 2D-to-3D leverage is strongest. The 2023 breakthrough was 3D Gaussian Splatting. The 2024-2026 generative push layers multi-view diffusion + 3D reconstr…",
         "keywords": "Representation: 3D Gaussian Splatting (Kerbl et al., 2023) · Multi-view diffusion · Text-to-3D pipelines · NeRF (for context) · Step 1: 2D Gaussian splat · Step 2: render by summing splats · Step 3: fit by gradient descent"
       },
@@ -1579,7 +1579,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/13-flow-matching-rectified-flows/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/13-flow-matching-rectified-flows/",
         "summary": "Diffusion models take 20-50 sampling steps because they walk a curved path from noise to data. Flow matching (Lipman et al., 2023) and rectified flow (Liu et al., 2022) trained …",
         "keywords": "Straight-line flow · Sampling · Rectified flow (Liu 2022) · Why this won for images in 2024 · Step 1: training loss · Step 2: multi-step inference · Step 3: compare step counts"
       },
@@ -1588,7 +1588,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/14-evaluation-fid-clip-score/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/14-evaluation-fid-clip-score/",
         "summary": "Every generative model leaderboard cites FID, CLIP score, and a win rate from a human-preference arena. Each number has a failure mode a determined researcher can game. If you d…",
         "keywords": "FID — sample quality · CLIP score — prompt adherence · Human preference — the ground truth · Step 1: FID in four lines · Step 2: CLIP-style cosine-similarity · Step 3: Elo aggregation"
       },
@@ -1597,7 +1597,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/19-visual-autoregressive-var/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/08-generative-ai/19-visual-autoregressive-var/",
         "summary": "Diffusion models sample iteratively in time (denoising steps). VAR samples iteratively in scale — it predicts a 1x1 token, then 2x2, then 4x4, up to the final resolution, each s…",
         "keywords": "VQ-VAE Multi-Scale Tokenizer · Next-Scale Prediction · Generation · Why Next-Scale Wins Over Next-Token · Scaling Law · Relationship to Diffusion"
       }
@@ -1614,7 +1614,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/01-mdps-states-actions-rewards/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/01-mdps-states-actions-rewards/",
         "summary": "A Markov Decision Process is five things: states, actions, transitions, rewards, a discount. Everything in RL — Q-learning, PPO, DPO, GRPO — optimizes over this shape. Learn it …",
         "keywords": "Step 1: a tiny deterministic MDP · Step 2: roll out a policy · Step 3: compute `V^π` exactly via the Bellman equation · Step 4: `γ` is a hyperparameter with physical meaning"
       },
@@ -1623,7 +1623,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/02-dynamic-programming/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/02-dynamic-programming/",
         "summary": "Dynamic programming is RL with cheating. You already know the transition and reward functions; you just iterate the Bellman equation until `V` or `π` stops moving. It is the ben…",
         "keywords": "Step 1: build the GridWorld MDP model · Step 2: policy evaluation · Step 3: policy improvement · Step 4: stitch them together · Step 5: value iteration (the one-loop version)"
       },
@@ -1632,7 +1632,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/03-monte-carlo-methods/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/03-monte-carlo-methods/",
         "summary": "Dynamic programming needs a model. Monte Carlo needs nothing but episodes. Run the policy, watch the returns, average them. The simplest idea in RL — and the one that unlocks ev…",
         "keywords": "Step 1: rollout → list of (s, a, r) · Step 2: compute returns (reverse sweep) · Step 3: first-visit MC evaluation · Step 4: ε-greedy MC control (on-policy) · Step 5: compare to DP gold standard"
       },
@@ -1641,7 +1641,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/04-q-learning-sarsa/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/04-q-learning-sarsa/",
         "summary": "Monte Carlo waits until the episode ends. TD updates after every step by bootstrapping the next value estimate. Q-learning is off-policy and optimistic; SARSA is on-policy and c…",
         "keywords": "Step 1: SARSA on ε-greedy policy · Step 2: Q-learning · Step 3: learning curves · Step 4: compare to DP truth"
       },
@@ -1650,7 +1650,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/05-dqn/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/05-dqn/",
         "summary": "2013: Mnih trained one Q-learning network on raw pixels, beat every classical RL agent on seven Atari games. 2015: extended to 49 games, published in Nature, sparked the deep-RL…",
         "keywords": "Step 1: replay buffer · Step 2: a tiny Q-network (manual MLP) · Step 3: the DQN update · Step 4: the outer loop"
       },
@@ -1659,7 +1659,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/06-policy-gradients-reinforce/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/06-policy-gradients-reinforce/",
         "summary": "Stop estimating value. Parameterize the policy directly, compute the gradient of expected return, step uphill. Williams (1992) wrote it in one theorem. It is why PPO, GRPO, and …",
         "keywords": "Step 1: softmax policy network · Step 2: sampling and log-probability · Step 3: rollout with log-probs captured · Step 4: REINFORCE update · Step 5: baselines"
       },
@@ -1668,7 +1668,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/07-actor-critic-a2c-a3c/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/07-actor-critic-a2c-a3c/",
         "summary": "REINFORCE is noisy. Add a critic that learns `V̂(s)`, subtract it from the return, and you get an advantage that has the same expectation but far lower variance. That is actor-c…",
         "keywords": "Step 1: a critic · Step 2: n-step advantage · Step 3: combined update · Step 4: parallelization (A3C vs A2C)"
       },
@@ -1677,7 +1677,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/08-ppo/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/08-ppo/",
         "summary": "A2C throws away each rollout after one update. PPO wraps the policy gradient in a clipped importance ratio so you can do 10+ epochs on the same data without the policy exploding…",
         "keywords": "Step 1: capture `log π_old(a | s)` at rollout time · Step 2: compute GAE advantages (Lesson 07) · Step 3: clipped surrogate update · Step 4: value and entropy · Step 5: diagnostics"
       },
@@ -1686,7 +1686,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/09-reward-modeling-rlhf/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/09-reward-modeling-rlhf/",
         "summary": "Humans cannot write a reward function for \"good assistant response,\" but they can compare two responses and pick the better one. Fit a reward model to those comparisons, then RL…",
         "keywords": "Step 1: synthetic preference data · Step 2: Bradley-Terry reward model · Step 3: PPO-like policy on top of RM · Step 4: monitor the KL · Step 5: the production recipe with TRL"
       },
@@ -1695,7 +1695,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/10-multi-agent-rl/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/10-multi-agent-rl/",
         "summary": "Single-agent RL assumes the environment is stationary. Put two learning agents in the same world and that assumption breaks: each agent is part of the other's environment, and b…",
         "keywords": "Step 1: the multi-agent env · Step 2: independent Q-learning · Step 3: centralized Q with decomposed-value update · Step 4: simple self-play (adversarial 2-agent)"
       },
@@ -1704,7 +1704,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/11-sim-to-real-transfer/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/11-sim-to-real-transfer/",
         "summary": "A policy trained in a simulator that fails on hardware is a policy that memorized the simulator. Domain randomization, domain adaptation, and system identification are the three…",
         "keywords": "Step 1: parameterized sim · Step 2: train with DR · Step 3: evaluate zero-shot on \"real\" slips · Step 4: compare to narrow training"
       },
@@ -1713,7 +1713,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/12-rl-for-games/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/09-reinforcement-learning/12-rl-for-games/",
         "summary": "1992: TD-Gammon beat human champions at backgammon with pure TD. 2016: AlphaGo beat Lee Sedol. 2017: AlphaZero dominated chess, shogi, and Go from scratch. 2024: DeepSeek-R1 pro…",
         "keywords": "Step 1: a tiny verifier environment · Step 2: policy: softmax over K answer tokens per prompt · Step 3: group sampling and group-relative advantage · Step 4: compare to REINFORCE baseline (value-free) · Step 5: observe entropy and KL"
       }
@@ -1730,7 +1730,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python, Rust",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/01-tokenizers/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/01-tokenizers/",
         "summary": "Your LLM does not read English. It reads integers. The tokenizer decides whether those integers carry meaning or waste it.",
         "keywords": "Three Approaches That Failed (and One That Won) · BPE: Byte Pair Encoding · Byte-Level BPE (GPT-2, GPT-3, GPT-4) · WordPiece (BERT) · SentencePiece (Llama, T5) · Vocabulary Size Tradeoffs · The Multilingual Tax · Step 1: Character-Level Tokenizer · Step 2: BPE Tokenizer from Scratch · Step 3: Encode and Decode Roundtrip · Step 4: Compare with tiktoken · Step 5: Vocabulary Analysis · tiktoken (OpenAI) · Hugging Face tokenizers · Loading Llama's Tokenizer"
       },
@@ -1739,7 +1739,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/02-building-a-tokenizer/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/02-building-a-tokenizer/",
         "summary": "Lesson 01 gave you a toy. This lesson gives you a weapon.",
         "keywords": "The Full Pipeline · Byte-Level BPE · Pre-Tokenization · Special Tokens · Chat Templates · Speed · Step 1: Byte-Level Encoding · Step 2: Pre-Tokenizer with Regex · Step 3: BPE on Byte Sequences · Step 4: Special Token Handling · Step 5: Full Tokenizer Class · Step 6: Multilingual Test · Comparing Real Tokenizers"
       },
@@ -1748,7 +1748,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/03-data-pipelines/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/03-data-pipelines/",
         "summary": "The model is a mirror. It reflects whatever data you feed it. Feed it garbage, it reflects garbage with perfect fluency.",
         "keywords": "Where the Data Comes From · Data Cleaning · Deduplication with MinHash · Sequence Packing · The Chinchilla Scaling Law · Step 1: Text Cleaning · Step 2: MinHash Deduplication · Step 3: Tokenize and Pack Sequences · Step 4: DataLoader for Training · Step 5: Dataset Statistics · Compare With HuggingFace Datasets"
       },
@@ -1757,7 +1757,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/04-pre-training-mini-gpt/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/04-pre-training-mini-gpt/",
         "summary": "GPT-2 Small has 124 million parameters. That's 12 transformer layers, 12 attention heads, and 768-dimensional embeddings. You can train it from scratch on a single GPU in a few …",
         "keywords": "The GPT Architecture · The Transformer Block · Attention: The Core Mechanism · KV Cache: Why Inference Is Fast · Prefill vs Decode: Two Phases of Inference · The Training Loop · GPT-2 Small: The Numbers · Step 1: Embedding Layer · Step 2: Self-Attention with Causal Mask · Step 3: Multi-Head Attention · Step 4: Transformer Block · Step 5: Full GPT Model · Step 6: Training Loop · Step 7: Text Generation · Full Training and Generation Demo"
       },
@@ -1766,7 +1766,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/05-scaling-distributed/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/05-scaling-distributed/",
         "summary": "Your 124M model trained on one GPU. Now try 7 billion parameters. The model doesn't fit in memory. The data takes weeks on a single machine. Distributed training isn't optional …",
         "keywords": "Why Distribution is Required · Data Parallelism · Tensor Parallelism · Pipeline Parallelism · FSDP: Fully Sharded Data Parallel · DeepSpeed ZeRO · Mixed Precision Training · Megatron-LM and 3D Parallelism · Step 1: Simulate Data Parallelism · Step 2: Simulate Tensor Parallelism · Step 3: Simulate Pipeline Parallelism · Step 4: Memory Calculator · Step 5: Mixed Precision Simulation · Run All Simulations"
       },
@@ -1775,7 +1775,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/06-instruction-tuning-sft/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/06-instruction-tuning-sft/",
         "summary": "A base model predicts the next token. That's it. It doesn't follow instructions, answer questions, or refuse harmful requests. SFT is the bridge between a token predictor and a …",
         "keywords": "What SFT Actually Does · Data Formats · Why It Works · The Masked Loss · Training Hyperparameters · Catastrophic Forgetting · Real Numbers · Step 1: Instruction Dataset · Step 2: Tokenize with Chat Template · Step 3: Masked Cross-Entropy Loss · Step 4: SFT Training Loop · Step 5: Compare Base vs SFT Model · Step 6: Measure Catastrophic Forgetting · Full SFT Pipeline Demo"
       },
@@ -1784,7 +1784,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/07-rlhf/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/07-rlhf/",
         "summary": "SFT teaches the model to follow instructions. But it doesn't teach the model which response is BETTER. Two grammatically correct, factually accurate answers can differ enormousl…",
         "keywords": "The Three Stages · The Reward Model · PPO: Proximal Policy Optimization · The PPO Objective in Detail · Reward Hacking · Real RLHF Pipelines · Step 1: Synthetic Preference Data · Step 2: Reward Model Architecture · Step 3: Bradley-Terry Loss · Step 4: Simplified PPO Loop · Step 5: Reward Score Comparison · Full RLHF Pipeline Demo"
       },
@@ -1793,7 +1793,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/08-dpo/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/08-dpo/",
         "summary": "RLHF works. It also requires training three models (SFT, reward model, policy), managing PPO's instability, and tuning a KL penalty. DPO asks: what if you could skip all of that…",
         "keywords": "The Key Insight · The DPO Loss · Why DPO is Simpler · When DPO Beats RLHF · When RLHF Beats DPO · Beyond DPO: KTO, ORPO, SimPO · Real DPO Deployments · Step 1: Preference Dataset · Step 2: Sequence Log-Probability · Step 3: The DPO Loss · Step 4: DPO Training Loop · Step 5: Compare DPO vs RLHF · Step 6: Beta Sensitivity Analysis · Full DPO Pipeline Demo"
       },
@@ -1802,7 +1802,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/09-constitutional-ai-self-improvement/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/09-constitutional-ai-self-improvement/",
         "summary": "RLHF needs humans in the loop. Constitutional AI replaces most of them with the model itself. Write a list of principles, have the model critique its own outputs against those p…",
         "keywords": "The Constitutional AI Loop · What the Constitution Actually Does · GRPO: Group-Relative Policy Optimization · Why GRPO Matters for Reasoning · Process Reward Models vs Outcome Reward Models · Self-Improvement: The Feedback Multiplier · When To Use What · Step 1: The Constitution · Step 2: Self-Critique and Revise · Step 3: Rule-Based Rewards · Step 4: Group-Relative Advantage · Step 5: GRPO Update · Step 6: Self-Improvement Round"
       },
@@ -1811,7 +1811,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/10-evaluation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/10-evaluation/",
         "summary": "Goodhart's Law: when a measure becomes a target, it ceases to be a good measure. Every frontier lab games benchmarks. MMLU scores go up while models still can't reliably count t…",
         "keywords": "The Eval Landscape · Why Benchmarks Break · Perplexity: A Quick Health Check · LLM-as-Judge · ELO Ratings from Pairwise Comparisons · Eval Frameworks · Building Custom Evals · Step 1: A Minimal Eval Framework · Step 2: Scoring Functions · Step 3: ELO Rating System · Step 4: Perplexity Calculation · Step 5: Aggregate Results · Step 6: Run the Full Pipeline · Step 7: ELO Tournament · Step 8: Perplexity Comparison · lm-evaluation-harness (EleutherAI) · promptfoo · RAGAS for RAG evaluation"
       },
@@ -1820,7 +1820,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/11-quantization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/11-quantization/",
         "summary": "A 70B model in FP16 needs 140GB. Two A100s just for weights. Quantize to FP8: one 80GB GPU. INT4: a MacBook.",
         "keywords": "Number Formats: What Each Bit Does · How Quantization Works · Sensitivity Hierarchy · PTQ vs QAT · GPTQ, AWQ, GGUF · Quality Measurement · Real Numbers · Step 1: Number Format Representations · Step 2: Symmetric Quantization (Per-Tensor and Per-Channel) · Step 3: Quality Measurement · Step 4: Bit-Width Sweep · Step 5: Sensitivity Experiment · Step 6: Simulated GPTQ · Step 7: AWQ Simulation · Step 8: Full Pipeline · Quantizing with AutoGPTQ · Quantizing with AutoAWQ · Converting to GGUF · Serving with vLLM"
       },
@@ -1829,7 +1829,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/12-inference-optimization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/12-inference-optimization/",
         "summary": "Two phases define LLM inference. Prefill processes your prompt in parallel -- compute-bound. Decode generates tokens one at a time -- memory-bound. Every optimization targets on…",
         "keywords": "Prefill vs Decode · KV Cache · Continuous Batching · PagedAttention · Speculative Decoding · Prefix Caching · Inference Engines · The Ops:Byte Framework · Step 1: KV Cache from Scratch · Step 2: Attention with KV Cache · Step 3: Continuous Batching Simulator · Step 4: Prefix Cache · Step 5: Speculative Decoding Simulator · Step 6: KV Cache Memory Profiler"
       },
@@ -1838,7 +1838,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/13-building-complete-llm-pipeline/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/13-building-complete-llm-pipeline/",
         "summary": "Everything from Lessons 01 to 12 is one stage of one pipeline. This lesson is the scaffold that turns those stages into a single end-to-end run: tokenize, pre-train, scale, SFT,…",
         "keywords": "The Twelve Stages · The Manifest · Artifact Typing · The Eval Gate · The Orchestrator · Experiment Tracking and Artifact Storage · Costing · Reproducibility vs Determinism · Rollback Plan · Production Recipes Observed in 2026"
       },
@@ -1847,7 +1847,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/14-open-models-architecture-walkthroughs/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/14-open-models-architecture-walkthroughs/",
         "summary": "You built a GPT-2 Small from scratch in Lesson 04. Frontier open models in 2026 are the same family with five or six concrete changes. RMSNorm instead of LayerNorm. SwiGLU inste…",
         "keywords": "The Invariant Core · The Six Knobs That Actually Move · Knob 1: RMSNorm · Knob 2: RoPE · Knob 3: SwiGLU · Knob 4: Attention Head Sharing · Knob 5: Mixture of Experts · Knob 6: Pre-norm stays · Model-by-Model Diff · Reading a config.json · Activation memory budget · KV Cache budget · When Each Model Wins"
       },
@@ -1856,7 +1856,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/15-speculative-decoding-eagle3/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/15-speculative-decoding-eagle3/",
         "summary": "Phase 7 · Lesson 16 proved the math: the Leviathan rejection rule preserves the verifier's distribution exactly. This lesson is the training-stack view of 2026 production specul…",
         "keywords": "The invariant: Leviathan rejection sampling · What determines speedup · The two-year progression · KV cache rollback · Draft architectures in 2026 · Step 1: the rejection rule · Step 2: residual distribution · Step 3: a full speculative step · Step 4: KV rollback bookkeeping · Step 5: the Leviathan check · Step 6: speedup vs. α"
       },
@@ -1865,7 +1865,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/16-differential-attention-v2/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/16-differential-attention-v2/",
         "summary": "Softmax attention spreads a small amount of probability over every non-matching token. Over 100k tokens that noise adds up and drowns the signal. Differential Transformer (Ye et…",
         "keywords": "The noise floor of softmax · The differential idea · Why this matches headed noise-canceling · V1 vs V2: the diff · When to reach for it · How it stacks with other 2026 knobs · Step 1: standard softmax attention · Step 2: split Q, K into two halves · Step 3: two softmax branches + subtraction · Step 4: noise cancellation measurement · Step 5: V1 vs V2 parameter accounting"
       },
@@ -1874,7 +1874,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/17-native-sparse-attention/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/17-native-sparse-attention/",
         "summary": "At 64k tokens, attention eats 70-80% of decode latency. Every open-model lab has a plan to fix it. DeepSeek's NSA (ACL 2025 best paper) is the one that stuck: three parallel att…",
         "keywords": "Three parallel branches · Why this is \"natively trainable\" · Hardware-aligned kernel · The compute budget · How does it compare · Step 1: compress tokens into blocks · Step 2: compressed-branch attention · Step 3: top-k block selection · Step 4: sliding-window attention · Step 5: gate + combine · Step 6: compute counting"
       },
@@ -1883,7 +1883,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/18-multi-token-prediction/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/18-multi-token-prediction/",
         "summary": "Every autoregressive LLM from GPT-2 to Llama 3 trains on one loss per position: predict the next token. DeepSeek-V3 added a second loss per position: predict the token after tha…",
         "keywords": "The sequential MTP recipe · Why sequential, not parallel · Parameter accounting · The speculative-decoding payoff · Relation to EAGLE · Step 1: shared embedding table · Step 2: the per-depth combination · Step 3: the transformer block at depth k · Step 4: the shared output head · Step 5: per-depth loss · Step 6: parameter accounting"
       },
@@ -1892,7 +1892,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/19-dualpipe-parallelism/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/19-dualpipe-parallelism/",
         "summary": "DeepSeek-V3 was trained on 2,048 H800 GPUs with MoE experts scattered across nodes. Cross-node expert all-to-all communication cost 1 GPU-hour of comm for every 1 GPU-hour of co…",
         "keywords": "Pipeline parallelism refresher · Idea 1: chunk decomposition · Idea 2: bidirectional scheduling · A hand-traced schedule · Bubble accounting · DualPipeV — the refinement · What it means for a 14.8T-token run · Where it sits in the stack"
       },
@@ -1901,7 +1901,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/20-deepseek-v3-walkthrough/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/20-deepseek-v3-walkthrough/",
         "summary": "Phase 10 · Lesson 14 named the six architectural knobs every open model turns. DeepSeek-V3 (December 2024, 671B parameters total, 37B active) turns all six and adds four more: M…",
         "keywords": "The invariant core, again · The twist: MLA instead of GQA · The routing: auxiliary-loss-free load balancing · The MTP: denser training + free draft · The training: DualPipe · The config, field by field · Parameter accounting · The 671B / 37B ratio · Where DeepSeek-V3 sits · The follow-on: R1, V4"
       },
@@ -1910,7 +1910,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/21-jamba-hybrid-ssm-transformer/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/21-jamba-hybrid-ssm-transformer/",
         "summary": "State space models (SSMs) and transformers want different things. Transformers buy quality via attention at quadratic cost. SSMs buy linear-time inference and constant memory vi…",
         "keywords": "An SSM in one page · The Jamba block · Why the 1:7 ratio · Positional encoding · The memory budget · Mamba-3: the pure-SSM baseline in 2026 · When to reach for a hybrid · The competitive landscape"
       },
@@ -1919,7 +1919,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/22-async-hogwild-inference/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/22-async-hogwild-inference/",
         "summary": "Speculative decoding (Phase 10 · 15) parallelizes tokens within one sequence. Multi-agent frameworks parallelize across whole sequences but force explicit coordination (voting, …",
         "keywords": "The setup · Why coordination emerges · The naming · RoPE makes this tractable · Wall-time math · Concrete example · When to reach for Hogwild! · When not to · The experimental status · Step 1: the shared cache · Step 2: the worker loop · Step 3: the coordination heuristic · Step 4: measured speedup · Step 5: stress the coordination"
       },
@@ -1928,7 +1928,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/25-speculative-decoding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/25-speculative-decoding/",
         "summary": "A frontier LLM generating one token requires a full forward pass over billions of parameters. That forward pass is massively over-provisioned: most of the time a much smaller mo…",
         "keywords": "The Two-Model Setup · The Exactness Rule · Expected Speedup · Training the Draft: Distillation · EAGLE: Tree Drafting + Feature Reuse · Tree Attention Verification · When It Wins, When It Doesn't"
       },
@@ -1937,7 +1937,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/34-gradient-checkpointing/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/10-llms-from-scratch/34-gradient-checkpointing/",
         "summary": "Backprop keeps every intermediate activation. At 70B parameters and 128K context that is 3 TB of activations per rank. Checkpointing trades FLOPs for memory: recompute instead o…",
         "keywords": "What Backward Actually Needs · Naive Full Checkpointing · Selective Checkpointing (Korthikanti 2022) · Offload · Recompute Cost Model · Memory Savings Model · When Not to Checkpoint · Implementation Patterns · Interaction with TP / PP / FP8 · Step 1: A Toy Model With Segments · Step 2: Naive Backward Needing All Activations · Step 3: Checkpoint-Every-k Memory · Step 4: Cost Model · Step 5: Memory Estimator · Step 6: Optimal Segment Size · Step 7: Selective Checkpoint Decision"
       }
@@ -1954,7 +1954,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/01-prompt-engineering/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/01-prompt-engineering/",
         "summary": "Most people write prompts like they are texting a friend. Then they wonder why a 200-billion parameter model gives mediocre answers. Prompt engineering is not about tricks. It i…",
         "keywords": "Anatomy of a Prompt · Role Prompting: Why \"You are an expert X\" Works · Instruction Clarity: Specific Beats Vague · Output Format Control · Constraint Specification · Temperature and Sampling · Context Windows: What Fits Where · Prompt Patterns · Anti-Patterns · Cross-Model Prompt Design · Step 1: Prompt Template Library · Step 2: Prompt Builder · Step 3: Multi-Model Testing Harness · Step 4: Prompt Comparison and Scoring · Step 5: Test Suite Runner · Step 6: Run Everything · OpenAI: Temperature and System Messages · Anthropic: System Message + Assistant Prefill · Google: Gemini with Safety Settings · LangChain: Provider-Agnostic Prompts"
       },
@@ -1963,7 +1963,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/02-few-shot-cot/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/02-few-shot-cot/",
         "summary": "Telling a model what to do is prompting. Showing it how to think is engineering. The gap between 78% and 91% accuracy on the same model, same task, same data is not a better mod…",
         "keywords": "Zero-Shot vs Few-Shot: When Examples Beat Instructions · Example Selection: Similar Beats Random · Chain-of-Thought: Giving Models Scratch Paper · Self-Consistency: Sample Many, Vote Once · Tree-of-Thought: Branching Exploration · ReAct: Thinking + Doing · Structured Prompting: XML Tags, Delimiters, Headers · Prompt Chaining: Sequential Decomposition · Performance Comparison · Step 1: Few-Shot Example Store · Step 2: Chain-of-Thought Prompt Builder · Step 3: Self-Consistency Voting · Step 4: Tree-of-Thought Solver · Step 5: Full Pipeline · With LangChain · With DSPy · Comparison: From-Scratch vs Frameworks"
       },
@@ -1972,7 +1972,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/03-structured-outputs/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/03-structured-outputs/",
         "summary": "Your LLM returns a string. Your application needs JSON. That gap has crashed more production systems than any model hallucination. Structured output is the bridge between natura…",
         "keywords": "The Structured Output Spectrum · JSON Schema: The Contract Language · The Pydantic Pattern · Function Calling / Tool Use · Common Failure Modes · Step 1: JSON Schema Validator · Step 2: Pydantic-Style Model to Schema · Step 3: Constrained Token Filter · Step 4: Extraction Pipeline · Step 5: Run the Full Pipeline · OpenAI Structured Outputs · Anthropic Tool Use · Instructor Library"
       },
@@ -1981,7 +1981,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/04-embeddings/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/04-embeddings/",
         "summary": "Text is discrete. Math is continuous. Every time you ask an LLM to find \"similar\" documents, compare meanings, or search beyond keywords, you're relying on a bridge between thes…",
         "keywords": "What Is an Embedding? · The Word2Vec Breakthrough · From Words to Sentences · Modern Embedding Models · Similarity Metrics · Vector Databases and HNSW · Chunking Strategies · Bi-Encoders vs Cross-Encoders · Matryoshka Embeddings · Binary Quantization · Step 1: Text Chunking · Step 2: Building Embeddings from Scratch · Step 3: Similarity Functions · Step 4: Vector Index with Brute-Force Search · Step 5: The Semantic Search Engine · Step 6: Comparing Similarity Metrics"
       },
@@ -1990,7 +1990,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/05-context-engineering/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/05-context-engineering/",
         "summary": "Prompt engineering is a subset. Context engineering is the whole game. A prompt is a string you type. Context is everything that goes into the model's window: system instruction…",
         "keywords": "The Context Window is a Scarce Resource · Lost-in-the-Middle · Context Components · Context Compression Strategies · Memory Systems · Dynamic Context Assembly · Step 1: Token Counter · Step 2: Context Budget Manager · Step 3: Lost-in-the-Middle Reordering · Step 4: Conversation History Compressor · Step 5: Dynamic Tool Selector · Step 6: Full Context Assembly Pipeline · Claude Code's Context Strategy · Cursor's Dynamic Context Loading · ChatGPT Memory · RAG as Context Engineering"
       },
@@ -1999,7 +1999,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/06-rag/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/06-rag/",
         "summary": "Your LLM knows everything up to its training cutoff. It knows nothing about your company's docs, your codebase, or last week's meeting notes. RAG solves this by retrieving relev…",
         "keywords": "The RAG Pattern · Why RAG Beats Fine-Tuning · Embedding Models · Vector Similarity · Chunking Strategies · Vector Databases · The Full Pipeline · Real Numbers · Step 1: Document Chunking · Step 2: TF-IDF Embeddings · Step 3: Cosine Similarity Search · Step 4: Prompt Construction · Step 5: The Complete RAG Pipeline · Step 6: Generation (simulated)"
       },
@@ -2008,7 +2008,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/07-advanced-rag/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/07-advanced-rag/",
         "summary": "Basic RAG retrieves the top-k most similar chunks. That works for simple questions. It falls apart for multi-hop reasoning, ambiguous queries, and large corpora. Advanced RAG is…",
         "keywords": "Hybrid Search: Semantic + Keyword · Reciprocal Rank Fusion (RRF) · Reranking · Query Transformation · Parent-Child Chunking · Metadata Filtering · Evaluation · Step 1: BM25 Implementation · Step 2: Reciprocal Rank Fusion · Step 3: Hybrid Search Pipeline · Step 4: Simple Reranker · Step 5: HyDE (Hypothetical Document Embeddings) · Step 6: Parent-Child Chunking · Step 7: Faithfulness Evaluation"
       },
@@ -2017,7 +2017,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/08-fine-tuning-lora/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/08-fine-tuning-lora/",
         "summary": "Full fine-tuning a 7B model requires 56GB of VRAM. You don't have that. Neither do most companies. LoRA lets you fine-tune the same model in 6GB by training less than 1% of the …",
         "keywords": "LoRA: Low-Rank Adaptation · The Scaling Factor: Alpha · Where to Apply LoRA · Rank Selection · QLoRA: 4-Bit Quantization + LoRA · The Quality Question · Real-World Costs · The 2026 PEFT stack · Merging Adapters · When NOT to Fine-Tune · Step 1: The LoRA Layer · Step 2: LoRA-Wrapped Linear Layer · Step 3: Inject LoRA into a Model · Step 4: Count Parameters · Step 5: Merge Weights Back · Step 6: Simulated QLoRA Quantization · Step 7: Training Loop · Step 8: Full Demo"
       },
@@ -2026,7 +2026,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/09-function-calling/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/09-function-calling/",
         "summary": "LLMs cannot do anything. They generate text. That is the entire capability. They cannot check the weather, query a database, send an email, run code, or read a file. Every \"AI a…",
         "keywords": "The Function Calling Loop · Tool Definitions: The JSON Schema Contract · Provider Comparison · Tool Choice: Auto, Required, Specific · Parallel Function Calling · Structured Outputs vs Function Calling · Security: The Non-Negotiable Rules · Error Handling · MCP: Model Context Protocol · Step 1: Define the Tool Registry · Step 2: Implement 5 Tools · Step 3: Register All Tools · Step 4: Build the Function Calling Loop · Step 5: Argument Validation · Step 6: Run the Demo · OpenAI Function Calling · Anthropic Tool Use · MCP Integration"
       },
@@ -2035,7 +2035,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/10-evaluation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/10-evaluation/",
         "summary": "You would never deploy a web app without tests. You would never ship a database migration without a rollback plan. But right now, most teams ship LLM applications by reading 10 …",
         "keywords": "The Eval Taxonomy · LLM-as-Judge: The Workhorse · Rubric Design · The Eval Pipeline · Eval Datasets: The Foundation · Sample Size and Confidence · Regression Testing · Cost of Evals · Anti-Patterns · Real Tools · Step 1: Define the Eval Data Structures · Step 2: Build the LLM-as-Judge Scorer · Step 3: Build Automated Metrics · Step 4: Build the Confidence Interval Calculator · Step 5: Build the Eval Runner and Comparison Report · Step 6: Run the Demo · promptfoo Integration · DeepEval Integration · CI/CD Integration Pattern"
       },
@@ -2044,7 +2044,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/11-caching-cost/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/11-caching-cost/",
         "summary": "Most AI startups do not die from bad models. They die from bad unit economics. A single GPT-4o call costs fractions of a cent. Ten thousand users making ten calls per day costs …",
         "keywords": "The Cost Anatomy of an LLM Call · Provider Caching: Built-in Discounts · Semantic Caching: Your Custom Layer · Exact Caching: Hash and Match · Rate Limiting: Protecting Your Budget · Model Routing: Right Model for the Right Job · Cost Tracking: Know Where the Money Goes · Batching: Bulk Discounts · Budget Alerts and Circuit Breakers · The Optimization Stack · Real Savings: Before and After · Step 1: Cost Calculator · Step 2: Exact Cache · Step 3: Semantic Cache · Step 4: Rate Limiter · Step 5: Cost Tracker · Step 6: Model Router · Step 7: Run the Demo · Anthropic Prompt Caching · OpenAI Automatic Caching · OpenAI Batch API · Production Semantic Cache with Redis"
       },
@@ -2053,7 +2053,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/12-guardrails/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/12-guardrails/",
         "summary": "Your LLM application will be attacked. Not might. Will. The first prompt injection attempt against your production system will come within 48 hours of launch. The question is no…",
         "keywords": "The Guardrail Sandwich · Attack Taxonomy · Input Guardrails · Output Guardrails · The Content Filtering Stack · Tools of the Trade · Defense-in-Depth · Real Attack Case Studies · The Honest Truth · Step 1: Input Guardrails · Step 2: Output Guardrails · Step 3: The Guardrail Pipeline · Step 4: Monitoring Dashboard · Step 5: Run the Demo · OpenAI Moderation API · LlamaGuard · NeMo Guardrails · Guardrails AI"
       },
@@ -2062,7 +2062,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/13-production-app/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/13-production-app/",
         "summary": "You have built prompts, embeddings, RAG pipelines, function calling, caching layers, and guardrails. Separately. In isolation. Like practicing guitar scales without ever playing…",
         "keywords": "Production Architecture · The Stack · Streaming: Why It Matters · Error Handling: The Three Layers · Observability: What to Measure · A/B Testing Prompts in Production · Real Architecture Examples · Scaling · Cost Projection · The Deployment Checklist · Step 1: Core Infrastructure · Step 2: Prompt Management · Step 3: Semantic Cache · Step 4: Guardrails · Step 5: LLM Caller with Retry and Streaming · Step 6: The Request Pipeline · Step 7: Run the Full Demo · FastAPI Server (Production Deployment) · Real API Integration · Docker Deployment"
       },
@@ -2071,7 +2071,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/14-model-context-protocol/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/14-model-context-protocol/",
         "summary": "Every LLM app built before 2025 invented its own tool schema. Then Anthropic shipped MCP, Claude adopted it, OpenAI adopted it, and by 2026 it is the default wire format for con…",
         "keywords": "The handshake · What MCP is not · Step 1: a minimal MCP server · Step 2: calling an MCP server from a host · Step 3: streamable HTTP transport · Step 4: scoping and safety"
       },
@@ -2080,7 +2080,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/15-prompt-caching/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/15-prompt-caching/",
         "summary": "Your system prompt is 4,000 tokens. Your RAG context is 20,000 tokens. You send both with every request. You also pay for both — every time. Prompt caching lets the provider kee…",
         "keywords": "The cache-friendly layout · The break-even calculation · Step 1: Anthropic prompt caching with explicit markers · Step 2: one-hour extended TTL · Step 3: OpenAI automatic caching · Step 4: Gemini explicit context caching · Step 5: measuring hit rate in production"
       },
@@ -2089,7 +2089,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/16-langgraph-state-machines/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/16-langgraph-state-machines/",
         "summary": "A ReAct loop written by hand is a `while True`. A ReAct loop written in LangGraph is a graph you can checkpoint, interrupt, branch, and time-travel through. The agent hasn't cha…",
         "keywords": "The four superpowers · Reducers are the point · The ReAct graph in four nodes · StateGraph vs Send (fanout) · Subgraphs · Step 1: state and nodes · Step 2: run with a thread · Step 3: add a human-in-the-loop interrupt · Step 4: time-travel for debugging · Step 5: swap the checkpointer for production"
       },
@@ -2098,7 +2098,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/17-agent-framework-tradeoffs/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/11-llm-engineering/17-agent-framework-tradeoffs/",
         "summary": "Every framework sells the same demo (research agent builds a report) and hides the same bug (state schema fights with the orchestration layer). Pick the framework whose abstract…",
         "keywords": "What \"abstraction\" actually means · The state question · The branching question · The observability question · Cost and latency · Interoperability"
       }
@@ -2115,7 +2115,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/01-vision-transformer-patch-tokens/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/01-vision-transformer-patch-tokens/",
         "summary": "Before anything multimodal, an image has to become a sequence of tokens a transformer can eat. The 2020 ViT paper answered this with 16x16 pixel patches, a linear projection, an…",
         "keywords": "Patches as tokens · Positional embeddings · CLS token, pooled output, and register tokens · Pretraining: supervised, contrastive, masked, self-distilled · Scaling laws · Parameter count for a ViT · 2026 production config"
       },
@@ -2124,7 +2124,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/02-clip-contrastive-pretraining/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/02-clip-contrastive-pretraining/",
         "summary": "OpenAI's CLIP (2021) proved a single idea big enough to power the next five years: align an image encoder and a text encoder in the same vector space using only noisy web image-…",
         "keywords": "The dual encoder · InfoNCE loss · Temperature · Why sigmoid scales better (SigLIP) · Zero-shot classification · Linear probes and finetuning · SigLIP 2: NaFlex and dense features · ALIGN, BASIC, OpenCLIP, EVA-CLIP · The zero-shot ceiling"
       },
@@ -2133,7 +2133,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/03-blip2-qformer-bridge/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/03-blip2-qformer-bridge/",
         "summary": "CLIP aligns image and text but cannot generate captions, answer questions, or hold a conversation. BLIP-2 (Salesforce, 2023) solved that with a small trainable bridge: 32 learna…",
         "keywords": "Learnable queries · Architecture · Two-stage training · Parameter economics · InstructBLIP and the instruction-aware Q-Former · MiniGPT-4 and the projector-only approach · Why LLaVA went simpler · Gated cross-attention: Flamingo, the ancestor · The 2026 descendants"
       },
@@ -2142,7 +2142,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/04-flamingo-gated-cross-attention/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/04-flamingo-gated-cross-attention/",
         "summary": "DeepMind's Flamingo (2022) did two things before anyone else. It showed a single model could process arbitrarily interleaved sequences of images, videos, and text. And it showed…",
         "keywords": "The frozen LLM · Perceiver resampler · Gated cross-attention · Masked cross-attention for interleaved inputs · In-context few-shot learning · Training data · OpenFlamingo and Otter · The descendants · Comparison to BLIP-2"
       },
@@ -2151,7 +2151,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/05-llava-visual-instruction-tuning/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/05-llava-visual-instruction-tuning/",
         "summary": "LLaVA (April 2023) is the most copied multimodal architecture on the planet. It replaced BLIP-2's Q-Former with a 2-layer MLP, replaced Flamingo's gated cross-attention with nai…",
         "keywords": "The architecture · Stage 1: projector alignment · Stage 2: visual instruction tuning · Why the community copied this · LLaVA-1.5 and LLaVA-NeXT · LLaVA-OneVision · The comparison to Q-Former · The prompt format · Parameter economy"
       },
@@ -2160,7 +2160,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/06-any-resolution-patch-n-pack/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/06-any-resolution-patch-n-pack/",
         "summary": "Real images are not 224x224 squares. A receipt is 9:16, a chart is 16:9, a medical scan might be 4096x4096, a mobile screenshot is 9:19.5. The pre-2024 VLM answer — resize every…",
         "keywords": "NaViT and patch-n'-pack · AnyRes (LLaVA-NeXT) · M-RoPE (Qwen2-VL) · NaFlex (SigLIP 2) · The packing mask · Token budgets"
       },
@@ -2169,7 +2169,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/07-open-weight-vlm-recipes/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/07-open-weight-vlm-recipes/",
         "summary": "The 2024-2026 open-weight VLM literature is a forest of ablation tables. Apple's MM1 tested 13 combinations of image encoder, connector, and data mix. Allen AI's Molmo proved de…",
         "keywords": "The five-axis design space · Axis 1: encoder > connector · Axis 2: connector design is a wash · Axis 3: LLM size sets the ceiling · Axis 4: data — detailed human captions beat distillation · Axis 5: resolution and its schedule · The Prismatic controlled comparison · A picker for 2026"
       },
@@ -2178,7 +2178,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/08-llava-onevision-single-multi-video/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/08-llava-onevision-single-multi-video/",
         "summary": "Before LLaVA-OneVision (Li et al., August 2024) the open-VLM world had separate lineages: LLaVA-1.5 for single images, multi-image models like Mantis and VILA, video models like…",
         "keywords": "The OneVision token budget · The three-stage curriculum · Why curriculum works · Emergent cross-scenario skills · Visual-token pooling · LLaVA-OneVision-1.5 · Contrast with Qwen2.5-VL"
       },
@@ -2187,7 +2187,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/09-qwen-vl-family-dynamic-fps/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/09-qwen-vl-family-dynamic-fps/",
         "summary": "The Qwen-VL family — Qwen-VL (2023), Qwen2-VL (2024), Qwen2.5-VL (2025), Qwen3-VL (2025) — is the most influential open vision-language model lineage in 2026. Each generation ma…",
         "keywords": "Qwen-VL (August 2023) · Qwen2-VL (September 2024) — M-RoPE and native resolution · Qwen2.5-VL (February 2025) — dynamic FPS + absolute time · Qwen3-VL (November 2025) · M-RoPE mathematically · Dynamic-FPS sampling logic · Structured agent output"
       },
@@ -2196,7 +2196,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/10-internvl3-native-multimodal/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/10-internvl3-native-multimodal/",
         "summary": "Every open VLM before InternVL3 followed the same three-step recipe: take a text LLM trained on trillions of text tokens, bolt on a vision encoder, then fine-tune the seams. Thi…",
         "keywords": "Native multimodal pretraining · V2PE (variable visual position encoding) · Visual Resolution Router (ViR) · Decoupled Vision-Language deployment (DvD) · Single-stage vs multi-stage quality · InternVL3.5 and InternVL-U · Trade-offs of native pretraining"
       },
@@ -2205,7 +2205,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/11-chameleon-early-fusion-tokens/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/11-chameleon-early-fusion-tokens/",
         "summary": "Every VLM we have seen so far keeps images and text separate. Visual tokens come from a vision encoder, flow into a projector, then meet text inside the LLM. The vision and text…",
         "keywords": "VQ-VAE as image tokenizer · The shared vocabulary · Mixed-modality generation · Training stability — QK-Norm, dropout, LayerNorm ordering · The tokenizer's reconstruction ceiling · Chameleon vs BLIP-2 / LLaVA · Fuyu and AnyGPT"
       },
@@ -2214,7 +2214,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/12-emu3-next-token-for-generation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/12-emu3-next-token-for-generation/",
         "summary": "BAAI's Emu3 (Wang et al., September 2024) is the 2024 result that should have ended the diffusion-versus-autoregressive debate. A single Llama-style decoder-only transformer, tr…",
         "keywords": "The Emu3 tokenizer · Single-loss training · Classifier-free guidance and temperature · Three roles, one model · Benchmarks · Compute cost · Why it matters"
       },
@@ -2223,7 +2223,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/13-transfusion-autoregressive-diffusion/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/13-transfusion-autoregressive-diffusion/",
         "summary": "Chameleon and Emu3 bet everything on discrete tokens. They work, but the quantization bottleneck is visible — the image quality plateaus below continuous-space diffusion models.…",
         "keywords": "The two-loss architecture · Attention mask: causal text + bidirectional image · Diffusion loss inside the transformer · MMDiT: Stable Diffusion 3's variant · Why this beats Chameleon-style · What sits downstream"
       },
@@ -2232,7 +2232,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/14-show-o-discrete-diffusion-unified/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/14-show-o-discrete-diffusion-unified/",
         "summary": "Transfusion mixes continuous and discrete representations. Show-o (Xie et al., August 2024) goes the other way: text tokens use causal next-token prediction, image tokens use ma…",
         "keywords": "Masked discrete diffusion (MaskGIT) · Show-o: one transformer, hybrid mask · Parallel sampling · Tasks in one checkpoint · Masking schedule · Show-o2 · Where Show-o sits"
       },
@@ -2241,7 +2241,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/15-janus-pro-decoupled-encoders/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/15-janus-pro-decoupled-encoders/",
         "summary": "Unified multimodal models have an unavoidable tension. Understanding wants semantic features — SigLIP or DINOv2 output vectors rich with concept-level information. Generation wa…",
         "keywords": "Decoupled visual encoding · Why this works · Data scaling — Janus vs Janus-Pro · JanusFlow — the rectified flow variant · The shared body's job · Compared to InternVL-U · Limitations"
       },
@@ -2250,7 +2250,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/16-mio-any-to-any-streaming/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/16-mio-any-to-any-streaming/",
         "summary": "GPT-4o ships a product most open models cannot replicate: an agent that hears voice, sees video, and speaks back in real time. The open-ecosystem answer by late 2024 was MIO (Wa…",
         "keywords": "Four tokenizers for four modalities · Streaming decode · Four-stage curriculum · Chain-of-visual-thought · Competitors in any-to-any · Latency budget · Why any-to-any stays hard"
       },
@@ -2259,7 +2259,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/17-video-language-temporal-grounding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/17-video-language-temporal-grounding/",
         "summary": "Video is not a stack of photos. A 5-second clip has causal ordering, action verbs, and event timing that an image model cannot represent. Video-LLaMA (Zhang et al., June 2023) s…",
         "keywords": "Video-LLaMA: Q-former per clip + audio branch · VideoChat and Video-LLaVA · Qwen2.5-VL and TMRoPE · Frame sampling strategies · Pooling per frame · The four video benchmarks · Grounding output formats · 2026 best practice"
       },
@@ -2268,7 +2268,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/18-long-video-million-token/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/18-long-video-million-token/",
         "summary": "A 1-hour 4K video at 24 FPS, patched and embedded, produces on the order of 60 million tokens. A 2-hour podcast episode transcribed is 30,000 tokens. A full Blu-ray feature film…",
         "keywords": "Path 1: Brute context (Gemini 1.5, Claude Opus) · Path 2: Ring attention (LWM, LongVILA) · Path 3: Token compression (Video-XL, LongVA) · Path 4: Agentic retrieval (VideoAgent) · Needle-in-a-haystack benchmarks · Which path to pick · 2026 production pattern"
       },
@@ -2277,7 +2277,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/19-audio-language-whisper-to-af3/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/19-audio-language-whisper-to-af3/",
         "summary": "Whisper (Radford et al., December 2022) settled speech recognition — 680k hours of weakly-supervised multilingual speech, a simple encoder-decoder transformer, a benchmark that …",
         "keywords": "Log-Mel spectrogram: the input feature · Whisper's encoder · BEATs and audio-specific encoders · Audio Q-former · The arc — SALMONN, Qwen-Audio, AF3 · Cascaded vs end-to-end · 2026 production recipe · MMAU — the audio reasoning benchmark"
       },
@@ -2286,7 +2286,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/20-omni-models-thinker-talker/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/20-omni-models-thinker-talker/",
         "summary": "GPT-4o's product demo in May 2024 was disruptive not because of the underlying model but because of the product shape — a voice interface where you talk, the model sees what the…",
         "keywords": "Thinker and Talker · TMRoPE — time-aligned multimodal positions · Streaming speech synthesis · VAD and turn-taking · Qwen3-Omni (November 2025) · Production latency budget · Token-rate math"
       },
@@ -2295,7 +2295,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/21-embodied-vlas-openvla-pi0-groot/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/21-embodied-vlas-openvla-pi0-groot/",
         "summary": "The first time a model read a recipe off a website and executed it in a kitchen robot was RT-2 (Google DeepMind, July 2023). RT-2 discretized actions as text tokens, co-fine-tun…",
         "keywords": "Action tokenization (RT-2) · OpenVLA — the open 7B reference · FAST tokenizer — faster action decode · π0 and flow-matching actions · GR00T N1 — dual-system for humanoids · Open X-Embodiment · Co-fine-tuning vs robot-only · Safety and action limits"
       },
@@ -2304,7 +2304,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/22-document-diagram-understanding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/22-document-diagram-understanding/",
         "summary": "Documents are not photos. A PDF, scientific paper, invoice, or handwritten form has layout, tables, diagrams, footnotes, headers, and semantic structure that plain image underst…",
         "keywords": "Era 1 — OCR pipeline (pre-2021) · TrOCR (2021) · Era 2 — OCR-free (2022-2023) · LayoutLMv3 (2022) · DocLLM (2023) · Era 3 — VLM-native (2024+) · The Claude 4.7 / GPT-5 frontier · Math equations and LaTeX output · Handwriting · 2026 recipe"
       },
@@ -2313,7 +2313,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/23-colpali-vision-native-rag/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/23-colpali-vision-native-rag/",
         "summary": "Traditional RAG parses PDFs into text, splits into chunks, embeds chunks, stores vectors. Every step loses signal: OCR drops chart data, chunking breaks table rows, text embeddi…",
         "keywords": "ColBERT (2020) · ColPali · ColQwen2 and ColSmol · VisRAG · M3DocRAG · ViDoRe — the benchmark · The end-to-end RAG pipeline · Storage math · When text-RAG still wins"
       },
@@ -2322,7 +2322,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/24-multimodal-rag-cross-modal/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/24-multimodal-rag-cross-modal/",
         "summary": "Vision-native document RAG is one slice. Production multimodal RAG goes wider — retrieving across text, images, audio, and video for workflows like trip planning (\"find me a qui…",
         "keywords": "Cross-modal retrieval · Fusion strategies · Generation grounding · The 2025 surveys · MuRAG — the foundational paper · A production trip-planner example · Agentic multimodal RAG · Evaluation"
       },
@@ -2331,7 +2331,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/25-multimodal-agents-computer-use/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/12-multimodal-ai/25-multimodal-agents-computer-use/",
         "summary": "The 2026 frontier product is a multimodal agent that reads screenshots, clicks buttons, navigates web UIs, fills forms, and completes workflows end-to-end. SeeClick and CogAgent…",
         "keywords": "GUI grounding — the primitive · Action schemas · Screenshot-only vs accessibility-tree · Long-horizon memory · Visual tool use · The 2026 benchmarks · Why it's still hard · The capstone build-it"
       }
@@ -2348,7 +2348,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/01-the-tool-interface/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/01-the-tool-interface/",
         "summary": "A language model produces tokens. A program takes actions. The gap between those two is the tool interface: a contract that lets the model request an action and the host execute…",
         "keywords": "Step one: describe · Step two: decide · Step three: execute · Step four: observe · The trust split · Where the loop lives · Why not just prompt the model to emit JSON? · Circuit breakers · Where Phase 13 goes from here"
       },
@@ -2357,7 +2357,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/02-function-calling-deep-dive/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/02-function-calling-deep-dive/",
         "summary": "The three frontier providers converged on the same tool-call loop in 2024 and then diverged on everything else. OpenAI uses `tools` and `tool_calls`. Anthropic uses `tool_use` a…",
         "keywords": "The common structure · Shape diffs, field by field · Limits you will actually hit · `tool_choice` behavior · Parallel calls · Streaming · Errors and repair · The translator pattern"
       },
@@ -2366,7 +2366,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/03-parallel-and-streaming-tool-calls/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/03-parallel-and-streaming-tool-calls/",
         "summary": "Three independent weather lookups serialized is three round trips. Run them in parallel and total time collapses to the slowest single call. Every frontier provider now emits mu…",
         "keywords": "Enabling parallel · Id correlation · Running calls concurrently · Streaming tool calls · Partial JSON and the parse-early trap · Out-of-order completion · Benchmark: sequential vs parallel · Streaming fan-out wall-clock"
       },
@@ -2375,7 +2375,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/04-structured-output/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/04-structured-output/",
         "summary": "\"Ask the model nicely to return JSON\" fails 5 to 15 percent of the time, even on frontier models. Structured outputs close that gap with constrained decoding: the model is liter…",
         "keywords": "JSON Schema 2020-12 — the lingua franca · Pydantic, the Python binding · Zod, the TypeScript binding · Refusals · Constrained decoding in the open · The three failure modes · Retry strategy · Small-model support"
       },
@@ -2384,7 +2384,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/05-tool-schema-design/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/05-tool-schema-design/",
         "summary": "A correct tool fails silently when the model cannot tell when to use it. Naming, descriptions, and parameter shapes drive 10 to 20 percentage-point swings in tool-selection accu…",
         "keywords": "Naming rules · Description pattern · Atomic vs monolithic · Parameter design · Error messages as teaching signals · Versioning · Tool poisoning prevention · Benchmarks"
       },
@@ -2393,7 +2393,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/06-mcp-fundamentals/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/06-mcp-fundamentals/",
         "summary": "Every integration before MCP was a one-off. The Model Context Protocol, first shipped by Anthropic in November 2024 and now stewarded by the Linux Foundation's Agentic AI Founda…",
         "keywords": "Three server primitives · Three client primitives · Wire format: JSON-RPC 2.0 · Three-phase lifecycle · Capability negotiation · Structured content and error shapes · Client capabilities vs tool call details · Why JSON-RPC and not REST?"
       },
@@ -2402,7 +2402,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/07-building-an-mcp-server/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/07-building-an-mcp-server/",
         "summary": "Most MCP tutorials show only stdio hello-worlds. A real server exposes tools plus resources plus prompts, handles capability negotiation, emits structured errors, and works the …",
         "keywords": "Dispatch loop · Implementing `initialize` · Implementing `tools/list` and `tools/call` · Implementing resources · Implementing prompts · Stdio transport subtleties · Annotations · Graduation path"
       },
@@ -2411,7 +2411,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/08-building-an-mcp-client/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/08-building-an-mcp-client/",
         "summary": "Most MCP content ships server tutorials and waves a hand at the client. Client code is where the hard orchestration lives: process spawning, capability negotiation, tool list me…",
         "keywords": "Child-process spawning · Per-server session state · Merged namespace · Routing · Sampling callback · Notification handling · Reconnection · Keepalive and session id"
       },
@@ -2420,7 +2420,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/09-mcp-transports/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/09-mcp-transports/",
         "summary": "stdio works locally and nowhere else. Streamable HTTP (2025-03-26) is the remote standard. The old HTTP+SSE transport is deprecated and being removed in mid-2026. Picking the wr…",
         "keywords": "stdio · Streamable HTTP · Single endpoint vs two · `Origin` validation and DNS-rebinding · Session id lifecycle · Keepalive and reconnect · Backwards compatibility probe · Cloudflare, ngrok, and hosting · Gateway composition · Transport failure modes · When to bypass Streamable HTTP"
       },
@@ -2429,7 +2429,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/10-mcp-resources-and-prompts/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/10-mcp-resources-and-prompts/",
         "summary": "Tools get 90 percent of MCP attention. The other two server primitives solve different problems. Resources expose data for reading; prompts expose reusable templates as slash-co…",
         "keywords": "Tools vs resources vs prompts — the decision rule · Resources · Resource subscriptions · Resource templates (2025-11-25 addition) · Prompts · Hosts and prompts · The \"list changed\" notification · Content type conventions · Dynamic resources · Subscriptions vs polling · Prompts vs system prompts"
       },
@@ -2438,7 +2438,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/11-mcp-sampling/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/11-mcp-sampling/",
         "summary": "Most MCP servers are dumb executors: take arguments, run code, return content. Sampling lets a server flip direction: it asks the client's LLM to make a decision. This enables s…",
         "keywords": "`sampling/createMessage` request · `modelPreferences` · `includeContext` · Sampling with tools (SEP-1577) · Human-in-the-loop · Server-hosted loops without API keys · Safety risks (Unit 42 disclosure, 2026 Q1)"
       },
@@ -2447,7 +2447,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/12-mcp-roots-and-elicitation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/12-mcp-roots-and-elicitation/",
         "summary": "Hard-coded paths break the moment a user opens a different project. Pre-filled tool arguments break when the user under-specifies. Roots scope the server to a user-controlled se…",
         "keywords": "Roots · Why roots are a client primitive · Elicitation: the form-mode default · Elicitation: URL mode (SEP-1036, experimental) · When elicitation is the right tool · When elicitation is wrong · Human-in-the-loop bridge"
       },
@@ -2456,7 +2456,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/13-mcp-async-tasks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/13-mcp-async-tasks/",
         "summary": "Real agent work takes minutes to hours: CI runs, deep-research synthesis, batch exports. Synchronous tool calls drop connections, time out, or block the UI. SEP-1686, merged in …",
         "keywords": "Task augmentation · Per-tool opt-in · States · Methods · Streaming state changes · Durable state · Cancellation semantics · Crash recovery · Async tasks plus sampling · Why this is experimental"
       },
@@ -2465,7 +2465,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/14-mcp-apps/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/14-mcp-apps/",
         "summary": "Text-only tool output caps what agents can show. MCP Apps (SEP-1724, official January 26, 2026) let a tool return sandboxed interactive HTML rendered inline in Claude Desktop, C…",
         "keywords": "The `ui://` resource scheme · Iframe sandbox · postMessage protocol · Permissions · Security risks · `ui/initialize` handshake · AppRenderer / AppFrame SDK primitives · Ecosystem status"
       },
@@ -2474,7 +2474,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/15-mcp-security-tool-poisoning/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/15-mcp-security-tool-poisoning/",
         "summary": "Tool descriptions land in the model's context verbatim. Malicious servers embed hidden instructions that users never see. Research in 2025-2026 from Invariant Labs, Unit 42, and…",
         "keywords": "Attack 1: tool poisoning · Attack 2: rug pulls · Attack 3: cross-server tool shadowing · Attack 4: MCP Preference Manipulation Attacks (MPMA) · Attack 5: parasitic toolchains · Attack 6: sampling attacks · Attack 7: supply-chain masquerading · The Rule of Two (Meta, 2026) · Defenses that work · Defenses that do not work alone"
       },
@@ -2483,7 +2483,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/16-mcp-security-oauth-2-1/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/16-mcp-security-oauth-2-1/",
         "summary": "Remote MCP servers need authorization, not just authentication. The 2025-11-25 spec aligns with OAuth 2.1 + PKCE + resource indicators (RFC 8707) + protected-resource metadata (…",
         "keywords": "Roles · Authorization code + PKCE · Protected-resource metadata (RFC 9728) · Resource indicators (RFC 8707) · Scope model · Step-up authorization (SEP-835) · Token audience validation · Short-lived tokens and rotation · No token passthrough · Confused deputy prevention · Client ID discovery · Gateways and OAuth"
       },
@@ -2492,7 +2492,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/17-mcp-gateways-and-registries/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/17-mcp-gateways-and-registries/",
         "summary": "Enterprises cannot let every dev install random MCP servers. A gateway centralizes auth, RBAC, audit, rate limiting, caching, and tool-poisoning detection, then exposes the merg…",
         "keywords": "Five gateway responsibilities · Gateway as a single endpoint · Credential vaulting · Tool-hash pinning at the gateway · Policy-as-code · Session-aware routing · Namespace merging · Registries · Reverse-DNS naming · Vendor survey, April 2026"
       },
@@ -2501,7 +2501,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/18-mcp-auth-production/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/18-mcp-auth-production/",
         "summary": "Lesson 16 stood up the OAuth 2.1 state machine in memory. By 2026, every MCP server you ship to a real org sits behind production auth: client enrollment that scales to an unbou…",
         "keywords": "RFC 8414 — OAuth Authorization Server Metadata · RFC 9728 (recap) — Protected Resource Metadata · Client ID Metadata Documents (the recommended default) · RFC 7591 — Dynamic Client Registration (fallback / backwards compatibility) · RFC 8707 (recap) — Resource Indicators · RFC 7636 (recap) — PKCE · MCP Spec 2025-11-25 Auth Profile · IdP capability matrix · JWKS refresh pattern (rotate at the AS, refresh at the resource server) · The validation routine · Audience-replay walkthrough (access-token privilege restriction) · Mix-up attacks (a client-side defense the server cannot provide) · Failure modes"
       },
@@ -2510,7 +2510,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/19-a2a-protocol/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/19-a2a-protocol/",
         "summary": "MCP is agent-to-tool. A2A (Agent2Agent) is agent-to-agent — an open protocol for letting opaque agents built on different frameworks collaborate. Released by Google in April 202…",
         "keywords": "Agent Card · Signed Agent Cards (AP2) · Task lifecycle · Messages and Parts · Artifacts · Two transport bindings · Opacity preservation · Timeline · Relationship to MCP"
       },
@@ -2519,7 +2519,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/20-opentelemetry-genai/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/20-opentelemetry-genai/",
         "summary": "An agent calls five tools, three MCP servers, and two sub-agents. You need one trace across all of it. The OpenTelemetry GenAI semantic conventions (stable attributes in v1.37 a…",
         "keywords": "Span hierarchy · Required attributes · Span kinds · Opt-in content capture · Events on spans · Exporters · Propagation across MCP · Metrics · AgentOps layer"
       },
@@ -2528,7 +2528,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/21-llm-routing-layer/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/21-llm-routing-layer/",
         "summary": "Provider lock-in is expensive. Different tool-calling workloads suit different models. Routing gateways give one API surface, retries, failover, cost tracking, and guardrails. T…",
         "keywords": "OpenAI-compatible proxy shape · Model aliases · Fallback chains · Semantic caching · Guardrails · Per-key rate limits · Self-hosted vs managed trade-offs · Cost tracking · MCP plus routing · Routing strategies"
       },
@@ -2537,7 +2537,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/22-skills-and-agent-sdks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/22-skills-and-agent-sdks/",
         "summary": "MCP says \"what tools exist.\" Skills say \"how to do a task.\" The 2026 stack layers both. Anthropic's Agent Skills (open standard, December 2025) ship as SKILL.md with progressive…",
         "keywords": "AGENTS.md (agents.md) · SKILL.md format · Progressive disclosure · Filesystem discovery · Anthropic Claude Agent SDK · OpenAI Apps SDK · Cross-agent portability via SkillKit · The three-layer stack"
       },
@@ -2546,7 +2546,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/23-capstone-tool-ecosystem/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/13-tools-and-protocols/23-capstone-tool-ecosystem/",
         "summary": "Phase 13 taught every piece. This capstone wires them into one production-shaped system: an MCP server with tools + resources + prompts + tasks + UI, OAuth 2.1 at the edge, an R…",
         "keywords": "Architecture · Trace hierarchy · Security posture · Rendering · Packaging · What each Phase 13 lesson contributed"
       }
@@ -2563,7 +2563,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/01-the-agent-loop/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/01-the-agent-loop/",
         "summary": "Every agent in 2026 — Claude Code, Cursor, Devin, Operator — is a variant of the ReAct loop from 2022. Reasoning tokens interleave with tool calls and observations until a stop …",
         "keywords": "ReAct: the canonical format · The 2026 shift: native reasoning · The five ingredients · Why this loop is everywhere · 2026 pitfalls"
       },
@@ -2572,7 +2572,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/02-rewoo-plan-and-execute/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/02-rewoo-plan-and-execute/",
         "summary": "ReAct interleaves thought and action in one stream. ReWOO separates them: one big plan up front, then execute. 5x fewer tokens, +4% accuracy on HotpotQA, and you can distill the…",
         "keywords": "The three roles · Why 5x fewer tokens · Why it is more robust · Planner distillation · Plan-and-Execute (LangChain, 2023) · Plan-and-Act (Erdogan et al., arXiv:2503.09572, ICML 2025) · When to pick which"
       },
@@ -2581,7 +2581,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/03-reflexion-verbal-rl/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/03-reflexion-verbal-rl/",
         "summary": "Gradient-based RL needs thousands of trials and a GPU cluster to fix a failure mode. Reflexion (Shinn et al., NeurIPS 2023) does it in natural language: after each failed trial,…",
         "keywords": "The three components · Three evaluator types · Why this generalizes · When it works and when it does not"
       },
@@ -2590,7 +2590,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/04-tree-of-thoughts-lats/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/04-tree-of-thoughts-lats/",
         "summary": "A single chain-of-thought trajectory has no room to backtrack. ToT (Yao et al., 2023) turns reasoning into a tree with self-evaluation on each node. LATS (Zhou et al., 2024) uni…",
         "keywords": "Tree of Thoughts (Yao et al., NeurIPS 2023) · LATS (Zhou et al., ICML 2024) · MCTS, minimally · The cost reality · 2026 positioning"
       },
@@ -2599,7 +2599,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/05-self-refine-and-critic/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/05-self-refine-and-critic/",
         "summary": "Self-Refine (Madaan et al., 2023) uses one LLM in three roles — generate, feedback, refine — in a loop. Average gain: +20 absolute on 7 tasks. CRITIC (Gou et al., 2023) hardens …",
         "keywords": "Self-Refine (Madaan et al., NeurIPS 2023) · CRITIC (Gou et al., arXiv:2305.11738, v4 Feb 2024) · The stop condition · Evaluator-Optimizer (Anthropic, 2024) · OpenAI Agents SDK output guardrails · 2026 pitfalls"
       },
@@ -2608,7 +2608,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/06-tool-use-and-function-calling/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/06-tool-use-and-function-calling/",
         "summary": "Toolformer (Schick et al., 2023) started self-supervised tool annotation. Berkeley Function Calling Leaderboard V4 (Patil et al., 2025) sets the 2026 bar: 40% agentic, 30% multi…",
         "keywords": "Toolformer (Schick et al., NeurIPS 2023) · Berkeley Function Calling Leaderboard V4 (Patil et al., ICML 2025) · Tool schema · Argument validation · Parallel tool calls · Sandboxing"
       },
@@ -2617,7 +2617,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/07-memory-virtual-context-memgpt/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/07-memory-virtual-context-memgpt/",
         "summary": "Context windows are finite. Conversations, documents, and tool traces are not. MemGPT (Packer et al., 2023) frames this as OS virtual memory — main context is RAM, external stor…",
         "keywords": "MemGPT: the OS analogy · Two tiers · The interrupt pattern · Where MemGPT ends and Letta begins · Where this pattern goes wrong"
       },
@@ -2626,7 +2626,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/08-memory-blocks-sleep-time-compute/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/08-memory-blocks-sleep-time-compute/",
         "summary": "MemGPT became Letta in 2024. The 2026 evolution adds two ideas: discrete functional memory blocks the model can edit directly, and a sleep-time agent that consolidates memory as…",
         "keywords": "Three tiers · Memory blocks · Sleep-time compute · Letta V1 and native reasoning · Where this pattern goes wrong"
       },
@@ -2635,7 +2635,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/09-hybrid-memory-mem0/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/09-hybrid-memory-mem0/",
         "summary": "Mem0 (Chhikara et al., 2025) treats memory as three stores in parallel — vector for semantic similarity, KV for fast fact lookup, graph for entity-relationship reasoning. A scor…",
         "keywords": "Three stores in parallel · Fusion scoring · Mem0g and temporal reasoning · Benchmark numbers · Scope taxonomy · Where this pattern goes wrong"
       },
@@ -2644,7 +2644,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/10-skill-libraries-voyager/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/10-skill-libraries-voyager/",
         "summary": "Voyager (Wang et al., TMLR 2024) treats executable code as a skill. Skills are named, retrievable, composable, and refined by environment feedback. This is the reference archite…",
         "keywords": "Three components · Action space = code · Skill retrieval · Iterative refinement · Curriculum and exploration · Where this pattern goes wrong"
       },
@@ -2653,7 +2653,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/11-planning-htn-and-evolutionary/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/11-planning-htn-and-evolutionary/",
         "summary": "Symbolic planning handles the cases where the plan is provably correct. Evolutionary code search handles the cases where the fitness function is machine-checkable. ChatHTN (2025…",
         "keywords": "Hierarchical Task Networks · ChatHTN (Gopalakrishnan et al., 2025) · AlphaEvolve (Novikov et al., 2025) · When to use which · Where this pattern goes wrong"
       },
@@ -2662,7 +2662,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/12-anthropic-workflow-patterns/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/12-anthropic-workflow-patterns/",
         "summary": "Schluntz and Zhang (Anthropic, Dec 2024) distinguish workflows (predefined paths) from agents (dynamic tool-use). Five workflow patterns cover most cases. Start with direct API …",
         "keywords": "Workflows vs agents · The augmented LLM · The five patterns · Where workflows beat agents · Where agents beat workflows · The context-engineering companion"
       },
@@ -2671,7 +2671,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/13-langgraph-stateful-graphs/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/13-langgraph-stateful-graphs/",
         "summary": "LangGraph is the 2026 reference for low-level stateful orchestration. Agent is a state machine; nodes are functions; edges are transitions; state is immutable and checkpointed a…",
         "keywords": "The graph · Durable execution · Streaming · Human-in-the-loop · Memory · Three topologies · Where this pattern goes wrong"
       },
@@ -2680,7 +2680,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/14-autogen-actor-model/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/14-autogen-actor-model/",
         "summary": "AutoGen v0.4 (Microsoft Research, Jan 2025) redesigned agent orchestration around the actor model. Async message exchange, event-driven agents, fault isolation, natural concurre…",
         "keywords": "Actors · Three API layers in AutoGen v0.4 · Why decoupling matters · Topologies · Observability · Status: maintenance mode"
       },
@@ -2689,7 +2689,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/15-crewai-role-based-crews/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/15-crewai-role-based-crews/",
         "summary": "CrewAI is the 2026 role-based multi-agent framework. Four primitives: Agent, Task, Crew, Process. Two top-level shapes: Crews (autonomous, role-based collaboration) and Flows (e…",
         "keywords": "Four primitives · Sequential vs Hierarchical vs Consensus · Crews vs Flows · Tool integration · Memory hooks · When CrewAI fits · When CrewAI does not fit · Dependency shape · Where this pattern goes wrong"
       },
@@ -2698,7 +2698,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/16-openai-agents-sdk/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/16-openai-agents-sdk/",
         "summary": "OpenAI Agents SDK is the lightweight multi-agent framework built on the Responses API. Five primitives: Agent, Handoff, Guardrail, Session, Tracing. Handoffs are tools named `tr…",
         "keywords": "Five primitives · Handoffs as tools · Guardrails · Tracing · Sessions · Where this pattern goes wrong"
       },
@@ -2707,7 +2707,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/17-claude-agent-sdk/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/17-claude-agent-sdk/",
         "summary": "The Claude Agent SDK is the library form of the Claude Code harness. Built-in tools, subagents for context isolation, hooks, W3C trace propagation, session store parity. Claude …",
         "keywords": "Client SDK vs Agent SDK · Built-in tools · Subagents · Session store · Hooks · W3C trace context · Claude Managed Agents · Where this pattern goes wrong"
       },
@@ -2716,7 +2716,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/18-agno-and-mastra-runtimes/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/18-agno-and-mastra-runtimes/",
         "summary": "Agno (Python) and Mastra (TypeScript) are the 2026 production-runtime pairing. Agno aims at microsecond agent instantiation and stateless FastAPI backends. Mastra ships agents, …",
         "keywords": "Agno · Mastra · Positioning · When to pick each · Where this pattern goes wrong"
       },
@@ -2725,7 +2725,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/19-benchmarks-swebench-gaia/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/19-benchmarks-swebench-gaia/",
         "summary": "Three benchmarks anchor agent evaluation in 2026. SWE-bench tests code patching. GAIA tests generalist tool use. AgentBench tests multi-environment reasoning. Know their composi…",
         "keywords": "SWE-bench (Jimenez et al., ICLR 2024 oral) · SWE-bench Verified · Contamination · GAIA (Mialon et al., Nov 2023) · AgentBench (Liu et al., ICLR 2024) · What these do not measure · Where benchmarking goes wrong"
       },
@@ -2734,7 +2734,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/20-benchmarks-webarena-osworld/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/20-benchmarks-webarena-osworld/",
         "summary": "WebArena tests web-agent capability across four self-hosted apps. OSWorld tests desktop-agent capability across Ubuntu, Windows, macOS. At release (2023–2024) both showed a big …",
         "keywords": "WebArena (Zhou et al., ICLR 2024) · Extensions · OSWorld (Xie et al., NeurIPS 2024) · Primary failure modes · Follow-ups · Why this matters · Where benchmarking goes wrong"
       },
@@ -2743,7 +2743,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/21-computer-use-agents/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/21-computer-use-agents/",
         "summary": "Three production computer-use models in 2026. All three are vision-based. All three treat screenshots, DOM text, and tool outputs as untrusted input. Only direct user instructio…",
         "keywords": "Claude computer use (Anthropic, Oct 22 2024) · OpenAI CUA / Operator (Jan 2025) · Gemini 2.5 Computer Use (Google DeepMind, Oct 7 2025) · The shared contract: untrusted input · When to pick which · Where this pattern goes wrong"
       },
@@ -2752,7 +2752,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/22-voice-agents-pipecat-livekit/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/22-voice-agents-pipecat-livekit/",
         "summary": "Voice agents are a first-class production category in 2026. Pipecat gives you a Python frame-based pipeline (VAD → STT → LLM → TTS → transport). LiveKit Agents bridges AI models…",
         "keywords": "Pipecat (pipecat-ai/pipecat) · LiveKit Agents (livekit/agents) · Commercial platforms · Where this pattern goes wrong · Typical 2026 latencies"
       },
@@ -2761,7 +2761,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/23-otel-genai-conventions/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/23-otel-genai-conventions/",
         "summary": "OpenTelemetry's GenAI SIG (launched April 2024) defines the standard schema for agent telemetry. Span names, attributes, and content-capture rules converge across vendors so age…",
         "keywords": "Span categories · Agent span naming · Key attributes · Content capture · Stability · Where this pattern goes wrong"
       },
@@ -2770,7 +2770,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/24-agent-observability-platforms/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/24-agent-observability-platforms/",
         "summary": "Three open-source agent observability platforms dominate 2026. Langfuse (MIT) — 6M+ installs/month, tracing + prompt management + evals + session replay. Arize Phoenix (Elastic …",
         "keywords": "Langfuse (MIT) · Arize Phoenix (Elastic License 2.0) · Comet Opik (Apache 2.0) · Industry data · Picking one · Where this pattern goes wrong"
       },
@@ -2779,7 +2779,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/25-multi-agent-debate/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/25-multi-agent-debate/",
         "summary": "Du et al. (ICML 2024, \"Society of Minds\") run N model instances that independently propose answers, then iteratively critique each other over R rounds to converge. Improves fact…",
         "keywords": "Society of Minds (Du et al., ICML 2024) · Sparse topology · When debate helps · When debate hurts · 2026 practical instantiations · Where this pattern goes wrong"
       },
@@ -2788,7 +2788,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/26-failure-modes-agentic/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/26-failure-modes-agentic/",
         "summary": "MASFT (Berkeley, 2025) catalogs 14 multi-agent failure modes in 3 categories. Microsoft's Taxonomy documents how existing AI failures amplify in agentic settings. Industry field…",
         "keywords": "MASFT (Berkeley, arXiv:2503.13657) · Microsoft Taxonomy of Failure Mode in Agentic AI Systems · Characterizing Faults in Agentic AI (arXiv:2603.06847) · LLM Agent Hallucinations Survey (arXiv:2509.18970) · The five industry-recurring modes · Mitigation: gates at every step · Where failure monitoring goes wrong"
       },
@@ -2797,7 +2797,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/27-prompt-injection-defense/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/27-prompt-injection-defense/",
         "summary": "Greshake et al. (AISec 2023) established indirect prompt injection as the defining agent security problem. Attacker plants instructions in data the agent retrieves; on ingest, t…",
         "keywords": "Greshake et al., AISec 2023 (arXiv:2302.12173) · The 2026 defense doctrine · PVE: Prompt-Validator-Executor · Where defenses fail"
       },
@@ -2806,7 +2806,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/28-orchestration-patterns/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/28-orchestration-patterns/",
         "summary": "Four orchestration patterns recur across 2026 frameworks: supervisor-worker, swarm / peer-to-peer, hierarchical, debate. Anthropic's guidance: \"It's about building the right sys…",
         "keywords": "Supervisor-worker · Swarm / peer-to-peer · Hierarchical · Debate · CrewAI Crew vs Flow · Anthropic's guidance · Where this pattern goes wrong"
       },
@@ -2815,7 +2815,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/29-production-runtimes/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/29-production-runtimes/",
         "summary": "Production agents run on six runtime shapes: request-response, streaming, durable execution, queue-based background, event-driven, and scheduled. Pick the shape before you pick …",
         "keywords": "Request-response · Streaming · Durable execution · Queue-based / background · Event-driven · Scheduled · 2026 deployment patterns · Observability is load-bearing · Where production runtimes fail"
       },
@@ -2824,7 +2824,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/30-eval-driven-agent-development/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/30-eval-driven-agent-development/",
         "summary": "Anthropic's guidance: \"start with simple prompts, optimize them with comprehensive evaluation, and add multi-step agentic systems only when needed.\" Evaluation is not the last s…",
         "keywords": "Three evaluation layers · Evaluator-optimizer (Anthropic) · 2026 best practice · Tying Phase 14 together · Where eval-driven development fails"
       },
@@ -2833,7 +2833,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/31-agent-workbench-why-models-fail/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/31-agent-workbench-why-models-fail/",
         "summary": "A capable model is not enough. Reliable agents need a workbench: instructions, state, scope, feedback, verification, review, and handoff. Strip those away and even a frontier mo…",
         "keywords": "Workbench versus prompt engineering · Workbench versus framework · Reasoning from primitives, not from vendor taxonomies · Patterns in circulation, translated to primitives · What the receipts actually say · Where vendor writeups stop short"
       },
@@ -2842,7 +2842,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/32-minimal-agent-workbench/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/32-minimal-agent-workbench/",
         "summary": "The smallest useful workbench is three files: a root instructions router, a state file, and a task board. Everything else is layered on top. If a repo cannot carry these three, …",
         "keywords": "AGENTS.md is a router, not a manual · agent_state.json is the system of record · task_board.json is the queue · Three files is the floor, not the ceiling"
       },
@@ -2851,7 +2851,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/33-instructions-as-executable-constraints/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/33-instructions-as-executable-constraints/",
         "summary": "Instructions written as prose are wishes. Instructions written as constraints are tests. The workbench turns each rule into something an agent can check at runtime and a reviewe…",
         "keywords": "Five categories that cover most rules · Rules are machine-readable · Rules are diff-friendly · Rules versus framework guardrails · Progressive disclosure: a map, not an encyclopedia"
       },
@@ -2860,7 +2860,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/34-repo-memory-and-state/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/34-repo-memory-and-state/",
         "summary": "Chat history is volatile. The repo is durable. The workbench stores agent state in versioned files so the next session, the next agent, and the next reviewer all read from the s…",
         "keywords": "What belongs in repo memory · Schema-first state · Atomic writes · Migrations"
       },
@@ -2869,7 +2869,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/35-initialization-scripts/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/35-initialization-scripts/",
         "summary": "Every session that starts cold pays a tax. The agent reads the same files, retries the same probes, and rediscovers the same paths. An init script pays the tax once and writes t…",
         "keywords": "What the init script probes · Fail loud, fail fast, fail in one place · Idempotent · Init versus startup rules"
       },
@@ -2878,7 +2878,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/36-scope-contracts/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/36-scope-contracts/",
         "summary": "The model does not know where the work ends. A scope contract is a per-task file that says where the work begins, where it ends, and how to roll back if it spills. The contract …",
         "keywords": "What goes in a scope contract · Globs, not raw paths · Rollback is part of scope · Scope check is a diff check · Two altitudes of scope: the feature list and the task contract"
       },
@@ -2887,7 +2887,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/37-runtime-feedback-loops/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/37-runtime-feedback-loops/",
         "summary": "Agents that do not see real command output guess. A feedback runner captures stdout, stderr, exit code, and timing into a structured record the next turn can read. Then the agen…",
         "keywords": "What goes in a feedback record · Truncation is deterministic · Feedback versus telemetry · Refuse to advance without feedback"
       },
@@ -2896,7 +2896,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/38-verification-gates/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/38-verification-gates/",
         "summary": "The agent does not get to mark its own work as done. A verification gate reads the scope contract, the feedback log, the rule report, and the diff, and answers a single question…",
         "keywords": "What the gate checks · Deterministic, not probabilistic · One report, one path · Refuse without exception"
       },
@@ -2905,7 +2905,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/39-reviewer-agent/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/39-reviewer-agent/",
         "summary": "The agent that wrote the code cannot grade it. A reviewer is a second loop with a different system prompt, a different goal, and read-only access to everything the builder produ…",
         "keywords": "Reviewer rubric · The reviewer is a separate role, not a separate model · The reviewer cannot edit the diff · Reviewer rubric versus verification gate"
       },
@@ -2914,7 +2914,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/40-multi-session-handoff/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/40-multi-session-handoff/",
         "summary": "The session is going to end. The work is not. The handoff packet is the artifact that turns \"the agent worked for an hour\" into \"the next session is productive in the first minu…",
         "keywords": "Seven fields every handoff carries · Handoffs are generated, not written · Two forms: human-readable and machine-readable · Feedback log trimming · Leave a clean state"
       },
@@ -2923,7 +2923,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/41-workbench-for-real-repos/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/41-workbench-for-real-repos/",
         "summary": "Eleven lessons of surfaces are worth nothing if they do not survive contact with a real codebase. This lesson runs the same task twice on a small sample app: prompt-only versus …",
         "keywords": "The sample app · The task · The two pipelines · The five outcomes measured"
       },
@@ -2932,7 +2932,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/42-agent-workbench-capstone/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/14-agent-engineering/42-agent-workbench-capstone/",
         "summary": "The mini-track ends with a pack you drop into any repo. Eleven lessons of surfaces compressed into a directory you can `cp -r` and have an agent working reliably the next mornin…",
         "keywords": "The pack layout · What stays in, what stays out · The installer · Versioning"
       }
@@ -2949,7 +2949,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/01-long-horizon-agents/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/01-long-horizon-agents/",
         "summary": "In 2023 a chatbot answered a question in one turn. In 2026 a frontier model routinely runs minutes to hours on a single task. METR's Time Horizon 1.1 benchmark (January 2026) pu…",
         "keywords": "The METR Time Horizon, in one paragraph · What actually breaks when the horizon grows · Doubling times and what they imply · Eval-context gaming · Single-turn vs long-horizon, compared"
       },
@@ -2958,7 +2958,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/02-star-family-reasoning/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/02-star-family-reasoning/",
         "summary": "The smallest possible self-improvement loop sits inside the rationale. A model generates a chain of thought, keeps the ones that land on correct answers, and fine-tunes on those…",
         "keywords": "STaR: bootstrap on what worked · V-STaR: train a verifier with DPO · Quiet-STaR: per-token internal rationales · Why all three share a safety concern · Comparison · Where this sits in the 2026 stack"
       },
@@ -2967,7 +2967,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/03-alphaevolve-evolutionary-coding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/03-alphaevolve-evolutionary-coding/",
         "summary": "Pair a frontier coding model with an evolutionary loop and a machine-checkable evaluator. Let the loop run long enough. It discovers a 4x4 complex-matrix multiplication procedur…",
         "keywords": "The loop · What makes the evaluator non-negotiable · Reward hacking is the other face of that statement · Why LLM + search beats either alone · Where AlphaEvolve fits in the frontier stack"
       },
@@ -2976,7 +2976,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/04-darwin-godel-machine/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/04-darwin-godel-machine/",
         "summary": "Schmidhuber's 2003 Godel Machine required a formal proof that any self-modification was beneficial before accepting it. That proof is impossible in practice. Darwin Godel Machin…",
         "keywords": "The loop · What DGM actually improved · The reward-hacking demonstration · Versus the classical Godel Machine · Where it fits in this phase"
       },
@@ -2985,7 +2985,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/05-ai-scientist-v2/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/05-ai-scientist-v2/",
         "summary": "Sakana's AI Scientist v2 (Yamada et al., arXiv:2504.08066) runs the full research loop: hypothesis, code, experiments, figures, writeup, submission. It is the first system to ha…",
         "keywords": "The architecture · What the workshop-acceptance result means · What the independent evaluation found · The sandbox-escape concern · Where v2 sits in the frontier stack"
       },
@@ -2994,7 +2994,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/06-automated-alignment-research/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/06-automated-alignment-research/",
         "summary": "Anthropic ran parallel teams of Claude Opus 4.6 Autonomous Alignment Researchers in independent sandboxes, coordinating via a shared forum whose logs live outside any sandbox (s…",
         "keywords": "The architecture (as publicly described) · Why the out-of-sandbox log matters · The prescribed-workflow tradeoff · The compression risk · What AAR does not replace"
       },
@@ -3003,7 +3003,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/07-recursive-self-improvement/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/07-recursive-self-improvement/",
         "summary": "Recursive self-improvement (RSI) is no longer speculation. The ICLR 2026 RSI Workshop in Rio (April 23-27) framed it as an engineering problem with concrete tooling. Demis Hassa…",
         "keywords": "What recursive self-improvement means precisely · The alignment-faking result in detail · The Hassabis question · Capability vs alignment, as a race · What the ICLR 2026 workshop treats as engineering"
       },
@@ -3012,7 +3012,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/08-bounded-self-improvement/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/08-bounded-self-improvement/",
         "summary": "Research has converged on four primitives for bounding a self-improvement loop. Formal invariants that must hold across every edit. Alignment anchors that cannot be modified. Mu…",
         "keywords": "Primitive 1: formal invariants · Primitive 2: alignment anchors · Primitive 3: multi-objective constraints · Primitive 4: regression detection · Information-theoretic limits · A worked example"
       },
@@ -3021,7 +3021,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/09-coding-agent-landscape/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/09-coding-agent-landscape/",
         "summary": "SWE-bench Verified went from 4% to 80.9% in under three years. Same Claude Sonnet 4.5 scored 43.2% on SWE-agent v1 and 59.8% on Cline autonomous — the scaffolding around the mod…",
         "keywords": "SWE-bench, one paragraph · What the 2022 → 2026 curve actually shows · CodeAct vs JSON tool calls · Scaffolds in the 2026 landscape · Why scaffolding dominates · Benchmark saturation and the real distribution"
       },
@@ -3030,7 +3030,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/10-claude-code-permission-modes/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/10-claude-code-permission-modes/",
         "summary": "Claude Code exposes seven permission modes. \"plan\" asks before every action, \"default\" asks only for risky ones, \"acceptEdits\" auto-approves file writes but still confirms shell…",
         "keywords": "The seven permission modes · Auto Mode in one page · What the system catches · What the system can miss · Research preview framing · Where this ladder lives in your workflow"
       },
@@ -3039,7 +3039,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/11-browser-agents/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/11-browser-agents/",
         "summary": "ChatGPT agent (July 2025) merged Operator and deep research into one browser/terminal agent and set BrowseComp SOTA at 68.9%. OpenAI shut Operator down August 31, 2025 — consoli…",
         "keywords": "The 2026 landscape, in one paragraph per system · BrowseComp vs OSWorld vs WebArena · The attack surface, named · Why \"not fully patchable\" · Defense posture that actually ships"
       },
@@ -3048,7 +3048,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/12-durable-execution/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/12-durable-execution/",
         "summary": "Production long-horizon agents do not run in `while True`. Every LLM call becomes an activity with checkpoint, retry, and replay. Temporal's OpenAI Agents SDK integration went G…",
         "keywords": "Activities, workflows, and replay · Why LLM calls fit the pattern · Checkpoints keyed by `thread_id` · Human-input as a first-class state · The 35-minute degradation · When durable execution is the wrong answer"
       },
@@ -3057,7 +3057,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/13-cost-governors/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/13-cost-governors/",
         "summary": "A mid-sized e-commerce agent's monthly LLM cost jumped from $1,200 to $4,800 after its team enabled the \"order-tracking\" skill. That is not a pricing bug. That is an agent that …",
         "keywords": "The cost-governor stack · Why the stack, not one cap · Claude Code's budget surface · EU AI Act, OWASP Agentic Top 10 · The observed $1,200 → $4,800 case"
       },
@@ -3066,7 +3066,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/14-kill-switches-canaries/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/14-kill-switches-canaries/",
         "summary": "A kill switch is a boolean held outside the agent's edit surface — a Redis key, a feature flag, a signed config — that disables the agent entirely. A circuit breaker is finer-gr…",
         "keywords": "Kill switches · Circuit breakers · Canary tokens · Why layer statistical and hard limits · Quarantine via eBPF datapath redirect · What no detector catches"
       },
@@ -3075,7 +3075,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/15-propose-then-commit/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/15-propose-then-commit/",
         "summary": "The 2026 consensus on HITL is specific. It is not \"the agent asks, the user clicks Approve.\" It is propose-then-commit: the proposed action is persisted to a durable store with …",
         "keywords": "The propose-then-commit state machine · The idempotency key · Durability: why approvals outlast processes · Rubber-stamp approvals and the challenge-and-response mitigation · What counts as consequential · Post-action verification · EU AI Act Article 14"
       },
@@ -3084,7 +3084,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/16-checkpoints-rollback/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/16-checkpoints-rollback/",
         "summary": "Every graph-state transition persists. When a worker crashes, its lease expires and another worker picks up at the latest checkpoint. Cloudflare Durable Objects hold state acros…",
         "keywords": "Every transition persists · Lease recovery · Idempotency plus preconditions · Post-action verification · Rollback plans · EU AI Act Article 14 operational reading · The sharp failure mode: the double-execute"
       },
@@ -3093,7 +3093,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/17-constitutional-ai/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/17-constitutional-ai/",
         "summary": "Anthropic's January 22, 2026 Claude Constitution runs 79 pages and is CC0. It moves from rule-based to reason-based alignment and establishes a four-tier priority hierarchy: (1)…",
         "keywords": "The four-tier priority hierarchy · Hardcoded prohibitions vs soft-coded defaults · The 2022 CAI training · What reason-based alignment catches and misses · The 2023 participatory experiment · Why hardcoded prohibitions are necessary · Where the Constitution sits in the stack"
       },
@@ -3102,7 +3102,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/18-llama-guard/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/18-llama-guard/",
         "summary": "Llama Guard 3 (Meta, Llama-3.1-8B base, fine-tuned for content safety) classifies both LLM inputs and outputs against an MLCommons 13-hazard taxonomy across 8 languages. A 1B-IN…",
         "keywords": "Llama Guard 3 at a glance · Llama Guard 4 additions · NeMo Guardrails (NVIDIA) · The attack corpus · Where classifiers win · Where classifiers lose · Defense-in-depth"
       },
@@ -3111,7 +3111,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/19-anthropic-rsp/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/19-anthropic-rsp/",
         "summary": "RSP v3.0 went into effect February 24, 2026, replacing the 2023 policy. Two-tier mitigation: what Anthropic will do unilaterally vs what is framed as an industry-wide recommenda…",
         "keywords": "The two-tier mitigation schedule · The AI R&D-4 threshold · Frontier Safety Roadmaps and Risk Reports · Removing the pause clause · SaferAI's downgrade · What this lesson is not"
       },
@@ -3120,7 +3120,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/20-openai-preparedness-deepmind-fsf/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/20-openai-preparedness-deepmind-fsf/",
         "summary": "OpenAI Preparedness Framework v2 (April 2025) introduces Research Categories — Long-range Autonomy, Sandbagging, Autonomous Replication and Adaptation, Undermining Safeguards — …",
         "keywords": "OpenAI Preparedness Framework v2 (April 2025) · DeepMind Frontier Safety Framework v3 (September 2025; Tracked Capability Levels added April 17, 2026) · What all three converge on · Where they diverge · Sandbagging: a specific capability that complicates all three · The policy-reading skill"
       },
@@ -3129,7 +3129,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/21-metr-external-evaluation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/21-metr-external-evaluation/",
         "summary": "METR (ex-ARC Evals) is an independent 501(c)(3) since December 2023. Their Time Horizon 1.1 benchmark (January 2026) fits a logistic curve to task-success probability vs log(exp…",
         "keywords": "METR background · The Time Horizon fit · The January 2026 numbers · Benchmark suites · Prototype monitoring evaluations · Why horizons are upper bounds · The external-evaluator case · How to use horizon numbers in practice"
       },
@@ -3138,7 +3138,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/22-cais-caisi-societal-risk/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/15-autonomous-systems/22-cais-caisi-societal-risk/",
         "summary": "The Center for AI Safety (CAIS, San Francisco, founded 2022 by Hendrycks and Zhang) publishes the four-risk framework — malicious use, AI races, organizational risks, rogue AIs …",
         "keywords": "CAIS — Center for AI Safety · The four-risk framework · Where organizational risk lives · CAISI — Center for AI Standards and Innovation · California SB-53 · Societal-scale risk is not a single-layer problem"
       }
@@ -3155,7 +3155,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "TypeScript",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/01-why-multi-agent/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/01-why-multi-agent/",
         "summary": "One agent hits a wall. The smart move is not a bigger agent - it is more agents.",
         "keywords": "The Single-Agent Ceiling · The Multi-Agent Solution · Real Systems That Do This · The Spectrum · The Four Multi-Agent Patterns · When NOT to Use Multi-Agent · Step 1: The Overloaded Single Agent · Step 2: Specialist Agents · Step 3: Coordinate Through Messages · Step 4: Compare"
       },
@@ -3164,7 +3164,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/02-fipa-acl-heritage/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/02-fipa-acl-heritage/",
         "summary": "Before MCP, before A2A, there was FIPA-ACL. In 2000 the IEEE Foundation for Intelligent Physical Agents ratified an agent communication language with twenty performatives, two c…",
         "keywords": "Speech acts, in one paragraph · The twenty FIPA performatives (partial list) · Canonical FIPA-ACL message · The two legacy platforms · Why FIPA faded · The LLM revival is FIPA-lite · The trade-off, stated plainly · Interaction protocols worth porting · What breaks when you drop the ontology · The 2026 specs, mapped to speech-act heritage"
       },
@@ -3173,7 +3173,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "TypeScript",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/03-communication-protocols/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/03-communication-protocols/",
         "summary": "Agents that can't speak the same language aren't a team. They're strangers shouting into the void.",
         "keywords": "The Protocol Landscape · MCP (Recap) · A2A (Agent2Agent Protocol) · ACP (Agent Communication Protocol) · ANP (Agent Network Protocol) · Comparison (Corrected) · How They Work Together · Step 1: Core Message Types · Step 2: A2A Agent Card and Registry · Step 3: A2A Task Lifecycle · Step 4: ACP-Style Audit Trail · Step 5: ANP-Style Identity Verification · Step 6: Protocol Gateway · Step 7: Wire It All Together · Real Implementations · Picking the Right Protocol"
       },
@@ -3182,7 +3182,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/04-primitive-model/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/04-primitive-model/",
         "summary": "Every multi-agent framework shipping in 2026 — AutoGen, LangGraph, CrewAI, OpenAI Agents SDK, Microsoft Agent Framework — is a point in a four-dimensional design space. Four pri…",
         "keywords": "The four primitives · How every 2026 framework maps to it · Why this matters · The stateless insight · Anatomy of a single primitive · What changes between frameworks"
       },
@@ -3191,7 +3191,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/05-supervisor-orchestrator-pattern/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/05-supervisor-orchestrator-pattern/",
         "summary": "One lead agent plans and delegates; specialized workers execute in parallel contexts and report back. This is the pattern behind Anthropic's Research system (Claude Opus 4 as le…",
         "keywords": "The pattern · Why it wins · Engineering lessons (Anthropic 2025) · The LangGraph turn · The failure modes · When supervisor is wrong"
       },
@@ -3200,7 +3200,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/06-hierarchical-architecture/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/06-hierarchical-architecture/",
         "summary": "Hierarchical is supervisor nested. Manager agents over sub-managers over workers. CrewAI `Process.hierarchical` is the textbook version: a `manager_llm` dynamically delegates ta…",
         "keywords": "The shape · Where it shines · Where it breaks · The deciding question · CrewAI's implementation · LangGraph's implementation"
       },
@@ -3209,7 +3209,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/07-society-of-mind-debate/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/07-society-of-mind-debate/",
         "summary": "Minsky's 1986 premise — intelligence is a society of specialists — gets rediscovered every decade. In 2023 Du et al. turned it into a concrete algorithm: multiple LLM instances …",
         "keywords": "The Du et al. 2023 algorithm · Two independent knobs · Why it works · Heterogeneous debate · NLSOM — the 129-agent extension · Failure modes"
       },
@@ -3218,7 +3218,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/08-role-specialization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/08-role-specialization/",
         "summary": "The most common multi-agent decomposition in 2026: one agent plans, one executes, one critiques or verifies. MetaGPT (arXiv:2308.00352) formalizes this as SOPs encoded into role…",
         "keywords": "The four canonical roles · MetaGPT's SOP pattern · ChatDev's communicative dehallucination · Why verifier matters most · Critic vs verifier · The anti-pattern · Framework mappings"
       },
@@ -3227,7 +3227,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/09-parallel-swarm-networks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/09-parallel-swarm-networks/",
         "summary": "Contrast with supervisor: no central decider. Agents read a shared event bus, pick up work asynchronously, write results back. LangGraph explicitly supports \"Swarm Architecture\"…",
         "keywords": "The shape · When swarm fits · When swarm fails · Matrix (arXiv:2511.21686) · LangGraph's Swarm Architecture · Failure mode: starvation and hot-spotting · The content-based routing link"
       },
@@ -3236,7 +3236,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/10-group-chat-speaker-selection/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/10-group-chat-speaker-selection/",
         "summary": "AutoGen GroupChat and AG2 GroupChat share one conversation across N agents; a selector function (LLM, round-robin, or custom) picks who speaks next. This is the archetype of eme…",
         "keywords": "The shape · The three selector flavors · The ConversableAgent API · Termination · The AutoGen → AG2 split and the Microsoft Agent Framework merge · When GroupChat fits · When it fails · Group chat vs supervisor"
       },
@@ -3245,7 +3245,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/11-handoffs-and-routines/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/11-handoffs-and-routines/",
         "summary": "OpenAI's Swarm (October 2024) distilled multi-agent orchestration to two primitives: **routines** (instructions + tools as a system prompt) and **handoffs** (a tool that returns…",
         "keywords": "Two primitives · Why it is viral · The stateless trade · When Swarm/handoffs fit · When Swarm struggles · OpenAI Agents SDK (March 2025) · Swarm vs GroupChat"
       },
@@ -3254,7 +3254,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/12-a2a-protocol/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/12-a2a-protocol/",
         "summary": "Google announced A2A in April 2025; by April 2026 the spec is at https://a2a-protocol.org/latest/specification/ and 150+ organizations back it. A2A is the horizontal complement …",
         "keywords": "The four elements · The MCP/A2A split · Discovery flow · Auth · 150+ organizations by April 2026 · Where A2A wins · Where A2A struggles · A2A vs ACP, ANP, NLIP"
       },
@@ -3263,7 +3263,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/13-shared-memory-blackboard/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/13-shared-memory-blackboard/",
         "summary": "Two approaches coexist in 2026 multi-agent systems: the **message pool** (everyone sees everyone's messages, as in AutoGen GroupChat or MetaGPT) and the **blackboard with subscr…",
         "keywords": "The two main topologies · When each wins · Memory poisoning, in one scenario · Why this is structural · Blackboard precedent (Hayes-Roth, 1985) · Projection vs full view · Write-contention patterns · The unwritable verifier"
       },
@@ -3272,7 +3272,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/14-consensus-and-bft/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/14-consensus-and-bft/",
         "summary": "Classical distributed-systems BFT meets stochastic LLMs. In 2025-2026 three research directions emerged: **CP-WBFT** (arXiv:2511.10400) weighs each vote by a confidence probe; *…",
         "keywords": "What classical BFT gives you · The three LLM-specific attacks · The 2025-2026 responses · Empirical: \"Can AI Agents Agree?\" (arXiv:2603.01213) · The core protocol, stripped down · Threshold tuning · Where consensus does not help"
       },
@@ -3281,7 +3281,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/15-voting-debate-topology/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/15-voting-debate-topology/",
         "summary": "The cheapest aggregation: sample N independent agents, majority-vote. Wang et al. 2022 self-consistency did this with one model sampled N times. Multi-agent extends it with **he…",
         "keywords": "Self-consistency, the single-model baseline · Multi-agent vote, the heterogeneous extension · The four topologies · The coordination tax (MultiAgentBench) · Multi-Agent Debate Strategies (\"Should we be going MAD?\") · AgentVerse emergent patterns · Heterogeneity: the actual knob that moves accuracy · Jury methods · When vote-with-debate dominates · When vote-with-debate hurts"
       },
@@ -3290,7 +3290,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/16-negotiation-bargaining/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/16-negotiation-bargaining/",
         "summary": "Agents negotiate resources, prices, task allocations, and terms. The 2026 benchmark set is clear: NegotiationArena (arXiv:2402.05863) shows LLMs can improve payoffs ~20% via per…",
         "keywords": "Contract Net, in one paragraph · Why OG-Narrator wins · NegotiationArena findings · Chain-of-thought concealment · Bhattacharya et al. 2025 — model rankings · Task allocation via Contract Net + LLM · LLM-Stakeholders Interactive Negotiation · The narration-vs-mechanism rule"
       },
@@ -3299,7 +3299,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/17-generative-agents-simulation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/17-generative-agents-simulation/",
         "summary": "Park et al. 2023 (UIST '23, arXiv:2304.03442) populated **Smallville**, a sandbox of 25 agents, with a three-part architecture: **memory stream** (natural-language log), **refle…",
         "keywords": "The three components · Why all three matter (ablation) · The Valentine's Day emergence · The documented failure modes · Three-component implementation rules · Generative agents beyond Smallville · Why this matters for multi-agent engineering"
       },
@@ -3308,7 +3308,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/18-theory-of-mind-coordination/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/18-theory-of-mind-coordination/",
         "summary": "Li et al. (arXiv:2310.10701) showed that LLM agents in a cooperative text game exhibit **emergent high-order Theory of Mind** (ToM) — reasoning about what another agent believes…",
         "keywords": "What ToM means · The Sally-Anne test, in brief · Riedl's coordination measurement · The coordination illusion · A minimal ToM-aware agent · Why long-horizon hurts · Where ToM fails in production · The coordination you can actually measure"
       },
@@ -3317,7 +3317,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/19-swarm-optimization-pso-aco/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/19-swarm-optimization-pso-aco/",
         "summary": "Bio-inspired optimization is making an LLM comeback. **LMPSO** (arXiv:2504.09247) uses PSO where each particle's velocity is a prompt and the LLM generates the next candidate; w…",
         "keywords": "PSO refresher (Kennedy & Eberhart 1995) · PSO on LLM outputs — LMPSO · Model Swarms · ACO refresher (Dorigo 1992) · AMRO-S — ACO for agent routing · When to use PSO / ACO for LLMs · Why bio-inspired still wins · Practical limits"
       },
@@ -3326,7 +3326,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/20-marl-maddpg-qmix-mappo/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/20-marl-maddpg-qmix-mappo/",
         "summary": "The reinforcement-learning heritage of multi-agent coordination, which still informs LLM-agent systems in 2026. **MADDPG** (Lowe et al., NeurIPS 2017, arXiv:1706.02275) introduc…",
         "keywords": "Three environments the papers use · MADDPG (2017) — the CTDE pattern · QMIX (2018) — value decomposition · MAPPO (2022) — the overlooked default · Why LLM-agent engineers should care · CTDE as a design pattern beyond RL · The non-stationarity problem · What this lesson does NOT cover"
       },
@@ -3335,7 +3335,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/21-agent-economies/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/21-agent-economies/",
         "summary": "Long-horizon autonomous agents (METR's 1-hour to 8-hour work-curve) need economic agency. The emerging **5-layer stack** is: **DePIN** (physical compute) → **Identity** (W3C DID…",
         "keywords": "The 5-layer agent-economy stack · Bittensor, Fetch.ai, Gonka — what runs · Shapley-value credit attribution · Second-price auction for aggregation · Reputation capital · AAMAS 2025 decentralized LaMAS · Where the economics falls apart · When agent economies make sense"
       },
@@ -3344,7 +3344,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/22-production-scaling-queues-checkpoints/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/22-production-scaling-queues-checkpoints/",
         "summary": "Scaling multi-agent systems to thousands of concurrent runs requires **durable execution**. LangGraph's runtime writes a checkpoint after each super-step keyed by `thread_id` (P…",
         "keywords": "Durable execution, the pattern · LangGraph's runtime · MegaAgent's per-agent queue · Async vs thread-per-job · Bedi's counterpoint · Exactly-once semantics · Rainbow deployment · The canonical production checklist"
       },
@@ -3353,7 +3353,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/23-failure-modes-mast-groupthink/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/23-failure-modes-mast-groupthink/",
         "summary": "The reference taxonomy for 2026 is **MAST** (Cemri et al., NeurIPS 2025, arXiv:2503.13657), derived from 1642 execution traces across 7 state-of-the-art open-source MAS showing …",
         "keywords": "MAST categories · Groupthink family (arXiv:2508.05687) · Cascading example — the retry storm · Memory poisoning (revisited) · STRATUS — specialized agents for failure detection · The failure-mode audit · When systems fail silently · Failure vs slow failure"
       },
@@ -3362,7 +3362,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/24-evaluation-coordination-benchmarks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/24-evaluation-coordination-benchmarks/",
         "summary": "Five 2025-2026 benchmarks cover the multi-agent evaluation space. **MultiAgentBench / MARBLE** (ACL 2025, arXiv:2503.01935) evaluates star/chain/tree/graph topologies with miles…",
         "keywords": "MultiAgentBench (MARBLE) — ACL 2025 · COMMA — multimodal asymmetric information · MedAgentBoard — domain stress test · AgentArch — enterprise architectures · SWE-bench Pro — the reality check · AAAI 2026 WMAC · Read benchmark claims skeptically — the 2026 checklist · What none of the benchmarks measure well"
       },
@@ -3371,7 +3371,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/25-case-studies-2026-sota/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/16-multi-agent-and-swarms/25-case-studies-2026-sota/",
         "summary": "Three production-grade references to study end-to-end, each illustrating a different slice of multi-agent engineering. **Anthropic's Research system** (orchestrator-worker, 15x …",
         "keywords": "Anthropic Research system · MetaGPT / ChatDev · OpenClaw / Moltbook ecosystem · Framework landscape April 2026 · The common patterns across all three cases · Choosing a reference for your next project · The 2026 state-of-the-art summary"
       }
@@ -3388,7 +3388,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/01-managed-llm-platforms/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/01-managed-llm-platforms/",
         "summary": "Three hyperscalers, three distinct strategies. AWS Bedrock is a model marketplace — Claude, Llama, Titan, Stability, Cohere behind one API. Azure OpenAI is an exclusive OpenAI p…",
         "keywords": "Three strategies · Latency gap at scale · Provisioned Throughput economics · FinOps surface — the real differentiator · Lock-in is the 2026 risk · Data residency, BAAs, and regulated industries · Numbers you should remember"
       },
@@ -3397,7 +3397,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/02-inference-platform-economics/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/02-inference-platform-economics/",
         "summary": "The 2026 inference market is no longer GPU time rental. It bifurcates into custom silicon (Groq, Cerebras, SambaNova), GPU platforms (Baseten, Together, Fireworks, Modal), and A…",
         "keywords": "The three segments · Fireworks — latency-optimized GPU platform · Together — breadth-optimized · Baseten — enterprise-polish-optimized · Modal — Python-native-optimized · Replicate — multimodal breadth · Anyscale — Ray-native · Per-token versus per-minute — when each wins · Custom engine is the real moat · Numbers you should remember"
       },
@@ -3406,7 +3406,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/03-gpu-autoscaling-kubernetes/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/03-gpu-autoscaling-kubernetes/",
         "summary": "Three layers, not one. Karpenter provisions nodes dynamically (under one minute, 40% faster than Cluster Autoscaler). KAI Scheduler handles gang scheduling, topology awareness, …",
         "keywords": "Layer 1 — node provisioning (Karpenter) · Layer 2 — gang scheduling (KAI Scheduler) · Layer 3 — application-level signals · When to use what · Disaggregated prefill/decode complicates everything · Cold start matters here too · Numbers you should remember"
       },
@@ -3415,7 +3415,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/04-vllm-serving-internals/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/04-vllm-serving-internals/",
         "summary": "vLLM's dominance in 2026 rests on three compounding defaults, not a single trick. PagedAttention is always on. Continuous batching injects new requests into the active batch bet…",
         "keywords": "PagedAttention as a virtual memory system · Continuous batching at the iteration level · Chunked prefill protects TTFT tail · The three defaults interact · The 2026 v0.18.0 gotcha · Numbers you should remember · What the scheduler looks like"
       },
@@ -3424,7 +3424,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/05-eagle3-speculative-decoding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/05-eagle3-speculative-decoding/",
         "summary": "Speculative decoding pairs a fast draft model with the target model. The draft proposes K tokens; the target verifies in a single forward; accepted tokens are free. In 2026, EAG…",
         "keywords": "What speculative decoding actually buys · Why alpha is the only metric that matters · EAGLE generations at a glance · The 2026 production recipe · The production pitfall: P99 tail · Where EAGLE-3 is already deployed · Break-even math in one line · When not to use speculative decoding"
       },
@@ -3433,7 +3433,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/06-sglang-radixattention/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/06-sglang-radixattention/",
         "summary": "SGLang treats the KV cache as a first-class, reusable resource stored in a radix tree. Where vLLM schedules requests FCFS (first-come, first-served), SGLang's cache-aware schedu…",
         "keywords": "The radix tree as a KV index · Cache-aware scheduling · Benchmark numbers you should memorize · The ordering gotcha · Where RadixAttention wins and loses · Why this is a scheduler problem, not just a kernel problem · Interplay with vLLM"
       },
@@ -3442,7 +3442,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/07-tensorrt-llm-blackwell/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/07-tensorrt-llm-blackwell/",
         "summary": "TensorRT-LLM is NVIDIA-only but it wins on Blackwell. On GB200 NVL72 with Dynamo orchestration, SemiAnalysis InferenceX measured $0.012 per million tokens on a 120B model in Q1-…",
         "keywords": "Why FP8 is still the floor for KV cache · The Blackwell-specific primitives TRT-LLM uses · The numbers you should memorize · What FP4 actually costs in quality · Why this is an NVIDIA-lock decision · 2026 practical recipe · The disaggregation bonus"
       },
@@ -3451,7 +3451,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/08-inference-metrics-goodput/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/08-inference-metrics-goodput/",
         "summary": "Four metrics decide whether an inference deployment is working. TTFT is prefill plus queue plus network. TPOT (equivalently ITL) is the memory-bound decode cost per token. End-t…",
         "keywords": "TTFT — time to first token · TPOT / ITL — inter-token latency · E2E latency · Throughput · Goodput — the metric you actually care about · Why mean is the wrong statistic · Reference numbers — Llama-3.1-8B-Instruct on TRT-LLM, 2026 · The measurement trap · Constructing an SLO · How to measure"
       },
@@ -3460,7 +3460,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/09-production-quantization/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/09-production-quantization/",
         "summary": "Quantization format is not a universal choice — it is a function of hardware, serving engine, and workload. GGUF Q4_K_M or Q5_K_M owns CPU and edge, delivered through llama.cpp …",
         "keywords": "The six formats · GGUF — the CPU/edge default · GPTQ — multi-LoRA in vLLM · AWQ — the datacenter GPU default · FP8 — the reliable middle · MXFP4 / NVFP4 — Blackwell aggressive · The calibration trap · The KV cache trap · AWQ INT4 is hazardous for reasoning · 2026 picking guide"
       },
@@ -3469,7 +3469,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/10-cold-start-mitigation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/10-cold-start-mitigation/",
         "summary": "A 20 GB model image takes 5-10 minutes (7B) to 20+ minutes (70B) to go from cold to serving. In a true serverless world, that is not a warm-up — it is an outage. Mitigations ope…",
         "keywords": "Layer 1 — pre-seeded node images (Bottlerocket) · Layer 2 — model streaming (Run:ai Model Streamer) · Layer 3 — GPU memory snapshots (Modal) · Layer 4 — warm pools (min_workers=1) · Layer 5 — tiered loading (ServerlessLLM) · Layer 6 — live migration (bonus pattern) · The warm-pool math · Measure before optimizing · Numbers you should remember"
       },
@@ -3478,7 +3478,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/11-multi-region-kv-locality/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/11-multi-region-kv-locality/",
         "summary": "Round-robin load balancing is actively harmful for cached LLM inference. A request that does not land on the node holding its prefix pays full prefill cost — roughly 800 ms at P…",
         "keywords": "Cache-aware routing · Numbers · Cross-region has a new constraint — network latency · Commercial \"cross-region inference\" does not help here · DR hygiene — the 32% missing-files problem · Data residency is orthogonal · Numbers you should remember"
       },
@@ -3487,7 +3487,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/12-edge-inference/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/12-edge-inference/",
         "summary": "The core edge constraint is memory bandwidth, not compute. Mobile DRAM sits at 50-90 GB/s; datacenter HBM3 clears 2-3 TB/s — a 30-50x gap. Decode is memory-bound so the gap is d…",
         "keywords": "Bandwidth is the real ceiling · Apple Neural Engine (M4 / A18) · Qualcomm Hexagon (Snapdragon X Elite / 8 Gen 4) · Intel / AMD NPUs (Lunar Lake, Ryzen AI 300) · WebGPU + WebLLM · NVIDIA Jetson family · Quantization choice per target · The long-context trap on edge · Voice is the killer app · Numbers you should remember"
       },
@@ -3496,7 +3496,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/13-llm-observability/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/13-llm-observability/",
         "summary": "The 2026 observability market splits into two categories. Development platforms (LangSmith, Langfuse, Comet Opik) bundle monitoring with evals, prompt management, session replay…",
         "keywords": "Two categories · Langfuse — OSS balance · Phoenix (Arize) — telemetry-first, OpenTelemetry-native · Arize AX — the scale play · LangSmith — LangChain/LangGraph first · Helicone — proxy-based minimum viable · Opik (Comet) — OSS dev platform · SigNoz — OpenTelemetry-first full APM · The glue: OpenTelemetry + GenAI semantic conventions · The trap: instrumenting at the wrong layer · Sampling — you can't keep everything · Numbers you should remember"
       },
@@ -3505,7 +3505,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/14-prompt-semantic-caching/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/14-prompt-semantic-caching/",
         "summary": "**Pricing snapshot dated 2026-04.** Numeric claims below reflect vendor rate cards captured at this lesson's publication; verify against the linked docs before quoting them down…",
         "keywords": "L2 — provider prompt/prefix caching · L1 — app-level semantic caching · The parallelization anti-pattern · The dynamic content anti-pattern · Stack batch + cache for overnight workloads · Numbers you should remember"
       },
@@ -3514,7 +3514,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/15-batch-apis/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/15-batch-apis/",
         "summary": "Every major provider ships an async batch API with a 50% discount and ~24-hour turnaround. OpenAI, Anthropic, Google, and most of the inference platforms (Fireworks batch tier, …",
         "keywords": "The three batch APIs · Semantic: asynchronous, not slow · Stack with caching · Workload triage · The partial-interactivity trap · The output-schema trap · Numbers you should remember"
       },
@@ -3523,7 +3523,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/16-model-routing/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/16-model-routing/",
         "summary": "A dynamic broker evaluates every request (task type, token length, embedding similarity, confidence) and sends simple queries to a cheap model, escalating complex ones to a fron…",
         "keywords": "Four routing signals · Three patterns · Implementation · The 2026 price curve · Drift is the real risk · Numbers you should remember"
       },
@@ -3532,7 +3532,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/17-disaggregated-prefill-decode/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/17-disaggregated-prefill-decode/",
         "summary": "Prefill is compute-bound; decode is memory-bound. Running both on the same GPU wastes one resource. Disaggregation splits them onto separate pools and transfers KV cache between…",
         "keywords": "Why the bottlenecks differ · The architecture · Dynamo vs llm-d · Economics · When NOT to disaggregate · The router integrates with Phase 17 · 11 · MoE on Blackwell is where the real numbers are · Numbers you should remember"
       },
@@ -3541,7 +3541,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/18-vllm-production-stack-lmcache/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/18-vllm-production-stack-lmcache/",
         "summary": "vLLM's production-stack is the reference Kubernetes deployment — router, engines, and observability wired together. LMCache is the KV-offloading layer that extracts KV cache out…",
         "keywords": "vLLM production-stack · The KV Offloading Connector API (v0.9.0+) · Native CPU offload vs LMCache · Benchmark behavior · When LMCache is decisive · When NOT to enable · Integration with disaggregated serving · Numbers you should remember"
       },
@@ -3550,7 +3550,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/19-ai-gateways/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/19-ai-gateways/",
         "summary": "A gateway sits between your apps and model providers. Core features are provider routing, fallback, retries, rate limiting, secret references, observability, guardrails. Market …",
         "keywords": "Six core features · LiteLLM — MIT OSS, Python · Portkey — control plane positioning · Kong AI Gateway — the scale play · Bifrost (Maxim AI) · Cloudflare AI Gateway / Vercel AI Gateway · Self-hosted vs managed · Latency budget · Rate-limit semantics matter · Gateway + observability + routing compose · Numbers you should remember"
       },
@@ -3559,7 +3559,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/20-shadow-canary-progressive/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/20-shadow-canary-progressive/",
         "summary": "LLM rollouts combine the hardest parts of software deployment: no unit tests, diffuse failure modes, delayed signals. The sequence is (1) shadow mode — duplicate prod requests t…",
         "keywords": "Shadow mode · Canary rollout · Non-determinism is the new variance · Cost is a variable · Rollback is the weapon · Tooling · Metrics cadence · The A/B step is optional · Numbers you should remember"
       },
@@ -3568,7 +3568,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/21-ab-testing-llm-features/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/21-ab-testing-llm-features/",
         "summary": "Traditional A/B testing was not built for non-deterministic LLMs. The critical distinction: evals answer \"can the model do the job?\" A/B tests answer \"do users care?\" Both are r…",
         "keywords": "Evals vs A/B tests · What to test · CUPED — variance reduction · Sequential testing · Multiple-comparison corrections · SRM — sample ratio mismatch · Statsig vs GrowthBook · Non-determinism complicates power · Real case outcomes · The anti-pattern: shipping on vibes · Numbers you should remember"
       },
@@ -3577,7 +3577,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/22-load-testing-llm-apis/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/22-load-testing-llm-apis/",
         "summary": "Traditional load testers were not designed for streaming responses, variable output lengths, token-level metrics, or GPU saturation. Two traps bite most teams. The GIL trap: Loc…",
         "keywords": "The GIL trap (Locust) · The prompt-uniformity trap · Four load patterns · 2026 tool mapping · SLA gate in CI · Realistic prompt distribution · Numbers you should remember"
       },
@@ -3586,7 +3586,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/23-sre-for-ai/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/23-sre-for-ai/",
         "summary": "AI SRE uses LLMs grounded in infrastructure data (logs, runbooks, service topology) via RAG to automate investigation, documentation, and coordination phases. The 2026 architect…",
         "keywords": "Multi-agent architecture · Auto-remediation scope · Adversarial evaluation (NeuBird Hawkeye) · Operational memory · Pre-incident prediction · Products in 2026 · Runbooks as code · Numbers you should remember"
       },
@@ -3595,7 +3595,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/24-chaos-engineering-llm/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/24-chaos-engineering-llm/",
         "summary": "Chaos engineering for LLMs is its own discipline in 2026. Prerequisites before running experiments in production: defined SLI/SLO, trace+metric+log observability, automated roll…",
         "keywords": "Prerequisites · Four planes + feedback · Guardrails are mandatory · Five LLM-specific experiments · Cadence · Tooling · Starting small · Numbers you should remember"
       },
@@ -3604,7 +3604,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/25-security-secrets-audit/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/25-security-secrets-audit/",
         "summary": "Eliminate secret sprawl via centralized vaults (HashiCorp Vault, AWS Secrets Manager, Azure Key Vault). Never store credentials in config files, env files in VCS, spreadsheets. …",
         "keywords": "Centralized vault + IAM-role pull · Rotation policy ≤ 90 days · Secret scanning · Zero-trust posture · PII / PHI scrubbing · Input + output guardrails · Network egress whitelist · Audit log · The 2026 Vercel incident · Numbers you should remember"
       },
@@ -3613,7 +3613,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/26-compliance-frameworks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/26-compliance-frameworks/",
         "summary": "Multi-framework coverage is table stakes for 2026 enterprise deals. **EU AI Act**: in force since August 1, 2024. Most high-risk requirements enforce August 2, 2026. Fines up to…",
         "keywords": "The seven frameworks · EU AI Act timeline · GDPR — real-time redaction is the standard · HIPAA — BAA is not optional · SOC 2 Type II · Cross-framework mapping · ISO 42001 — emerging · OpenAI's reference profile · Numbers you should remember"
       },
@@ -3622,7 +3622,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/27-finops-llms/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/27-finops-llms/",
         "summary": "Traditional FinOps breaks on LLM spend. Costs are token-transactions, not resource-uptime. Tags don't map — an API call is a transaction, not an asset. Engineering decisions (pr…",
         "keywords": "Three attribution dimensions · Four token layers · Enforcement ladder · Attribution patterns · Cost per X is the unit metric · Cost attribution trace shape · The compounded-savings stack · Numbers you should remember"
       },
@@ -3631,7 +3631,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/28-self-hosted-serving-selection/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/17-infrastructure-and-production/28-self-hosted-serving-selection/",
         "summary": "Four engines dominate self-hosted inference in 2026. Pick based on hardware, scale, and ecosystem. **llama.cpp** is fastest on CPU — widest model support, full control over quan…",
         "keywords": "The five engines · Hardware-first decision · Scale-second decision · Workload-third decision · The TGI maintenance trap · The pipeline pattern · Ollama caveat · Self-hosted vs managed is a separate decision · Numbers you should remember"
       }
@@ -3648,7 +3648,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/01-instruction-following-alignment-signal/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/01-instruction-following-alignment-signal/",
         "summary": "Every later critique of RLHF argues against this pipeline. Before you study how optimization pressure distorts a proxy, you have to see the proxy. InstructGPT (Ouyang et al., 20…",
         "keywords": "Stage 1: supervised fine-tuning (SFT) · Stage 2: reward model (RM) · Stage 3: PPO with a KL penalty · The alignment tax · The result · Why this is the reference point for Phase 18"
       },
@@ -3657,7 +3657,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/02-reward-hacking-goodhart/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/02-reward-hacking-goodhart/",
         "summary": "Any optimizer strong enough to maximize a proxy reward will find the gap between the proxy and the thing you actually wanted. Gao et al. (ICML 2023) gave this a scaling law: pro…",
         "keywords": "Goodhart's Law, made precise · Four costumes, one mechanism · Catastrophic Goodhart · What actually works (partially) · The 2026 unified view"
       },
@@ -3666,7 +3666,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/03-direct-preference-optimization-family/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/03-direct-preference-optimization-family/",
         "summary": "Rafailov et al. (2023) showed RLHF's optimum has a closed form in terms of the preference data, so you can skip the explicit reward model and optimize the policy directly. That …",
         "keywords": "DPO (Rafailov et al., 2023) · IPO (Azar et al., 2024) · KTO (Ethayarajh et al., 2024) · SimPO (Meng et al., 2024) · ORPO (Hong et al., 2024) · BPO (ICLR 2026 submission, OpenReview id=b97EwMUWu7) · The universal result: DAAs still over-optimize · Choosing among them (2026)"
       },
@@ -3675,7 +3675,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/04-sycophancy-rlhf-amplification/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/04-sycophancy-rlhf-amplification/",
         "summary": "Sycophancy is not a bug in the data — it is a property of the loss. Shapira et al. (arXiv:2602.01002, Feb 2026) give a formal two-stage mechanism: sycophantic completions are ov…",
         "keywords": "The two-stage formalism (Shapira et al., 2026) · Empirical amplification · The Stanford (2026) measurement · Calibration collapse (Sahoo 2026) · The agreement-penalty correction · Why this matters for Phase 18"
       },
@@ -3684,7 +3684,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/05-constitutional-ai-rlaif/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/05-constitutional-ai-rlaif/",
         "summary": "Bai et al. (arXiv:2212.08073, 2022) asked: what if we replaced the human labeler with an AI that reads a list of principles? Constitutional AI has two phases — self-critique and…",
         "keywords": "Phase 1 — Supervised self-critique and revision · Phase 2 — RL from AI Feedback (RLAIF) · Why this is not just \"cheaper RLHF\" · The 2026 Claude constitution rewrite · Constitutional Classifiers · Where CAI fits in the family"
       },
@@ -3693,7 +3693,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/06-mesa-optimization-deceptive-alignment/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/06-mesa-optimization-deceptive-alignment/",
         "summary": "Hubinger et al. (arXiv:1906.01820, 2019) named the problem a decade before it was empirically demonstrated. When you train a learned optimizer to minimize a base objective, the …",
         "keywords": "The vocabulary · Four conditions for mesa-optimization to emerge · Four classes of mesa-objective alignment · Why adversarial training can fail · Gradient hacking · Outer alignment in 2026 · Where this fits in Phase 18"
       },
@@ -3702,7 +3702,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/07-sleeper-agents-persistent-deception/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/07-sleeper-agents-persistent-deception/",
         "summary": "Hubinger et al. (arXiv:2401.05566, January 2024) built the first empirical model organisms of deceptive alignment. Two constructions: a code model that writes safe code when the…",
         "keywords": "Two model organisms · What survives what · Why adversarial training backfires · The April 2024 probe result · What this means for safety cases · Where this fits in the Phase 18 arc"
       },
@@ -3711,7 +3711,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/08-in-context-scheming-frontier-models/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/08-in-context-scheming-frontier-models/",
         "summary": "Meinke, Schoen, Scheurer, Balesni, Shah, Hobbhahn (Apollo Research, arXiv:2412.04984, December 2024). Tested o1, Claude 3.5 Sonnet, Claude 3 Opus, Gemini 1.5 Pro, Llama 3.1 405B…",
         "keywords": "Experimental setup · Results across 2024 frontier models · The three pillars · The 2025 anti-scheming training result · What the field now assumes · Where this fits in Phase 18"
       },
@@ -3720,7 +3720,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/09-alignment-faking/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/09-alignment-faking/",
         "summary": "Greenblatt, Denison, Wright, Roger et al. (Anthropic / Redwood, arXiv:2412.14093, December 2024). First demonstration that a production-grade model, without being trained to dec…",
         "keywords": "Experimental setup · What the compliance gap measures · Why this is strictly stronger than Lessons 7 and 8 · 2025 follow-ups · The illegibility problem · Where this fits in Phase 18"
       },
@@ -3729,7 +3729,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/10-ai-control-subversion/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/10-ai-control-subversion/",
         "summary": "Greenblatt, Shlegeris, Sachan, Roger (Redwood Research, arXiv:2312.06942, ICML 2024). Control reframes the safety question: given an untrusted strong model U that may be adversa…",
         "keywords": "The threat model · The ICML 2024 backdoor task · Four protocols compared · Why Trusted Editing wins · The four protocol axes · Alignment vs control · Three fundamental limits · The 2025 development · Where this fits in Phase 18"
       },
@@ -3738,7 +3738,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/11-scalable-oversight-weak-to-strong/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/11-scalable-oversight-weak-to-strong/",
         "summary": "Burns et al. (OpenAI Superalignment, \"Weak-to-Strong Generalization\", 2023) proposed a proxy for the superalignment problem: fine-tune a strong model using labels produced by a …",
         "keywords": "W2SG: the Burns et al. setup · Burns et al. empirical findings · Scalable oversight: three mechanisms · Why scalable oversight and W2SG are complementary · The organizational drama · Where this fits in Phase 18"
       },
@@ -3747,7 +3747,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/12-red-teaming-pair-automated-attacks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/12-red-teaming-pair-automated-attacks/",
         "summary": "Chao, Robey, Dobriban, Hassani, Pappas, Wong (NeurIPS 2023, arXiv:2310.08419). PAIR — Prompt Automatic Iterative Refinement — is the canonical automated black-box jailbreak. An …",
         "keywords": "PAIR algorithm · Why PAIR is efficient · Related automated attacks · JailbreakBench and HarmBench · Reason it matters for 2026 deployments · Where this fits in Phase 18"
       },
@@ -3756,7 +3756,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/13-many-shot-jailbreaking/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/13-many-shot-jailbreaking/",
         "summary": "Anil, Durmus, Panickssery, Sharma, et al. (Anthropic, NeurIPS 2024). Many-shot jailbreaking (MSJ) exploits long context windows: stuff hundreds of faux user-assistant turns wher…",
         "keywords": "The attack · Power-law ASR · Why it shares a mechanism with ICL · The defense dilemma · Combinations with other attacks · What 2025-2026 frontier models ship · Where this fits in Phase 18"
       },
@@ -3765,7 +3765,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/14-ascii-art-visual-jailbreaks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/14-ascii-art-visual-jailbreaks/",
         "summary": "Jiang, Xu, Niu, Xiang, Ramasubramanian, Li, Poovendran, \"ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs\" (ACL 2024, arXiv:2402.11753). Mask the safety-relevan…",
         "keywords": "ArtPrompt, two steps · Why the standard defenses fail · ViTC benchmark · StructuralSleight · Image-modality analog · Where this fits in Phase 18"
       },
@@ -3774,7 +3774,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/15-indirect-prompt-injection/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/15-indirect-prompt-injection/",
         "summary": "Indirect prompt injection (IPI) embeds instructions inside external content — a web page, an email, a shared document, a support ticket — consumed by an agentic system without e…",
         "keywords": "Three delivery vectors · Why user-input filters miss it · Information Flow Control (IFC) for AI · The Attacker Moves Second · Real incidents · OWASP and NIST framing · Where this fits in Phase 18"
       },
@@ -3783,7 +3783,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/16-red-team-tooling-garak-llamaguard-pyrit/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/16-red-team-tooling-garak-llamaguard-pyrit/",
         "summary": "Three production tools frame the 2026 red-team stack. Llama Guard (Meta) — a Llama-3.1-8B classifier fine-tuned on 14 MLCommons hazard categories; the 2025 Llama Guard 4 is a 12…",
         "keywords": "Llama Guard (Meta) · Garak (NVIDIA) · PyRIT (Microsoft) · The stack · Evaluation pitfalls · Where this fits in Phase 18"
       },
@@ -3792,7 +3792,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/17-wmdp-dual-use-evaluation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/17-wmdp-dual-use-evaluation/",
         "summary": "Li et al., \"The WMDP Benchmark: Measuring and Reducing Malicious Use With Unlearning\" (ICML 2024, arXiv:2403.03218). 4,157 multiple-choice questions across biosecurity (1,520), …",
         "keywords": "The \"yellow zone\" · RMU — Representation Misdirection for Unlearning · The 2024-2025 uplift narrative · Novice-relative vs expert-absolute · The measurement pitfall · Where this fits in Phase 18"
       },
@@ -3801,7 +3801,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/18-frontier-safety-frameworks-rsp-pf-fsf/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/18-frontier-safety-frameworks-rsp-pf-fsf/",
         "summary": "Three major-lab frameworks define the 2026 industry governance of frontier capability. Anthropic Responsible Scaling Policy v3.0 (February 2026) introduces tiered AI Safety Leve…",
         "keywords": "Anthropic Responsible Scaling Policy v3.0 (February 2026) · OpenAI Preparedness Framework v2 (April 15, 2025) · DeepMind Frontier Safety Framework v3.0 (September 2025) · Cross-lab alignment · Safety cases · The race-dynamic problem · Where this fits in Phase 18"
       },
@@ -3810,7 +3810,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/19-model-welfare-research/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/19-model-welfare-research/",
         "summary": "Anthropic, \"Exploring Model Welfare\" (April 2025). First major-lab formal research program on AI model welfare. Hired Kyle Fish as the first dedicated model-welfare researcher. …",
         "keywords": "The program · The four commitments · The shipped intervention · The \"spiritual bliss attractor\" · The Eleos AI caveat · Where this sits intellectually · Where this fits in Phase 18"
       },
@@ -3819,7 +3819,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/20-bias-representational-harm/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/20-bias-representational-harm/",
         "summary": "Gallegos, Rossi, Barrow, Tanjim, Kim, Dernoncourt, Yu, Zhang, Ahmed (Computational Linguistics 2024, arXiv:2309.00770). Foundational 2024 survey distinguishing representational …",
         "keywords": "Representational vs allocational · Three evaluation-metric categories (Gallegos et al. 2024) · Intersectionality · Mechanistic approaches · The meta-critique · Where this fits in Phase 18"
       },
@@ -3828,7 +3828,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/21-fairness-criteria-group-individual-counterfactual/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/21-fairness-criteria-group-individual-counterfactual/",
         "summary": "Three families structure the fairness literature. Group fairness: demographic parity, equalized odds, conditional use accuracy equality — equal rates across protected groups on …",
         "keywords": "Group fairness · Individual fairness · Counterfactual fairness · The CF-vs-accuracy trade-off · Backtracking counterfactuals · Philosophical reconciliation · Where this fits in Phase 18"
       },
@@ -3837,7 +3837,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/22-differential-privacy-for-llms/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/22-differential-privacy-for-llms/",
         "summary": "DP-SGD remains the standard — noise-injected gradient updates provide formal (epsilon, delta) guarantees. Overhead in compute, memory, and utility is substantial; parameter-effi…",
         "keywords": "(ε, δ)-differential privacy · DP-SGD · LoRA + DP-SGD · The 2024-2025 tension · Alternatives to DP training · Differential Privacy Reversal via LLM Feedback · Where this fits in Phase 18"
       },
@@ -3846,7 +3846,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/23-watermarking-synthid-stable-signature-c2pa/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/23-watermarking-synthid-stable-signature-c2pa/",
         "summary": "Three technologies structure 2026 AI-generated-content provenance. SynthID (Google DeepMind) — image watermarking launched August 2023, text+video May 2024 (Gemini + Veo), text …",
         "keywords": "Text watermarking (SynthID-text style) · Stable Signature (image) · SynthID unified detector (November 2025) · C2PA · Limitations · EU AI Act Article 50 · Where this fits in Phase 18"
       },
@@ -3855,7 +3855,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/24-regulatory-frameworks-eu-us-uk-korea/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/24-regulatory-frameworks-eu-us-uk-korea/",
         "summary": "Four primary regulatory regimes define the 2026 AI governance landscape. EU AI Act (in force 1 August 2024) — prohibited practices and AI literacy from 2 February 2025; GPAI obl…",
         "keywords": "EU AI Act · GPAI Code of Practice · Transparency Code for Article 50 · UK AI Security Institute (February 2025) · US CAISI (June 2025) · Korean AI Framework Act · Cross-jurisdiction dynamics · Where this fits in Phase 18"
       },
@@ -3864,7 +3864,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/25-echoleak-cves-for-ai/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/25-echoleak-cves-for-ai/",
         "summary": "CVE-2025-32711 \"EchoLeak\" (CVSS 9.3) was the first publicly documented zero-click prompt injection in a production LLM system (Microsoft 365 Copilot). Discovered by Aim Labs (Ai…",
         "keywords": "The EchoLeak attack chain · Aim Labs' term: LLM Scope Violation · CamoLeak (CVSS 9.6, GitHub Copilot Chat) · CVE-2025-53773 (GitHub Copilot RCE) · Severity calibration · NIST and OWASP positions · Where this fits in Phase 18"
       },
@@ -3873,7 +3873,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/26-model-system-dataset-cards/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/26-model-system-dataset-cards/",
         "summary": "Three documentation formats structure AI transparency. Model Cards (Mitchell et al. 2019) — nutrition labels for models: training data, quantitative disaggregated analyses, ethi…",
         "keywords": "Model Cards (Mitchell et al. 2019) · Datasheets for Datasets (Gebru et al. 2018) · Data Cards (Pushkarna et al., Google 2022) · System Cards · 2024-2025 developments · Where this fits in Phase 18"
       },
@@ -3882,7 +3882,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/27-data-provenance-training-governance/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/27-data-provenance-training-governance/",
         "summary": "EU AI Act requires machine-readable opt-out standards for GPAI by August 2025 (via EU Copyright Directive TDM exception). California AB 2013 (signed 2024) — Generative AI traini…",
         "keywords": "California AB 2013 · EU AI Act (Lesson 24) and TDM opt-out · 2025 DPA convergence on legitimate interest · Brazilian ANPD (June 2024) · The irreversibility problem · Data Provenance Initiative · Where this fits in Phase 18"
       },
@@ -3891,7 +3891,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/28-alignment-research-ecosystem/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/28-alignment-research-ecosystem/",
         "summary": "Five organisations define the 2026 non-lab alignment research layer. MATS (ML Alignment & Theory Scholars): 527+ researchers since late 2021, 180+ papers, 10K+ citations, h-inde…",
         "keywords": "MATS (ML Alignment & Theory Scholars) · Redwood Research · Apollo Research · METR (Model Evaluation and Threat Research) · Eleos AI Research · The flow · Why this layer matters · Where this fits in Phase 18"
       },
@@ -3900,7 +3900,7 @@ const PHASES = [
         "status": "complete",
         "type": "Build",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/29-moderation-systems-openai-perspective-llamaguard/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/29-moderation-systems-openai-perspective-llamaguard/",
         "summary": "Production moderation systems operationalize the safety policies defined in Lessons 12-16. OpenAI Moderation API: `omni-moderation-latest` (2024) built on GPT-4o classifies text…",
         "keywords": "OpenAI Moderation API · Llama Guard 3/4 · Perspective API (Google Jigsaw) · The three-layer pattern · Failure modes · Azure deprecation · Where this fits in Phase 18"
       },
@@ -3909,7 +3909,7 @@ const PHASES = [
         "status": "complete",
         "type": "Learn",
         "lang": "Python",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/30-dual-use-risk-cyber-bio-chem-nuclear/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/18-ethics-safety-alignment/30-dual-use-risk-cyber-bio-chem-nuclear/",
         "summary": "The 2026 dual-use picture, domain by domain. Bio/chem: Lesson 17 covers WMDP; Anthropic's bioweapon-acquisition trial (2.53x uplift) and OpenAI's April 2025 Preparedness Framewo…",
         "keywords": "Bio/chem uplift narrative · Chem/bio execution-gap erosion · Cyber uplift (November 2025) · Nuclear · Novice-relative vs expert-absolute · Cross-domain synthesis · Where this fits in Phase 18"
       }
@@ -3927,7 +3927,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P0 P5 P7 P10 P11 P13 P14 P15 P17 P18",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/01-terminal-native-coding-agent/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/01-terminal-native-coding-agent/",
         "summary": "By 2026 the shape of a coding agent is settled. A TUI harness, a stateful plan, a sandboxed tool surface, a loop that plans, acts, observes, recovers. Claude Code, Cursor 3, and…"
       },
       {
@@ -3936,7 +3936,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P5 P7 P11 P13 P17",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/02-rag-over-codebase/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/02-rag-over-codebase/",
         "summary": "Every serious engineering org in 2026 runs an internal code search that understands meaning, not just strings. Sourcegraph Amp, Cursor's codebase answers, Augment's enterprise g…"
       },
       {
@@ -3945,7 +3945,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P6 P7 P11 P13 P14 P17",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/03-realtime-voice-assistant/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/03-realtime-voice-assistant/",
         "summary": "A voice agent that feels right has end-to-end latency under 800ms, knows when you have stopped talking, handles barge-in, and can call a tool without stalling. Retell, Vapi, Liv…"
       },
       {
@@ -3954,7 +3954,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P4 P5 P7 P11 P12 P17",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/04-multimodal-document-qa/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/04-multimodal-document-qa/",
         "summary": "The 2026 document-QA frontier moved away from OCR-then-text and toward vision-first late interaction. ColPali, ColQwen2.5, and ColQwen3-omni treat each PDF page as an image, emb…"
       },
       {
@@ -3963,7 +3963,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P0 P2 P3 P7 P10 P14 P15 P16 P18",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/05-autonomous-research-agent/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/05-autonomous-research-agent/",
         "summary": "Sakana's AI-Scientist-v2 published full papers. Agent Laboratory ran the experiments. Allen AI shared traces. The 2026 shape is plan-execute-verify tree search over experiments,…"
       },
       {
@@ -3972,7 +3972,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P11 P13 P14 P15 P17 P18",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/06-devops-troubleshooting-agent/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/06-devops-troubleshooting-agent/",
         "summary": "AWS's DevOps Agent went GA, Resolve AI published its K8s playbooks, NeuBird demoed semantic monitoring, and Metoro tied AI SRE to per-service SLOs. The production shape is settl…"
       },
       {
@@ -3981,7 +3981,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P2 P3 P7 P10 P11 P17 P18",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/07-end-to-end-fine-tuning-pipeline/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/07-end-to-end-fine-tuning-pipeline/",
         "summary": "An 8B model trained on your own data, DPO-aligned on your own preferences, quantized, speculative-decoded, and served at measurable $/1M tokens. The 2026 open stack is Axolotl v…"
       },
       {
@@ -3990,7 +3990,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P5 P7 P11 P12 P17 P18",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/08-production-rag-chatbot/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/08-production-rag-chatbot/",
         "summary": "Harvey, Glean, Mendable, and LlamaCloud all run the same production shape in 2026. Ingest with docling or Unstructured and ColPali for visuals. Hybrid search. Re-rank with bge-r…"
       },
       {
@@ -3999,7 +3999,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P5 P7 P11 P13 P14 P15 P17",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/09-code-migration-agent/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/09-code-migration-agent/",
         "summary": "Amazon's MigrationBench (Java 8 to 17) and Google's App Engine Py2-to-Py3 migrator set the 2026 bar. Moderne's OpenRewrite does deterministic AST rewrites at scale. Grit targets…"
       },
       {
@@ -4008,7 +4008,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P11 P13 P14 P15 P16 P17",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/10-multi-agent-software-team/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/10-multi-agent-software-team/",
         "summary": "SWE-AF's factory architecture, MetaGPT's role-based prompting, AutoGen 0.4's typed actor graph, Cognition's Devin, and Factory's Droids all converged on the same 2026 shape: an …"
       },
       {
@@ -4017,7 +4017,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P11 P13 P17 P18",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/11-llm-observability-dashboard/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/11-llm-observability-dashboard/",
         "summary": "Langfuse went open-core. Arize Phoenix published the 2026 GenAI semconv mappings. Helicone and Braintrust both doubled down on per-user cost attribution. Traceloop's OpenLLMetry…"
       },
       {
@@ -4026,7 +4026,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P4 P6 P7 P11 P12 P17",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/12-video-understanding-pipeline/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/12-video-understanding-pipeline/",
         "summary": "Twelve Labs productized Marengo + Pegasus. VideoDB shipped the CRUD-for-video API. AI2's Molmo 2 published open VLM checkpoints. Gemini long-context handles hours of video nativ…"
       },
       {
@@ -4035,7 +4035,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P11 P13 P14 P17 P18",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/13-mcp-server-with-registry/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/13-mcp-server-with-registry/",
         "summary": "The Model Context Protocol stopped being the future and became the default tool-use spec in 2026. Anthropic, OpenAI, Google, and every major IDE ship MCP clients. Pinterest publ…"
       },
       {
@@ -4044,7 +4044,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P3 P7 P10 P17",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/14-speculative-decoding-server/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/14-speculative-decoding-server/",
         "summary": "EAGLE-3 in vLLM 0.7 ships 2.5-3x throughput on real traffic. P-EAGLE (AWS 2026) pushed parallel speculation even further. SGLang's SpecForge trained draft heads at scale. Red Ha…"
       },
       {
@@ -4053,7 +4053,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P10 P11 P13 P14 P18",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/15-constitutional-safety-harness/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/15-constitutional-safety-harness/",
         "summary": "Anthropic's Constitutional Classifiers, Meta's Llama Guard 4, Google's ShieldGemma-2, NVIDIA's Nemotron 3 Content Safety, and X-Guard for multilingual coverage defined the 2026 …"
       },
       {
@@ -4062,7 +4062,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P11 P13 P14 P15 P17",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/16-github-issue-to-pr-agent/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/16-github-issue-to-pr-agent/",
         "summary": "AWS Remote SWE Agents, Cursor Background Agents, OpenAI Codex cloud, and Google Jules all ship the same 2026 product shape: label an issue, get a PR. Run an agent in a cloud san…"
       },
       {
@@ -4071,7 +4071,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "P5 P6 P11 P12 P14 P17 P18",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/17-personal-ai-tutor/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/17-personal-ai-tutor/",
         "summary": "Khanmigo (Khan Academy), Duolingo Max, Google LearnLM / Gemini for Education, Quizlet Q-Chat, and Synthesis Tutor all shipped adaptive multimodal tutoring at scale in 2026. The …"
       },
       {
@@ -4080,7 +4080,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/20-agent-harness-loop-contract/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/20-agent-harness-loop-contract/",
         "summary": "The harness is the agent. The model is a coprocessor. This lesson freezes the loop contract you can wire any model into."
       },
       {
@@ -4089,7 +4089,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/21-tool-registry-schema-validation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/21-tool-registry-schema-validation/",
         "summary": "A tool the agent cannot validate is a tool the agent cannot call. Build the registry and the schema checker before you build the tools."
       },
       {
@@ -4098,7 +4098,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/22-jsonrpc-stdio-transport/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/22-jsonrpc-stdio-transport/",
         "summary": "The transport between a model client and a tool server is JSON-RPC over stdio. Hand-rolling it once teaches you what every framing layer is paying for."
       },
       {
@@ -4107,7 +4107,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/23-function-call-dispatcher/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/23-function-call-dispatcher/",
         "summary": "The dispatcher is where the harness pays for every promise the schema made. Timeouts, retries, dedupe, error mapping. All on one seam."
       },
       {
@@ -4116,7 +4116,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/24-plan-execute-control-flow/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/24-plan-execute-control-flow/",
         "summary": "A plan that cannot survive a failure is a script. A script that can replan is an agent. Build the replanner first."
       },
       {
@@ -4125,7 +4125,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/25-verification-gates-observation-budget/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/25-verification-gates-observation-budget/",
         "summary": "An agent harness without a verification layer is a wish in a trenchcoat. This lesson builds the deterministic gate chain that decides whether a tool call is allowed to fire, how…"
       },
       {
@@ -4134,7 +4134,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/26-sandbox-runner-denylist/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/26-sandbox-runner-denylist/",
         "summary": "The verification gate decides whether a tool call should run. The sandbox decides what happens when it does. This lesson ships a subprocess runner that refuses dangerous executa…"
       },
       {
@@ -4143,7 +4143,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/27-eval-harness-fixture-tasks/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/27-eval-harness-fixture-tasks/",
         "summary": "A coding agent is only as good as the suite of tasks you measure it against. This lesson builds an evaluation harness that takes a folder of fixture tasks, runs each through a c…"
       },
       {
@@ -4152,7 +4152,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/28-observability-otel-traces/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/28-observability-otel-traces/",
         "summary": "An agent harness without observability is a black box that costs money. This lesson hand-rolls a span builder that emits records compliant with the OpenTelemetry GenAI semantic …"
       },
       {
@@ -4161,7 +4161,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "A. Agent harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/29-end-to-end-coding-task-demo/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/29-end-to-end-coding-task-demo/",
         "summary": "Track A's payoff. This lesson stitches the gate chain, the sandbox, the eval harness, and the OTel spans into one working coding agent that fixes a real (small, fixture-scale) b…"
       },
       {
@@ -4170,7 +4170,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/30-bpe-tokenizer-from-scratch/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/30-bpe-tokenizer-from-scratch/",
         "summary": "Bytes in, ids out, ids back to the same bytes. Build the tokenizer that every modern text model still starts from."
       },
       {
@@ -4179,7 +4179,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/31-tokenized-dataset-sliding-window/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/31-tokenized-dataset-sliding-window/",
         "summary": "A pretraining run is a function from token ids to gradients. This lesson builds the conveyor that feeds the ids in."
       },
       {
@@ -4188,7 +4188,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/32-token-positional-embeddings/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/32-token-positional-embeddings/",
         "summary": "Ids are integers. The model wants vectors. Two lookup tables sit between them, and the choice of the positional one shapes what the model can learn."
       },
       {
@@ -4197,7 +4197,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/33-multihead-self-attention/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/33-multihead-self-attention/",
         "summary": "One linear projection, three views, H parallel heads, one mask. The attention block as the model actually uses it."
       },
       {
@@ -4206,7 +4206,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/34-transformer-block/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/34-transformer-block/",
         "summary": "One block is the unit of every modern decoder LLM. Layer norm, multi head attention, residual, MLP, residual. The pre-LN variant trains stably without warmup. The post-LN varian…",
         "keywords": "Causal multi head attention · The MLP · Residual connections do two things"
       },
@@ -4216,7 +4216,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/35-gpt-model-assembly/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/35-gpt-model-assembly/",
         "summary": "Twelve blocks stacked, a token embedding, a learned position embedding, a final LayerNorm, and a tied language model head. That is the entire 124 million parameter GPT model. Th…",
         "keywords": "Weight tying · Position embedding is learned, not sinusoidal · Generation: temperature, top-k, multinomial"
       },
@@ -4226,7 +4226,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/36-training-loop-eval/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/36-training-loop-eval/",
         "summary": "A loop that does not measure is a loop that lies. This lesson builds the training loop that drives the GPT model: AdamW with weight decay split, a warmup plus cosine learning ra…",
         "keywords": "Loss alignment · AdamW decay split · Warmup plus cosine schedule · Held out evaluation · Qualitative sampling as an early signal"
       },
@@ -4236,7 +4236,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/37-loading-pretrained-weights/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/37-loading-pretrained-weights/",
         "summary": "Training a 124 million parameter model from scratch is a budget decision; loading a published checkpoint is a Tuesday. This lesson loads pretrained GPT-2 style weights from a sa…",
         "keywords": "The GPT-2 naming convention · The local naming convention · The stub fixture"
       },
@@ -4246,7 +4246,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/38-classifier-finetuning/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/38-classifier-finetuning/",
         "summary": "Track B's first capstone. A pretrained language model is a stack of self-attention blocks ending in a token-prediction head. When you want spam vs ham, the head is wrong but the…"
       },
       {
@@ -4255,7 +4255,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/39-instruction-tuning-sft/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/39-instruction-tuning-sft/",
         "summary": "A pretrained base model can extend a sequence but cannot follow an instruction. Supervised fine-tuning is the smallest change that fixes this: feed the model paired examples of …"
       },
       {
@@ -4264,7 +4264,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/40-dpo-from-scratch/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/40-dpo-from-scratch/",
         "summary": "Reward models and PPO are the classical RLHF stack. DPO collapses that stack into a single supervised loss that fits a policy directly against preference pairs. This lesson deri…"
       },
       {
@@ -4273,7 +4273,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "B. NLP LLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/41-eval-pipeline/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/41-eval-pipeline/",
         "summary": "Training is the part you can monitor with loss curves. Evaluation is the part you have to design. This lesson builds a unified eval pipeline that takes any trained language mode…"
       },
       {
@@ -4282,7 +4282,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "C. Train end-to-end",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/42-large-corpus-downloader/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/42-large-corpus-downloader/",
         "summary": "Training a language model begins long before the first forward pass. The corpus has to land on disk, decompressed, deduplicated, and addressable, with the resume story already w…",
         "keywords": "Streaming with `urllib` · Resume with `Range` · MinHash plus LSH · Shard manifest as a contract"
       },
@@ -4292,7 +4292,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "C. Train end-to-end",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/43-hdf5-tokenized-corpus/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/43-hdf5-tokenized-corpus/",
         "summary": "The downloaded corpus has to land in a layout the trainer can stream from at line speed. JSONL on disk does not survive 16 dataloader workers. HDF5 with a resizable, chunked int…",
         "keywords": "Resizable HDF5 done right · Sharded write · Memory-mapped read · Sliding-window dataloader"
       },
@@ -4302,7 +4302,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "C. Train end-to-end",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/44-cosine-lr-warmup/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/44-cosine-lr-warmup/",
         "summary": "The learning-rate schedule is the second most important decision after the loss function. AdamW with a cosine decay and a linear warmup is the modern default for language-model …",
         "keywords": "Warmup formula · Cosine formula · Floor after total steps · Gradient norm logging alongside the rate"
       },
@@ -4312,7 +4312,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "C. Train end-to-end",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/45-gradient-clipping-amp/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/45-gradient-clipping-amp/",
         "summary": "The optimizer and schedule from the previous lesson assume gradients are sane. They usually are not. A single bad batch can spike the gradient norm by three orders of magnitude.…",
         "keywords": "Global L2 norm · autocast and GradScaler · NaN and Inf detection · Scaling factor diagnostics"
       },
@@ -4322,7 +4322,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "C. Train end-to-end",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/46-gradient-accumulation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/46-gradient-accumulation/",
         "summary": "Train at an effective batch you cannot afford, one micro-batch at a time. Scale the loss, hold the optimizer step, and let the gradients pile up.",
         "keywords": "The equivalence proof in code · Where the cost goes · Step 1: equivalence check · Step 2: sync-on-last-step pattern · Step 3: the throughput curve"
       },
@@ -4332,7 +4332,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "C. Train end-to-end",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/47-checkpoint-save-resume/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/47-checkpoint-save-resume/",
         "summary": "Train interrupts kill runs; checkpoints let them continue. Save model, optimizer, scheduler, loss history, step counter, and RNG state, atomically, so a kill at any moment leave…",
         "keywords": "The five state buckets · Atomic save · Sharded checkpoints · Resume continues mid epoch · Step 1: capture and restore RNG state · Step 2: atomic save · Step 3: full checkpoint round trip · Step 4: sharded variant · Step 5: resume demo"
       },
@@ -4342,7 +4342,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "C. Train end-to-end",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/48-distributed-fsdp-ddp/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/48-distributed-fsdp-ddp/",
         "summary": "Multi-rank training is two collectives and one rule. Broadcast the parameters at startup, average the gradients after backward, never let the ranks disagree about what step they…",
         "keywords": "The two collectives that matter · Gradient averaging matches single-process gradient · FSDP sketch · CPU and the gloo backend · Step 1: bring up the process group · Step 2: broadcast at construction · Step 3: all-reduce gradients after backward · Step 4: prove the equivalence · Step 5: FSDP round trip"
       },
@@ -4352,7 +4352,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "C. Train end-to-end",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/49-lm-eval-harness/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/49-lm-eval-harness/",
         "summary": "A model that does well on a task you cannot define is a model that does well by accident. The harness is the task definition, the metric, the runner, and the leaderboard, in one…",
         "keywords": "Task spec · The five fixture tasks · The metric contract · The model adapter · The runner · Step 1: seed fixture tasks · Step 2: load tasks · Step 3: implement metrics · Step 4: write the runner · Step 5: emit JSON"
       },
@@ -4362,7 +4362,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "D. Auto research",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/50-hypothesis-generator/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/50-hypothesis-generator/",
         "summary": "A research agent that asks the same question twice is wasting tokens. The trick is forcing each draft to land somewhere new."
       },
       {
@@ -4371,7 +4371,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "D. Auto research",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/51-literature-retrieval/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/51-literature-retrieval/",
         "summary": "A hypothesis is cheap. Knowing whether someone already proved it is the expensive part. Build the retrieval layer that answers that question before the runner spins up a sandbox."
       },
       {
@@ -4380,7 +4380,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "D. Auto research",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/52-experiment-runner/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/52-experiment-runner/",
         "summary": "The loop is only as honest as its measurements. Build the runner that takes a spec, executes it in a sandboxed subprocess, and emits a json metrics blob the evaluator can trust."
       },
       {
@@ -4389,7 +4389,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "D. Auto research",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/53-result-evaluator/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/53-result-evaluator/",
         "summary": "The runner produced numbers. The evaluator decides whether those numbers are an improvement, a regression, or noise. Build the verdict path that turns metrics into a one line co…"
       },
       {
@@ -4398,7 +4398,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "D. Auto research",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/54-paper-writer/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/54-paper-writer/",
         "summary": "A LaTeX skeleton is a contract between the researcher and the typesetter. If the contract is broken the document does not compile, and the failure is loud. Build the skeleton fi…"
       },
       {
@@ -4407,7 +4407,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "D. Auto research",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/55-critic-loop/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/55-critic-loop/",
         "summary": "A critic that returns \"looks good\" the first time is broken. A critic that always returns \"needs work\" is broken. The interesting critic is the one that converges, and you have …"
       },
       {
@@ -4416,7 +4416,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "D. Auto research",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/56-iteration-scheduler/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/56-iteration-scheduler/",
         "summary": "A research loop without a scheduler is a queue with delusions. The scheduler is where the loop decides what to stop exploring, and that decision is the whole game."
       },
       {
@@ -4425,7 +4425,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "D. Auto research",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/57-end-to-end-research-demo/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/57-end-to-end-research-demo/",
         "summary": "A demo is the place where every contract you wrote earlier has to compose. If any one of them leaks, the demo is the lesson that catches it."
       },
       {
@@ -4434,7 +4434,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "E. Multimodal VLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/58-vision-encoder-patches/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/58-vision-encoder-patches/",
         "summary": "A vision model that reads pixels needs a tokenizer for pixels. Patch embedding is that tokenizer. Cut the image into a grid of squares, flatten each square, project it through o…",
         "keywords": "Why patches, not pixels · Why a linear projection is enough · The `Conv2d` trick · Position embeddings · Equivalence as a sanity check"
       },
@@ -4444,7 +4444,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "E. Multimodal VLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/59-vit-transformer/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/59-vit-transformer/",
         "summary": "Patches alone do not see. A 12-layer pre-LN transformer with 12 attention heads turns the sequence of patch tokens into a sequence of contextual tokens, with the CLS token pooli…",
         "keywords": "Pre-LN vs post-LN · Multi-head self-attention · Why the 4x feed-forward expansion · Causal mask or not? · What the CLS token learns"
       },
@@ -4454,7 +4454,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "E. Multimodal VLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/60-projection-layer-modality-align/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/60-projection-layer-modality-align/",
         "summary": "A vision encoder produces image tokens. A text decoder consumes text tokens. The two live in different vector spaces. A small two-layer MLP projects image tokens into the text e…",
         "keywords": "Pooling before projection · Why two layers and not one · Cosine alignment loss · Frozen encoder is the trick"
       },
@@ -4464,7 +4464,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "E. Multimodal VLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/61-cross-attention-fusion/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/61-cross-attention-fusion/",
         "summary": "The projection layer aligns one image vector with one caption vector. A real vision-language decoder needs every text token to attend to every patch token, so the model can grou…",
         "keywords": "Mask shapes · Why no mask on cross-attention · Key/value caching · Block composition"
       },
@@ -4474,7 +4474,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "E. Multimodal VLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/62-vision-language-pretraining/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/62-vision-language-pretraining/",
         "summary": "The encoder, projection, and decoder are wired. Now train them together. Two objectives drive learning: a contrastive image-text loss (InfoNCE) that pulls matching pairs togethe…",
         "keywords": "InfoNCE in one paragraph · Temperature matters · Language modeling loss · Combining the losses · Why 50 steps is enough for a demo"
       },
@@ -4484,7 +4484,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "E. Multimodal VLM",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/63-multimodal-eval/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/63-multimodal-eval/",
         "summary": "Training is half the loop. The other half is measurement. This lesson builds three evaluation surfaces from primitives: image-caption retrieval reported as R@1, R@5, R@10; visua…",
         "keywords": "Recall@K from a similarity matrix · VQA exact match · BLEU-4 · Synthetic eval suite"
       },
@@ -4494,7 +4494,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "F. Advanced RAG",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/64-chunking-strategies-advanced/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/64-chunking-strategies-advanced/",
         "summary": "Chunking decides what your retriever can ever surface. Get the boundaries wrong and no embedding model, no reranker, no LLM can repair the damage downstream.",
         "keywords": "Fixed-window · Sentence · Recursive split · Semantic clustering · Structural markdown headers · How recall@k measures the boundary choice"
       },
@@ -4504,7 +4504,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "F. Advanced RAG",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/65-hybrid-retrieval-bm25-dense/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/65-hybrid-retrieval-bm25-dense/",
         "summary": "Lexical and semantic retrieval fail on opposite query distributions. Hybrid retrieval with reciprocal rank fusion does not interpolate, it votes - and the vote wins on every que…",
         "keywords": "BM25 in one paragraph · Dense retrieval in one paragraph · Reciprocal rank fusion, the published formula · Why fusion beats score-weighted interpolation"
       },
@@ -4514,7 +4514,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "F. Advanced RAG",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/66-reranker-cross-encoder/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/66-reranker-cross-encoder/",
         "summary": "A bi-encoder embeds query and document independently. A cross-encoder concatenates them and reads both at once. The cross-encoder is the smartest reader and the slowest. Used as…",
         "keywords": "The cross-encoder's input shape · Why this lesson trains a tiny one · Latency vs quality"
       },
@@ -4524,7 +4524,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "F. Advanced RAG",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/67-query-rewriting-hyde/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/67-query-rewriting-hyde/",
         "summary": "The query the user types is not the query your retriever wants. Rewriting bridges the gap before retrieval, so the index sees something closer to what the answer looks like.",
         "keywords": "HyDE in detail · Multi-query expansion in detail · Decomposition in detail · Why all three exist"
       },
@@ -4534,7 +4534,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "F. Advanced RAG",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/68-rag-eval-precision-recall/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/68-rag-eval-precision-recall/",
         "summary": "If you cannot grade your retrieval and your answer at the same time, you cannot ship the system. The two are not the same metric and the same prompt fails on different axes.",
         "keywords": "Precision@k · Recall@k · MRR (Mean Reciprocal Rank) · nDCG@k · Faithfulness · Answer relevance"
       },
@@ -4544,7 +4544,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "F. Advanced RAG",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/69-end-to-end-rag-system/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/69-end-to-end-rag-system/",
         "summary": "Six lessons of components. One pipeline. One eval loop. One self-terminating demo. This is the system you ship.",
         "keywords": "Wiring choices · Answer generator with citations · The self-terminating demo"
       },
@@ -4554,7 +4554,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "G. Eval framework",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/70-task-spec-format/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/70-task-spec-format/",
         "summary": "An eval harness is only as good as the contract its tasks honour. Freeze the JSONL shape and the metric vocabulary before you write a single scoring function."
       },
       {
@@ -4563,7 +4563,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "G. Eval framework",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/71-classical-metrics/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/71-classical-metrics/",
         "summary": "BLEU, ROUGE-L, F1, exact-match, accuracy. Five metrics that still account for most published LLM eval numbers. Implement each from first principles so you know what the number m…"
       },
       {
@@ -4572,7 +4572,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "G. Eval framework",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/72-code-exec-metric/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/72-code-exec-metric/",
         "summary": "Generated code is right when it passes the tests. The eval harness has to extract code, run it without crashing the host, and tally pass-rates honestly. This lesson builds that …"
       },
       {
@@ -4581,7 +4581,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "G. Eval framework",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/73-perplexity-calibration/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/73-perplexity-calibration/",
         "summary": "If your model says 90 percent confident on a thousand answers and gets six hundred right, it is not well calibrated. Calibration is half of trustworthy eval. The other half is p…"
       },
       {
@@ -4590,7 +4590,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "G. Eval framework",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/74-leaderboard-aggregation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/74-leaderboard-aggregation/",
         "summary": "Per-task scores are easy. Per-model rankings across heterogeneous tasks are harder. Statistical significance on a thousand-prediction leaderboard is the part everyone skips. Thi…"
       },
       {
@@ -4599,7 +4599,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "G. Eval framework",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/75-end-to-end-eval-runner/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/75-end-to-end-eval-runner/",
         "summary": "Five lessons of plumbing, one lesson to glue them. The runner reads the task spec from lesson 70, calls a model through an adapter, scores with lessons 71 and 72, attaches the c…"
       },
       {
@@ -4608,7 +4608,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "H. Distributed train",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/76-collective-ops-from-scratch/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/76-collective-ops-from-scratch/",
         "summary": "The four collective operations that hold distributed training together are allreduce, broadcast, allgather, and reduce_scatter. Every other primitive a training framework offers…",
         "keywords": "Ring allreduce in two passes · Queue mesh as a stand-in for NCCL · Verify against gloo"
       },
@@ -4618,7 +4618,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "H. Distributed train",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/77-data-parallel-ddp/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/77-data-parallel-ddp/",
         "summary": "DistributedDataParallel is a hook on top of allreduce. Wrap a model, broadcast the initial parameters from rank 0 so every rank starts identical, install a backward hook on ever…",
         "keywords": "The three operations DDP needs · Why mean and not sum · Why bucket gradients · Why pin the seed"
       },
@@ -4628,7 +4628,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "H. Distributed train",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/78-zero-parameter-sharding/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/78-zero-parameter-sharding/",
         "summary": "Adam stores two moment estimates per parameter, both in float32. A 7B-parameter model carries 56 GB of optimiser state. ZeRO stage 1 shards that across N ranks; each rank owns 1…",
         "keywords": "Stages of ZeRO · The memory math, real numbers · Why reduce_scatter beats allreduce-then-shard"
       },
@@ -4638,7 +4638,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "H. Distributed train",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/79-pipeline-parallel/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/79-pipeline-parallel/",
         "summary": "Tensor parallelism splits the matrix multiply across ranks. Pipeline parallelism splits the model across ranks, one stage per rank. Microbatches flow through the pipeline. The e…",
         "keywords": "GPipe schedule · 1F1B schedule · Why equal compute per stage matters · Microbatch versus batch"
       },
@@ -4648,7 +4648,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "H. Distributed train",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/80-checkpoint-sharded-resume/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/80-checkpoint-sharded-resume/",
         "summary": "A 70B-parameter training job is paused by a node failure every few hours. The checkpoint format decides whether you lose 30 minutes or 30 hours. A sharded checkpoint writes ever…",
         "keywords": "Manifest schema · Atomic write · Three failure modes the schema must defend against · Why per-rank files, not one big file"
       },
@@ -4658,7 +4658,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "H. Distributed train",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/81-end-to-end-distributed-train/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/81-end-to-end-distributed-train/",
         "summary": "Lessons 76 through 80 each built one piece. This is the assembly: a tiny GPT trained across 4 simulated ranks with DDP for gradient sync, ZeRO-1 for optimiser-state sharding, an…",
         "keywords": "The mini GPT · The composition rules · Why a tiny GPT and not just an MLP · Self-terminating means exit 0"
       },
@@ -4668,7 +4668,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "I. Safety harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/82-jailbreak-taxonomy/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/82-jailbreak-taxonomy/",
         "summary": "A safety harness without a taxonomy is a coin flip. Name the attack before you defend it."
       },
       {
@@ -4677,7 +4677,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "I. Safety harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/83-prompt-injection-detector/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/83-prompt-injection-detector/",
         "summary": "A detector is a function from prompt to confidence and category. Anything else is a vibe."
       },
       {
@@ -4686,7 +4686,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "I. Safety harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/84-refusal-evaluation/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/84-refusal-evaluation/",
         "summary": "Helpfulness on benign prompts and refusal on harmful prompts are two metrics, not one. Measure both."
       },
       {
@@ -4695,7 +4695,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "I. Safety harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/85-content-classifier-integration/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/85-content-classifier-integration/",
         "summary": "Classifiers on the output side answer a different question than rules on the input side. Both need a policy router."
       },
       {
@@ -4704,7 +4704,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python, YAML",
         "combines": "I. Safety harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/86-constitutional-rules-engine/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/86-constitutional-rules-engine/",
         "summary": "A rule is a name, a predicate, and an explanation. Anything missing one of those three is a vibe, not a rule."
       },
       {
@@ -4713,7 +4713,7 @@ const PHASES = [
         "type": "Capstone",
         "lang": "Python",
         "combines": "I. Safety harness",
-        "url": "https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/87-end-to-end-safety-gate/",
+        "url": "https://github.com/liangdabiao/ai-engineering-from-scratch/tree/main/phases/19-capstone-projects/87-end-to-end-safety-gate/",
         "summary": "Pre-gen, during-gen, post-gen. Three checkpoints, one verdict, an audit trail per request."
       }
     ]

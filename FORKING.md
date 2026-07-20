@@ -43,7 +43,7 @@ Want to teach this curriculum in a different programming language?
 ## Keeping Your Fork Updated
 
 ```bash
-git remote add upstream https://github.com/rohitg00/ai-engineering-from-scratch.git
+git remote add upstream https://github.com/liangdabiao/ai-engineering-from-scratch.git
 
 git fetch upstream
 git merge upstream/main
@@ -55,5 +55,5 @@ Not required by MIT, but appreciated:
 
 ```
 Based on AI Engineering from Scratch
-https://github.com/rohitg00/ai-engineering-from-scratch
+https://github.com/liangdabiao/ai-engineering-from-scratch
 ```

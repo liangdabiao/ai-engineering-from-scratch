@@ -72,7 +72,7 @@ git merge experiment/new-optimizer
 ### 步骤4：使用本课程仓库
 
 ```bash
-git clone https://github.com/rohitg00/ai-engineering-from-scratch.git
+git clone https://github.com/liangdabiao/ai-engineering-from-scratch.git
 cd ai-engineering-from-scratch
 
 git checkout -b my-progress
