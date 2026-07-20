@@ -1,0 +1,78 @@
+{
+  "lesson": "22-differential-privacy-for-llms",
+  "title": "面向大语言模型的差分隐私",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "(epsilon, delta)-差分隐私对随机算法 M 提供了什么保证？",
+      "options": [
+        "M 永远不会记住任何训练数据",
+        "M 在噪声范围内是确定性的",
+        "对于任意两个仅在一个样本上不同的数据集以及任意事件 S，P(M(D) in S) <= e^epsilon * P(M(D') in S) + delta，因此任何单个个体的贡献都无法被可靠推断",
+        "M 被证明等价于一个非私有算法"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "根据 Abadi 等人 2016 年的描述，以下哪项不是 DP-SGD 的步骤？",
+      "options": [
+        "采样一个小批量并计算每个样本各自的梯度",
+        "将每个样本的梯度裁剪到阈值 C",
+        "在步骤之间重新随机化模型的分词器",
+        "对裁剪后的梯度求和，并添加按 sigma * C 缩放的高斯噪声"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么 LoRA + DP-SGD 是 2025 年的常见配置？",
+      "options": [
+        "在前沿模型上做完整的 DP-SGD 代价过高；LoRA 将梯度更新限制在一个小型适配器中，减少了每个样本梯度的存储，同时仍对适配器提供 DP 保证",
+        "它将 LoRA 用作分词器",
+        "LoRA 按设计增大了 epsilon",
+        "LoRA 消除了对审计员（accountant）的需求"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "2025 年 3 月的审计（arXiv:2503.06808）是如何解决 canary-MIA 与训练数据提取之间张力的？",
+      "options": [
+        "它完全消除了对 canary 的需求",
+        "它证明了 DP-SGD 是不必要的",
+        "它表明两者衡量的是同一属性",
+        "它表明它们衡量的是不同的东西：在插入的 canary 上做的 MIA 低估了记忆程度，因为 canary 并未被优化为对隐私真正重要的、'最易被提取'的样本"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "PMixED（arXiv:2403.15638）作为 DP 训练的替代方案提供了什么？",
+      "options": [
+        "一种更快的 DP-SGD 变体",
+        "用于 Renyi DP 的新审计员（accountant）",
+        "通过下一词分布上的专家混合实现推理时差分隐私，并带聚合噪声；完全避免了 DP 训练",
+        "一种仅通过 epsilon-delta 审计来计算 epsilon 的方法"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "什么是通过 LLM 反馈的差分隐私逆转攻击？",
+      "options": [
+        "将经过 DP 训练的模型的置信度分数用作预言机来重新识别个体，即使输出不直接泄露信息",
+        "一种针对分词器熵的攻击",
+        "一种将 epsilon 重置为零的方法",
+        "针对金丝雀插入的对策"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

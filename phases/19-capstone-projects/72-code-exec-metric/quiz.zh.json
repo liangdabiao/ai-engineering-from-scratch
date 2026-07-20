@@ -1,0 +1,78 @@
+{
+  "lesson": "72-code-exec-metric",
+  "title": "代码执行指标",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么运行器为每个候选代码生成一个全新的 Python 子进程，而不是内联调用 exec？",
+      "options": [
+        "它比 exec 更快",
+        "它避免污染内置命名空间",
+        "它将超时、输出溢出和危险导入与宿主评估进程隔离",
+        "exec 在现代 Python 中已被弃用"
+      ],
+      "correct": 2,
+      "explanation": "候选代码中的无限循环或失控的内存分配只会使子进程崩溃。宿主评估进程继续推进。"
+    },
+    {
+      "stage": "pre",
+      "question": "当一个任务有三个断言，其中两个通过、一个失败时，得分是多少？",
+      "options": [
+        "1.0",
+        "0.667",
+        "0.0",
+        "0.5"
+      ],
+      "correct": 1,
+      "explanation": "得分等于通过数除以总数。三个中通过两个即为 0.667。退出码为 assertion_fail。"
+    },
+    {
+      "stage": "check",
+      "question": "当候选代码无法解析时，运行器返回哪个退出码？",
+      "options": [
+        "误差",
+        "assertion_fail",
+        "timeout",
+        "syntax_error"
+      ],
+      "correct": 3,
+      "explanation": "compile() 在运行器内部抛出 SyntaxError，内部脚本捕获它并写入 exit_code=syntax_error。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么挂钟超时才是起关键作用的管控手段，而不是导入黑名单？",
+      "options": [
+        "Python 中无法拒绝导入",
+        "大多数失败是无限循环，而有决心的攻击者可以绕过任何进程内黑名单",
+        "subprocess.run 不支持黑名单",
+        "挂钟在编译期被检查"
+      ],
+      "correct": 1,
+      "explanation": "黑名单捕获懒惰代码，超时捕获无限循环。黑名单是兜底，超时是底线。"
+    },
+    {
+      "stage": "check",
+      "question": "当 n - c < k 时，pass_at_k(n, c, k) 返回什么？",
+      "options": [
+        "零，因为样本未定义",
+        "一，因为样本必须至少包含一个通过的解决方案",
+        "c / n，即经验通过率",
+        "抛出 ValueError"
+      ],
+      "correct": 1,
+      "explanation": "如果失败数少于样本大小，则每个大小为 k 的样本必然至少包含一个通过项，因此概率为 1。"
+    },
+    {
+      "stage": "post",
+      "question": "runner 是如何暴露输出溢出的，为什么上限是 256 KB？",
+      "options": [
+        "子进程的 stdout 是流式传输的；一旦累计运行总量超过 256 KB，子进程就会被杀死，任务会被记录为 exit_code=error，详细信息为 \"output overflow\"",
+        "仅 stderr；大小与操作系统管道默认值一致",
+        "候选源代码大小，已设上限以使生成的代码保持较小",
+        "得分值，以带两位小数的百分比表示"
+      ],
+      "correct": 0,
+      "explanation": "该上限用于保护宿主机。大量输出 stdout 的候选代码会在流传输过程中被杀死；runner 会将其结果规范为 exit_code=error 且详细信息为 \"output overflow\"，而不是新设一个退出码。"
+    }
+  ]
+}

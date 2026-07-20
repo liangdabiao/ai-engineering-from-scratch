@@ -1,0 +1,102 @@
+{
+  "lesson": "05-sentiment-analysis",
+  "title": "Sentiment Analysis",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why is 'The food was not great' a hard case for naive BoW classifiers?",
+      "options": [
+        "It has no punctuation",
+        "It mixes English and French",
+        "Negation flips meaning, but bag of words discards the link between 'not' and 'great'",
+        "It contains too few tokens"
+      ],
+      "correct": 2,
+      "explanation": "BoW cannot bind 'not' to the word it negates, so the classifier misses the polarity flip."
+    },
+    {
+      "stage": "pre",
+      "question": "What two steps make up classical sentiment analysis?",
+      "options": [
+        "Translate, then classify",
+        "Embed, then cluster",
+        "Represent (vectorize text) and classify (linear model on the vector)",
+        "Search, then rank"
+      ],
+      "correct": 2,
+      "explanation": "Classical sentiment is feature extraction followed by a linear classifier."
+    },
+    {
+      "stage": "check",
+      "question": "Why does Naive Bayes work despite its 'naive' independence assumption?",
+      "options": [
+        "With sparse text features and moderate data the classifier mostly cares which side each word leans toward, not exact joint probabilities",
+        "Naive Bayes secretly learns interactions",
+        "The assumption is actually true for text",
+        "Laplace smoothing fixes dependence"
+      ],
+      "correct": 0,
+      "explanation": "Even with wrong independence, leaning-direction information per word is enough to classify well."
+    },
+    {
+      "stage": "check",
+      "question": "Why include 'NOT_' prefixed tokens during preprocessing?",
+      "options": [
+        "To normalize case",
+        "To stem the words",
+        "To turn 'good' versus 'NOT_good' into separate features that the classifier can weight oppositely",
+        "To shrink the vocabulary"
+      ],
+      "correct": 2,
+      "explanation": "Negation scoping splits negated forms into distinct features so a BoW classifier can model the flip."
+    },
+    {
+      "stage": "check",
+      "question": "Why is removing stopwords risky for sentiment analysis?",
+      "options": [
+        "Negation words ('not', 'no', 'never') are usually treated as stopwords but carry sentiment signal",
+        "Stopword lists are too long",
+        "It increases sparsity",
+        "Stopword removal breaks tokenization"
+      ],
+      "correct": 0,
+      "explanation": "默认的停用词表会丢弃否定词及类似的情感载体。"
+    },
+    {
+      "stage": "post",
+      "question": "当情感类别不平衡时，你应该报告哪个指标？",
+      "options": [
+        "宏F1（各类别F1的均值，等权重）",
+        "仅准确率",
+        "均方误差",
+        "仅微F1"
+      ],
+      "correct": 0,
+      "explanation": "宏F1迫使少数类被计入；准确率或微F1会将其掩盖。"
+    },
+    {
+      "stage": "post",
+      "question": "何时应该跳过经典模型，转而使用transformer来处理情感分析？",
+      "options": [
+        "当你有不到100个样本时",
+        "当延迟至关重要时",
+        "当你需要可解释性时",
+        "讽刺检测、长篇漂移文档、基于方面的情感分析，或低资源语言"
+      ],
+      "correct": 3,
+      "explanation": "讽刺、基于方面的以及跨语言的情感分析超出了经典词袋模型的能力范围。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么L2正则化对文本上的逻辑回归很重要？",
+      "options": [
+        "用于计算梯度所必需",
+        "避免ReLU死单元",
+        "加速矩阵求逆",
+        "稀疏的高维文本特征否则会让模型记住训练样本"
+      ],
+      "correct": 3,
+      "explanation": "L2在文本这种稀疏特征、高维的情况下防止过拟合。"
+    }
+  ]
+}

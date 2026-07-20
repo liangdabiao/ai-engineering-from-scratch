@@ -1,0 +1,78 @@
+{
+  "lesson": "12-edge-inference",
+  "title": "边缘推理 — Apple Neural Engine、Qualcomm Hexagon、WebGPU/WebLLM、Jetson",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "根据本课(lesson)内容，使移动端大语言模型推理比数据中心更慢的核心限制是什么？",
+      "options": [
+        "Wi-Fi 延迟",
+        "计算吞吐量",
+        "内存带宽（移动端 DRAM 为 50-90 GB/s，对比 HBM3 为 2-3 TB/s）",
+        "存储容量"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为何 Apple 的 Neural Engine 能避免 CPU-NPU 拷贝开销？",
+      "options": [
+        "它使用 PCIe 5.0",
+        "Core ML 禁用 KV 缓存",
+        "它在拷贝前将权重转码为 FP4",
+        "Apple Silicon 采用统一内存 — CPU 和 ANE 共享同一内存池"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "本课(lesson)推荐在浏览器中使用 WebGPU + WebLLM 的哪种量化格式？",
+      "options": [
+        "NVFP4",
+        "FP8",
+        "Q4 MLC（q4f16_1），通过 mlc_llm convert_weight 编译",
+        "GGUF Q4_K_M"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "本课(lesson)报告的 2026 年 WebGPU 移动端覆盖率大约是多少？",
+      "options": [
+        "所有浏览器 100% 覆盖",
+        "仅 iOS Safari",
+        "低于 10%",
+        "约 70-75%，Firefox Android 仍在追赶"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为何在典型手机上保留 128K 上下文不切实际？",
+      "options": [
+        "分词器(tokenizer)在 8K 以上失效",
+        "模型权重加上 32K token 的 KV 缓存再加上操作系统开销，轻易超出 8 GB RAM 预算",
+        "WebGPU 将上下文限制为 4K",
+        "iOS 禁止长上下文"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为何语音被强调为边缘推理的杀手级应用？",
+      "options": [
+        "语音代理对延迟敏感（首个 token < 500 ms），且本地推理完全消除了网络延迟",
+        "语音模型不需要 KV 缓存",
+        "语音模型总能放入 50 MB",
+        "Voice 仅在 WebAssembly 中运行"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "74-leaderboard-aggregation",
+  "title": "排行榜聚合",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么聚合器要求每个输入分数都在 [0, 1] 范围内？",
+      "options": [
+        "这是 ECE 的箱范围",
+        "如果没有统一的量纲，一个 0-100 范围的单一指标会主导各模型的平均值",
+        "Numpy 要求如此",
+        "Markdown 渲染需要保留两位小数"
+      ],
+      "correct": 1,
+      "explanation": "如果通过率(pass-rate)在 [0,1] 而 BLEU 在 [0,100]，后者会淹没平均值。归一化应在指标层完成，并在此进行检查。"
+    },
+    {
+      "stage": "pre",
+      "question": "平均分隐藏了哪些胜率(win-rate)能暴露的信息？",
+      "options": [
+        "模型是否经过良好校准",
+        "逐任务胜率能抵抗离群值和量纲偏移；平均值对两者都敏感",
+        "完成的任务数量",
+        "Bootstrap 区间"
+      ],
+      "correct": 1,
+      "explanation": "胜率逐任务统计胜利次数。一个模型可能凭借某个简单任务获得高平均分，却在大多数两两比较中落败。"
+    },
+    {
+      "stage": "check",
+      "question": "bootstrap_mean_ci 如何估计置信区间？",
+      "options": [
+        "通过对均值假设正态分布",
+        "通过对任务分数进行有放回重采样，计算每个样本的平均值，然后取 alpha/2 和 1 - alpha/2 分位数",
+        "通过解析方法计算标准差",
+        "通过调用 scipy.stats.bootstrap"
+      ],
+      "correct": 1,
+      "explanation": "对逐任务分数进行非参数百分位 Bootstrap；无分布假设，无 scipy。"
+    },
+    {
+      "stage": "check",
+      "question": "两两差异的置信区间何时报告为 `significant`（显著）？",
+      "options": [
+        "当置信区间不包含零时",
+        "当均值差异大于 0.1 时",
+        "当两个模型的任务数都超过三十时",
+        "当胜率不相等时"
+      ],
+      "correct": 0,
+      "explanation": "严格排除零的置信区间意味着在该选定水平下差异不太可能为零；这正是该课所用的操作定义。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么两两 Bootstrap 是配对的而非独立的？",
+      "options": [
+        "独立 Bootstrap 在 Python 中是非法的",
+        "配对 Bootstrap 尊重同一任务同时输入两个模型；在重采样前逐任务计算差异",
+        "配对 Bootstrap 运行更快",
+        "配对 Bootstrap 是 numpy 唯一支持的"
+      ],
+      "correct": 1,
+      "explanation": "配对自助法(Paired bootstrap)降低了噪声：我们在任务上采样，而不是在模型上采样，因此每次迭代的比较都基于相同的任务集。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么聚合器在返回总体数字的同时，还返回各分类的平均值？",
+      "options": [
+        "JSON Schema 要求如此",
+        "总体平均值可能掩盖分类级别的弱点（整体不错，但代码很差）；各分类平均值能暴露这一点",
+        "各分类平均值比总体平均值运行得更快",
+        "Markdown 渲染需要它"
+      ],
+      "correct": 1,
+      "explanation": "一个模型可以通过各方面都还行，或者通过在某一分类上占绝对优势，从而在总体上胜出。各分类细分能让使用者看清是哪一种情况。"
+    }
+  ]
+}

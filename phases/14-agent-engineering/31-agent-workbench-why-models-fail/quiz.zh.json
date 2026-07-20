@@ -1,0 +1,90 @@
+{
+  "lesson": "31-agent-workbench-why-models-fail",
+  "title": "Agent Workbench 工程：为何能力强的模型仍然失败",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "该课(lesson)认为 agent 在真实任务上失败的根本原因是什么？",
+      "options": [
+        "模型参数不足",
+        "Workbench 失败：模型周围缺失各类‘面(surfaces)’，而非 LLM 自身的局限",
+        "网络缓慢",
+        "训练数据过时"
+      ],
+      "correct": 1,
+      "explanation": "模型对 Python 本身没错；它错在‘工作’这件事上。模型周围的各类‘面(surfaces)’缺失了。"
+    },
+    {
+      "stage": "pre",
+      "question": "该课(lesson)提到的七种 workbench 面(surfaces)是什么？",
+      "options": [
+        "指令、状态、范围、反馈、验证、审查、交接",
+        "训练、评估、部署、监控、再训练、扩展、退役",
+        "规划、行动、反思、精炼、辩论、投票、发布",
+        "读、写、执行、分叉、退出、等待、终止"
+      ],
+      "correct": 0,
+      "explanation": "这七种面(surfaces)是指令、状态、范围、反馈、验证、审查、交接。"
+    },
+    {
+      "stage": "check",
+      "question": "以下哪项不是该课(lesson)将面(surfaces)映射到的八种分布式系统原语之一？",
+      "options": [
+        "函数(Function)",
+        "工作进程(Worker)",
+        "触发器(Trigger)",
+        "反向传播(Backpropagation)"
+      ],
+      "correct": 3,
+      "explanation": "这八种原语是函数(Function)、工作进程(Worker)、触发器(Trigger)、运行时(Runtime)、HTTP/RPC、队列(Queue)、会话持久化(Session Persistence)、授权策略(Authorization Policy)。"
+    },
+    {
+      "stage": "check",
+      "question": "Vercel 报告的 harness 改动将成功率从多少提升到了多少？",
+      "options": [
+        "20% 到 60%",
+        "80% 到 100%，通过删除 agent 80% 的工具",
+        "0% 到 100%，通过切换模型",
+        "50% 到 70%，通过添加 RAG"
+      ],
+      "correct": 1,
+      "explanation": "删除 80% 的工具使 Vercel 的 agent 成功率从 80% 提升到 100%。"
+    },
+    {
+      "stage": "check",
+      "question": "Terminal Bench 2.0 在模型与 harness 方面说明了什么？",
+      "options": [
+        "仅由模型决定排名",
+        "仅改变 harness，同一模型从排名前 30 之外升至第五",
+        "harness 的改变无关紧要",
+        "只有 GPU 才重要"
+      ],
+      "correct": 1,
+      "explanation": "LangChain 的 Agent Harness 剖析：相同的模型，harness 改变，排名提升 25+。"
+    },
+    {
+      "stage": "post",
+      "question": "当你听到新的 harness 词汇时，该课(Lesson)建议怎么做？",
+      "options": [
+        "逐字采用该词汇",
+        "在采用之前，先翻译回原语（函数(Function)、worker、触发器、运行时、HTTP/RPC、队列、持久化、策略）",
+        "拒绝它",
+        "等待 OpenAI 将其标准化"
+      ],
+      "correct": 1,
+      "explanation": "从原语出发推理，而非依赖供应商的分类法；词汇会变，但工程不变。"
+    },
+    {
+      "stage": "post",
+      "question": "聊天历史相对于工作台处于什么位置？",
+      "options": [
+        "聊天是记录系统",
+        "聊天是易失的；仓库是记录系统",
+        "两者等价",
+        "两者都不重要"
+      ],
+      "correct": 1,
+      "explanation": "循环在状态文件上闭合，而非在聊天历史上。"
+    }
+  ]
+}

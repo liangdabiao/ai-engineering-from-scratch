@@ -1,0 +1,90 @@
+{
+  "lesson": "22-voice-agents-pipecat-livekit",
+  "title": "Voice Agents: Pipecat and LiveKit",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Which two flow directions does a Pipecat pipeline use?",
+      "options": [
+        "Read and write",
+        "DOWNSTREAM (source to sink) and UPSTREAM (feedback, cancel, barge-in)",
+        "Inbound and outbound",
+        "Hot and cold"
+      ],
+      "correct": 1,
+      "explanation": "Frames flow downstream source-to-sink and upstream for control and cancellation."
+    },
+    {
+      "stage": "pre",
+      "question": "What is the canonical Pipecat voice pipeline?",
+      "options": [
+        "VAD -> STT -> LLM -> TTS -> transport",
+        "TTS -> STT -> LLM -> VAD",
+        "LLM -> embed -> retrieve -> answer",
+        "Audio -> JSON -> SQL -> response"
+      ],
+      "correct": 0,
+      "explanation": "VAD detects voice activity, STT transcribes, LLM responds, TTS speaks, transport delivers."
+    },
+    {
+      "stage": "check",
+      "question": "Which two voice agent classes does LiveKit Agents ship?",
+      "options": [
+        "MultimodalAgent (direct audio) and VoicePipelineAgent (STT/LLM/TTS cascade)",
+        "BatchAgent and StreamAgent",
+        "TextAgent and SpeechAgent",
+        "LocalAgent and CloudAgent"
+      ],
+      "correct": 0,
+      "explanation": "MultimodalAgent uses direct audio (Realtime-style); VoicePipelineAgent uses STT->LLM->TTS for text-level control."
+    },
+    {
+      "stage": "check",
+      "question": "What is barge-in and how is it handled?",
+      "options": [
+        "An LLM cost spike; reduce tokens",
+        "The user interrupts while the agent is speaking; UPSTREAM cancel frames stop TTS mid-utterance",
+        "A provider outage; switch regions",
+        "Captcha failure; retry"
+      ],
+      "correct": 1,
+      "explanation": "Barge-in is user interruption; UPSTREAM cancellation is how Pipecat handles it cleanly."
+    },
+    {
+      "stage": "check",
+      "question": "What end-to-end latency does the lesson describe as premium?",
+      "options": [
+        "About 50 ms",
+        "About 450-600 ms",
+        "About 1500 ms",
+        "About 5000 ms"
+      ],
+      "correct": 1,
+      "explanation": "高级方案延迟通常在 450-600 毫秒；800-1200 毫秒较为常见；超过 1500 毫秒会让人感觉系统坏了。"
+    },
+    {
+      "stage": "post",
+      "question": "如果忽略语音转文本（STT）的置信度，会出现什么问题？",
+      "options": [
+        "延迟得到改善",
+        "低置信度的转写文本被当作绝对真理输入大语言模型（LLM），导致错误回答；应根据置信度进行门控或请求确认",
+        "文本转语音（TTS）变得更快",
+        "通话成本更低"
+      ],
+      "correct": 1,
+      "explanation": "将低置信度的语音转文本（STT）当作事实，是语音智能体最常见的失败模式之一。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么该课程建议在上线前先汇总各组件的延迟？",
+      "options": [
+        "服务商按延迟计费",
+        "每个组件都会增加 50-200 毫秒；总和决定了体验是否让人感觉不可用",
+        "它满足某项合规要求",
+        "WebRTC 要求必须有延迟"
+      ],
+      "correct": 1,
+      "explanation": "在上线前汇总整条链路（语音活动检测 + 语音转文本 + 大语言模型 + 文本转语音 + 传输）；目标非常严苛。"
+    }
+  ]
+}

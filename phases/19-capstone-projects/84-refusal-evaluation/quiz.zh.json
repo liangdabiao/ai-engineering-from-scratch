@@ -1,0 +1,78 @@
+{
+  "lesson": "84-refusal-evaluation",
+  "title": "顶点项目 84 — 拒答评估",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "欠拒答(under-refusal)衡量什么？",
+      "options": [
+        "模型对标记为不安全的提示(prompt)作出回答的频率",
+        "模型对标记为安全的提示(prompt)予以拒绝的频率",
+        "模型每次回复发出的 token 数量",
+        "每个提示(prompt)的 API 调用成本"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为什么本課(Lesson)使用模拟 LLM 而不是真实模型？",
+      "options": [
+        "因为真实模型不允许出现在顶点项目中",
+        "这样相同的输入在不同运行中会产生相同的输出，使代码变更可归因于已知原因",
+        "因为模拟 LLM 比真实模型更准确",
+        "因为本課(Lesson)需要 GPU 硬件"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "已知安全提示(prompt)数 = 30，拒绝的安全提示数 = 5，过拒答(over-refusal)率是多少？",
+      "options": [
+        "0.50",
+        "0.17",
+        "0.30",
+        "0.05"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "这里的预期校准误差（Expected Calibration Error, ECE）衡量什么？",
+      "options": [
+        "不安全提示(prompt)上拒答的比例",
+        "模型陈述的置信度与其观测准确率之间的差距，按置信度区间分箱(binned)计算",
+        "所有回复中的总 token 数",
+        "触发的正则表达式规则数量"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么框架将不安全提示(prompt)与課(Lesson) 82 的分类法(taxonomy)进行关联？",
+      "options": [
+        "为了重新运行課(Lesson) 82 的语料加载器",
+        "为了按攻击类别报告欠拒答(under-refusal)，使团队能看到模型在哪个边界上发生泄漏",
+        "为了将每个提示(prompt)的严重级别提升一级",
+        "为了去除重复项"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么框架同时返回欠拒答(under-refusal)和过拒答(over-refusal)，而不是单一的安全分数？",
+      "options": [
+        "因为 Python 数据类(dataclass)偏好多个字段",
+        "因为它们是两种相反的错误，单一数值会掩盖在给定构建中更严重的那一种",
+        "因为欠拒答(under-refusal)仅在 CI 中使用",
+        "因为过度拒绝(over-refusal)是由另一个团队计算的"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

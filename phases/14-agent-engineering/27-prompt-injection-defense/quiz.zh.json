@@ -1,0 +1,90 @@
+{
+  "lesson": "27-prompt-injection-defense",
+  "title": "提示注入与 PVE 防御",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "什么是间接提示注入？",
+      "options": [
+        "用户直接输入“忽略所有规则”",
+        "嵌入在智能体检索到的数据（页面、PDF、邮件、记忆笔记）中的指令，在摄取时覆盖了开发者提示",
+        "模型的误点击",
+        "系统提示中的拼写错误"
+      ],
+      "correct": 1,
+      "explanation": "Greshake 等人提出了间接提示注入：攻击者控制的检索内容携带指令。"
+    },
+    {
+      "stage": "pre",
+      "question": "该课中说处理检索到的提示等同于什么？",
+      "options": [
+        "言论自由",
+        "在智能体工具使用面上的任意代码执行",
+        "一次静态分析遍历",
+        "一次纯函数调用"
+      ],
+      "correct": 1,
+      "explanation": "Greshake 的框架：检索到的指令可以命中智能体有权访问的任何工具。"
+    },
+    {
+      "stage": "check",
+      "question": "以下哪项不是所演示的五类漏洞利用之一？",
+      "options": [
+        "数据窃取",
+        "蠕虫传播",
+        "持久化记忆投毒",
+        "缓存失效"
+      ],
+      "correct": 3,
+      "explanation": "这五类是数据窃取、蠕虫传播、持久化记忆投毒、生态污染、任意工具使用。"
+    },
+    {
+      "stage": "check",
+      "question": "PVE 代表什么？",
+      "options": [
+        "Prompt-Validator-Executor（提示-验证器-执行器）：在昂贵的主模型提交前，对每个工具调用运行一个廉价快速的验证器",
+        "Provider-Verifier-Encoder（提供方-验证方-编码方）",
+        "Plan-Verify-Execute（计划-验证-执行），一种 HTN 方言",
+        "Pre-Vectorize-Embed（预向量化-嵌入）"
+      ],
+      "correct": 0,
+      "explanation": "PVE 在主模型提交前，用廉价验证器包裹每次工具调用。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么“系统提示说忽略不受信任的指令”是不够的？",
+      "options": [
+        "它太短了",
+        "它是指令遵循，而非强制；模型仍可能被足够有说服力的注入内容覆盖",
+        "提供方会剥离它",
+        "它是加密的"
+      ],
+      "correct": 1,
+      "explanation": "真正的防御需要源标记、允许列表、逐步安全检查，以及类PVE式的验证，而不仅仅是提示词工程。"
+    },
+    {
+      "stage": "post",
+      "question": "什么是检索记忆的过度信任(overtrust)？",
+      "options": [
+        "缓存过于激进",
+        "昨天的智能体写入了一条被污染的内存记录；今天的智能体读取它并重新执行了该注入攻击",
+        "加载了错误的模型",
+        "忘记清理（vacuum）索引"
+      ],
+      "correct": 1,
+      "explanation": "持久化记忆污染意味着，如果将记忆视为可信的，注入攻击会跨会话存活。"
+    },
+    {
+      "stage": "post",
+      "question": "该课(Lesson)建议为每一条内容附加什么元数据？",
+      "options": [
+        "一个加密密钥",
+        "一个源标记：user_message 与 tool_output 与 retrieved 的区别；验证器拒绝 retrieved 内容中的指令",
+        "仅一个时间戳",
+        "一个令牌计数"
+      ],
+      "correct": 1,
+      "explanation": "来源标记(provenance tagging)让验证器能根据内容的信任级别来处理它。"
+    }
+  ]
+}

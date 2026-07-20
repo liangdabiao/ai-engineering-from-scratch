@@ -1,0 +1,78 @@
+{
+  "lesson": "24-chaos-engineering-llm",
+  "title": "面向大模型生产的混沌工程",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在 production 中运行混沌之前，本课需要哪五个先决条件？",
+      "options": [
+        "Slack 频道、贴纸包、吉祥物、标签、博客文章",
+        "SLI/SLO、可观测性、自动回滚、结构化 runbook、on-call",
+        "仅向量数据库",
+        "三个前沿模型"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "混沌架构包含哪四个平面，外加反馈回路？",
+      "options": [
+        "摄取、转换、存储、服务",
+        "训练、评估、部署、归档",
+        "控制、目标、安全、可观测性——并反馈至 SLO 调整",
+        "前端、后端、移动端、Web 端"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在混沌实验期间，燃尽率告警护栏做什么？",
+      "options": [
+        "禁用可观测性",
+        "将实验自动推广到生产环境",
+        "加速实验",
+        "当每日错误预算消耗超过预期约 2 倍时暂停实验"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "课中列出的哪个是大模型特有的混沌实验？",
+      "options": [
+        "丢弃所有 DNS",
+        "随机降低风扇转速",
+        "KV 驱逐风暴，迫使 vLLM 块预算饱和",
+        "重启整个数据中心"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "本课推荐混沌演练的节奏是什么？",
+      "options": [
+        "每周小型金丝雀，每月带事后分析的演练日，每季度跨团队弹性审计",
+        "每日全生产环境中断",
+        "从不",
+        "仅每年一次"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "畸形提示词实验揭示了哪个大模型特有的故障模式？",
+      "options": [
+        "分词器停滞，在深度嵌套 unicode 或巨大 UTF-8 码点等输入上锁住工作进程",
+        "磁盘 I/O 争用",
+        "GPU 欠压",
+        "网络丢包"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

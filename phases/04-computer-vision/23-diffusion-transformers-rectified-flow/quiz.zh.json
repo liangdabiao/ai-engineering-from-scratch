@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么 2024 年及以后的 SOTA 文生图模型（SD3、FLUX、Z-Image）要用扩散Transformer（DiT）替换 U-Net 去噪器？",
+      "options": [
+        "Transformer 更容易编写",
+        "DiT 比 U-Net 的可扩展性更可预测（与 LLM 处于相同的扩展定律体系），在处理长程空间依赖以实现提示词精确生成方面表现更好，并且可通过交叉注意力或联合注意力与自然地与文本编码器配对",
+        "GPU 已不再支持 U-Net",
+        "DiT 参数更少"
+      ],
+      "correct": 1,
+      "explanation": "DiT 将扩散视为另一种序列建模任务。它像语言模型一样扩展，避免了卷积的固定归纳偏置（这种偏置可能成为长程结构的瓶颈），并与 Transformer 文本编码器干净地集成。每一个 2026 年的 SOTA 模型——SD3、FLUX.1、FLUX.2、SD4、Z-Image、Qwen-Image——都是 DiT。"
+    },
+    {
+      "stage": "pre",
+      "question": "修正流（Rectified flow）训练模型预测数据与圆噪声之间直线插值上的速度 `v = epsilon - x_0`。为什么这能实现 20 步采样而非 1000 步？",
+      "options": [
+        "并不能；修正流同样需要 1000 步",
+        "所学到的 ODE 比 DDPM 的弯曲 SDE 更接近直线，因此少步欧拉积分即可生成准确样本；结合蒸馏可得 1-4 步的变体如 FLUX schnell",
+        "欧拉严格优于 DDIM",
+        "它需要更大的模型"
+      ],
+      "correct": 1,
+      "explanation": "DDPM 的反向过程是一条随机弯曲路径，需要许多小步。修正流定义了直线插值；所学速度沿轨迹近似恒定。对近似直线的 ODE 积分只需很少步数。SD3 和 FLUX 以 20-30 步达到完整质量；schnell/turbo/LCM 进一步将其蒸馏至 1-4 步。"
+    },
+    {
+      "stage": "post",
+      "question": "MMDiT（SD3）使用两组权重，一组用于文本 token，一组用于图像 token，它们共享一个联合注意力层。为什么？",
+      "options": [
+        "为了节省显存",
+        "文本和图像嵌入在概念上是不同的分布；独立权重让每种模态处理自身表示，而联合注意力让它们交互；结果是比单一共享流更好的图文对齐和提示词遵循",
+        "这是一种遗留设计",
+        "实际上只有图像 token 经过注意力"
+      ],
+      "correct": 1,
+      "explanation": "Stable Diffusion 3 的 MMDiT 保留逐模态权重流以保留文本和图像 token 的不同统计特性，同时联合自注意力层让它们融合。这在结构上比 concatenate-and-share（SD1/2 所用）更具表现力，并在经验上提升了提示词遵循和文本渲染。FLUX 将其扩展为交替的双流/单流块以提高效率。"
+    },
+    {
+      "stage": "post",
+      "question": "DiT 块中的 AdaLN-Zero 是什么意思，为什么有帮助？",
+      "options": [
+        "一种零 epsilon 的层归一化",
+        "自适应层归一化（Adaptive LayerNorm），其调制 MLP 初始化为零，使块起始为恒等映射；训练随后学习 scale/shift/gate，从而稳定极深的扩散Transformer",
+        "一种仅 50% 时间应用的 LayerNorm",
+        "一种零均值的 LayerNorm"
+      ],
+      "correct": 1,
+      "explanation": "AdaLN 从条件向量预测 scale、shift 和 gate。'Zero' 指 MLP 初始化为零，因此 gate 起始为 0，块表现为恒等映射。梯度缓慢将调制从零推开，防止深层堆叠在训练早期发散。它相当于 DiT 版的 ResNet 残差零初始化，被用于每个现代扩散Transformer。"
+    },
+    {
+      "stage": "post",
+      "question": "FLUX.1-schnell 能在 4 步内生成图像。哪种技术使之成为可能？",
+      "options": [
+        "与 FLUX.1-dev 不同的基础架构",
+        "蒸馏——schnell 从一个缓慢的多步教师模型使用对抗/一致性风格目标训练，使 1-4 去噪步匹配教师的 20-30 步输出",
+        "更低精度权重",
+        "更小的参数规模"
+      ],
+      "correct": 1,
+      "explanation": "Schnell / Turbo / LCM 变体使用步数蒸馏。小步学生模型学习匹配多步教师的输出。基础架构和参数规模通常相同（FLUX.1-dev 与 schnell 均为 12B）。蒸馏使亚秒级推理变得实用。这与 SDXL Turbo、SD Turbo 和 Latent Consistency Models 思路相同。"
+    }
+  ]
+}

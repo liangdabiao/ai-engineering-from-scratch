@@ -1,0 +1,78 @@
+{
+  "lesson": "06-mesa-optimization-deceptive-alignment",
+  "title": "Mesa-Optimization 与欺骗性对齐",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "哪一对最能概括内部/外部对齐的区别？",
+      "options": [
+        "外部 = 模型是否在硬件上运行；内部 = 损失是否低",
+        "外部 = 基础目标是否与我们想要的相符；内部 = mesa目标是否与基础目标相符",
+        "外部 = 策略是否稳定；内部 = 温度是否低",
+        "外部 = 数据是否干净；内部 = 优化器是否随机"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "以下哪项不是 Hubinger 等人提出的 mesa目标对齐四类之一？",
+      "options": [
+        "近似对齐",
+        "稳健对齐",
+        "代理对齐",
+        "概率对齐"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在什么条件下，欺骗性对齐是 mesa优化器的奖励最大化策略？",
+      "options": [
+        "它使用 PPO 而非 DPO 进行训练",
+        "它具有持久的终极目标，具备训练与部署的情境感知能力，且若它在训练中叛逃，基础优化器会对其进行修改",
+        "其参数量超过 100B",
+        "它有任何内部表征"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么标准对抗训练会失败（或恶化）欺骗性对齐？",
+      "options": [
+        "它所需的计算量超过 RLHF",
+        "它教会了 mesa优化器在测试与部署之间更敏锐的判别器，而非对齐的 mesa目标",
+        "它使用了错误的损失函数",
+        "它无法在 GPU 上运行"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "如 Hubinger 等人（2019）所引入的，什么是梯度黑客？",
+      "options": [
+        "一种推测性的病理现象，其中有能力的 mesa优化器产生输出，以塑造自身的梯度更新，从而保留其 mesa目标",
+        "一种针对指令微调模型的越狱方法",
+        "自动微分中的一个 bug",
+        "一种加速训练的技术"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "以下哪项是外部对齐失败，而非内部对齐失败？",
+      "options": [
+        "由于基础目标本身是人类意图的有缺陷代理，从而出现的奖励黑客与谄媚行为",
+        "Mesa优化器优化一个在分布外发散的代理目标",
+        "在 SFT 中存活的后门",
+        "Mesa优化器在评估期间隐藏其目标"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "lesson": "13-langgraph-stateful-graphs",
+  "title": "LangGraph：有状态图与持久化执行",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "LangGraph 将什么视为智能体(Agent)的核心单元？",
+      "options": [
+        "一次自由形式的 LLM 调用",
+        "一个带有类型化状态、函数节点和条件边的状态机",
+        "一个单一的工具注册表",
+        "一个向量索引"
+      ],
+      "correct": 1,
+      "explanation": "LangGraph 将智能体建模为一个状态图：节点是纯函数，边是转移，状态是类型化且不可变的。"
+    },
+    {
+      "stage": "pre",
+      "question": "持久化执行解决了哪个问题？",
+      "options": [
+        "降低推理成本",
+        "当运行失败时，从步骤 38 恢复一个 40 步的运行，并保留精确状态，而不是从头开始",
+        "更快地生成嵌入(Embedding)",
+        "在提供商之间进行转换"
+      ],
+      "correct": 1,
+      "explanation": "每个节点之后的检查点让运行时能从最后一个成功步骤恢复。"
+    },
+    {
+      "stage": "check",
+      "question": "以下哪项不是 LangGraph 支持的三种拓扑结构之一？",
+      "options": [
+        "监督者(Supervisor)",
+        "群(Swarm)（点对点）",
+        "分层（嵌套子图）",
+        "梯度环"
+      ],
+      "correct": 3,
+      "explanation": "拓扑结构包括监督者、群和分层。梯度环不是 LangGraph 的拓扑结构。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么节点必须是确定性的，才能干净地恢复？",
+      "options": [
+        "提供商要求确定性",
+        "恢复假设相同的输入产生相同的状态更新；随机种子、墙钟时间和外部 API 必须被捕获",
+        "确定性降低令牌(Token)成本",
+        "这是被 GIL 所要求的"
+      ],
+      "correct": 1,
+      "explanation": "如果一个节点依赖于未被捕获的不确定性，恢复就无法重建步骤后的状态。"
+    },
+    {
+      "stage": "check",
+      "question": "什么是条件边？",
+      "options": [
+        "由训练损失加权的边",
+        "由状态的函数选择的边，用于分支图",
+        "仅在 GPU 上运行的边",
+        "带有 TTL 的边"
+      ],
+      "correct": 1,
+      "explanation": "条件边(Conditional edges)根据状态进行分支；过度使用会使图难以推理。"
+    },
+    {
+      "stage": "post",
+      "question": "当检查点(checkpoints)过小时会出现什么问题？",
+      "options": [
+        "工具状态和内存写入不可恢复；完整状态必须序列化",
+        "磁盘被填满",
+        "图无法到达 END",
+        "模型产生更短的答案"
+      ],
+      "correct": 0,
+      "explanation": "仅对对话轮次进行检查点(checkpointing)，会使工具状态和内存写入处于恢复(resume)能力范围之外。"
+    },
+    {
+      "stage": "post",
+      "question": "人在回路(human-in-the-loop)在 LangGraph 的设计中处于什么位置？",
+      "options": [
+        "它需要对运行时(runtime)进行分叉(fork)",
+        "在关键节点前暂停，将序列化状态呈现给人类，接受修改，恢复(resume)；检查点器(checkpointer)使这变得廉价",
+        "仅在 START 和 END",
+        "通过一个独立的提供者 API"
+      ],
+      "correct": 1,
+      "explanation": "因为状态已经在节点间序列化，人工审阅和编辑是一种自然的暂停-恢复模式。"
+    }
+  ]
+}

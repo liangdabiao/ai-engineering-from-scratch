@@ -1,0 +1,78 @@
+{
+  "lesson": "21-ab-testing-llm-features",
+  "title": "A/B 测试 LLM 功能 —— GrowthBook、Statsig 与主观感受问题",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在本课中，评估(evals)与 A/B 测试的确切区别是什么？",
+      "options": [
+        "评估(evals)在带标签的数据集上回答“模型能胜任任务吗？”；A/B 测试用线上随机流量回答“用户在意吗？”",
+        "只需要 A/B 测试",
+        "评估(evals)是面向用户的；A/B 测试是离线的",
+        "它们可以互换"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "CUPED 对实验做了什么？",
+      "options": [
+        "禁用多重比较校正",
+        "完全取代序贯检验",
+        "在比较后周期前回归掉前周期的方差，通常可降低 30-70% 的方差并提升有效样本量",
+        "通过招募更多用户来增加样本量"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么在运行大量 A/B 测试时需要多重比较校正（Bonferroni 或 Benjamini-Hochberg）？",
+      "options": [
+        "GDPR 要求使用它们",
+        "它们仅用于序贯检验",
+        "以 95% 置信度运行 20 个测试会因偶然产生一个假阳性；校正用于控制族系误差率或错误发现率",
+        "它们能加速实验"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "SRM（样本比例失衡）检测什么？",
+      "options": [
+        "分词器性能慢",
+        "分配哈希 bug 导致实际分流与预期不符（例如目标 50/50 却得到 47/53）",
+        "实验平台中的内存泄漏",
+        "PII 泄露"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么 LLM 的非确定性需要缓冲样本量？",
+      "options": [
+        "它违反 IID 假设；有效样本量下降，因此将所需样本量乘以约 1.3-1.5 倍作为安全边际",
+        "它与功效计算无关",
+        "非确定性减少了所需样本量",
+        "它只在离线时重要"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "本课如何对比 Statsig 和 GrowthBook？",
+      "options": [
+        "功能集完全相同",
+        "Statsig 仅支持数据仓库原生",
+        "GrowthBook 是闭源的",
+        "Statsig 是一体化 SaaS（于 2025 年 9 月被 OpenAI 以 11 亿美元收购）；GrowthBook 是开源 MIT 协议、数据仓库原生，具备贝叶斯/频率派/序贯引擎以及 CUPED/SRM/BH"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "lesson": "12-video-understanding-pipeline",
+  "title": "顶点项目 12 —— 视频理解流水线（场景、问答、搜索）",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "即使长上下文视觉语言模型(VLM)能够原生读取 2 小时视频，为什么仍然需要场景级索引？",
+      "options": [
+        "长上下文 VLM 无法流式输出",
+        "向量索引不支持视频文件",
+        "将 100 小时视频摄入可查询语料库需要场景级检索，即使单个视频可以被完整读取",
+        "场景切分是 VLM 唯一能理解的内容"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "每个场景在多向量索引中会获得哪三种向量类型？",
+      "options": [
+        "字幕嵌入、关键帧嵌入和转录文本嵌入",
+        "音频波形、梅尔频谱图和 MFCC",
+        "哈希、gzip 和 CRC",
+        "姿态、深度和光流"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在查询时，三个检索流的结果如何合并？",
+      "options": [
+        "仅选取字幕命中结果",
+        "通过对余弦相似度取平均",
+        "通过对三个排序列表进行倒数排名融合",
+        "通过取并集而不评分"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "时间定位步骤在顶部场景内细化什么？",
+      "options": [
+        "来自 Whisper 的转录文本词级时间戳",
+        "存储在 Qdrant 中的向量数量",
+        "包含答案的（开始，结束）时间戳窗口",
+        "关键帧嵌入的维度"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪一类问题被单独报告，因为其为已知的幻觉热点？",
+      "options": [
+        "关于风景的描述性问题",
+        "说话人识别问题",
+        "翻译问题",
+        "计数和动作类型问题，VLM 在此类问题上会数错或排错事件顺序"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "评分标准在留出集上衡量哪个定位指标？",
+      "options": [
+        "时间定位交并比（IoU）",
+        "接受率",
+        "困惑度（Perplexity）",
+        "MRR@10"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么流水线要求答案中包含引用的时间戳？",
+      "options": [
+        "它们降低了嵌入维度",
+        "时间戳是 Whisper 输出所必需的",
+        "时间戳是 Qdrant 负载所必需的",
+        "它们让观看者可以跳转到精确的 (video_id, start, end)，以便用户能够核实该说法"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

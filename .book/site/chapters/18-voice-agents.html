@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§18 语音 Agent：不是文本循环套个 TTS · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="active" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>§18 语音 Agent：不是文本循环套个 TTS</h2>
+<h3>18.1 一句判断：语音是独立品类</h3>
+<p>2026 年，语音 Agent 是production 一等公民。</p>
+<p>它不是"文本循环末尾加个语音合成"。</p>
+<p>延迟预算极狠：端到端要到 450–600ms，用户才不觉得卡。</p>
+<p>Vapi 在优化栈上跑到 450–600ms。Retell 跨 180 通测试约 600ms。</p>
+<p>超过 1500ms，用户就觉得"这东西坏了"。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：第一次被延迟教做人</p>
+<p>我做过一个客服语音，STT + LLM + TTS 一串，端到端 1.8 秒。用户平均每句说完等两秒。上线三天，挂断率 40%。砍到 700ms 后降到 12%。</p>
+</blockquote>
+<h3>18.2 Pipecat：帧管线</h3>
+<p>Pipecat（pipecat-ai/pipecat）是 Python 帧框架。</p>
+<p>核心是 <code>Frame</code> → <code>FrameProcessor</code> 链。</p>
+<p>两个方向：</p>
+<ul>
+<li><strong>DOWNSTREAM</strong>：源 → 汇。音频进，语音出。</li>
+<li><strong>UPSTREAM</strong>：反馈与控制。取消、指标、打断。</li>
+</ul>
+<p>典型五段：</p>
+<pre><code class="language-text">VAD (Silero) → STT → LLM → TTS → transport
+</code></pre>
+<p>VAD 判"人在说话"。STT 转文字。LLM 想。TTS 念。transport 传出去。</p>
+<p>transport 支持 Daily、LiveKit、WebSocket、WhatsApp。</p>
+<p><code>PipelineTask</code> 管生命周期：<code>on_pipeline_started</code>、<code>on_idle_timeout</code> 等事件可挂观察者做指标与追踪。</p>
+<h3>18.3 LiveKit：WebRTC 优先</h3>
+<p>LiveKit Agents（livekit/agents）把模型经 WebRTC 桥给用户。</p>
+<p>两个语音类：</p>
+<ul>
+<li><strong>MultimodalAgent</strong>：直接音频进音频出（OpenAI Realtime 那种）。</li>
+<li><strong>VoicePipelineAgent</strong>：STT → LLM → TTS 级联，文字级可控。</li>
+</ul>
+<p>它有语义性"话轮检测"（transformer 模型判你讲完没）。</p>
+<p>原生接 MCP，电话走 SIP。50+ 模型免密钥，200+ 走插件。</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Pipecat</th>
+<th>LiveKit</th>
+<th>标叔的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定位</td>
+<td>Python 帧框架</td>
+<td>WebRTC 平台</td>
+<td>要控制选前者</td>
+</tr>
+<tr>
+<td>音频路径</td>
+<td>级联为主</td>
+<td>可直连音频</td>
+<td>直连更省延迟</td>
+</tr>
+<tr>
+<td>可控性</td>
+<td>自定义 processor</td>
+<td>类封装好</td>
+<td>深度定制选 Pipecat</td>
+</tr>
+<tr>
+<td>电话</td>
+<td>经 transport</td>
+<td>原生 SIP</td>
+<td>打电话选 LiveKit</td>
+</tr>
+<tr>
+<td>上手</td>
+<td>中</td>
+<td>快</td>
+<td>求快上 LiveKit</td>
+</tr>
+</tbody>
+</table>
+<h3>18.4 延迟账：每一段都吃预算</h3>
+<p>每一段都加 50–200ms。上线前先加一遍。</p>
+<ul>
+<li>VAD：20–60ms</li>
+<li>STT 部分结果：100–250ms</li>
+<li>LLM 首个 token：150–400ms</li>
+<li>TTS 首个音频：100–200ms</li>
+<li>transport 往返：30–80ms</li>
+</ul>
+<p>高端栈 450–600ms。普通栈 800–1200ms。</p>
+<blockquote>
+<p><strong>注意</strong>：打断（barge-in）不做会出丑</p>
+<p>用户中途插话，Agent 还在念。Pipecat 用 UPSTREAM 取消帧停掉 TTS。LiveKit 同理。不做，体验直接崩。</p>
+</blockquote>
+<h3>18.5 手写一个帧管线</h3>
+<p>不接真模型，用脚本处理器演示流向与打断：</p>
+<pre><code class="language-python"># 帧管线：VAD → STT → LLM → TTS → 传输
+class Pipeline:
+    def __init__(self):
+        self.stages = []          # 处理器链
+
+    def add(self, proc):
+        self.stages.append(proc)
+
+    def push(self, frame):
+        for stage in self.stages:
+            frame = stage.process(frame)   # 逐段流转
+            if frame is None:
+                return                      # 取消帧到此截断
+        return frame
+
+class CancelFrame: pass                    # UPSTREAM 打断帧
+
+class TTS:
+    def process(self, frame):
+        if isinstance(frame, CancelFrame):
+            return None                     # 被打断，停止念
+        return frame
+</code></pre>
+<p>跑一遍：正常流顺下来；插一个 <code>CancelFrame</code>，TTS 中途停。</p>
+<h3>18.6 先给结论</h3>
+<p>语音 Agent 拼的是延迟，不是模型。</p>
+<p>先画延迟账，再选 Pipecat 还是 LiveKit。打断必须做。</p>
+<p>[向前桥接] 会说话了。但真上线，钱和稳定性才是生死线。</p>
+<hr>
+<div class="pager"><a class="prev" href="17-multi-agent-orchestration.html"><div class="lbl">← 上一章</div><div class="ttl">§17 多智能体：先问要不要，再问怎么编</div></a><a class="next" href="19-production-runtime-cost.html"><div class="lbl">下一章 →</div><div class="ttl">§19 生产运行时：选错形状，钱和稳定性一起崩</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>

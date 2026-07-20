@@ -1,0 +1,78 @@
+{
+  "lesson": "43-hdf5-tokenized-corpus",
+  "title": "HDF5 分词语料库",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么将分词语料库存储在可调整大小、分块(chunked)的 HDF5 数据集中，而不是 JSONL 中？",
+      "options": [
+        "HDF5 的 logo 更小",
+        "HDF5 提供分块、仅整数、内存映射的读取，具有 O(1) 随机访问；JSONL 迫使解析器出现在每个热路径(hot-path)读取中",
+        "JSONL 已弃用",
+        "随机原因"
+      ],
+      "correct": 1,
+      "explanation": "数据加载器(dataloader)想要一个具有可寻址切片(addressable slices)的扁平 token 流；HDF5 原生提供该能力。"
+    },
+    {
+      "stage": "check",
+      "question": "为 HDF5 分块(chunk)与训练器的 window_size 设定大小的正确的规则是什么？",
+      "options": [
+        "总是选 chunk=1",
+        "将 chunk 设为 window_size 的倍数，这样每个样本落在一个或两个 chunk 内，且读取保持页缓存(page-cache)对齐",
+        "选等于文档长度的 chunk",
+        "选能放入 RAM 的最大 chunk"
+      ],
+      "correct": 1,
+      "explanation": "不匹配的 chunk 会使吞吐量减半，因为每个样本横跨两个 chunk 而不是一个。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么 token_count 存储为 HDF5 属性(attribute)而不是从数据集形状推断？",
+      "options": [
+        "属性很好看",
+        "末尾的 chunk 可能部分填满；没有显式属性，读取器会越过真实末尾走到零填充的 token 中，模型会学习预测零",
+        "形状读取很慢",
+        "属性是强制的"
+      ],
+      "correct": 1,
+      "explanation": "分块布局有时会留下尾部空位；属性承载真实情况。"
+    },
+    {
+      "stage": "check",
+      "question": "写入器通过在每次调整大小前将 token 缓冲到 chunk_size 实现了什么？",
+      "options": [
+        "节省几个 CPU 周期",
+        "写入是连续且 chunk 对齐的，避免了一 token 一调整大小带来的碎片(fragmentation)",
+        "减小词表(vocabulary)大小",
+        "加速 sha256"
+      ],
+      "correct": 1,
+      "explanation": "以 chunk 大小缓冲再扩展是保持 HDF5 chunk 在磁盘上连续的唯一方法。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么在读取端而不是写入端打开 swmr=True？",
+      "options": [
+        "随机偏好",
+        "单写多读(Single-Writer-Multiple-Reader)模式让数据加载器工作进程安全共享文件；写入器不需要特殊模式，因为它每个进程写一个分片(shard)",
+        "性能",
+        "安全"
+      ],
+      "correct": 1,
+      "explanation": "混合这两种模式是导致“文件被锁定”失败的最常见原因。"
+    },
+    {
+      "stage": "post",
+      "question": "边界令牌 id 的存在是为了明确什么？",
+      "options": [
+        "词汇表大小限制",
+        "打包窗口内的文档边界，以便模型不会在跨文档拼接上被静默训练",
+        "压缩(Compression)",
+        "随机数据"
+      ],
+      "correct": 1,
+      "explanation": "如果没有显式的边界，训练器会将边界当作噪声来学习；有了它，边界就变成了一个可用的分隔符。"
+    }
+  ]
+}

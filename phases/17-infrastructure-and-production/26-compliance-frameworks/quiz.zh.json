@@ -1,0 +1,78 @@
+{
+  "lesson": "26-compliance-frameworks",
+  "title": "合规性 —— SOC 2、HIPAA、GDPR、PCI-DSS、欧盟人工智能法案(EU AI Act)、ISO 42001",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "欧盟人工智能法案(EU AI Act)对高风险系统的执法何时开始？",
+      "options": [
+        "2025年2月2日",
+        "2026年8月2日",
+        "已于2024年完全生效",
+        "2030年1月1日"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "欧盟人工智能法案(EU AI Act)定义了哪两种层级的罚款上限？",
+      "options": [
+        "任何违规一律最高罚款€100万",
+        "任何违规最高罚款€10万",
+        "高风险系统义务最高€1500万或全球年营业额的3%（第99(4)条）；禁止的人工智能实践最高€3500万或7%（第99(3)条）",
+        "无经济处罚，仅下达下架命令"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为何事后处理个人身份信息(PII)清理不是可辩护的GDPR合规姿态？",
+      "options": [
+        "其在规模上太慢",
+        "GDPR完全禁止编辑遮盖",
+        "事后处理与实时处理相同",
+        "模型已经看到了数据，因此实时推理层编辑遮盖（在调用LLM之前）是2026年可辩护的标准"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "SOC 2 Type I与Type II的实际区别是什么？",
+      "options": [
+        "Type I需要HIPAA业务伙伴协议(BAA)",
+        "Type I比Type II更严格",
+        "Type I证明控制措施已设计并文档化；Type II证明控制措施在6-12个月内有效运行",
+        "Type II仅适用于初创公司"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "跨框架控制映射旨在实现什么？",
+      "options": [
+        "满足多个框架要求的一项控制策略（例如访问日志映射到ISO 27001 A.5.15-5.18、GDPR第32条、HIPAA §164.312(a)）",
+        "消除审计",
+        "用ISO 42001取代所有框架",
+        "每个框架有更多不同的控制项"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "该课(Lesson)对HIPAA + LLM工作负载有何建议？",
+      "options": [
+        "HIPAA不适用于LLM",
+        "切勿在没有签署业务伙伴协议(BAA)的情况下将受保护健康信息(PHI)发送给外部AI服务；三大超大规模云服务商和主要LLM API提供商均提供BAA",
+        "仅使用本地部署模型，绝不使用托管服务",
+        "将 PHI 发送给任何提供商；BAA 是可选的"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

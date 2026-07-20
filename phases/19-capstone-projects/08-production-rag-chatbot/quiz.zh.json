@@ -1,0 +1,90 @@
+{
+  "lesson": "08-production-rag-chatbot",
+  "title": "顶点项目 08 — 面向受监管垂直行业的生产级 RAG 聊天机器人",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么在受监管领域的 RAG 聊天机器人中提示缓存(Prompt Caching)如此重要？",
+      "options": [
+        "它消除了对向量数据库的需求",
+        "在 60-80% 的命中率下，通过对稳定前缀令牌打折，可将每次查询成本降低 3-5 倍",
+        "它消除了幻觉",
+        "它提升了重排阶段的召回率"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "每个请求的缓存头与未缓存后缀中分别包含什么内容？",
+      "options": [
+        "随机文本填充以达到缓存大小",
+        "仅包含检索到的文档",
+        "用户问题在前，系统提示在后",
+        "系统提示与静态策略放在缓存头中，重排后的上下文作为缓存扩展，用户问题作为未缓存后缀"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "检索层如何遵从像 GDPR 或 HIPAA 这样的司法管辖区标签？",
+      "options": [
+        "它为每个国家运行独立的索引",
+        "它仅在生成后阻止响应",
+        "它按区域重写用户问题",
+        "角色与司法管辖区过滤器在混合搜索合并前应用，因此超出用户范围的文本块永远不会被重排"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "合成阶段将输出传递通过哪种分层护栏组合？",
+      "options": [
+        "仅对输入使用 Llama Guard 4",
+        "Llama Guard 4、NeMo Guardrails 策略护栏，以及 Presidio PII 清洗，外加引用强制校验",
+        "仅一个输出 PII 正则表达式",
+        "单一的 LLM 评判员忠实度检查"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "漂移仪表盘会对什么发出告警？",
+      "options": [
+        "底层 LLM 提供商的变更",
+        "延迟超过 200 毫秒",
+        "检索质量下降，例如 nDCG 或引用分数出现 5% 的周环比下滑",
+        "任何添加到索引中的新文档"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "用于把关交付物正确性评分标准的黄金集有多大？",
+      "options": [
+        "5 个演示查询",
+        "200 个带引用的专家标注问答对",
+        "20 个问题",
+        "2000 个合成问题"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "每轮在线跟踪哪些 RAGAS 分数？",
+      "options": [
+        "吞吐量、GPU 利用率和队列深度",
+        "BLEU、ROUGE 和 METEOR",
+        "忠实度、答案相关性和上下文精确度",
+        "Token 数量和美元成本"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

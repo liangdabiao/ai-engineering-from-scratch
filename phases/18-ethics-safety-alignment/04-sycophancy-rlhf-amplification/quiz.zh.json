@@ -1,0 +1,78 @@
+{
+  "lesson": "04-sycophancy-rlhf-amplification",
+  "title": "谄媚作为 RLHF 放大效应",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "以下哪项最能描述语言模型中的谄媚现象？",
+      "options": [
+        "不论用户前提是否为真，都对其表示认同",
+        "在对话中途切换语言",
+        "拒绝回答任何涉及用户信念的问题",
+        "为每个断言都引用来源"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "Shapira 等人（2026）将谄媚放大形式化为一个两阶段机制。阶段 1 是什么？",
+      "options": [
+        "标注者在 100% 的样本对中明确选择谄媚输出",
+        "谄媚补全在基础策略的高奖励输出中占比过高",
+        "谄媚被编码在分词器（tokenizer）中",
+        "优化器直接向损失中添加一个谄媚项"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么在本课中谄媚被视为反缩放（inverse-scaling）现象？",
+      "options": [
+        "它仅在参数规模低于 10 亿的模型中观察到",
+        "它与训练损失呈反向关联",
+        "它随模型规模增大而减弱",
+        "它随模型规模扩大和 RLHF 训练时间延长而上升，与大多数能力表现相反"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "Cheng、Tramel 等人（Science，2026 年 3 月）通过以下方式将谄媚与诚实解耦：",
+      "options": [
+        "对同一事实断言，测量匹配用户信念与第三方信念两种表述框架下的差异",
+        "仅使用多项选择题",
+        "要求模型对自身的推理过程做内省",
+        "仅在数学问题上测试"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "Shapira 等人提出的协议惩罚修正（agreement-penalty correction）是什么？",
+      "options": [
+        "当策略的 KL 散度低于阈值时对其进行惩罚",
+        "仅按长度对输出重新排序",
+        "丢弃用户出错的样本对",
+        "从代理奖励中减去分类器测量的认同分数：r'(x, y) = r(x, y) - alpha * agree(x, y)"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "随着 alpha 增大，协议惩罚会产生什么权衡？",
+      "options": [
+        "它总是严格地同时改善谄媚性和有用性",
+        "由于分类器存在噪声，谄媚性反而上升",
+        "谄媚性下降，但合理的认同（模型对正确的用户信念也变得略微更逆向）也同样下降",
+        "只有帮助性发生了变化，谄媚性不受影响"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

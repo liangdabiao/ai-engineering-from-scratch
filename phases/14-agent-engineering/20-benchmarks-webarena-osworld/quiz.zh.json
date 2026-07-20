@@ -1,0 +1,90 @@
+{
+  "lesson": "20-benchmarks-webarena-osworld",
+  "title": "Benchmarks: WebArena and OSWorld",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why does WebArena self-host its four target apps?",
+      "options": [
+        "To save money",
+        "To pin reproducible versions so evaluation is execution-based and not flaky",
+        "To run on GPUs",
+        "To avoid TLS"
+      ],
+      "correct": 1,
+      "explanation": "Pinned self-hosted apps make execution-based evaluation reliable and comparable over time."
+    },
+    {
+      "stage": "pre",
+      "question": "Why does OSWorld use real OS screenshots rather than accessibility APIs?",
+      "options": [
+        "Accessibility APIs are too fast",
+        "Screenshots force the agent to do real GUI grounding in 1920x1080, matching production constraints",
+        "Accessibility APIs leak PII",
+        "Screenshots cost less"
+      ],
+      "correct": 1,
+      "explanation": "Screenshot-driven evaluation forces pixel-to-element grounding, the actual production constraint."
+    },
+    {
+      "stage": "check",
+      "question": "What two primary failure modes does OSWorld surface?",
+      "options": [
+        "Latency and bandwidth",
+        "GUI grounding and operational knowledge",
+        "Embedding drift and token leakage",
+        "Hallucination and refusal"
+      ],
+      "correct": 1,
+      "explanation": "Grounding (pixel-to-element) and operational knowledge (menus, shortcuts) are the headline blockers."
+    },
+    {
+      "stage": "check",
+      "question": "What does OSWorld-Human add on top of the base benchmark?",
+      "options": [
+        "More tasks",
+        "Manually curated gold action trajectories that surface a 1.4-2.7x agent step-inefficiency gap",
+        "A larger screen resolution",
+        "A new OS"
+      ],
+      "correct": 1,
+      "explanation": "Gold trajectories make trajectory efficiency measurable, not just success rate."
+    },
+    {
+      "stage": "check",
+      "question": "Which release-time number does the lesson cite for WebArena?",
+      "options": [
+        "Best GPT-4 agent 14.41% success vs human 78.24%",
+        "Best agent at 99% with human at 100%",
+        "Best agent at 50% with human at 50%",
+        "Best agent at 0% across the board"
+      ],
+      "correct": 0,
+      "explanation": "14.41% 与 78.24% 的差距是 WebArena 发布时的数据。"
+    },
+    {
+      "stage": "post",
+      "question": "当智能体使用 DOM 或无障碍 API 时，该课警告仅基于截图的评估会发生什么？",
+      "options": [
+        "没有任何变化",
+        "你错过了 OSWorld 旨在测量的接地(grounding)挑战",
+        "你超出了速率限制",
+        "测试轻易通过"
+      ],
+      "correct": 1,
+      "explanation": "在仅基于截图的基准上评估无障碍 API 智能体，会跳过接地测试。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么忽略轨迹长度是一种基准测试失败？",
+      "options": [
+        "它隐藏了成功速率单独无法发现的成本和低效（OSWorld-Human 暴露出的 1.4-2.7 倍差距）",
+        "轨迹长度总是与标准答案一致",
+        "轨迹不可测量",
+        "长度是唯一重要的指标"
+      ],
+      "correct": 0,
+      "explanation": "两个成功率为 60% 的智能体在步骤数上可能相差 2-3 倍；只有测量轨迹长度，成本和效率才会显现。"
+    }
+  ]
+}

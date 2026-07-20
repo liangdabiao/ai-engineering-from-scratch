@@ -1,0 +1,90 @@
+{
+  "lesson": "14-autogen-actor-model",
+  "title": "AutoGen v0.4：Actor 模型与 Agent 框架",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在 AutoGen v0.4 中，actor 之间唯一合法的交互方式是什么？",
+      "options": [
+        "直接访问共享的 dict",
+        "通过 inbox 交换异步消息；无共享内存",
+        "共享 SQL 事务",
+        "相互修改对方的 prompt"
+      ],
+      "correct": 1,
+      "explanation": "Actor 拥有私有状态和 inbox；消息是唯一的交互方式。"
+    },
+    {
+      "stage": "pre",
+      "question": "AutoGen v0.4 的三个 API 层是什么？",
+      "options": [
+        "Core、AgentChat、Extensions",
+        "前端、后端、数据库",
+        "工具、模型、记忆",
+        "计划、执行、反思"
+      ],
+      "correct": 0,
+      "explanation": "Core 是底层的 actor 框架，AgentChat 是任务驱动的高层 API，Extensions 是集成扩展。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么将投递与处理解耦能实现故障隔离？",
+      "options": [
+        "运行时捕获 B 中的处理失败而不会使 A 崩溃；A 的 send() 立即返回且从不阻塞",
+        "每个 actor 运行在独立的机器上",
+        "运行时在故障时重启操作系统",
+        "处理函数是纯函数"
+      ],
+      "correct": 0,
+      "explanation": "send() 将消息放入接收者的 inbox 并返回；处理崩溃仅限于该 actor 本地。"
+    },
+    {
+      "stage": "check",
+      "question": "哪种 AgentChat 拓扑按固定顺序轮转 agent？",
+      "options": [
+        "SelectorGroupChat",
+        "RoundRobinGroupChat",
+        "Magentic-One",
+        "监督者(Supervisor)"
+      ],
+      "correct": 1,
+      "explanation": "RoundRobinGroupChat 是固定轮转；SelectorGroupChat 使用选择器挑选下一个。"
+    },
+    {
+      "stage": "check",
+      "question": "在本课中，Magentic-One 是什么？",
+      "options": [
+        "一个新的 LLM 模型",
+        "基于 AgentChat 构建的、用于网页浏览、代码执行和文件处理的参考多 agent 团队",
+        "一种序列化格式",
+        "一个 OTel 导出器"
+      ],
+      "correct": 1,
+      "explanation": "Magentic-One 是微软的参考团队，用于演示 AgentChat API。"
+    },
+    {
+      "stage": "post",
+      "question": "该课中所述的 AutoGen v0.4 在 2026 年初的状态是什么？",
+      "options": [
+        "已弃用并移除",
+        "稳定但处于维护模式；Microsoft Agent Framework 是前进方向",
+        "刚刚发布",
+        "已被 LangGraph 取代"
+      ],
+      "correct": 1,
+      "explanation": "AutoGen v0.7.x 在研究场景中稳定；活跃开发已转向 Microsoft Agent Framework。"
+    },
+    {
+      "stage": "post",
+      "question": "AutoGen v0.4 默认发出哪种可观测性标准？",
+      "options": [
+        "仅 Prometheus 指标",
+        "符合 OTel GenAI 语义约定的、带有 gen_ai.* 属性的 OpenTelemetry 跨度",
+        "StatsD",
+        "Datadog APM"
+      ],
+      "correct": 1,
+      "explanation": "每条消息都会发出一个跨度；工具调用携带符合 OTel GenAI 约定的 gen_ai.* 属性。"
+    }
+  ]
+}

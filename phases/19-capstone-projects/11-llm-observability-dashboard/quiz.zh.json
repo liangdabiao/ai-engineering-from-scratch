@@ -1,0 +1,90 @@
+{
+  "lesson": "11-llm-observability-dashboard",
+  "title": "顶点项目 11 —— 大语言模型可观测性与评估仪表板",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Langfuse、Phoenix 和 OpenLLMetry 在摄取模式上趋向于哪种统一方案？",
+      "options": [
+        "各厂商专有的 JSON",
+        "Prometheus 暴露格式",
+        "基于 OTLP HTTP 的 OpenTelemetry GenAI 语义约定",
+        "纯 CSV 日志文件"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为何在存储层将 ClickHouse 与 Postgres 分开？",
+      "options": [
+        "它们可互换，且随机选用其中一个",
+        "Postgres 在 span 摄取时更快",
+        "ClickHouse 无法存储字符串",
+        "ClickHouse 处理跨 span 的列存分析，而 Postgres 保存用户、会话与应用元数据"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "OpenTelemetry Collector 中的尾部采样处理器有何作用？",
+      "options": [
+        "在 trace 完成后决定是否保留，使用如保留错误并抽样成功请求等规则",
+        "将旧 trace 重放至 Postgres",
+        "无条件流式传输每一个字节",
+        "截断低于 100ms 的 span"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "仪表板如何检测跨周漂移？",
+      "options": [
+        "对汇总的提示词嵌入计算 PSI 或 KL 散度，并观察评估分数趋势",
+        "人工肉眼查看仪表板",
+        "读取最新的部署时间戳",
+        "统计唯一 trace ID 数量"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在注入 PII 泄露回归问题时，交付物的 MTTR 目标是什么？",
+      "options": [
+        "1 小时以内",
+        "24 小时内",
+        "下一个值班班次内",
+        "从 bug 部署到 Slack 告警低于 5 分钟"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪些 SDK 系列必须生成规范化的 GenAI span 以满足 trace 覆盖评分标准？",
+      "options": [
+        "仅 vLLM",
+        "至少六个：OpenAI、Anthropic、Google GenAI、LangChain、LlamaIndex 和 vLLM",
+        "任意一个 SDK 即可",
+        "仅 OpenAI 和 Anthropic"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "评估结果如何关联回原始的 LLM 调用？",
+      "options": [
+        "以每晚通过电子邮件发送的 CSV 形式",
+        "仅以 Slack 消息形式",
+        "以没有 trace ID 的独立 Postgres 表形式",
+        "以作为父 trace 子项写入 ClickHouse 的 eval span 形式"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

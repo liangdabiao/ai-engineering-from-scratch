@@ -1,0 +1,102 @@
+{
+  "lesson": "03-word-embeddings-word2vec",
+  "title": "词嵌入 — 从零实现 Word2Vec",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "什么是分布假说(Distributional Hypothesis)？",
+      "options": [
+        "观其伴而知其义",
+        "词在文档中是均匀分布的",
+        "所有词都可以嵌入到 300 维空间中",
+        "高频词承载最多的语义"
+      ],
+      "correct": 0,
+      "explanation": "Firth（1957）的分布假说(Distributional Hypothesis)：相似的上下文意味着相似的含义。"
+    },
+    {
+      "stage": "pre",
+      "question": "为什么在 Word2Vec 中对整个词表使用普通 softmax 是不现实的？",
+      "options": [
+        "在 10 万以上的词表项上计算 softmax，每个训练步的代价都高得难以承受",
+        "softmax 无法建模概率",
+        "softmax 没有梯度",
+        "它会导致梯度消失"
+      ],
+      "correct": 0,
+      "explanation": "全词表 softmax 代价过高；负采样将其重新表述为二分类问题。"
+    },
+    {
+      "stage": "check",
+      "question": "skip-gram 和 CBOW 有什么区别？",
+      "options": [
+        "skip-gram 使用二元语法；CBOW 使用一元语法",
+        "skip-gram 从中心词预测上下文词；CBOW 从上下文预测中心词",
+        "skip-gram 从上下文预测中心词；CBOW 则相反",
+        "skip-gram 训练深度网络；CBOW 是浅层网络"
+      ],
+      "correct": 1,
+      "explanation": "skip-gram：中心 -> 上下文。CBOW：上下文 -> 中心。"
+    },
+    {
+      "stage": "check",
+      "question": "在负采样中，正样本对（中心词，上下文）的目标是什么？",
+      "options": [
+        "最大化 sigmoid(W[center] dot W'[context])，使其接近 1",
+        "强制它们正交",
+        "最小化它们的点积",
+        "对向量去相关"
+      ],
+      "correct": 0,
+      "explanation": "正样本对将 sigmoid 训练到接近 1；采样的负样本将 sigmoid 训练到接近 0。"
+    },
+    {
+      "stage": "check",
+      "question": "训练完 Word2Vec 后，哪个权重矩阵会成为词嵌入？",
+      "options": [
+        "一个独立的训练后投影矩阵",
+        "输入到隐藏的 W 矩阵（中心词表）",
+        "两者相乘",
+        "隐藏到输出的 W' 矩阵"
+      ],
+      "correct": 1,
+      "explanation": "中心词表 W 是标准的嵌入(embedding)输出；W' 通常被丢弃或平均并入。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么 Word2Vec 在处理一词多义（如 'bank'）时会失败？",
+      "options": [
+        "窗口大小太小",
+        "它忽略了罕见词",
+        "负采样丢弃了罕见含义",
+        "它为每个词分配一个静态向量，因此 'river bank'（河岸）和 'financial bank'（金融机构）共享同一个向量"
+      ],
+      "correct": 3,
+      "explanation": "静态嵌入无法消歧词义；上下文嵌入（ELMo/BERT）解决了这个问题。"
+    },
+    {
+      "stage": "post",
+      "question": "在 2026 年，你何时仍会选择 Word2Vec 而不是 transformer？",
+      "options": [
+        "轻量级、设备端、特定领域的检索，其中单行查找就是延迟预算",
+        "当你需要上下文消歧时",
+        "当输入非常长时",
+        "当对话质量很重要时"
+      ],
+      "correct": 0,
+      "explanation": "Word2Vec 在极小延迟预算、设备端推理或快速特定领域训练方面占优。"
+    },
+    {
+      "stage": "post",
+      "question": "是什么实现了著名的类比 'king - man + woman ~ queen'（国王 - 男人 + 女人 ≈ 女王）？",
+      "options": [
+        "模型将皇室身份编码为一个标志位",
+        "Skip-gram 在皇室词汇上训练",
+        "向量算术捕捉了如 'royal'（皇室）这样的线性方向，并可跨性别迁移",
+        "余弦相似度对性别不变"
+      ],
+      "correct": 2,
+      "explanation": "嵌入空间中的方向编码了关系特征，因此加/减会系统性地移动。"
+    }
+  ]
+}

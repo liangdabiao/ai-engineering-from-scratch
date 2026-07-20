@@ -1,0 +1,78 @@
+{
+  "lesson": "45-gradient-clipping-amp",
+  "title": "梯度裁剪与混合精度",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "全局 L2 梯度裁剪解决了什么问题？",
+      "options": [
+        "训练缓慢",
+        "单个异常批次可能使梯度范数飙升数个数量级；裁剪限制了最坏情况下的优化器步长，从而让一个批次无法抹掉数小时的学习成果",
+        "词表漂移",
+        "随机重启"
+      ],
+      "correct": 1,
+      "explanation": "裁剪就是安全带，防止某个含噪批次毁掉损失曲线。"
+    },
+    {
+      "stage": "check",
+      "question": "在一个训练步中，GradScaler 操作的正确顺序是什么？",
+      "options": [
+        "step、scale、unscale、backward、update",
+        "scaler.scale(loss).backward(); scaler.unscale_(optimizer); clip_grad_norm_; scaler.step(optimizer); scaler.update()",
+        "backward、step、scale、update",
+        "任意顺序；scaler 内部会重排"
+      ],
+      "correct": 1,
+      "explanation": "在 unscale_ 和 step 之间对未缩放梯度进行裁剪；update 始终执行。"
+    },
+    {
+      "stage": "check",
+      "question": "scaler.update() 在跳过的步上会做什么？",
+      "options": [
+        "什么也不会发生",
+        "将缩放因子减半并重置无 inf 计数器；在跳过路径上忘记调用它，正是导致“缩放因子从未改变”这一 bug 的原因",
+        "将缩放因子加倍",
+        "关闭运行"
+      ],
+      "correct": 1,
+      "explanation": "scaler 会根据近期步的跳过 / 正常比例来调整其因子。"
+    },
+    {
+      "stage": "check",
+      "question": "即使使用了 GradScaler，为什么仍然需要对损失进行有限性检查？",
+      "options": [
+        "因为 GradScaler 很慢",
+        "GradScaler 处理反向传播中的溢出，但非有限损失不会产生有用的梯度；在反向传播前跳过可节省计算并避免污染 scaler 的状态",
+        "它是装饰性的",
+        "PyTorch 要求这样做"
+      ],
+      "correct": 1,
+      "explanation": "损失检查覆盖前向传播失败；scaler 覆盖反向传播失败。"
+    },
+    {
+      "stage": "post",
+      "question": "滚动跳过率中的生产环境告警信号是什么？",
+      "options": [
+        "任何跳过都直接告警",
+        "每次运行中出现少量跳过是正常的；每个 epoch 数百次跳过（滚动率约高于 5%）则是硬性告警，说明模型已处于 FP16 无法支撑的状态",
+        "跳过率无关紧要",
+        "仅在连续跳过时告警"
+      ],
+      "correct": 1,
+      "explanation": "基于比率的告警能捕捉到偶发跳过告警所无法发现的静默失败模式。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么在跳过(skip)频繁时从 FP16 切换到 BF16 自动混合精度(autocast)？",
+      "options": [
+        "BF16 较新",
+        "BF16 比 FP16 具有更宽的指数范围，且几乎不需要损失缩放(loss scaling)；在相同模型上跳过率通常会降为零",
+        "BF16 较慢，因此跳过较少",
+        "随机传统"
+      ],
+      "correct": 1,
+      "explanation": "FP16 偏向尾数精度而非范围；BF16 则反向取舍，完全去除了溢出类"
+    }
+  ]
+}

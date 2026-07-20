@@ -1,0 +1,90 @@
+{
+  "lesson": "16-openai-agents-sdk",
+  "title": "OpenAI Agents SDK：交接(Handoff)、护栏(Guardrail)、追踪(Tracing)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "OpenAI Agents SDK 的五个原语(Primitive)是什么？",
+      "options": [
+        "智能体(Agent)、交接(Handoff)、护栏(Guardrail)、会话(Session)、追踪(Tracing)",
+        "节点(Node)、边(Edge)、归约器(Reducer)、检查点器(Checkpointer)、子图(Subgraph)",
+        "规划器(Plan)、工作器(Worker)、求解器(Solver)、评估器(Evaluator)、反思器(Reflector)",
+        "工具(Tool)、提示词(Prompt)、模型(Model)、记忆(Memory)、追踪(Trace)"
+      ],
+      "correct": 0,
+      "explanation": "该 SDK 提供了这五个原语(Primitive)。"
+    },
+    {
+      "stage": "pre",
+      "question": "模型是如何看待一个交接(Handoff)的？",
+      "options": [
+        "作为一个自定义的 HTTP 端点",
+        "作为一个名为 transfer_to_<agent_name> 的工具",
+        "作为一条系统消息",
+        "作为一个特殊令牌(Token)"
+      ],
+      "correct": 1,
+      "explanation": "交接(Handoff)以具有 transfer_to_<agent> 命名形态的工具形式暴露。"
+    },
+    {
+      "stage": "check",
+      "question": "该 SDK 提供了哪三种护栏(Guardrail)类型？",
+      "options": [
+        "输入、输出和工具护栏(Guardrail)",
+        "前置、后置和内联护栏(Guardrail)",
+        "硬、软和尽力护栏(Guardrail)",
+        "静态、动态和联邦护栏(Guardrail)"
+      ],
+      "correct": 0,
+      "explanation": "输入（首个智能体(Agent)）、输出（末个智能体(Agent)）和工具（每个函数工具）护栏(Guardrail)。"
+    },
+    {
+      "stage": "check",
+      "question": "并行和阻塞护栏(Guardrail)有什么区别？",
+      "options": [
+        "并行与主 LLM 一同运行（延迟更低，但在触发时浪费令牌(Token)）；阻塞先运行（触发时不浪费令牌(Token)）",
+        "阻塞是异步的；并行是同步的",
+        "并行总是花费更多金钱",
+        "阻塞仅作用于输出"
+      ],
+      "correct": 0,
+      "explanation": "并行以触发时浪费令牌(Token)为代价来优化延迟；阻塞节省令牌(Token)但增加延迟。"
+    },
+    {
+      "stage": "check",
+      "question": "SDK 中如何启用追踪(Tracing)？",
+      "options": [
+        "默认关闭；按智能体(Agent)启用",
+        "默认开启；设置 OPENAI_AGENTS_DISABLE_TRACING=1 可退出",
+        "仅通过 OpenTelemetry 收集器",
+        "仅在托管仪表盘上"
+      ],
+      "correct": 1,
+      "explanation": "LLM、工具、交接(handoff)和护栏(guardrail)的跨度(span)默认会发出；一个环境变量可禁用它们。"
+    },
+    {
+      "stage": "post",
+      "question": "什么是交接漂移(handoff drift)，本课(lesson)建议如何缓解它？",
+      "options": [
+        "追踪(tracing)落后；减少跨度(span)数量",
+        "智能体A交接给B，B又交回A形成循环；添加一个跳数计数器(hop counter)",
+        "会话(sessions)溢出；归档旧的",
+        "护栏(guardrails)失同步；重新训练"
+      ],
+      "correct": 1,
+      "explanation": "跳数计数器(hop counter)在传输链无限循环前限制其长度。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么内置工具是护栏(guardrail)的一个缺口？",
+      "options": [
+        "它们比函数工具慢",
+        "工具护栏(guardrail)仅在函数工具上触发；内置工具（文件读取器、网络获取）需要单独的策略",
+        "它们无法被追踪(traced)",
+        "它们不支持交接(handoffs)"
+      ],
+      "correct": 1,
+      "explanation": "每工具护栏(per-tool guardrails)覆盖函数工具；内置工具需要独立的策略层。"
+    }
+  ]
+}

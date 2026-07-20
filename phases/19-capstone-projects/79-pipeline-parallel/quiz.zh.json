@@ -1,0 +1,78 @@
+{
+  "lesson": "79-pipeline-parallel",
+  "title": "流水线并行与气泡分析",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "什么是流水线气泡？",
+      "options": [
+        "NCCL 中的一个 bug",
+        "流水线开始和结束时的空闲时间：在第一个微批次(microbatch)到达之前以及最后一个微批次离开之后，这些阶段没有任何工作",
+        "内存泄漏",
+        "一个网络数据包"
+      ],
+      "correct": 1,
+      "explanation": "对于 M 个微批次和 N 个阶段，每阶段气泡为 (N-1)/(M+N-1)。取 M 远大于 N 可使其缩小。"
+    },
+    {
+      "stage": "pre",
+      "question": "为什么 GPipe 的激活内存与 M 成正比？",
+      "options": [
+        "Bug",
+        "所有 M 个微批次的激活必须保留到对应的反向传播；在排空开始之前没有任何东西被释放",
+        "编译器限制",
+        "硬件限制"
+      ],
+      "correct": 1,
+      "explanation": "GPipe 在任何反向传播之前用所有前向传播填满流水线。每个在途微批次携带其激活，直到其反向传播开始。"
+    },
+    {
+      "stage": "check",
+      "question": "1F1B 相比 GPipe 有何改进？",
+      "options": [
+        "更低的气泡",
+        "气泡相同但激活内存有界；一旦 mb 0 的前向传播到达最后一个阶段，其反向传播就开始并释放激活",
+        "更高吞吐量",
+        "更小的模型"
+      ],
+      "correct": 1,
+      "explanation": "Megatron-LM 和 PipeDream 使用 1F1B 将激活内存限制为流水线深度，而非微批次数量。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么每阶段计算量相等比参数数量相等更重要？",
+      "options": [
+        "美观",
+        "最慢的阶段制约每个周期；其他阶段空闲等待它。嵌入层有许多参数但计算很少，因此按参数数量划分会使流水线失衡",
+        "内存对齐",
+        "更容易编码"
+      ],
+      "correct": 1,
+      "explanation": "Megatron-LM 将 --num-layers-per-stage 作为一个列表暴露出来，以允许在每层成本不同时使用不均匀的层数。"
+    },
+    {
+      "stage": "check",
+      "question": "如果每个阶段都在 recv 之前调用 send 会出什么问题？",
+      "options": [
+        "内存泄漏",
+        "链路上的死锁；标准修复是交错偶数秩先发送、奇数秩先接收",
+        "慢",
+        "更高的气泡"
+      ],
+      "correct": 1,
+      "explanation": "同步的 send/recv 对需要一侧在另一侧发送时正在接收。该课显式调度秩，使模式可见。"
+    },
+    {
+      "stage": "post",
+      "question": "Pipeline 加上 ZeRO-1 结合了哪两项内存收益？",
+      "options": [
+        "压缩与量化",
+        "逐阶段参数分片（每个 rank 仅持有某一阶段的层）加上逐 rank 优化器分片（每个 rank 仅持有其所处阶段 1/N 的优化器状态）",
+        "仅激活值",
+        "什么也不会发生"
+      ],
+      "correct": 1,
+      "explanation": "Pipeline 在多个 rank 间对层进行分片；ZeRO 在每个流水线 rank 的数据并行组内对优化器状态进行分片。两项收益叠加增效。"
+    }
+  ]
+}

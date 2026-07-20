@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么 Stable Diffusion 要在 4x64x64 的潜空间(latent space)中运行其 DDPM，而不是直接在 3x512x512 的像素图像上运行？",
+      "options": [
+        "潜变量更容易可视化",
+        "在 16,384 个潜变量值上训练和采样，而不是在 786,432 个像素上，成本大约便宜 48 倍；一个预训练的 VAE 负责图像 <-> 潜变量之间的转换，扩散模型只需对结构化的潜流形(latent manifold)建模",
+        "潜变量是 GPU 的原生输出",
+        "为了使推理具有确定性"
+      ],
+      "correct": 1,
+      "explanation": "潜扩散(Latent diffusion)是让消费级 GPU 文本生成图像成为现实的那一项创新。VAE 压缩了 48 倍的空间和通道信息。扩散模型可以将其全部参数和计算预算用于对潜流形建模，而这部分正是用户解码后所看到的内容。"
+    },
+    {
+      "stage": "pre",
+      "question": "无分类器引导(classifier-free guidance, CFG)在推理时做什么？",
+      "options": [
+        "运行两个独立的模型并对它们取平均",
+        "使用一个训练来预测条件噪声 eps_cond 和无条件噪声 eps_uncond 的模型，然后将它们组合为 eps = eps_uncond + w*(eps_cond - eps_uncond)，以放大对提示的遵循度",
+        "在测试时给模型添加一个分类器头",
+        "使用更大的调度器(scheduler)"
+      ],
+      "correct": 1,
+      "explanation": "CFG 训练一个单一模型，其中条件以 10% 的概率被丢弃，因此相同的权重可以同时产生条件和无条件预测。在推理时，上述公式会放大条件方向。引导尺度 w 是用于调节提示遵循度与多样性之间平衡的标准旋钮；SD 默认值为 7.5。"
+    },
+    {
+      "stage": "post",
+      "question": "你将 SD 的默认调度器换为 DPM-Solver++ 2M Karras，并将 num_inference_steps 从 50 减少到 20。预期结果是什么？",
+      "options": [
+        "质量更差且运行时间更长",
+        "在大约一半的时间内达到可比的质量；DPM-Solver++ 是一个二阶 ODE 积分器(integrator)，在相同采样质量下比 DDIM 用更少的步数收敛",
+        "数值不稳定",
+        "你还必须重新训练模型"
+      ],
+      "correct": 1,
+      "explanation": "调度器与模型权重是解耦的。DPM-Solver++ 是一个更高阶的求解器(solver)，能在约 20 步内达到 DDIM-50 的质量。无需重新训练，并且它是 2026 年的生产环境默认选择。低于 8 步通常需要像 LCM 或 Turbo 这样的蒸馏/一致性模型变体。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么 LoRA 微调在 Stable Diffusion 中比全量微调更受欢迎？",
+      "options": [
+        "LoRA 默认能生成更好的图像",
+        "LoRA 保持 860M 的基础 U-Net 冻结，并向注意力层插入微小的秩分解矩阵，因此微调可以在消费级硬件上几分钟完成，生成 10-50 MB 的适配器(adapter)，并可在推理时切换或混合",
+        "diffusers 要求必须使用 LoRA",
+        "LoRA 能完全防止过拟合"
+      ],
+      "correct": 1,
+      "explanation": "LoRA 的价值在于训练成本和分发。完整的 SD 微调会更新 860M+ 参数，需要 20+ GB 的显存(VRAM)。LoRA 更新约 1-10M 参数，可在 6-8 GB 内完成。基础模型不变，因此同一个 LoRA 可加载到任何兼容的检查点(checkpoint)中，并且多个 LoRA 可以组合使用。CivitAI 的生态系统完全由 LoRA 构成。"
+    },
+    {
+      "stage": "post",
+      "question": "你用 guidance_scale=15 生成相同的提示，看到过饱和的颜色和烧入的伪影。这是怎么回事？",
+      "options": [
+        "模型坏了",
+        "CFG 会放大条件方向；超过约 9-12 的阈值后，这种放大将预测推到了 VAE 能够干净解码的流形之外，从而产生视觉伪影。将引导值降到 7-9 可获得均衡的结果",
+        "VAE 需要重新训练",
+        "种子(seed)错了"
+      ],
+      "correct": 1,
+      "explanation": "CFG 的公式无界：更大的 w 会沿着 (eps_cond - eps_uncond) 方向移动预测更远。超过某个点后，你就离开了训练分布，VAE 解码器会生成过饱和、色调分离的图像。生产环境默认值为 7-8。一些较新的调度器支持 CFG 调度（在最后时间步降低 w）来避免这个问题。"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "33-multihead-self-attention",
+  "title": "多头自注意力(Multi-Head Self-Attention)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么一个高效的自注意力块使用单个线性层输出 3*D 个特征？",
+      "options": [
+        "它在 Q、K 和 V 之间强制共享权重",
+        "它在数学上等价于三个 Linear(D, D) 层，并作为一个矩阵乘法运行",
+        "它避免了对因果掩码(causal mask)的需求",
+        "它减少了模型参数数量"
+      ],
+      "correct": 1,
+      "explanation": "将三个 (D, D) 投影矩阵堆叠为一个 (3D, D) 矩阵会产生相同的输出，但前向传播是一次对加速器友好的矩阵乘法。"
+    },
+    {
+      "stage": "check",
+      "question": "d_model、n_heads 和 d_head 之间的关系是什么？",
+      "options": [
+        "d_head = d_model * n_heads",
+        "d_head = d_model + n_heads",
+        "d_head = d_model // n_heads，且 d_model 必须能被 n_heads 整除",
+        "d_head 与 d_model 无关"
+      ],
+      "correct": 2,
+      "explanation": "该块将 d_model 均匀分配到各个头上。约束 d_model % n_heads == 0 在构建时强制执行。"
+    },
+    {
+      "stage": "check",
+      "question": "缩放点积注意力(scaled dot-product attention)的缩放因子中填入什么值？",
+      "options": [
+        "sqrt(d_model)",
+        "sqrt(d_head)",
+        "sqrt(n_heads)",
+        "sqrt(seq_len)"
+      ],
+      "correct": 1,
+      "explanation": "分数在 softmax 之前除以 sqrt(d_head)，即矩阵乘法所缩并的头的维度。这随着 d_head 增大将分数的方差保持在有界范围内。"
+    },
+    {
+      "stage": "check",
+      "question": "因果掩码如何强制位置 t 不能关注位置 t+1？",
+      "options": [
+        "通过将未来位置的键乘以零",
+        "通过在 softmax 之前将对角线上方的分数项设为负无穷",
+        "通过从输入中移除未来词元",
+        "通过对未来使用不同的注意力头"
+      ],
+      "correct": 1,
+      "explanation": "将未来项设为 -inf 会强制 softmax 赋予它们零权重。过去和当前位置保留有效的权重分布。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么该块在合并头之后以 Linear(D, D) 输出投影结束？",
+      "options": [
+        "为了允许模型在头之间混合信息",
+        "为了匹配模型的词表大小",
+        "为了将激活归一化到均值为零",
+        "它是 autograd 跟踪梯度所必需的"
+      ],
+      "correct": 0,
+      "explanation": "如果没有输出投影(Projection)，各个头的输出只能在后续层中组合。投影(Projection)为该块在同一个步骤中混合各个头提供了一个位置。"
+    },
+    {
+      "stage": "post",
+      "question": "形状为 (B, H, T, T) 的注意力权重矩阵能告诉你什么？",
+      "options": [
+        "每个头有多少个参数",
+        "在每个头、每个批次元素中，每个查询位置关注哪些键位置",
+        "查询向量和值向量之间的余弦相似度",
+        "下一个词元的输出逻辑值(Logits)"
+      ],
+      "correct": 1,
+      "explanation": "每个头矩阵的第 t 行是查询位置 t 所使用的、关于键位置的分布。检查它可以看出每个头关注哪里。"
+    }
+  ]
+}

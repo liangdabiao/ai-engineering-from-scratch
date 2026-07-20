@@ -1,0 +1,90 @@
+{
+  "lesson": "09-code-migration-agent",
+  "title": "顶点项目 09 — 代码迁移代理（仓库级语言/运行时升级）",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么该流水线将确定性底层与代理层结合，而不是仅使用其中之一？",
+      "options": [
+        "OpenRewrite 或 libcst 可安全且低成本地处理 70-80% 的机械化重写，将模糊的长尾部分留给代理处理",
+        "仅使用代理比使用配方更快",
+        "确定性配方比 LLM 更慢",
+        "仅构建系统需要确定性"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "该流水线使用什么信号作为迁移成功的真实标准？",
+      "options": [
+        "代理基于评分标准自我评分",
+        "审查者对 PR 的批准",
+        "差异大小低于硬性限制",
+        "沙箱中 CI 为绿色，且覆盖率回归未超过小阈值"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "代理循环对每个仓库强制执行哪些预算上限？",
+      "options": [
+        "无限时间和成本；仅出错时中止",
+        "无轮次限制，100 美元上限",
+        "1 小时实际运行时间和 100 轮",
+        "30 分钟实际运行时间、8 美元成本，以及 20 轮代理"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "当迁移后覆盖率下降超过约 2% 时，会触发哪个关卡？",
+      "options": [
+        "审查者被绕过",
+        "该仓库被归入 coverage_regression 失败类，而不是打开一个干净的 PR",
+        "确定性底层重放其配方",
+        "代理自动强制推送一个修复"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么失败分类法被视为交付物，而不是附属产物？",
+      "options": [
+        "它替代了测试套件",
+        "它按类别对失败仓库分组，以便未来的配方作者可以针对主要失败模式",
+        "GitHub 分支保护要求它",
+        "它满足合规检查清单"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "该顶点项目针对 Java 8 到 17 迁移瞄准哪个公开基准？",
+      "options": [
+        "Amazon 的 MigrationBench",
+        "SWE-bench Pro",
+        "MMLU-Pro",
+        "ViDoRe v3"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "agent 集成评分标准衡量了关于修复分布的什么内容？",
+      "options": [
+        "源文件的令牌化速度",
+        "每个仓库的强制推送次数",
+        "锁定的依赖项数量",
+        "由 OpenRewrite 处理的修复与由 agent 层编写的修复所占的比例"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

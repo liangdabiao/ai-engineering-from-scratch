@@ -1,0 +1,102 @@
+{
+  "lesson": "08-cnns-rnns-for-text",
+  "title": "CNNs and RNNs for Text",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What is a 1D convolutional filter of width 3 over word embeddings effectively learning?",
+      "options": [
+        "A learnable bigram detector",
+        "A position embedding",
+        "A learnable trigram (n-gram) detector",
+        "A unigram count"
+      ],
+      "correct": 2,
+      "explanation": "A width-3 filter spans three consecutive tokens, acting as a learnable trigram detector."
+    },
+    {
+      "stage": "pre",
+      "question": "Why does an LSTM use a cell state with mostly additive interactions?",
+      "options": [
+        "Additive flow lets gradients propagate through long sequences without vanishing or exploding",
+        "Faster softmax",
+        "It saves memory",
+        "To avoid matrix inversion"
+      ],
+      "correct": 0,
+      "explanation": "The cell-state highway keeps gradients stable across hundreds of steps, fixing vanishing-gradient issues."
+    },
+    {
+      "stage": "check",
+      "question": "Why does TextCNN use global max-pooling after the convolutional layer?",
+      "options": [
+        "To enable backpropagation",
+        "To remove embeddings",
+        "To reduce vocabulary",
+        "Max-pool gives a fixed-size, position-invariant representation by selecting the strongest activation per filter"
+      ],
+      "correct": 3,
+      "explanation": "Global max-pool produces a fixed-size feature vector regardless of input length, with position invariance."
+    },
+    {
+      "stage": "check",
+      "question": "What is the main advantage of a bidirectional RNN over a one-way RNN for sequence labeling?",
+      "options": [
+        "Faster training",
+        "Each token's representation sees both left and right context, which is essential for tagging",
+        "Avoids embeddings",
+        "Cheaper memory"
+      ],
+      "correct": 1,
+      "explanation": "Bidirectional networks concatenate forward + backward hidden states so labels can use full context."
+    },
+    {
+      "stage": "check",
+      "question": "Why does max-pooling over an LSTM's outputs often beat using just the last hidden state for classification?",
+      "options": [
+        "Max-pool is differentiable; last-state is not",
+        "Information at the end of a long sequence tends to dominate the last state, hiding earlier evidence",
+        "Max-pool removes capitalization",
+        "Last-state pool ignores padding"
+      ],
+      "correct": 1,
+      "explanation": "最大池化(Max-pool)聚合各位置中最强的信号；最后状态可能会丢失较早的证据。"
+    },
+    {
+      "stage": "post",
+      "question": "LSTM/RNN 编码器-解码器的哪个局限性促使了注意力(Attention)机制的产生？",
+      "options": [
+        "它们需要子词分词器(subword tokenizers)",
+        "它们无法使用嵌入(Embeddings)",
+        "解码器只能看到固定大小的编码器状态，在长输入上会丢失细节；此外循环结构也使得训练串行化",
+        "它们无法嵌入令牌(Tokens)"
+      ],
+      "correct": 2,
+      "explanation": "固定大小的摘要加上串行训练是注意力机制解决的两个缺陷。"
+    },
+    {
+      "stage": "post",
+      "question": "在 2026 年，TextCNN 或 BiLSTM 何时仍能击败 Transformer？",
+      "options": [
+        "在图像输入上",
+        "边缘 / 设备上、逐令牌(Token-by-token)流式输入，或极小数据基线",
+        "只要数据集是多语言的",
+        "当延迟要求极其宽松时"
+      ],
+      "correct": 1,
+      "explanation": "小型架构在边缘推理、流式输入和快速基线方面仍具优势。"
+    },
+    {
+      "stage": "post",
+      "question": "普通 RNN 中的梯度消失(Vanishing Gradient)问题是什么？",
+      "options": [
+        " recurrent 权重（小于 1）的重复相乘使得指向早期步骤的梯度收缩趋近于零",
+        "嵌入(Embedding)矩阵变为奇异矩阵",
+        "输入变为零",
+        "损失变为负数"
+      ],
+      "correct": 0,
+      "explanation": "无门控机制时，长乘积梯度会消失（或爆炸）；这正是 LSTM 和 GRU 存在的原因。"
+    }
+  ]
+}

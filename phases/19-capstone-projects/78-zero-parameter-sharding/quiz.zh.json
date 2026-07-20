@@ -1,0 +1,78 @@
+{
+  "lesson": "78-zero-parameter-sharding",
+  "title": "ZeRO 优化器状态分片",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么 ZeRO 先分片优化器状态而不是参数？",
+      "options": [
+        "优化器更重要",
+        "优化器状态是占用内存最大的项，并且只在 step（更新步）中被访问，而非前向或反向传播阶段",
+        "参数更简单",
+        "DeepSpeed 强制要求"
+      ],
+      "correct": 1,
+      "explanation": "对于混合精度下的 Adam，fp32 主参数加上两个动量项在每个 rank 上占用 12P 字节，而 fp16 参数加梯度为 4P。优先分片最大的项能以最小复杂度换取最多内存收益。"
+    },
+    {
+      "stage": "pre",
+      "question": "ZeRO stage 1 的每步通信模式是什么？",
+      "options": [
+        "一次 allreduce（全规约）",
+        "对梯度执行一次 reduce_scatter（归约散播），并对更新后的参数执行一次 allgather（全收集）",
+        "一次 broadcast（广播）",
+        "什么也不会发生"
+      ],
+      "correct": 1,
+      "explanation": "reduce_scatter 让每个 rank 只获得自己的梯度分片；allgather 将更新后的参数分片分发回去。总字节数与 allreduce 相等，内存被除以 N（rank 数）。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么每步带宽和 DDP 一样？",
+      "options": [
+        "魔法",
+        "allreduce 在带宽上等价于 reduce_scatter 加 allgather；ZeRO 将其拆分为对两份不同数据的两半操作",
+        "ZeRO 使用了压缩",
+        "并非如此"
+      ],
+      "correct": 1,
+      "explanation": "Ring allreduce（环形全规约）实现为先 reduce_scatter 再 allgather。ZeRO 执行相同的两个操作，但 allgather 轮转的是更新后的参数，而非求和后的梯度。"
+    },
+    {
+      "stage": "check",
+      "question": "对于一个 7B 模型，在 8 个 rank 上用混合精度 Adam，相比原始 DDP 内存下降多少？",
+      "options": [
+        "10%",
+        "约 65%（原始 16P 对比 ZeRO-1 的 4P + 12P/N = 5.5P）",
+        "99%",
+        "0%"
+      ],
+      "correct": 1,
+      "explanation": "原始：2P + 2P + 4P + 4P + 4P = 16P。ZeRO-1：2P + 2P + (4P+4P+4P)/8 = 5.5P。下降为 (16-5.5)/16 = 65.6%。"
+    },
+    {
+      "stage": "check",
+      "question": "ZeRO-2 相比 ZeRO-1 增加了什么？",
+      "options": [
+        "什么也不会发生",
+        "还在 reduce_scatter 之后丢弃非分片梯度，释放每 rank 的梯度内存；带宽保持不变",
+        "将后端切换为 NCCL",
+        "移除了优化器"
+      ],
+      "correct": 1,
+      "explanation": "ZeRO-2 在 reduce_scatter 之后将非分片梯度部分置零；带宽与 ZeRO-1 相同但梯度内存更低。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么 ZeRO 要求优化器状态检查点记录哪个 rank 拥有哪个分片？",
+      "options": [
+        "装饰性的",
+        "如果没有按秩(rank)的所有权，保存的状态在重启时是无法读取的；在以相同世界大小(world size)恢复时，需要把正确的分片(shard)放回正确的秩(rank)上",
+        "它不抵御",
+        "压缩(Compression)"
+      ],
+      "correct": 1,
+      "explanation": "第80课(Lesson 80)精确地构建了分片检查点清单(manifest)，以便一个 ZeRO 运行能在相同拓扑结构上恢复。"
+    }
+  ]
+}

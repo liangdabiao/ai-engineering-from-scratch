@@ -1,0 +1,90 @@
+{
+  "lesson": "18-agno-and-mastra-runtimes",
+  "title": "Agno 和 Mastra：生产运行时",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "该课(Lesson)针对每个运行时推荐哪种语言组合？",
+      "options": [
+        "Agno 用于 TypeScript，Mastra 用于 Python",
+        "Agno 用于 Python，Mastra 用于 TypeScript",
+        "两者都以 Rust 优先",
+        "两者都以 Go 优先"
+      ],
+      "correct": 1,
+      "explanation": "Agno 是 Python（FastAPI 形态）；Mastra 是 TypeScript（Vercel AI SDK 形态）。"
+    },
+    {
+      "stage": "pre",
+      "question": "Agno 推荐的生产部署形态是什么？",
+      "options": [
+        "一个长期运行的有状态守护进程",
+        "一个无状态会话作用域的 FastAPI 后端；每次请求启动一个新的智能体，会话状态存放在数据库中",
+        "仅一个无服务器定时任务工作器",
+        "仅一个 WebSocket 服务器"
+      ],
+      "correct": 1,
+      "explanation": "每次请求无状态 FastAPI；会话状态外置到数据库。"
+    },
+    {
+      "stage": "check",
+      "question": "Mastra 的三个原语是什么？",
+      "options": [
+        "智能体、工具、工作流",
+        "Actor、Message、Inbox",
+        "Plan、Worker、Solver",
+        "Node、Edge、State"
+      ],
+      "correct": 0,
+      "explanation": "智能体（LLM + 角色）、工具（Zod 类型化）和工作流是 Mastra 的三个原语。"
+    },
+    {
+      "stage": "check",
+      "question": "根据其文档，Agno 大致针对的每个智能体实例化成本是多少？",
+      "options": [
+        "约 2 微秒，每个智能体约 3.75 KiB",
+        "约 200 毫秒，每个智能体 100 MiB",
+        "约 1 秒，每个智能体 1 GiB",
+        "约 10 分钟，每个智能体 4 GiB"
+      ],
+      "correct": 0,
+      "explanation": "Agno 的文档引用了约 2 微秒和每个智能体约 3.75 KiB。"
+    },
+    {
+      "stage": "check",
+      "question": "Mastra 的统一模型路由器提供什么？",
+      "options": [
+        "一个用于跨多个提供商的成千上万模型的单一客户端接口",
+        "一个用于工具调用的队列",
+        "一个向量数据库层",
+        "一个图检查点器"
+      ],
+      "correct": 0,
+      "explanation": "Mastra 的统一模型路由器引用了 94 家提供商的 3,300+ 个模型。"
+    },
+    {
+      "stage": "post",
+      "question": "什么时候“为了性能而性能”是选择 Agno 的错误理由？",
+      "options": [
+        "当工作负载是每请求一次慢速智能体调用且开销不是瓶颈时",
+        "当使用 Python 3.13 时",
+        "当部署到 AWS 时",
+        "当使用 Langfuse 时"
+      ],
+      "correct": 0,
+      "explanation": "2 微秒在聊天扇入规模下才有意义，而不是对于每请求一次慢速调用。"
+    },
+    {
+      "stage": "post",
+      "question": "在 fork Mastra 之前，你应该仔细阅读哪些许可相关的内容？",
+      "options": [
+        "没有许可证文件",
+        "ee/ 目录是源码可见而非 Apache 2.0，并且限制商业使用",
+        "Mastra 全部为 GPL",
+        "Mastra 需要 CLA 但无需许可证审查"
+      ],
+      "correct": 1,
+      "explanation": "Mastra 为 Apache 2.0，但 ee/ 部分为源码可见；fork 前请查看相关限制。"
+    }
+  ]
+}

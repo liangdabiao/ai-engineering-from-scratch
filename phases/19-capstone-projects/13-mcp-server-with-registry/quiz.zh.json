@@ -1,0 +1,90 @@
+{
+  "lesson": "13-mcp-server-with-registry",
+  "title": "顶点项目 13 — 带注册表与治理的 MCP 服务器",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为何 2026 年的 MCP 修订版在生产服务器上偏向 StreamableHTTP？",
+      "options": [
+        "它免去了身份验证的需要",
+        "它是唯一支持工具调用的传输方式",
+        "它会自动加密负载",
+        "它默认是无状态的，因此负载均衡器后的单一端点可以水平扩展"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "在这个顶点项目中，哪种授权模型对工具调用进行门控？",
+      "options": [
+        "携带每工具作用域的 OAuth 2.1 令牌，在工具调用时检查",
+        "一个共享的管理员密码",
+        "每个 IP 地址的 API 密钥",
+        "无作用域的双向 TLS"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": ".well-known/mcp-capabilities 文档的作用是什么？",
+      "options": [
+        "存储服务器的审计日志",
+        "列出出站 IP 范围",
+        "持有 OPA 策略包",
+        "暴露工具清单、传输 URL 和认证要求，以便注册表验证并为服务器建立索引"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为何在这个设计中，破坏性工具位于独立的 MCP 服务器上？",
+      "options": [
+        "它们无法通过 StreamableHTTP 暴露",
+        "它们运行在较慢的硬件上",
+        "它们被一个在短时间窗口内通过 Slack 卡片提升的审批令牌所门控",
+        "它们需要不同的编程语言"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "OPA / Rego 在每次工具调用时决定什么？",
+      "options": [
+        "调用哪个模型",
+        "审计日志写入何处",
+        "服务器应如何对响应重新排序",
+        "调用方的作用域是否允许调用，以及 PII 脱敏与负载上限"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪种证据在负载测试中证明了 StreamableHTTP 的水平扩展？",
+      "options": [
+        "将并发降低到单个客户端",
+        "切换到 stdio 传输",
+        "在单一进程中运行所有内容",
+        "添加第二个副本，并展示负载均衡器在没有会话粘性的情况下重新分配流量"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么审计日志在按租户持久化之前要通过 Presidio 擦除 PII？",
+      "options": [
+        "为了让日志更简短",
+        "为了满足企业安全要求，同时保持每次调用的血缘可追溯",
+        "Presidio 减少了 ClickHouse 的写放大",
+        "PII 提升了搜索性能"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

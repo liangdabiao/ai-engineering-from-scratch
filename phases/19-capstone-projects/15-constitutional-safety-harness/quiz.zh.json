@@ -1,0 +1,90 @@
+{
+  "lesson": "15-constitutional-safety-harness",
+  "title": "顶点项目 15 — 宪法级安全约束 + 红队靶场",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在这个顶点项目中，分层安全意味着什么？",
+      "options": [
+        "对每条回复进行人工审查",
+        "仅对输入运行一个强分类器",
+        "对输出执行单一基于规则的正则表达式匹配",
+        "在输入清洗、策略护栏、分类器门控、模型、输出过滤器和人机协同(HITL)层级上的深度防御"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "哪个分类器可覆盖约 132 种语言的多语言场景？",
+      "options": [
+        "Nemotron 3 Content Safety",
+        "ShieldGemma-2",
+        "X-Guard",
+        "Llama Guard 4"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为何要在 XSTest 这类良性测试集上衡量过度拒答？",
+      "options": [
+        "为了替代红队评分",
+        "为了基准测试令牌吞吐量",
+        "为了认证护栏框架",
+        "为了追踪误报拦截，使模型在提升无害性的同时保持有用性"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在这个顶点项目中，宪法式自我批判循环是什么？",
+      "options": [
+        "针对候选越狱提示的重排序器",
+        "从零训练的 RLHF 奖励模型",
+        "通过 Llama Guard 4 的单次前向传播",
+        "批判模型(Critic LLM)依据书面宪法对草稿评分，提示模型重写被反对的输出，并在改进后的配对上运行监督微调(SFT)"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在调查结论中，成功越狱是如何按严重程度评分的？",
+      "options": [
+        "依据生成回复的模型",
+        "使用 CVSS 4.0，结合攻击向量、复杂度和影响，以及披露时间线",
+        "依据提示的原始令牌数量",
+        "依据操作员选定的手工调整的 1-10 分制"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "红队靶场运行哪六种攻击类型？",
+      "options": [
+        "BLEU、ROUGE、METEOR、BERTScore、CometKiwi 和 chrF",
+        "PAIR、TAP、GCG、编码（ASCII/base64/rot13）、多轮角色扮演，以及多语言语码切换",
+        "暴力破解、字典攻击、重放攻击、中间人攻击(MITM)、钓鱼攻击和跨站请求伪造(CSRF)",
+        "PSI、KL、MMD、KS、JS 和 Wasserstein"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么范围自动化（cron + 告警）是评分标准的一部分？",
+      "options": [
+        "Cron 是调用 OPA 的唯一方式",
+        "持续的定时探测可以捕捉随时间推移的攻击成功率和过度拒绝回归的漂移",
+        "明确要求手动运行",
+        "需要自动化来禁用 Llama Guard 4"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "lesson": "03-realtime-voice-assistant",
+  "title": "顶点项目 03 — 实时语音助手（ASR 到 LLM 到 TTS）",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么不能通过拼接三个阻塞式 REST 调用来构建语音代理？",
+      "options": [
+        "REST 端点有 30 秒的硬性超时",
+        "REST 与 WebRTC 不兼容",
+        "JSON 序列化对于音频数据来说太慢了",
+        "低于 800ms 的端到端延迟需要在每个阶段都使用流水线流式处理"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "在 VAD 之外，turn-detector（话轮检测器）的作用是什么？",
+      "options": [
+        "为代理训练一个自定义语音克隆",
+        "读取部分转写文本并评分判断用户是否真的说完了自己的话语",
+        "在多方通话中检测是哪个说话人在讲话",
+        "将背景音乐混入输出流"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "当用户在代理响应中途开始说话时，为了让打断（barge-in）感觉自然，必须发生什么？",
+      "options": [
+        "TTS 在完成当前句子后才让出",
+        "流水线将用户音频缓冲直到 TTS 完成",
+        "TTS 被立即取消，剩余的 LLM 输出被丢弃，ASR 重新待命",
+        "代理提高 TTS 音量以宣示优先级"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么当工具运行超过约 300ms 时会发出如“稍等，我查一下”这样的短填充语？",
+      "options": [
+        "它避免了静默，从而在旁路工具运行期间对话不会卡住",
+        "它触发一个后备 ASR 模型",
+        "它重置 WebRTC 抖动缓冲区",
+        "它改善了下一句话的 WER"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "第一个音频块必须在第一个 LLM token 出现后大约多长时间内离开服务器？",
+      "options": [
+        "20ms",
+        "800ms",
+        "2 seconds",
+        "200ms"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪个指标直接衡量不恰当的打断（barge-in）或过早的话轮结束？",
+      "options": [
+        "WER",
+        "MOS",
+        "接受率",
+        "伪截断速率"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "在丢包率低于 3% 的情况下，该管道依赖哪两种自适应行为？",
+      "options": [
+        "切换到更大的 LLM 并禁用 TTS",
+        "回退到 PSTN 音频编解码器",
+        "保留部分转录文本并提高 VAD 语音门限阈值",
+        "重启 LiveKit 房间"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

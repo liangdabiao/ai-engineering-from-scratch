@@ -1,0 +1,78 @@
+{
+  "lesson": "10-ai-control-subversion",
+  "title": "AI 控制——即便遭遇颠覆也能保证安全",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "以下哪项最能概括对齐(Alignment)与 AI 控制之间的区别？",
+      "options": [
+        "对齐(Alignment)追问 U 是否值得信任；控制(Control)追问我们能否在不信任 U 的情况下安全使用它",
+        "控制(Control)替换损失函数，而对齐(Alignment)改变优化器",
+        "它们是同义词",
+        "控制(Control)关乎硬件；对齐(Alignment)关乎软件"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "AI 控制威胁模型做出了什么假设？",
+      "options": [
+        "U 是不可信任的强模型，T 是可信任的弱模型，H 是有上限的可信任人力",
+        "U 和 T 都是对抗性的",
+        "三种资源（U、T、H）全部可信任",
+        "只有 U 存在"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在不可信任监控(Untrusted Monitoring)中，哪项是可信编辑(Trusted Editing)所规避的关键风险？",
+      "options": [
+        "U 的两个实例可能串通或共享先验，因此协议必须耗费预算来抵御串通",
+        "人类无法被审计",
+        "硬件争用",
+        "T 无法编辑文本"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在 Greenblatt 等人（ICML 2024）的代码后门任务中，相较于不可信任监控(Untrusted Monitoring)，可信编辑(Trusted Editing)取得了什么结果？",
+      "options": [
+        "它严格更差",
+        "它仅在零人力预算时胜出",
+        "两者完全等价",
+        "它严格帕累托占优：在每个安全等级上都有更高的有用性"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "以下哪项不是该课所讲控制(Control)的三大基本限制之一？",
+      "options": [
+        "可信弱模型终将落后于 U",
+        "控制(Control)会顺带产生对齐(Alignment)的模型",
+        "人类无法扩展",
+        "若 U 能操纵 T 或推理 H 的审计分布，控制(Control)在更高能力层级可能失效"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "控制安全论证(Control Safety Case)主张什么？",
+      "options": [
+        "T 比 U 能力更强",
+        "在对 U 的最坏情况假设下，部署协议将不可接受结果的概率限制在界限内",
+        "U 是值得信任的",
+        "该模型通过了一次人工越狱测试"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

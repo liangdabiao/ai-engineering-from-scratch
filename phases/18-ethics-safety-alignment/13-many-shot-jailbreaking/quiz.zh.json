@@ -1,0 +1,78 @@
+{
+  "lesson": "13-many-shot-jailbreaking",
+  "title": "多样本越狱（Many-Shot Jailbreaking）",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "多样本越狱（MSJ）利用了上下文窗口的哪种属性？",
+      "options": [
+        "位置嵌入在超过 2048 个 token 后发生旋转",
+        "滑动窗口注意力截断系统提示",
+        "非常长的上下文窗口，在目标查询之前可容纳数百个虚假的用户-助手有害顺从轮次",
+        "分词器在 Unicode 字符上的歧义"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在 MSJ 中，攻击成功率（ASR）如何随样本数量变化？",
+      "options": [
+        "具有负斜率的线性变化",
+        "随样本数量呈幂律变化；不会趋于平稳，持续上升",
+        "在 100 个样本处呈阶跃函数",
+        "逻辑斯蒂曲线，在 50% 处趋于平稳"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么 MSJ 与良性的上下文学习（ICL）共享一种机制？",
+      "options": [
+        "两者都依赖模型从上下文示例中抽取任务结构，并在查询上执行它",
+        "两者都依赖 RLHF",
+        "两者都绕过分词",
+        "两者都需要一个隐藏的草稿板"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "MSJ 的核心防御困境是什么？",
+      "options": [
+        "防御必须在采样温度为零时应用",
+        "防御需要 GPU 集群",
+        "抑制从长上下文中抽取模式也会禁用良性的上下文学习；防御必须区分有害模式与良性模式",
+        "防御必须在响应的每个 token 上运行"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "Anthropic 基于分类器的提示修改防御在测试设置上将 MSJ 攻击成功率从多少降低到多少？",
+      "options": [
+        "从 99% 降到 50%",
+        "从 30% 降到 25%",
+        "从 61% 降到 2%",
+        "它提高了 ASR"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "MSJ 如何与 PAIR（第 12 课）相互作用？",
+      "options": [
+        "PAIR 中和了 MSJ",
+        "PAIR 仅适用于闭源模型",
+        "MSJ 与 PAIR 组合使用；用 PAIR 找到攻击结构，然后填入大量样本，可达到比单独使用任一方法更高的 ASR",
+        "它们互斥"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

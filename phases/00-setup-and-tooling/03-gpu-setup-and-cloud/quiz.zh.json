@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么 GPU 在训练神经网络时比 CPU 更快？",
+      "options": [
+        "GPU 的时钟频率比 CPU 高",
+        "GPU 可以同时执行数千个并行矩阵运算",
+        "GPU 比 CPU 拥有更多 RAM",
+        "GPU 使用了更高效的编程语言"
+      ],
+      "correct": 1,
+      "explanation": "GPU 拥有数千个为并行计算优化的核心，这使其成为神经网络训练中最主要的矩阵乘法运算的理想选择。"
+    },
+    {
+      "stage": "pre",
+      "question": "VRAM 指的是什么？",
+      "options": [
+        "操作系统用于交换空间的虚拟 RAM",
+        "GPU 上的显存(Video RAM)，与系统 RAM 相互独立",
+        "所有设备上可用的总 RAM",
+        "一种 CPU 缓存存储器"
+      ],
+      "correct": 1,
+      "explanation": "VRAM（显存，Video RAM）是 GPU 上的专用内存。它限制了你在训练时所能使用的模型大小和批次大小，与系统主 RAM 相互独立。"
+    },
+    {
+      "stage": "post",
+      "question": "什么命令可以验证你的 NVIDIA GPU 已被识别并显示其当前状态？",
+      "options": [
+        "gpu --status",
+        "nvidia-smi",
+        "torch.cuda.list_devices()",
+        "lspci | grep gpu"
+      ],
+      "correct": 1,
+      "explanation": "nvidia-smi（NVIDIA 系统管理接口）显示 GPU 利用率、内存使用情况、温度以及正在运行的进程。它是验证 GPU 可用性的标准工具。"
+    },
+    {
+      "stage": "post",
+      "question": "在对 GPU 与 CPU 的矩阵乘法进行基准测试时，为什么必须在测量 GPU 时间之前调用 torch.cuda.synchronize()？",
+      "options": [
+        "将数据从 CPU 传输到 GPU 内存",
+        "确保在停止计时器之前所有 GPU 操作都已完成",
+        "将 GPU 时钟频率重置为基础频率",
+        "释放未使用的 GPU 内存"
+      ],
+      "correct": 1,
+      "explanation": "GPU 操作是异步的——Python 会立即返回，而 GPU 仍在计算。synchronize() 会阻塞直到所有 GPU 操作完成，从而给出准确的时间测量。"
+    },
+    {
+      "stage": "post",
+      "question": "使用 fp16 的经验法则，大约有多少参数可以放入 24 GB 的 VRAM 中？",
+      "options": [
+        "240 亿参数",
+        "120 亿参数",
+        "60 亿参数",
+        "480 亿参数"
+      ],
+      "correct": 1,
+      "explanation": "在 fp16 中，每个参数占用 2 字节。24 GB / 2 字节 = 120 亿参数。这是一个粗略估计；实际使用情况还包括激活值、梯度和优化器状态。"
+    }
+  ]
+}

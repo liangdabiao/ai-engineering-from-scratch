@@ -1,0 +1,90 @@
+{
+  "lesson": "39-reviewer-agent",
+  "title": "Reviewer Agent: Separate Builder from Marker",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why cannot the builder reliably grade its own work?",
+      "options": [
+        "It runs out of tokens",
+        "Acceptance is necessary but not sufficient; problem-fit, scope discipline, documented assumptions, and handoff readiness need a different role with different inputs",
+        "It loses authentication",
+        "The model rejects self-grading"
+      ],
+      "correct": 1,
+      "explanation": "The gap between builder and reviewer is where reliability lives; acceptance only proves a weaker version."
+    },
+    {
+      "stage": "pre",
+      "question": "Which is NOT one of the five rubric dimensions?",
+      "options": [
+        "Problem fit",
+        "Scope discipline",
+        "Verification quality",
+        "推理延迟"
+      ],
+      "correct": 3,
+      "explanation": "The five are problem fit, scope discipline, assumptions, verification quality, handoff readiness."
+    },
+    {
+      "stage": "check",
+      "question": "What does role separation require?",
+      "options": [
+        "A different model",
+        "A different system prompt and different inputs; the same model can play both roles if posture changes and the reviewer has no write access to the diff",
+        "Different physical hardware",
+        "A new account"
+      ],
+      "correct": 1,
+      "explanation": "Discipline is in posture and inputs, not in the model identity."
+    },
+    {
+      "stage": "check",
+      "question": "What does Cloudflare's 2026 review architecture look like?",
+      "options": [
+        "One big reviewer",
+        "Up to seven specialist reviewers in parallel under a Review Coordinator that deduplicates findings; top-tier model only for the coordinator, cheaper tiers for specialists",
+        "Round-robin two reviewers",
+        "Single sequential LLM"
+      ],
+      "correct": 1,
+      "explanation": "Cloudflare ran 131,246 review runs in 30 days using specialist + coordinator architecture."
+    },
+    {
+      "stage": "check",
+      "question": "Which of these is NOT one of the four LLM-judge biases the lesson lists?",
+      "options": [
+        "Position bias (A,B vs B,A ordering inconsistency)",
+        "Verbosity bias (longer outputs score higher)",
+        "Self-preference (same model family)",
+        "Vector locality"
+      ],
+      "correct": 3,
+      "explanation": "The four are position, verbosity, self-preference, authority; vector locality is not one of them."
+    },
+    {
+      "stage": "post",
+      "question": "什么是校准集？",
+      "options": [
+        "一个新的训练语料库",
+        "10-20 个具有已知正确结论的历史任务结案记录；每次提示词变更时重新运行；如果审阅者一致率低于 80%，在发布前修复评分标准",
+        "一个 A/B 测试夹具",
+        "一个向量索引"
+      ],
+      "correct": 1,
+      "explanation": "校准集让审阅者保持诚实；如果一致率发生偏移，你修复的是评分标准，而不是数据。"
+    },
+    {
+      "stage": "post",
+      "question": "审阅者的报告在哪里与工作台的其他部分集成？",
+      "options": [
+        "它替代了验证",
+        "它被打包进交接包（第 40 课）；人工审阅从报告开始，而不是从空白页开始",
+        "它覆盖了门禁",
+        "它只发送给经理"
+      ],
+      "correct": 1,
+      "explanation": "审阅报告为交接提供输入，以便下一次会话和人工审阅者从书面结论开始。"
+    }
+  ]
+}

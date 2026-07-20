@@ -1,0 +1,78 @@
+{
+  "lesson": "59-vit-transformer",
+  "title": "视觉Transformer编码器",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么标准ViT块使用前置LayerNorm而不是后置LayerNorm？",
+      "options": [
+        "后置LN受专利保护",
+        "前置LN在深层训练时无需学习率预热即可稳定训练，而后置LN在超过约6层时会出现发散",
+        "前置LN运行更快",
+        "后置LN占用更多内存"
+      ],
+      "correct": 1,
+      "explanation": "前置LN对每个子层的输入进行归一化，从而在深度增加时保持梯度范数有界。"
+    },
+    {
+      "stage": "pre",
+      "question": "在hidden=768、heads=12时，每头维度是多少？为什么它很重要？",
+      "options": [
+        "12，这样每个头可以在小型GPU上运行",
+        "64，它控制每个注意力图的分辨率，并让十二个头并行独立地关注",
+        "768，因为所有头共享投影",
+        "96，由ResNet-50设定"
+      ],
+      "correct": 1,
+      "explanation": "head_dim = hidden / heads = 64。每个头将token投影到其自身的64维q/k/v，并计算自己的注意力图。"
+    },
+    {
+      "stage": "check",
+      "question": "ViT编码器需要因果注意力掩码吗？",
+      "options": [
+        "需要，像GPT解码器一样",
+        "不需要：编码器是双向的，每个token可以关注同一序列中的任何其他token",
+        "仅针对CLS行",
+        "仅在训练期间"
+      ],
+      "correct": 1,
+      "explanation": "视觉编码器是双向的。因果掩码出现在后续文本解码器消费交叉注意力输出时。"
+    },
+    {
+      "stage": "check",
+      "question": "经过全部12个块后，CLS token的最终隐藏状态代表什么？",
+      "options": [
+        "输入嵌入的一个副本",
+        "一个学习得到的整张图像向量摘要，下游头将其投影为类别logits或对比嵌入",
+        "随机噪声",
+        "仅最后一个patch"
+      ],
+      "correct": 1,
+      "explanation": "CLS token初始为空，并通过全部12个块的自注意力从每个patch累积信息。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么前馈层扩展到隐藏维度的4倍？",
+      "options": [
+        "PyTorch要求4倍",
+        "自原始Transformer以来的经验最优值；在数据预算固定时，较小会欠拟合，较大会过拟合",
+        "它使FLOPs减半",
+        "它消除了对注意力的需求"
+      ],
+      "correct": 1,
+      "explanation": "自2017年以来，4倍因子在语言和视觉Transformer中一直成立。每个参数的容量在此达到峰值。"
+    },
+    {
+      "stage": "post",
+      "question": "哪种家族扩展保持了模块数学不变，但增加了前置的可学习令牌？",
+      "options": [
+        "因果掩码",
+        "寄存器令牌（DINOv2）：在CLS之后前置的几个可学习向量，用于捕获全局统计信息并平滑注意力图",
+        "混合专家",
+        "RoPE旋转"
+      ],
+      "correct": 1,
+      "explanation": "寄存器令牌在不改变模块数学的情况下稳定注意力；它们是序列中的额外槽位。"
+    }
+  ]
+}

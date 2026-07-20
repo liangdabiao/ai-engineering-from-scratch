@@ -1,0 +1,78 @@
+{
+  "lesson": "58-vision-encoder-patches",
+  "title": "视觉编码器补丁",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么视觉Transformer使用补丁而不是每个token输入一个像素？",
+      "options": [
+        "补丁是PyTorch所要求的",
+        "逐像素token序列会使注意力计算随长度呈二次方爆炸，并在典型分辨率下失去可处理性",
+        "补丁可改善图像质量",
+        "它避免使用分词器"
+      ],
+      "correct": 1,
+      "explanation": "一张224x224的图像有150528个像素token。注意力随长度呈二次方增长，因此16x16分块将序列缩减为196个token，使模型可处理。"
+    },
+    {
+      "stage": "pre",
+      "question": "kernel = stride = patch_size的Conv2d与flatten-then-linear之间有什么关系？",
+      "options": [
+        "它们产生不同的输出",
+        "Conv2d是在每个补丁上表达相同线性投影的更快写法",
+        "Conv2d增加了非线性",
+        "flatten-then-linear是不可能的"
+      ],
+      "correct": 1,
+      "explanation": "每个Conv2d输出位置将补丁像素与一个滤波器做点积，这等同于flatten-then-linear。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么2D正弦位置嵌入是确定性的而不是学习得到的？",
+      "options": [
+        "学习到的位置是非法的",
+        "固定的sin/cos信号可以干净地插值到模型从未见过的网格上，这在分辨率变化时很有用",
+        "这样可以节省磁盘空间",
+        "需要随机初始化"
+      ],
+      "correct": 1,
+      "explanation": "固定的正弦位置在不同分辨率下是确定性的，并允许同一编码器运行在未经训练的输入上。"
+    },
+    {
+      "stage": "check",
+      "question": "patch_size=16且带一个CLS token的224x224图像，其输出序列长度是多少？",
+      "options": [
+        "196",
+        "197",
+        "224",
+        "256"
+      ],
+      "correct": 1,
+      "explanation": "224/16 = 14，所以14x14 = 196个补丁，加上一个CLS token共197个token。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么重建（unfold然后unflatten）是对补丁前端有用的健全性检查？",
+      "options": [
+        "它提高准确率",
+        "通过patch-flatten且无投影的像素往返必须等同于输入；失败意味着unfold数学有误",
+        "ONNX要求这样做",
+        "它加速推理"
+      ],
+      "correct": 1,
+      "explanation": "补丁步骤在无投影时可逆。如果往返发生偏移，说明unfold逻辑有bug，编码器的其余部分也不安全。"
+    },
+    {
+      "stage": "post",
+      "question": "在本课(Lesson)中，当你把学习到的位置嵌入换成二维正弦嵌入时，会发生什么变化？",
+      "options": [
+        "没有任何变化",
+        "学习到的位置在固定分辨率下能稍微拟合得更好；正弦位置无需重新训练即可迁移到新的分辨率",
+        "正弦位置消耗更多参数",
+        "正弦位置在每一步都是随机的"
+      ],
+      "correct": 1,
+      "explanation": "学习到的位置在单一分辨率下很灵活。正弦位置不消耗任何参数，并且能适应分辨率的改变。"
+    }
+  ]
+}

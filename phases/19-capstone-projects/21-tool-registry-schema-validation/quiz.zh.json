@@ -1,0 +1,78 @@
+{
+  "lesson": "21-tool-registry-schema-validation",
+  "title": "带模式校验的工具注册表",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么要将工具的模式与其处理函数分开注册？",
+      "options": [
+        "因为模式必须存在于 YAML 中",
+        "这样校验器保持为纯数据，而处理函数保持为不透明代码",
+        "因为处理函数无法返回 JSON",
+        "因为模式必须被编译"
+      ],
+      "correct": 1,
+      "explanation": "将模式作为数据、将处理函数作为代码，可以让校验器成为作用于模式树的纯函数。"
+    },
+    {
+      "stage": "check",
+      "question": "哪些关键字是有意处于本課所实现子集之外的？",
+      "options": [
+        "type、properties、required",
+        "minLength、maxLength、pattern",
+        "oneOf、anyOf、$ref、allOf",
+        "items、enum"
+      ],
+      "correct": 2,
+      "explanation": "被省略的关键字会引入循环和引用解析。我们保持子集为线性，以便校验器始终是单次递归遍历。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么 register() 默认拒绝重复项？",
+      "options": [
+        "因为注册表无法为每个名称存储多于一条记录",
+        "静默覆盖是生产环境工具目录漂移的根源",
+        "因为模式无法被重新校验",
+        "因为处理函数无法被替换"
+      ],
+      "correct": 1,
+      "explanation": "强制使用 override=True 可以暴露出代码的两个部分意图拥有同一工具名称的情况。"
+    },
+    {
+      "stage": "check",
+      "question": "当模式指定类型为 integer 但接收到值 True 时，校验器会做什么？",
+      "options": [
+        "将其视为 1 并通过",
+        "返回类型错误，因为在此校验器中 bool 不是 integer",
+        "引发未处理的异常",
+        "静默地强制转换为 integer"
+      ],
+      "correct": 1,
+      "explanation": "Python 的 bool 是 int 的子类，但校验器在整数检查中过滤掉了 bool。JSON 中的布尔值和整数是不同的。"
+    },
+    {
+      "stage": "post",
+      "question": "当输入对象为 {'user': {'email': 0}} 且模式要求 user.email 为字符串时，错误路径是什么？",
+      "options": [
+        "/",
+        "/user",
+        "/user/email",
+        "user.email"
+      ],
+      "correct": 2,
+      "explanation": "JSON 指针将经由 user 再至 email 的向下寻址编码为 /user/email。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么注册表不是一个安全边界？",
+      "options": [
+        "因为校验通过后处理器仍可能行为异常",
+        "因为处理器是异步的",
+        "因为模式(schema)是 JSON",
+        "因为注册表位于进程内"
+      ],
+      "correct": 0,
+      "explanation": "注册表检查结构形状。行为、超时和隔离则属于调度器与沙箱。"
+    }
+  ]
+}

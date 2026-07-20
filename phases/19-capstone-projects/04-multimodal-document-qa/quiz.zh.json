@@ -1,0 +1,90 @@
+{
+  "lesson": "04-multimodal-document-qa",
+  "title": "顶点项目 04 — 多模态文档问答（视觉优先 PDF、表格、图表）",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为何 2026 年的前沿模型在金融 PDF 和科学论文上偏好视觉优先的后期交互，而非先 OCR 再文本？",
+      "options": [
+        "视觉模型每页成本更低",
+        "OCR 流水线会破坏旋转表格、密集公式和图表图像，丢失一半的信号",
+        "OCR 比渲染更慢",
+        "OCR 无法在 GPU 上运行"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "在 ColPali 风格的检索中，后期交互（late interaction）是什么意思？",
+      "options": [
+        "每个查询词元与每个图像块词元打分，并通过 MaxSim 对逐词元最大值求和",
+        "嵌入（Embeddings）延迟到评估时才计算",
+        "嵌入在用户点击结果后才计算",
+        "重排器（reranker）只在最终候选上运行"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "ColQwen 每页大约产生多少个图像块向量，这造成了什么存储问题？",
+      "options": [
+        "每页约 2048 个图像块向量，与单向量索引相比原始存储急剧膨胀",
+        "恰好 128 个向量，可干净地放入任何向量数据库",
+        "每页 1 个向量，无存储问题",
+        "16 个向量，存储开销可忽略"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "DocPruner 在这个流水线中做什么？",
+      "options": [
+        "在摄取前移除重复的 PDF 页面",
+        "通过保留约 50% 的高信号图像块来压缩多向量索引，精度损失可忽略",
+        "重写查询嵌入以得到更短向量",
+        "在证据区域周围裁剪边界框"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为何某些页面仍会拼接 OCR 文本通道？",
+      "options": [
+        "它提升了 PDF 渲染质量",
+        "VLM 无法读取 180 DPI 的图像",
+        "OCR 是主要的检索模态",
+        "公式密集和表格繁重的页面受益于图像之外的文本回退"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "这个顶点项目针对哪个基准来评估视觉优先检索？",
+      "options": [
+        "RewardBench-2",
+        "SWE-bench Pro",
+        "ViDoRe v3",
+        "MMLU-Pro"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "评分标准中所说的证据区域定位(Evidence-Region Grounding)是什么意思？",
+      "options": [
+        "DocPruner 实现的压缩比",
+        "重排序器(Re-ranker)在 p99 尾延迟下的延迟",
+        "每个查询检索到的页面总数",
+        "被引用的边界框中实际包含答案片段的比例"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

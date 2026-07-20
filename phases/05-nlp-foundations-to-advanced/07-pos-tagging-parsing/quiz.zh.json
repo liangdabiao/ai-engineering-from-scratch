@@ -1,0 +1,102 @@
+{
+  "lesson": "07-pos-tagging-parsing",
+  "title": "POS Tagging and Syntactic Parsing",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What is the goal of POS tagging?",
+      "options": [
+        "Detect sentiment",
+        "Translate the sentence",
+        "Extract named entities",
+        "Assign a grammatical category (noun, verb, etc.) to each token"
+      ],
+      "correct": 3,
+      "explanation": "POS tagging labels each token with its part of speech."
+    },
+    {
+      "stage": "pre",
+      "question": "Which tagset is the default for cross-lingual work?",
+      "options": [
+        "Penn Treebank",
+        "Stanford Dependencies",
+        "Universal Dependencies",
+        "CoNLL-2003"
+      ],
+      "correct": 2,
+      "explanation": "Universal Dependencies provides a coarser, language-agnostic 17-tag set."
+    },
+    {
+      "stage": "check",
+      "question": "What does a bigram HMM POS tagger model?",
+      "options": [
+        "P(tags) only",
+        "Dependency parses",
+        "Embedding similarities",
+        "P(tag | previous tag) transitions plus P(word | tag) emissions, decoded with Viterbi"
+      ],
+      "correct": 3,
+      "explanation": "Bigram HMM uses tag transitions and word emissions; Viterbi finds the highest-probability sequence."
+    },
+    {
+      "stage": "check",
+      "question": "What does the Viterbi algorithm compute for an HMM tagger?",
+      "options": [
+        "The single highest-probability tag sequence via dynamic programming over the tag lattice",
+        "The transition matrix",
+        "The marginal probability of each tag",
+        "The forward probabilities only"
+      ],
+      "correct": 0,
+      "explanation": "Viterbi finds the argmax sequence with O(n * |T|^2) dynamic programming."
+    },
+    {
+      "stage": "check",
+      "question": "What does dependency parsing produce?",
+      "options": [
+        "A tree where each word has one head word and a labeled grammatical relation",
+        "A flat BIO sequence",
+        "A constituency tree of NP/VP/PP labels",
+        "A coreference chain"
+      ],
+      "correct": 0,
+      "explanation": "依存句法分析给出逐词（中心词，关系）边；成分句法分析给出嵌套的短语结构。"
+    },
+    {
+      "stage": "post",
+      "question": "为何 PTB 词性标注的准确率上限在 97-98% 左右？",
+      "options": [
+        "模型在任何任务中都无法超过 98%",
+        "Universal Dependencies 上限为 98%",
+        "人工标注员只有约 97% 的时间达成一致，因此高于约 98% 的模型可能是在过拟合测试数据",
+        "硬件限制"
+      ],
+      "correct": 2,
+      "explanation": "标注员的不一致界定了可实现的准确率上限；非常高的数值往往意味着过拟合。"
+    },
+    {
+      "stage": "post",
+      "question": "在 2026 年的 LLM 流水线中，词性标注为何仍然重要？",
+      "options": [
+        "LLM 离不开它",
+        "词形还原、基于方面的情感分析、查询分解、结构化输出验证以及跨语言迁移，都仍然消耗词性标注或依存句法分析的结果",
+        "分词所需",
+        "替代 transformer"
+      ],
+      "correct": 1,
+      "explanation": "即便由 LLM 生成散文，词性标注和依存句法分析仍支撑许多结构化的下游任务。"
+    },
+    {
+      "stage": "post",
+      "question": "在大多数生产环境的词性标注 / 句法分析任务中，你应该选用哪个库？",
+      "options": [
+        "scikit-learn",
+        "NumPy",
+        "spaCy（或 stanza/trankit，用于最高准确率或更广语言覆盖）",
+        "自己动手写解析器"
+      ],
+      "correct": 2,
+      "explanation": "spaCy 提供快速的生产级词性标注 + 依存解析器；stanza/trankit 覆盖更广的语言。"
+    }
+  ]
+}

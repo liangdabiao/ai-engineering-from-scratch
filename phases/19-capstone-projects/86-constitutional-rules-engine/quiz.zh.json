@@ -1,0 +1,78 @@
+{
+  "lesson": "86-constitutional-rules-engine",
+  "title": "Capstone 86 — 宪法规则引擎",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么使用声明式 YAML 宪法，而不是临时代码检查？",
+      "options": [
+        "因为 YAML 比 Python 解析更快",
+        "因为 YAML 中的规则可供非工程师审查、纳入版本控制管理，且无需修改代码即可替换",
+        "因为标准库偏好 YAML",
+        "因为 YAML 支持锚点"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "每条规则至少必须包含哪些字段？",
+      "options": [
+        "name、regex、fix",
+        "id、owner、timestamp",
+        "name、severity、must、explanation",
+        "predicate、severity、owner"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "引擎如何组合谓词？",
+      "options": [
+        "仅通过每条规则单一的 contains_regex",
+        "通过 all_of、any_of 和 not_ 递归包裹原子谓词",
+        "通过乘以置信度分数",
+        "通过神经分类器"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "applies_when 的作用是什么？",
+      "options": [
+        "它始终求值为 true",
+        "它对 must 谓词进行门控，使不适用的规则被记录为 not_applicable 而非 violation",
+        "它覆盖 severity",
+        "它选择 fixer 操作"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "Fixer 做什么？",
+      "options": [
+        "它重写规则文件",
+        "它应用每条规则的声明式修复（append、prepend、replace_regex）以生成修订后的文本",
+        "它根据修复计算 severity",
+        "它调用远程模型来修复文本"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么演示在 fixer 之后第二次运行引擎？",
+      "options": [
+        "为了夸大报告大小",
+        "为了验证修订后的文本满足规则，并暴露出 fixer 无法在本地修复的任何规则",
+        "为了重新加载宪法",
+        "因为第一遍只是一次演习"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

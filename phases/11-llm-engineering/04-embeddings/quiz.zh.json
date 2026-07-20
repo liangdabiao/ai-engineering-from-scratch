@@ -1,0 +1,62 @@
+[
+  {
+    "question": "嵌入(Embeddings)解决了哪些关键词搜索无法解决的问题？",
+    "options": [
+      "嵌入(Embeddings)速度更快",
+      "嵌入(Embeddings)捕获语义含义，将'payment didn't go through'与'charge was declined'匹配，尽管它们没有共同词汇",
+      "嵌入(Embeddings)使用更少存储",
+      "嵌入(Embeddings)可离线工作"
+    ],
+    "correct": 1,
+    "explanation": "关键词搜索将词汇视为独立符号。嵌入(Embeddings)将文本映射到高维向量，其中语义相似性等同于几何接近性。含义相同的文本无论用词如何都会聚在一起。",
+    "stage": "pre"
+  },
+  {
+    "question": "余弦相似性(Cosine Similarity)衡量两个嵌入向量之间的什么？",
+    "options": [
+      "欧氏距离(Euclidean distance)",
+      "向量之间的角度，指示它们方向有多相似，与大小无关",
+      "它们分量的和",
+      "匹配维度的数量"
+    ],
+    "correct": 1,
+    "explanation": "余弦相似度(Cosine Similarity) = 点积(A,B) / (|A|*|B|)。其范围从-1（相反）到1（相同方向）。两个含义相同的文本的向量会指向几乎相同的方向，余弦相似度接近1。",
+    "stage": "pre"
+  },
+  {
+    "question": "现代文本嵌入模型(Text Embedding Model)的典型维度数是多少？",
+    "options": [
+      "2-10维度",
+      "50-100维度",
+      "768-3072维度",
+      "10万+维度"
+    ],
+    "correct": 2,
+    "explanation": "现代嵌入模型（OpenAI text-embedding-3, BGE, E5）生成维度在768到3072之间的向量。更高的维度能捕捉更多细微差别，但存储和搜索成本也更高。",
+    "stage": "post"
+  },
+  {
+    "question": "为什么应该使用检索基准而不是仅仅检查相似度分数来评估嵌入质量？",
+    "options": [
+      "相似度分数总是错误的",
+      "绝对相似度值因模型而异；重要的是相关文档是否比无关文档排名更高（precision@k, recall）",
+      "检索基准更快",
+      "相似度分数不使用余弦距离"
+    ],
+    "correct": 1,
+    "explanation": "对于某个模型，余弦相似度0.85可能意味着'非常相似'，而对另一个模型则意味着'有些相似'。检索指标（precision@k, recall）衡量的是真正重要的事情：正确的文档是否被检索回来？",
+    "stage": "post"
+  },
+  {
+    "question": "何时应使用本地/开源嵌入模型而非基于API的模型？",
+    "options": [
+      "本地模型总是更好",
+      "当您需要数据隐私、离线操作、大规模低成本或领域特定微调时",
+      "本地模型生成更高质量的嵌入",
+      "API模型不支持批处理"
+    ],
+    "correct": 1,
+    "explanation": "API嵌入（OpenAI、Cohere）易用但会将数据发送到外部。本地模型（BGE、E5、Nomic）保护数据隐私，消除大规模场景下的单次调用成本，并可针对领域特定数据进行微调。",
+    "stage": "post"
+  }
+]

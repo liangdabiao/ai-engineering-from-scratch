@@ -1,0 +1,78 @@
+{
+  "lesson": "phase-19/29-end-to-end-coding-task-demo",
+  "title": "Harness 上的端到端编码智能体",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在阅读本课之前：为什么端到端演示用确定性策略替换了 LLM？",
+      "options": [
+        "LLM 太慢，无法在测试中运行。",
+        "harness 正是本课所测试的对象；策略是可替换的接缝(seam)。",
+        "确定性策略在编码任务上总是优于 LLM。",
+        "本课承担不起推理成本。"
+      ],
+      "correct": 1,
+      "explanation": "harness 契约并不关心策略是 LLM 还是状态机。移除 LLM 就移除了网络和方差，并将本课变成一个可复现的集成(integration)测试。"
+    },
+    {
+      "stage": "check",
+      "question": "智能体的状态机有五个状态。在正常流程中它按什么顺序执行它们？",
+      "options": [
+        "SURVEY -> FIX -> VERIFY -> RUN_TESTS -> INSPECT。",
+        "SURVEY -> RUN_TESTS -> INSPECT -> FIX -> VERIFY。",
+        "RUN_TESTS -> SURVEY -> INSPECT -> FIX -> VERIFY。",
+        "SURVEY -> INSPECT -> FIX -> RUN_TESTS -> VERIFY。"
+      ],
+      "correct": 1,
+      "explanation": "智能体先勘察项目，运行测试，检查失败的测试，修复缺陷，然后验证。RUN_TESTS 在 INSPECT 之前，因为测试失败是策略读取的信号。"
+    },
+    {
+      "stage": "check",
+      "question": "打包的 fixture 的缺陷是 src/fizz.py 中的差一错误(off-by-one)：range(1, n) 而非 range(1, n + 1)。策略在哪里决定应用修复？",
+      "options": [
+        "在 SURVEY 状态内部，通过读取文件头。",
+        "在 INSPECT 状态内部，在测试失败已指明预期输出之后。",
+        "在 VERIFY 状态内部，在重新运行之后。",
+        "在状态机外部，在 gate chain 中。"
+      ],
+      "correct": 1,
+      "explanation": "INSPECT 是策略读取失败测试并学习预期形态的地方。修复在那里被识别，并在下一个 FIX 状态中写入。"
+    },
+    {
+      "stage": "check",
+      "question": "每次工具调用按顺序经过哪些组件链？",
+      "options": [
+        "Sandbox -> GateChain -> SpanBuilder -> ObservationLedger。",
+        "GateChain -> SpanBuilder -> Sandbox -> ObservationLedger。",
+        "SpanBuilder -> GateChain -> Sandbox -> ObservationLedger。",
+        "ObservationLedger -> GateChain -> Sandbox -> SpanBuilder。"
+      ],
+      "correct": 1,
+      "explanation": "先 gate（允许/拒绝），再 span（这样拒绝也被记录），第三是 sandbox（仅当允许时），最后是 ledger（仅成功时）。本课代码就是这样接线的。"
+    },
+    {
+      "stage": "post",
+      "question": "你将确定性策略替换为真实的 LLM。哪个 harness 组件会改变？",
+      "options": [
+        "gate chain 必须重写以处理 LLM 的随机性(stochasticity)。",
+        "sandbox 必须用 seccomp 加固。",
+        "harness 中没有任何部分改变；策略是唯一被替换的部件。",
+        "Prometheus 暴露(exposition)格式变得不兼容。"
+      ],
+      "correct": 2,
+      "explanation": "本课的重点：该框架(framework)是与策略无关的。接缝(seam)是 next_action / observe 接口。LLM 插入到那里，而不触及 gate、sandbox、ledger 或 spans。"
+    },
+    {
+      "stage": "post",
+      "question": "该演示断言智能体在少于 12 步内解决该 fixture。确定性策略使用了 5 步。一个真实 LLM 智能体可能会做什么，框架又如何处理它？",
+      "options": [
+        "LLM 也使用了 5 步；框架保持不变。",
+        "LLM 可能会使用更多步；step_budget 限制了循环，未解决的运行为失败，并带有 halted_reason 被报告。",
+        "LLM 无法在此框架内运行。",
+        "框架静默地扩展预算。"
+      ],
+      "correct": 1,
+      "explanation": "步数预算是响亮且确定性的停止标准。一个徘徊的 LLM 会被限制，报告会确切告诉你原因。"
+    }
+  ]
+}

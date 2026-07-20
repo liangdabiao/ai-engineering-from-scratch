@@ -1,0 +1,78 @@
+{
+  "lesson": "81-end-to-end-distributed-train",
+  "title": "端到端分布式训练",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "既然每节课都已经有了自己的测试，为什么还需要综合项目（capstone）？",
+      "options": [
+        "装饰性的",
+        "组合是一种独立的属性：各个部分可以通过单元测试，但当它们一起运行时，集成会死锁、损失会发散，或者内存会增长",
+        "更慢",
+        "更容易评分"
+      ],
+      "correct": 1,
+      "explanation": "端到端测试能捕捉到孤立的部件测试无法发现的连接错误：集合通信 rendezvous、屏障顺序、聚集契约。"
+    },
+    {
+      "stage": "pre",
+      "question": "该演示验证了哪四个不变量？",
+      "options": [
+        "速度",
+        "(a) 损失运行到第 20 步而无 NaN，(b) 每个秩的参数范数一致，(c) 每秩优化器内存等于 ZeRO-1 公式，(d) 第 10 步的检查点重新加载后字节一致",
+        "每秒令牌数",
+        "硬件"
+      ],
+      "correct": 1,
+      "explanation": "每个不变量捕捉一种不同的组合错误：NaN 捕捉发散，范数一致捕捉同步漂移，内存捕捉分片错误，检查点捕捉写入原子性。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么模型是一个微小的 GPT 而不是 MLP？",
+      "options": [
+        "看起来花哨",
+        "GPT 增加了 LayerNorm 运行统计、嵌入梯度形状，以及 softmax+交叉熵的边界情况，而这些是 MLP 会隐藏的",
+        "更快",
+        "必需"
+      ],
+      "correct": 1,
+      "explanation": "MLP 梯度同步已在第 77 课验证；综合项目需要一个具有更多边界情况的模型，以证明在真实操作下的组合性。"
+    },
+    {
+      "stage": "check",
+      "question": "在这种上下文中，自终止（self-terminating）是什么意思？",
+      "options": [
+        "进程自行终止",
+        "固定的步数（20），完成时退出码为 0，无需人工介入；如果任何部分死锁，演示将永不返回，由 CI 捕捉到",
+        "崩溃恢复",
+        "手动"
+      ],
+      "correct": 1,
+      "explanation": "带有退出码 0 的有界运行让测试框架能够断言终止；而 while-True 循环会掩盖死锁。"
+    },
+    {
+      "stage": "check",
+      "question": "该演示如何结合 DDP 和 ZeRO？",
+      "options": [
+        "两者同时使用",
+        "初始化时采用 DDP 风格的广播进行参数同步，ZeRO-1 的 reduce_scatter+allgather 替代了 optimiser.step；DDP 的梯度 allreduce 被并入 ZeRO 的 reduce_scatter 中",
+        "仅 DDP",
+        "仅 ZeRO"
+      ],
+      "correct": 1,
+      "explanation": "ZeRO-1 通过 reduce_scatter 负责梯度同步，因此不需要 DDP 单独的 allreduce；初始化时的广播是唯一保留下来的 DDP 特定调用。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么生产环境使用挂钟时间检查点节奏而不是步数？",
+      "options": [
+        "看起来更干净",
+        "步长时间随序列长度和微批次数量而变化；无论模型大小，10分钟的节奏都能覆盖相同的计算量",
+        "更快",
+        "NCCL 所要求"
+      ],
+      "correct": 1,
+      "explanation": "本课为清晰起见采用基于步长的保存方式；生产运行通常按每 5-15 分钟的实际时间（wall-clock）保存一次。"
+    }
+  ]
+}

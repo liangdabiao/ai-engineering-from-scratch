@@ -1,0 +1,78 @@
+{
+  "lesson": "44-cosine-lr-warmup",
+  "title": "带线性预热的余弦学习率",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么余弦预热调度从零开始而不是从 lr_max 开始？",
+      "options": [
+        "因为 lr_max 在第零步是非法的",
+        "前一千次更新是有噪声的；从零到 lr_max 的线性上升在运行估计稳定期间给优化器一个较小的有效步长",
+        "因为 Adam 需要它",
+        "随机传统"
+      ],
+      "correct": 1,
+      "explanation": "预热使脆弱的早期更新保持较小；否则模型要么发散要么停滞。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么该调度被实现为关于步数的单一函数而不是三段拼接的片段？",
+      "options": [
+        "单一函数更小",
+        "拼接的调度在第一次更改 lr_max 时会丢失一个边界；单一函数计算相同的闭式表达式并在预热点和总端点处保持连续性",
+        "Linters 要求这样做",
+        "随机"
+      ],
+      "correct": 1,
+      "explanation": "在 lr(warmup_steps) 和 lr(total_steps) 处的连续性由闭式形式得出。"
+    },
+    {
+      "stage": "check",
+      "question": "在调度中对于 step > total_steps 会发生什么？",
+      "options": [
+        "它抛出异常",
+        "它固定在 lr_min；该调度不外推，需要延长训练的训练器会显式更改 total_steps",
+        "它返回 nan",
+        "它环绕"
+      ],
+      "correct": 1,
+      "explanation": "一个固定的下限使超出范围的训练器保持在已记录的状态而不是崩溃。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么在学习率旁边记录梯度 L2 范数？",
+      "options": [
+        "它看起来漂亮",
+        "范数是训练健康的另一半：发散的运行在损失之前其范数会飙升；过于激进的峰值表现为预热后范数持续偏高",
+        "Adam 需要它",
+        "传统"
+      ],
+      "correct": 1,
+      "explanation": "共同记录使病态调度在运行时可见，而不是事后。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么在生产中将 warmup_steps 配置为 total_steps 的比例？",
+      "options": [
+        "比例更简洁",
+        "适用于 20k 步运行的固定预热次数在 200M 步运行中基本不算预热；该比例（典型为 1-3  percent）随训练时长缩放",
+        "随机偏好",
+        "硬件要求"
+      ],
+      "correct": 1,
+      "explanation": "绝对预热次数在不同训练时长尺度下表现异常。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么在生产中非零的 lr_min 是典型做法？",
+      "options": [
+        "Adam 要求非零",
+        "接近 lr_max 的 10% 的 floor 能让优化器在长尾阶段持续学习；lr_min 为零会产生一条看起来不错但模型尚未训练完成的曲线",
+        "数值稳定性",
+        "向后兼容性"
+      ],
+      "correct": 1,
+      "explanation": "调度曲线的尾部是后期精细调整生效的地方；将其归零会浪费该信号。"
+    }
+  ]
+}

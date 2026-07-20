@@ -1,0 +1,78 @@
+{
+  "lesson": "phase-19/25-verification-gates-observation-budget",
+  "title": "验证闸门与观测预算",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在阅读本课(lesson)之前：以下哪个是测试框架需要确定性的闸门链而非模型即裁判的最强理由？",
+      "options": [
+        "模型作为生产环境中的裁判太慢了。",
+        "确定性使拒绝原因可审计且闸门链可重放。",
+        "模型即裁判总是会产生幻觉般的允许决策。",
+        "闸门链让模型编写自己的策略。"
+      ],
+      "correct": 1,
+      "explanation": "审计轨迹与可复现性是实际的收益。也可以接入裁判模型，但结构性的闸门需要是确定性的，以便决策可被复现和审查。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么本课在链中先运行 WhitelistGate 再运行 BudgetGate？",
+      "options": [
+        "白名单拒绝更廉价，因此短路它们可避免昂贵的账本求和。",
+        "BudgetGate 在至少调用一个工具之前无法运行。",
+        "按照惯例，Whitelist 必须始终是最后一个闸门。",
+        "顺序无关紧要，因为 GateChain 会随机化评估顺序。"
+      ],
+      "correct": 0,
+      "explanation": "廉价拒绝先运行。WhitelistGate 是 O(1) 哈希查找。BudgetGate 必须对账本求和。当调用在结构上非法时，在白名单处短路可避免该工作。"
+    },
+    {
+      "stage": "check",
+      "question": "一个 ObservationLedger 已记录来自 read_file 的 60 个 token 的观测。测试框架随后拒绝了一个后续调用。账本关于该拒绝记录了什么？",
+      "options": [
+        "一个标记 refused 的零 token 的 Observation 行。",
+        "什么都不记录。账本只记录成功的观测。",
+        "一个表示拒绝成本的负 token 的 Observation 行。",
+        "该拒绝作为带有拒绝者名称的合成 Observation 被追加。"
+      ],
+      "correct": 1,
+      "explanation": "账本记录模型已看到的观测。拒绝产生的是 GateDecision，而非 Observation。拒绝计数存在于账本旁边，而非其内部。"
+    },
+    {
+      "stage": "check",
+      "question": "RecencyGate.window 被设为 3。账本的 latest_turn 是 5。一个新的 ToolCall 在第 10 回合到达。会发生什么？",
+      "options": [
+        "闸门允许：该调用在最新回合上。",
+        "闸门拒绝：间隔 5 超过了窗口 3。",
+        "闸门允许：窗口应用于账本大小，而非回合间隔。",
+        "闸门抛出异常，因为账本已过时。"
+      ],
+      "correct": 1,
+      "explanation": "RecencyGate 将 (call.turn - ledger.latest_turn) 与窗口比较。10 - 5 = 5，大于 3，因此闸门拒绝。"
+    },
+    {
+      "stage": "post",
+      "question": "你想添加一个每次调用的输出上限（任何单个观测不得超过 8000 个 token）。该闸门在逻辑上属于链中的何处？",
+      "options": [
+        "在 WhitelistGate 之前，因为大小是最廉价的检查属性。",
+        "在 BudgetGate 之后，因为累计预算总是占主导。",
+        "它不能是闸门，因为大小仅在工具运行后才知道。",
+        "在 BudgetGate 内部，以便限制组合。"
+      ],
+      "correct": 2,
+      "explanation": "输出大小在门(gate)评估时未知。测试框架(harness)在工具运行后通过截断模型所见观察(observation)之前的内容来施加上限(cap)。门评估输入，而非输出。"
+    },
+    {
+      "stage": "post",
+      "question": "一位审查者要求你证明该智能体(agent)在会话期间从未发起过被拒绝(denied)的工具调用。你会指向他们哪个产物(artifact)？",
+      "options": [
+        "ObservationLedger 快照，其中仅包含成功的观察。",
+        "ChainOutcome 记录列表，其中包含每次调用的决策及拒绝原因。",
+        "pytest 输出，其记录测试通过/失败。",
+        "模型的聊天转录文本(transcript)，其中包含其自身的自我报告。"
+      ],
+      "correct": 1,
+      "explanation": "ChainOutcome 记录携带每次调用的决策与拒绝原因。账本(ledger)和转录文本可支持该主张，但可审计的产物是链(chain)决策。"
+    }
+  ]
+}

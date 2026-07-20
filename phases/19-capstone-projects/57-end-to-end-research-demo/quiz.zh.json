@@ -1,0 +1,78 @@
+{
+  "lesson": "57-end-to-end-research-demo",
+  "title": "端到端研究演示",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在本课(Lesson)中，该演示的作用是什么？",
+      "options": [
+        "用单一新框架替换之前的课(Lesson)",
+        "通过普通 Python 导入来组合之前课(Lesson)中的原语",
+        "将调度器与基线进行基准测试",
+        "在每个分支上调用真实的语言模型"
+      ],
+      "correct": 1,
+      "explanation": "该演示是一个组合测试。每个阶段都存在于其自身的课(Lesson)中。演示导入它们并连接报告。没有新框架，没有新抽象。"
+    },
+    {
+      "stage": "pre",
+      "question": "为什么本课(Lesson)通过 importlib 而不是普通包导入来加载之前的课(Lesson)？",
+      "options": [
+        "因为 importlib 更快",
+        "因为之前的每个课(Lesson)都是一个独立的 code/ 文件夹，而不是已安装的包；importlib 通过文件路径加载它们",
+        "因为 asyncio 需要 importlib",
+        "因为各课(Lesson)共享模块名并会发生冲突"
+      ],
+      "correct": 1,
+      "explanation": "这些课(Lesson)不是已安装的包。每个都在自己的 code/ 文件夹中附带一个 main.py。importlib.util.spec_from_file_location 按路径加载它们，而不会污染全局模块命名空间。"
+    },
+    {
+      "stage": "check",
+      "question": "当多个分支触发了一篇论文时，最佳结果选择器如何在分支之间做决定？",
+      "options": [
+        "它选择运行实验最多的分支",
+        "它选择平均奖励最高的分支，并以分支 id 的字母顺序打破平局",
+        "它为了公平随机选取",
+        "它选取第一个被触发的分支"
+      ],
+      "correct": 1,
+      "explanation": "最高平均者胜出。平局时按分支 id 打破，因此演示是确定性的。随机会破坏确定性测试。"
+    },
+    {
+      "stage": "check",
+      "question": "当调度器报告零论文触发时，选择器抛出什么错误？",
+      "options": [
+        "ValueError",
+        "NoTriggerError，它会在写入器运行前短路演示",
+        "PaperValidationError",
+        "它返回 None"
+      ],
+      "correct": 1,
+      "explanation": "NoTriggerError 是类型化的失败模式。返回 None 会让写入器在畸形输入上运行，并在之后以更难以处理的错误中断。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么演示在确定性测试中使用相同种子运行两次？",
+      "options": [
+        "为了执行两次 asyncio",
+        "为了断言被选中的分支、奖励和论文章节 id 在各次运行间完全一致",
+        "为了捕获内存泄漏",
+        "为了证明调度器是公平的"
+      ],
+      "correct": 1,
+      "explanation": "确定性是契约的一部分。两次使用相同种子(Seed)的运行必须产生相同的产物。测试锁定了这一点。"
+    },
+    {
+      "stage": "post",
+      "question": "成功运行后，演示报告包含什么？",
+      "options": [
+        "仅包含最终的 LaTeX 文件",
+        "scheduler_report、best_branch、best_reward、critic_result、paper_manifest 和 stop_reason",
+        "仅包含实验计数和一个状态字符串",
+        "一个模型提示(Prompt)和补全日志"
+      ],
+      "correct": 1,
+      "explanation": "每个阶段的输出都会被保留。报告是上游输出的组合，而非转换后的摘要。下游工具读取清单(Manifest)；调试器读取 scheduler_report 内部的追踪(Trace)。"
+    }
+  ]
+}

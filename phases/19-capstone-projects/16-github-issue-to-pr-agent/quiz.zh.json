@@ -1,0 +1,90 @@
+{
+  "lesson": "16-github-issue-to-pr-agent",
+  "title": "顶点项目 16 — GitHub 议题转 PR 的自主代理",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "生产环境中异步云端编码代理是如何被触发的？",
+      "options": [
+        "到一个虚拟机的长连接 SSH 会话",
+        "由议题标签或 PR 评论触发的 GitHub webhook，被分派给一个沙箱工作进程",
+        "一个定时访问该仓库的 cron 任务",
+        "手动文件上传"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为什么该代理必须使用短生命周期的 GitHub App 安装令牌，而不是个人访问令牌？",
+      "options": [
+        "App 完全避免了 GitHub 的速率限制",
+        "App 令牌提供细粒度、限定范围、短生命周期的凭据，适合按任务运行的工作进程",
+        "个人访问令牌无法打开 PR",
+        "App 比 PAT 需要的代码更少"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪两项保护措施可防止该代理破坏 main 分支？",
+      "options": [
+        "每次推送要求输入验证码",
+        "分支保护强制禁止直接向 main 推送或强制推送，且应用不在绕过列表中",
+        "克隆前对仓库进行加密",
+        "在工作进程上禁用 git"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么针对 .github/workflows 的路径范围保护要在工作进程上实施，而不是作为 GitHub App 权限？",
+      "options": [
+        "工作流存储在仓库之外",
+        "路径范围在任何形式下都不可能实现",
+        "GitHub App 权限不是按路径范围的，因此工作进程对 proposed diff 的允许列表检查才是实施该保护的正确位置",
+        ".github/workflows 是一个虚拟路径"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "在代理循环结束之后、打开 PR 之前，会发生什么门控？",
+      "options": [
+        "审查模型重写 diff",
+        "完整 CI 在沙箱中运行；计算覆盖率增量；回归超过阈值的 PR 被标记为 needs-review",
+        "PR 立即打开且不进行任何检查",
+        "仓库被强制推送到 main"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "调度器每天每个仓库强制实施哪些预算旋钮？",
+      "options": [
+        "仅有一个挂钟时间上限",
+        "无限 PR 且无限成本",
+        "每个 PR 的美元上限加上每天每个仓库的最大 PR 数量",
+        "仅一个回合上限"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "代理发布的 PR 正文中包含哪些内容？",
+      "options": [
+        "仅包含 diff",
+        "包含理由、diff 摘要、trace URL、成本和回合数，以便审查者审计和跟进",
+        "仅生成一个变更日志",
+        "什么都不包含；该 PR 的正文为空"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

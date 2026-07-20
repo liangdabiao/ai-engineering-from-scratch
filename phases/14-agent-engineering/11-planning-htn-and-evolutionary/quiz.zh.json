@@ -1,0 +1,90 @@
+{
+  "lesson": "11-planning-htn-and-evolutionary",
+  "title": "使用 HTN 和进化搜索进行规划",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "相比于自由形式的 LLM 计划，HTN 增加了什么？",
+      "options": [
+        "当强制实施算子(Operator)的先决条件和效果时的可证明正确性",
+        "更便宜的推理",
+        "更短的提示词",
+        "更好的嵌入"
+      ],
+      "correct": 0,
+      "explanation": "HTN 的带有先决条件和效果的符号算子通过构造保证可靠性。"
+    },
+    {
+      "stage": "pre",
+      "question": "AlphaEvolve 是为哪类问题构建的？",
+      "options": [
+        "自由形式的散文生成",
+        "具有机器可检查的确定性适应度函数的优化",
+        "多轮对话记忆",
+        "向量搜索排序"
+      ],
+      "correct": 1,
+      "explanation": "进化搜索需要确定性评估器；AlphaEvolve 面向存在此类评估器的领域。"
+    },
+    {
+      "stage": "check",
+      "question": "ChatHTN 如何在使用 LLM 的同时保持计划可靠性？",
+      "options": [
+        "它不能；可靠性是尽力而为的",
+        "LLM 的建议仅作为候选分解进入，并根据算子(Operator)模式进行验证；符号层负责正确性",
+        "它在 HTN 轨迹上微调 LLM",
+        "它使用向量数据库"
+      ],
+      "correct": 1,
+      "explanation": "LLM 扩展方法库，但无法绕过算子(Operator)的先决条件和效果。"
+    },
+    {
+      "stage": "check",
+      "question": "该课引用了 AlphaEvolve 的哪个结果？",
+      "options": [
+        "56 年来首次在 4x4 复数矩阵乘法上超越 Strassen",
+        "Gemini 上推理速度提升 10 倍",
+        "在 HumanEval 上击败 GPT-4",
+        "首个 P=NP 的证明"
+      ],
+      "correct": 0,
+      "explanation": "AlphaEvolve 找到了 4x4 复数矩阵乘法的 48 次标量乘法，这是 56 年来对 Strassen 的首次改进。"
+    },
+    {
+      "stage": "check",
+      "question": "HTN 的哪个元素是具有先决条件和效果的可直接执行的原语动作？",
+      "options": [
+        "任务(Task)",
+        "方法(Method)",
+        "算子(Operator)",
+        "状态(State)"
+      ],
+      "correct": 2,
+      "explanation": "算子是基本原语；方法将复合任务分解；状态是一组事实。"
+    },
+    {
+      "stage": "post",
+      "question": "该课关于没有真实评估器的 AlphaEvolve 的警告是什么？",
+      "options": [
+        "它很慢",
+        "询问 LLM 代码是否更好并不是适应度函数；评估器必须是确定性的且快速的",
+        "它违反了 Apache 2.0",
+        "它无法在 GPU 上运行"
+      ],
+      "correct": 1,
+      "explanation": "没有确定性评估器，搜索就没有可收敛的信号。"
+    },
+    {
+      "stage": "post",
+      "question": "何时应该选用 ReAct 或 ReWOO 而不是 HTN 或 AlphaEvolve？",
+      "options": [
+        "永远不；HTN 严格更优",
+        "当你不需要形式化可靠性或可机器检查的适应度时；大多数智能体任务都属于此类",
+        "当你有可用的 GPU 集群时",
+        "当延迟低于 100 毫秒时"
+      ],
+      "correct": 1,
+      "explanation": "该课明确警告不要过度工程化：大多数任务不需要形式化规划或进化搜索。"
+    }
+  ]
+}

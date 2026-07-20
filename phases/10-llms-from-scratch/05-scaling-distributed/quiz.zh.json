@@ -1,0 +1,62 @@
+[
+  {
+    "question": "一个7B参数的FP16模型仅权重需要多少显存？",
+    "options": [
+      "7 GB",
+      "14 GB",
+      "28 GB",
+      "56 GB"
+    ],
+    "correct": 1,
+    "explanation": "FP16中每个参数占2字节。70亿*2字节=14 GB。加上Adam优化器状态（2份）和梯度，训练总内存约56 GB，未计入激活值。",
+    "stage": "pre"
+  },
+  {
+    "question": "分布式训练中使用的三种并行方式是什么？",
+    "options": [
+      "CPU并行、GPU并行和TPU并行",
+      "数据并行(Data parallelism)、张量并行(Tensor parallelism)和流水线并行(Pipeline parallelism)",
+      "批次并行(Batch parallelism)、序列并行(Sequence parallelism)和令牌并行(Token parallelism)",
+      "前向并行(Forward parallelism)、反向并行(Backward parallelism)和优化器并行(Optimizer parallelism)"
+    ],
+    "correct": 1,
+    "explanation": "数据并行在每个GPU上复制模型并分割数据。张量并行将单个层分割到多个GPU上。流水线并行将模型的层分割成多个阶段分配到不同GPU上。",
+    "stage": "pre"
+  },
+  {
+    "question": "FSDP（全分片数据并行）与标准DDP相比有什么不同？",
+    "options": [
+      "它使用了不同的优化器",
+      "它在GPU之间分片模型参数、梯度和优化器状态，而不是在每个GPU上复制完整模型",
+      "它处理数据更快",
+      "它支持更多GPU"
+    ],
+    "correct": 1,
+    "explanation": "标准DDP会在每个GPU上复制整个模型（浪费）。FSDP将参数分片到各个GPU上，使得每个GPU只持有参数的一部分。参数在需要计算时按需收集，计算后释放。",
+    "stage": "post"
+  },
+  {
+    "question": "什么是DeepSpeed ZeRO Stage 3？",
+    "options": [
+      "一种量化方法",
+      "它将优化器状态、梯度和模型参数分布到各个GPU上，实现了最大的内存效率",
+      "一种学习率调度方法",
+      "一种数据预处理流水线"
+    ],
+    "correct": 1,
+    "explanation": "ZeRO Stage 1分片优化器状态，Stage 2增加了梯度分片，Stage 3增加了参数分片。Stage 3提供了最大的内存节省，使得训练远超单GPU内存的模型成为可能。",
+    "stage": "post"
+  },
+  {
+    "question": "为什么在数据并行训练中需要进行梯度同步？",
+    "options": [
+      "为了防止过拟合",
+      "每个GPU在不同的数据上计算梯度；对多个GPU的梯度求平均可确保所有副本进行相同的更新",
+      "为减少内存使用",
+      "为了加速前向传播"
+    ],
+    "correct": 1,
+    "explanation": "在数据并行中，每个GPU处理不同的批次并计算不同的梯度。AllReduce对这些梯度在所有GPU上求平均，使得每个副本应用相同的更新并保持同步。",
+    "stage": "post"
+  }
+]

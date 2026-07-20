@@ -1,0 +1,90 @@
+{
+  "lesson": "29-production-runtimes",
+  "title": "Production Runtimes: Queue, Event, Cron",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What are the six runtime shapes the lesson lists?",
+      "options": [
+        "Request-response, streaming, durable execution, queue-based, event-driven, scheduled",
+        "Read, write, exec, fork, exit, wait",
+        "REST, gRPC, GraphQL, WebSocket, SSE, MQTT",
+        "Map, filter, reduce, fold, scan, group"
+      ],
+      "correct": 0,
+      "explanation": "These are the six runtime shapes; pick a shape before picking a framework."
+    },
+    {
+      "stage": "pre",
+      "question": "When is request-response a poor fit?",
+      "options": [
+        "On a 1-second classification",
+        "When the task takes longer than about 30 seconds and users hang up while workers pile up",
+        "On REST APIs",
+        "On internal services"
+      ],
+      "correct": 1,
+      "explanation": "Synchronous HTTP is only viable for short tasks; long tasks need queue/durable/event shapes."
+    },
+    {
+      "stage": "check",
+      "question": "What is durable execution's core property?",
+      "options": [
+        "Faster inference",
+        "State is checkpointed after every step so the runtime can resume from the last successful step on failure",
+        "Lower token cost",
+        "Native voice support"
+      ],
+      "correct": 1,
+      "explanation": "Checkpoint-and-resume is the differentiator; LangGraph is the lesson's reference."
+    },
+    {
+      "stage": "check",
+      "question": "Which Anthropic observation justifies queue-based runtimes for long-horizon agents?",
+      "options": [
+        "Tasks always complete in 5 seconds",
+        "Computer use announcement: dozens-to-hundreds of steps per task is normal",
+        "Tasks must run synchronously",
+        "Cron solves everything"
+      ],
+      "correct": 1,
+      "explanation": "Anthropic flagged dozens-to-hundreds of steps per task as normal; that workload needs queues or durable runtimes."
+    },
+    {
+      "stage": "check",
+      "question": "What does the lesson mean by 'observability is load-bearing'?",
+      "options": [
+        "Logs are pretty",
+        "Without OTel GenAI spans and a Langfuse/Phoenix/Opik backend you cannot debug a multi-step agent that failed at step 40",
+        "Disk gets full",
+        "Providers require it for billing"
+      ],
+      "correct": 1,
+      "explanation": "对于多步骤智能体而言，可观测性不是可选项；它是调试与从头重放之间的区别。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么队列工作线程必须拥有死信队列（DLQ）？",
+      "options": [
+        "没有死信队列，失败的任务会悄无声息地消失",
+        "死信队列是 AWS 要求的",
+        "死信队列让任务更快",
+        "死信队列是加密的"
+      ],
+      "correct": 0,
+      "explanation": "没有死信队列的失败任务会消失；死信队列就是失败任务的停车场。"
+    },
+    {
+      "stage": "post",
+      "question": "本课建议将 cron 形态的智能体与什么搭配使用？",
+      "options": [
+        "GPU 自动伸缩器",
+        "持久化执行，以便失败的夜间运行在下一个周期恢复",
+        "流式 SSE",
+        "WebRTC"
+      ],
+      "correct": 1,
+      "explanation": "Cron + 持久化执行能从失败的计划运行中干净地恢复。"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "68-rag-eval-precision-recall",
+  "title": "RAG 评估：精确率(Precision)、召回率(Recall)、MRR、nDCG、忠实度(Faithfulness)、答案相关性(Answer Relevance)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么在生产环境 RAG 中，recall@k 通常是首要的检索指标？",
+      "options": [
+        "召回率忽略排序",
+        "生成阶段可以丢弃不相关的块(chunk)，但无法从从未检索到的块中凭空生成答案，因此遗漏正确块是代价更高的失败",
+        "OpenAPI 规范要求使用召回率",
+        "在 RAG 中召回率与精确率相同"
+      ],
+      "correct": 1,
+      "explanation": "遗漏正确块的检索器无法在下游修复；多余的块会浪费 token，但很少污染答案。"
+    },
+    {
+      "stage": "pre",
+      "question": "MRR 计算的是什么？",
+      "options": [
+        "跨查询的第一相关文档位置倒数的均值",
+        "余弦相似度的几何均值",
+        "第二个相关文档排名的中位数",
+        "答案的 token 数量"
+      ],
+      "correct": 0,
+      "explanation": "MRR 由列表顶部主导：排名 1 贡献 1.0，排名 2 贡献 0.5，排名 10 贡献 0.1。"
+    },
+    {
+      "stage": "check",
+      "question": "何时应该使用 nDCG 而非 recall@k？",
+      "options": [
+        "当语料库较小时",
+        "当黄金标签带有分级相关性（例如文档 A 为 3，文档 B 为 2，文档 C 为 1）且二元指标会丢失信息时",
+        "当检索器不返回分数时",
+        "从不"
+      ],
+      "correct": 1,
+      "explanation": "nDCG 使用分级增益和位置折扣；召回率将所有内容扁平化为二元。"
+    },
+    {
+      "stage": "check",
+      "question": "忠实度与答案相关性的区别是什么？",
+      "options": [
+        "忠实度问的是'答案是否基于检索到的上下文'；答案相关性问的是'答案是否解决了问题'",
+        "忠实度衡量精确率；相关性衡量召回率",
+        "忠实度是检索指标，相关性是分块(chunk)指标",
+        "它们是同一个指标的两个名称"
+      ],
+      "correct": 0,
+      "explanation": "一个忠实但偏离主题的答案是高忠实度、低相关性；一个相关但无依据的答案则是高相关性、低忠实度。"
+    },
+    {
+      "stage": "check",
+      "question": "某流水线 recall@5 尚可但 MRR 较低。应首先排查哪个阶段？",
+      "options": [
+        "分块器(chunker)",
+        "重排器(reranker)，因为正确块在 top-k 中但不在顶部",
+        "生成器(generator)",
+        "语料摄取器(corpus ingestor)"
+      ],
+      "correct": 1,
+      "explanation": "recall@5 表示黄金块在 top-5 中；低 MRR 表示它不在列表顶部。那是重排阶段的职责。"
+    },
+    {
+      "stage": "post",
+      "question": "什么生产隐患会让冻结的 qrels 文件随着时间变得危险？",
+      "options": [
+        "检索器在六个月后停止工作",
+        "qrels 腐烂：语料库发生变化，上个季度还是标准答案的文档不再是正确的答案；指标是基于过时的标签计算出来的",
+        "嵌入向量会过期",
+        "评估套件会耗尽磁盘空间"
+      ],
+      "correct": 1,
+      "explanation": "安排一次季度 qrels 审查，否则随着语料库的演变，你的指标将衡量错误的东西。"
+    }
+  ]
+}

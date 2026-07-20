@@ -1,0 +1,62 @@
+[
+  {
+    "question": "DPO相比RLHF的主要优势是什么？",
+    "options": [
+      "DPO能生成更好的模型",
+      "DPO消除了对独立奖励模型和PPO的需求，直接在偏好对上进行单循环训练",
+      "DPO使用更少的训练数据",
+      "DPO无需任何偏好数据即可工作"
+    ],
+    "correct": 1,
+    "explanation": "RLHF需要分别训练奖励模型，然后运行PPO优化。而DPO将这两个步骤合并为一个训练目标，直接在偏好对上优化语言模型。",
+    "stage": "pre"
+  },
+  {
+    "question": "参考模型在DPO中扮演什么角色？",
+    "options": [
+      "它生成训练数据",
+      "It serves as the anchor that prevents the trained model from diverging too far, similar to the KL penalty in RLHF",
+      "It evaluates model quality",
+      "It handles tokenization"
+    ],
+    "correct": 1,
+    "explanation": "The DPO loss compares log probabilities under the trained policy and the reference (usually SFT) model. The reference model constrains how far the policy can drift, preventing reward hacking without explicit KL tuning.",
+    "stage": "pre"
+  },
+  {
+    "question": "What does the beta parameter in DPO control?",
+    "options": [
+      "The learning rate",
+      "How strongly the policy is constrained to stay close to the reference model -- higher beta means more conservative updates",
+      "The batch size",
+      "训练轮数"
+    ],
+    "correct": 1,
+    "explanation": "Beta缩放隐式KL散度惩罚。Beta=0.1允许模型显著偏离参考模型（可能更好但风险更高）。Beta=0.5使其保持接近（更安全但学习较少）。",
+    "stage": "post"
+  },
+  {
+    "question": "DPO如何隐式表示奖励模型？",
+    "options": [
+      "它没有——DPO没有奖励的概念",
+      "DPO损失函数可以通过证明在奖励函数下的最优策略直接通过策略对数概率表示来推导",
+      "它在语言模型内部训练了一个隐藏的奖励模型",
+      "DPO将损失函数用作奖励"
+    ],
+    "correct": 1,
+    "explanation": "Rafailov等人表明，RLHF目标的闭式解将奖励表示为相对于参考策略的对数概率的函数。DPO直接优化这一点，隐式地学习奖励。",
+    "stage": "post"
+  },
+  {
+    "question": "什么时候RLHF比DPO更受青睐？",
+    "options": [
+      "总是——RLHF严格更好",
+      "当你需要一个可复用的奖励模型来评估多个策略，或者当在线数据收集有益时",
+      "当你拥有的偏好数据较少时",
+      "当训练较小的模型时"
+    ],
+    "correct": 1,
+    "explanation": "DPO是离线的（固定偏好数据）。RLHF允许在线数据收集，奖励模型对新生成的内容进行评分，发现奖励作弊模式。独立的奖励模型对于评估和其他策略也很有用。",
+    "stage": "post"
+  }
+]

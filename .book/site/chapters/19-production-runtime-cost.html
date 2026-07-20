@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§19 生产运行时：选错形状，钱和稳定性一起崩 · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="active" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>§19 生产运行时：选错形状，钱和稳定性一起崩</h2>
+<p>2025 年一个定时 Agent 在机器重启后丢了半夜进度。我才认真看运行时形状。</p>
+<h3>19.1 一句判断：先选运行时，再选框架</h3>
+<p>多数 AI 创业公司不是死在模型差。</p>
+<p>是死在单位经济差。</p>
+<p>一次 GPT 调用几分钱。一万用户每天十次，光输入 token 就 250 美元一天。</p>
+<p>我见过的账单：一个 RAG 客服，裸模型 2.25 万美元/月。</p>
+<p>加了缓存和路由，降到 5000 多。省下的就是 runway。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：那张 2.2 万刀的账单</p>
+<p>2025 年帮一个团队看成本。系统提示每次都重发 1500 token。10 万请求/天，光这段不变文字就 375 刀/天。加一行 cache_control，当天省 337 刀。</p>
+</blockquote>
+<h3>19.2 六种运行时形状</h3>
+<p>生产 Agent 跑在六种外壳上。形状决定哪些故障可活。</p>
+<ul>
+<li><strong>请求-响应</strong>：同步 HTTP，用户等。只适合 &lt;30 秒的短任务。</li>
+<li><strong>流式</strong>：SSE/WebSocket 渐进输出。语音经 WebRTC（§18）。</li>
+<li><strong>持久执行</strong>：每步存盘，失败自动续。长任务必备。</li>
+<li><strong>队列/后台</strong>：任务进队列，worker 取，结果回传。长程 Agent 靠它。</li>
+<li><strong>事件驱动</strong>：订阅触发（新邮件、PR 开、cron 响）。Claude 托管 Agent 自带。</li>
+<li><strong>定时</strong>：cron 周期跑。配合持久执行，夜里挂了下 tick 续。</li>
+</ul>
+<p>框架落点：Agno 走 stateless FastAPI；Mastra 走 server adapter；CrewAI Flow 管事件驱动；Pipecat/LiveKit 管语音；Claude Managed Agents 管长程异步。</p>
+<h3>19.3 可观测性是承重墙</h3>
+<p>没有 OpenTelemetry 的 GenAI span，你调不了第 40 步挂掉的 Agent。</p>
+<p>Langfuse / Phoenix / Opik 不是锦上添花。是地基。</p>
+<p>没有它，你只有两条路：要么快速复现，要么从头重跑加日志。</p>
+<table>
+<thead>
+<tr>
+<th>形状</th>
+<th>代表栈</th>
+<th>致命坑</th>
+<th>标叔的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>请求-响应</td>
+<td>Agno + FastAPI</td>
+<td>5 分钟任务用户挂</td>
+<td>超 30 秒别用</td>
+</tr>
+<tr>
+<td>流式</td>
+<td>SSE/WS</td>
+<td>背压没做</td>
+<td>客户端慢要暂停</td>
+</tr>
+<tr>
+<td>持久</td>
+<td>LangGraph</td>
+<td>不做就重跑</td>
+<td>长任务必须做</td>
+</tr>
+<tr>
+<td>队列</td>
+<td>Celery/BullMQ</td>
+<td>无 DLQ 任务消失</td>
+<td>死信队列必建</td>
+</tr>
+<tr>
+<td>事件</td>
+<td>CrewAI Flow</td>
+<td>触发源不清</td>
+<td>埋 trace</td>
+</tr>
+<tr>
+<td>定时</td>
+<td>K8s CronJob</td>
+<td>重启即丢</td>
+<td>配持久执行</td>
+</tr>
+</tbody>
+</table>
+<h3>19.4 Provider 缓存：白送的折扣</h3>
+<p>三家 2026 都给 prompt 缓存，机制不同：</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>机制</th>
+<th>折扣</th>
+<th>最低长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic</td>
+<td>显式 cache_control</td>
+<td>90% 命中</td>
+<td>1024 token</td>
+</tr>
+<tr>
+<td>OpenAI</td>
+<td>自动前缀匹配</td>
+<td>50% 命中</td>
+<td>1024 token</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>显式 CachedContent</td>
+<td>~75%</td>
+<td>4096 (Flash)</td>
+</tr>
+</tbody>
+</table>
+<p>Anthropic 写法：给不变前缀打 <code>cache_control: {"type": "ephemeral"}</code>。</p>
+<p>首次写贵 25%，之后命中省 90%。系统提示从此几乎免费。</p>
+<pre><code class="language-python"># Anthropic 提示缓存：打标记即可
+client.messages.create(
+    model=&quot;claude-sonnet-4-20250514&quot;,
+    max_tokens=1024,
+    system=[{
+        &quot;type&quot;: &quot;text&quot;,
+        &quot;text&quot;: &quot;你是 Acme 客服...&quot;,        # 不变的长提示
+        &quot;cache_control&quot;: {&quot;type&quot;: &quot;ephemeral&quot;}  # 命中省 90%
+    }],
+    messages=[{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;退货政策？&quot;}],
+)
+</code></pre>
+<h3>19.5 应用层缓存：精确与语义</h3>
+<p>Provider 缓存只认相同前缀。语义缓存管"同义不同字"。</p>
+<p>"退货政策？" 和 "怎么退货？" 不是同一串，意思一样。</p>
+<pre><code class="language-python"># 精确缓存：相同输入直接命中
+class ExactCache:
+    def _hash(self, model, messages, temperature):
+        key = json.dumps({&quot;model&quot;: model, &quot;messages&quot;: messages,
+                          &quot;temperature&quot;: temperature}, sort_keys=True)
+        return hashlib.sha256(key.encode()).hexdigest()  # 哈希全提示
+
+    def get(self, model, messages, temperature=0.0):
+        if temperature &gt; 0:
+            return None                     # 非确定，跳过
+        return self.cache.get(self._hash(model, messages, temperature))
+</code></pre>
+<pre><code class="language-python"># 语义缓存：embedding 后比余弦相似度
+def semantic_cache_get(query, entries, threshold=0.92):
+    q = embed(query)
+    best, sim = None, 0.0
+    for e in entries:
+        s = cosine(q, e[&quot;embedding&quot;])      # 0.92+ 视为同义
+        if s &gt; sim:
+            best, sim = e, s
+    return best[&quot;response&quot;] if best and sim &gt;= threshold else None
+</code></pre>
+<h3>19.6 限速与熔断：活下去的开关</h3>
+<p>限速不是讲公平，是讲生存。</p>
+<p>令牌桶：每用户一桶 N 个 token，按 R/秒 补。空了就拒。允许突发。</p>
+<p>熔断：到预算就降级。三档：</p>
+<ul>
+<li>70%：告警。</li>
+<li>85%：只走便宜模型。</li>
+<li>95%：拒新请求，只回缓存。</li>
+</ul>
+<pre><code class="language-python"># 令牌桶限速器（每用户）
+class TokenBucket:
+    def __init__(self, cap=50_000, refill=500):
+        self.cap, self.refill = cap, refill
+        self.tokens = cap
+        self.last = time.time()
+
+    def check(self, need):
+        now = time.time()
+        self.tokens = min(self.cap, self.tokens + (now - self.last) * self.refill)
+        self.last = now
+        return self.tokens &gt;= need          # 不够就拒
+</code></pre>
+<h3>19.7 模型路由：对的事给对的价</h3>
+<p>不是每句都要贵模型。</p>
+<p>"几点关门？" 用 GPT-4o-mini 足够。复杂推理才上 Opus。</p>
+<p>一个简单的分类器，就能省 40–70% 模型费。</p>
+<pre><code class="language-python"># 复杂度分类 → 路由模型
+SIMPLE = [&quot;几点&quot;, &quot;价格&quot;, &quot;退货&quot;, &quot;你好&quot;]
+COMPLEX = [&quot;分析&quot;, &quot;对比&quot;, &quot;写代码&quot;, &quot;架构&quot;]
+
+def route(query, tier=&quot;pro&quot;):
+    q = query.lower()
+    if len(q.split()) &lt;= 5 or any(k in q for k in SIMPLE):
+        return &quot;gpt-4o-mini&quot;                # 便宜模型
+    if any(k in q for k in COMPLEX):
+        return &quot;claude-opus-4&quot;              # 贵模型
+    return &quot;claude-sonnet-4&quot;
+</code></pre>
+<h3>19.8 优化栈：一层叠一层</h3>
+<table>
+<thead>
+<tr>
+<th>层</th>
+<th>技术</th>
+<th>典型省</th>
+<th>难度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Provider 缓存</td>
+<td>30–50%</td>
+<td>低</td>
+</tr>
+<tr>
+<td>2</td>
+<td>精确缓存</td>
+<td>10–20%</td>
+<td>低</td>
+</tr>
+<tr>
+<td>3</td>
+<td>语义缓存</td>
+<td>15–30%</td>
+<td>中</td>
+</tr>
+<tr>
+<td>4</td>
+<td>模型路由</td>
+<td>40–70%</td>
+<td>中</td>
+</tr>
+<tr>
+<td>5</td>
+<td>限速熔断</td>
+<td>保预算</td>
+<td>低</td>
+</tr>
+<tr>
+<td>6</td>
+<td>批量 API</td>
+<td>50%</td>
+<td>低</td>
+</tr>
+</tbody>
+</table>
+<p>RAG 应用叠 1–5 层，通常从 2.25 万/月 降到 4000–6000/月。</p>
+<p>这就是烧 runway 和做业务的差别。</p>
+<blockquote>
+<p><strong>核心建议</strong>：先接成本追踪</p>
+<p>每笔调用记 model、token、延迟、花费、用户、命中。不量就无从优化。先装 CostTracker，再谈省。</p>
+</blockquote>
+<h3>19.9 先给结论</h3>
+<p>运行时形状定生死。缓存和路由定成本。</p>
+<p>两者都做，才叫生产级。</p>
+<p>[向前桥接] 最后一步。把前面所有能力，装进一个能跑真仓库的工作台。</p>
+<hr>
+<div class="pager"><a class="prev" href="18-voice-agents.html"><div class="lbl">← 上一章</div><div class="ttl">§18 语音 Agent：不是文本循环套个 TTS</div></a><a class="next" href="20-capstone-agent-workbench.html"><div class="lbl">下一章 →</div><div class="ttl">§20 Capstone：能跑真仓库的 Agent 工作台</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>

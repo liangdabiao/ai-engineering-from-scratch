@@ -1,0 +1,90 @@
+{
+  "lesson": "21-computer-use-agents",
+  "title": "Computer Use: Claude, OpenAI CUA, Gemini",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What input does Claude computer use take, and what does it emit?",
+      "options": [
+        "Accessibility tree in, keyboard/mouse commands out",
+        "Screenshots in (vision-based), keyboard/mouse commands out",
+        "DOM XML in, JavaScript out",
+        "JSON in, SQL out"
+      ],
+      "correct": 1,
+      "explanation": "Claude reads pixels and emits keyboard/mouse actions; no OS accessibility API is used."
+    },
+    {
+      "stage": "pre",
+      "question": "What is Gemini 2.5 Computer Use's distinguishing safety feature?",
+      "options": [
+        "A per-step safety service that assesses each action before execution and rejects unsafe ones",
+        "Hard-coded WAF rules",
+        "Mandatory CAPTCHAs",
+        "Read-only mode by default"
+      ],
+      "correct": 0,
+      "explanation": "Gemini 2.5 Computer Use ships a per-step safety classifier as a defining feature."
+    },
+    {
+      "stage": "check",
+      "question": "What does the lesson identify as untrusted input across all three models?",
+      "options": [
+        "Only HTTPS responses",
+        "Screenshots, DOM text, tool outputs, PDF content, anything retrieved",
+        "Only PDF content",
+        "Nothing; everything is trusted"
+      ],
+      "correct": 1,
+      "explanation": "Only direct user instructions count as permission; everything else is untrusted."
+    },
+    {
+      "stage": "check",
+      "question": "Which OSWorld / WebArena numbers does the lesson cite for OpenAI CUA at launch?",
+      "options": [
+        "OSWorld 38.1%, WebArena 58.1%, WebVoyager 87%",
+        "OSWorld 0%, WebArena 0%",
+        "OSWorld 99%, WebArena 99%",
+        "Numbers not reported"
+      ],
+      "correct": 0,
+      "explanation": "Those were the launch numbers cited."
+    },
+    {
+      "stage": "check",
+      "question": "Which defense pattern is NOT in the 2026 convergence list?",
+      "options": [
+        "Per-step safety classifier",
+        "Allowlist/blocklist of navigation targets",
+        "Human-in-the-loop for sensitive actions",
+        "Auto-clicking through dialogs to save time"
+      ],
+      "correct": 3,
+      "explanation": "自动点击对话框与安全的做法相反；该课建议进行明确的确认。"
+    },
+    {
+      "stage": "post",
+      "question": "该课重点指出的针对计算机使用智能体的主要攻击是什么？",
+      "options": [
+        "网络中断",
+        "恶意页面或PDF在检索内容中嵌入指令，模型将其视为用户意图",
+        "渲染缓慢",
+        "操作系统更新延迟"
+      ],
+      "correct": 1,
+      "explanation": "将截图或DOM文本当作权限来信任，是典型的间接提示注入失败。"
+    },
+    {
+      "stage": "post",
+      "question": "在什么情况下特别建议采用人在回路确认？",
+      "options": [
+        "在只读导航时",
+        "在登录、购买、删除文件等敏感操作时",
+        "仅当模型请求时",
+        "从不"
+      ],
+      "correct": 1,
+      "explanation": "敏感操作（金钱、数据暴露、新登录）需要明确的人工确认。"
+    }
+  ]
+}

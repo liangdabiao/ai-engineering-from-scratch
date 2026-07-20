@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§06 记忆：Agent 为什么忘了你 · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="active" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>§06 记忆：Agent 为什么忘了你</h2>
+<h3>06.1 我踩过的坑</h3>
+<p>2023 年我做了个客服 Agent。用户周一说"我用 PostgreSQL"。周五它问"你数据库是什么？"</p>
+<p>记忆为零。窗口一关，啥都不剩。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：窗口不是记忆</p>
+<p>我原以为 128K 窗口够用。后来 Mem0 论文打了脸：128K 基线照样漏掉长程事实。大窗口不根治。</p>
+</blockquote>
+<h3>06.2 三道坎</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>现象</th>
+<th>标叔的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>溢出</td>
+<td>长对话撑爆窗口</td>
+<td>大窗口不根治</td>
+</tr>
+<tr>
+<td>稀释</td>
+<td>无关内容冲淡注意力</td>
+<td>装满≠有效</td>
+</tr>
+<tr>
+<td>持久化</td>
+<td>新会话一片空白</td>
+<td>必须外部存</td>
+</tr>
+</tbody>
+</table>
+<h3>06.3 MemGPT：把内存当磁盘管</h3>
+<p>Packer 等人（arXiv:2310.08560）借用了操作系统：</p>
+<table>
+<thead>
+<tr>
+<th>OS 概念</th>
+<th>MemGPT 概念</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>主上下文（prompt）</td>
+</tr>
+<tr>
+<td>磁盘</td>
+<td>外部存储</td>
+</tr>
+<tr>
+<td>缺页</td>
+<td>调记忆工具</td>
+</tr>
+</tbody>
+</table>
+<p>主上下文固定，外部存储可检索。Agent 中途调 <code>archival_memory_search</code>，结果拼回下一轮。像 <code>read()</code> 系统调用。</p>
+<h3>06.4 Mem0：三库融合</h3>
+<p>2025 年 Mem0（arXiv:2504.19413）说：一个库不够。</p>
+<ul>
+<li>向量库：语义相似，"上周聊的漂移"能搜到。</li>
+<li>KV 库：精确查，"用户电话"O(1) 命中。</li>
+<li>图库：关系推理，"谁和谁同账单"答得了。</li>
+</ul>
+<p>融合打分：<code>score = 相关*wr + 重要*wi + 时新*wr2</code>。不是层级，是加权。</p>
+<p>硬指标（LoCoMo 91.6 / LongMemEval 93.4 / BEAM 1M 64.1），比单库高 10+ 点。</p>
+<blockquote>
+<p><strong>核心建议</strong>：按范围分记忆</p>
+<p>user / session / agent 三档。混写会出"把 Bob 项目告诉 Alice"的事故。</p>
+</blockquote>
+<h3>06.5 两个坑</h3>
+<ul>
+<li>记忆腐烂：写入比读取快，检索淹死在旧事实里。</li>
+<li>记忆投毒：外部记忆被攻击者写入，下次召回就中招。</li>
+</ul>
+<p>[向前桥接] 光记得住不够。下一步，Agent 还得会"想下一步"。讲规划。</p>
+<hr>
+<div class="pager"><a class="prev" href="05-from-toy-to-real.html"><div class="lbl">← 上一章</div><div class="ttl">§05 从 Toy 到真实模型：原生推理来了</div></a><a class="next" href="07-planning.html"><div class="lbl">下一章 →</div><div class="ttl">§07 规划：先想清楚，再动手</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>

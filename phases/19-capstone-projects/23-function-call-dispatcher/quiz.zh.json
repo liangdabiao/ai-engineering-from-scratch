@@ -1,0 +1,90 @@
+{
+  "lesson": "23-function-call-dispatcher",
+  "title": "函数调用分发器",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么对非幂等工具的超时默认不重试？",
+      "options": [
+        "因为分发器无法度量非幂等调用",
+        "因为工具可能已部分提交；重试会重复该效果",
+        "因为非幂等处理器运行更快",
+        "因为幂等键很慢"
+      ],
+      "correct": 1,
+      "explanation": "对超时为 4.9s 的 db.write 进行重试可能产生第二次写入。除非处理器告知该调用可安全重复，否则分发器拒绝重试。"
+    },
+    {
+      "stage": "pre",
+      "question": "幂等键去重是在防止什么？",
+      "options": [
+        "缓慢的网络",
+        "原始调用仍在进行时触发的重试",
+        "模式校验错误",
+        "进程重启"
+      ],
+      "correct": 1,
+      "explanation": "若无去重，在 5s 时的重试会与仍在等待的慢原始调用竞争。缓存将两者合并为一次处理器调用。"
+    },
+    {
+      "stage": "check",
+      "question": "在此分发器中哪些错误类型有资格重试？",
+      "options": [
+        "schema 和 not_found",
+        "internal 和 budget_exceeded",
+        "timeout（若幂等）和 transient",
+        "全部都是"
+      ],
+      "correct": 2,
+      "explanation": "schema 和 not_found 是确定性的。internal 掩盖了未知的处理器缺陷。budget_exceeded 是一种让步。只有幂等超时和显式 TransientError 会重试。"
+    },
+    {
+      "stage": "check",
+      "question": "_run_with_retries 周围的信号量保护什么？",
+      "options": [
+        "处理器自身",
+        "后端免受 gather() 扇出的过多并发调用",
+        "校验器",
+        "重试计数器"
+      ],
+      "correct": 1,
+      "explanation": "若不设限制，四十个调用的 gather 会开启四十个并发分发。信号量限制这一波调用。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么幂等键由调用方派生，而非分发器？",
+      "options": [
+        "因为 Python 哈希不稳定",
+        "因为仅从参数派生会使两个语义不同的调用在参数恰好相同时发生冲突",
+        "因为注册表不会有该键",
+        "因为缓存无法存储字符串"
+      ],
+      "correct": 1,
+      "explanation": "调用方知道步骤 id、规划器意图和用户。仅有参数不足以安全地去重。"
+    },
+    {
+      "stage": "post",
+      "question": "哪个 JSON-RPC 错误码对应于调度时的模式(schema)失败？",
+      "options": [
+        "-32601",
+        "-32602",
+        "-32603",
+        "-32700"
+      ],
+      "correct": 1,
+      "explanation": "-32602 无效参数。调度器在任何处理器运行前返回它。"
+    },
+    {
+      "stage": "post",
+      "question": "在对一个幂等工具达到 max_attempts 且均为超时后，返回什么？",
+      "options": [
+        "抛出一个异常",
+        "DispatchOk，无结果",
+        "DispatchError，kind=timeout 且 attempts==max_attempts",
+        "DispatchError，kind=internal"
+      ],
+      "correct": 2,
+      "explanation": "调度器返回一个类型化错误信封。kind 反映最后的失败模式，attempts 反映它尝试的次数。"
+    }
+  ]
+}

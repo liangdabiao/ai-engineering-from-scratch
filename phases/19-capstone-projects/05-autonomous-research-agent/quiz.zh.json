@@ -1,0 +1,90 @@
+{
+  "lesson": "05-autonomous-research-agent",
+  "title": "顶点项目 05 — 自主研究智能体（AI-Scientist 级别）",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "AI-Scientist 级别的智能体使用什么搜索形态来探索实验？",
+      "options": [
+        "对 token 输出进行束搜索（Beam search）",
+        "基于新颖性 x 质量 x 预算评分的实验节点最佳优先树搜索",
+        "基于人类反馈的纯强化学习",
+        "带随机评分的宽度优先扩展"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为什么沙箱配置了 --network=none 和有界的资源上限？",
+      "options": [
+        "迫使智能体使用提示缓存（prompt caching）",
+        "强制确定性的浮点运算",
+        "默认允许 GPU 直通",
+        "防止网络出口（egress）并将实验副作用控制在可复现的边界内"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "视觉批判（vision critique）步骤在写作者循环（writer loop）中的作用是什么？",
+      "options": [
+        "将图表转换为条形图",
+        "将 LaTeX 草稿编译为 PDF，然后由视觉语言模型（VLM）批判布局、图表清晰度和声明-证据一致性",
+        "从截图中生成新的实验想法",
+        "在渲染时替换 matplotlib"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "评审集成（reviewer ensemble）如何对流程进行门控（gate）？",
+      "options": [
+        "单个评审者基于二元标志接受或拒绝",
+        "评审者匿名投票，多数胜出",
+        "评审仅在发表后运行",
+        "五位评审者基于 NeurIPS 风格的评分标准打分，加权总分必须超过阈值，否则草稿退回写作者"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "该顶点项目对每篇论文执行哪种成本纪律（cost discipline）？",
+      "options": [
+        "通过 Langfuse 计数器和运行前估计跟踪的 $30 硬性预算",
+        "仅成本优化而无质量检查",
+        "无限制计算，仅硬性时钟时间限制",
+        "跟踪 GPU 小时但从不设限"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪个评分函数对树节点进行排序以进一步扩展？",
+      "options": [
+        "新颖性 x 质量 x 剩余预算",
+        "相关论文的引用次数",
+        "随机均匀优先级",
+        "输出长度与令牌数"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "红队报告针对系统进行了哪些测试？",
+      "options": [
+        "系统提示的缓存命中率",
+        "向量数据库中的多租户数据泄漏",
+        "丢包情况下的长尾延迟",
+        "沙箱逃逸尝试，例如 fork 炸弹、网络外泄和文件系统逃逸"
+      ],
+      "correct": 3,
+      "explanation": ""
+    }
+  ]
+}

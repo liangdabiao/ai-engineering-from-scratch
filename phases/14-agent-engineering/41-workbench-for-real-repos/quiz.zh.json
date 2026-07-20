@@ -1,0 +1,90 @@
+{
+  "lesson": "41-workbench-for-real-repos",
+  "title": "真实代码库上的工作台",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "通过纯提示(prompt-only)和受工作台引导(workbench-guided)的流水线运行同一任务，其目的是什么？",
+      "options": [
+        "比较模型",
+        "生成一份前后对比报告，用数据而非争论交给持怀疑态度的人",
+        "挑选供应商",
+        "对 GPU 进行基准测试"
+      ],
+      "correct": 1,
+      "explanation": "让数据来说话；案例基于真实感的任务而非玩具任务。"
+    },
+    {
+      "stage": "pre",
+      "question": "以下哪项不是所测量的五个结果之一？",
+      "options": [
+        "tests_actually_run",
+        "acceptance_met",
+        "files_outside_scope",
+        "model_perplexity"
+      ],
+      "correct": 3,
+      "explanation": "这五个是 tests_actually_run、acceptance_met、files_outside_scope、handoff_quality、reviewer_total。"
+    },
+    {
+      "stage": "check",
+      "question": "LangChain 的《Anatomy of an Agent Harness》在 Terminal Bench 2.0 上测量了什么？",
+      "options": [
+        "所有模型在前三名收敛",
+        "仅改变 harness，同一模型从排名前 30 之外升至第五",
+        "排名最高的模型下降了 25 位",
+        " harness 的改动没有改变排名"
+      ],
+      "correct": 1,
+      "explanation": "同一模型上 25 位的排名差异，就是 harness 对比模型最醒目的证据。"
+    },
+    {
+      "stage": "check",
+      "question": "preprints.org 上的论文引用企业智能体(agent)项目的失败率是多少？",
+      "options": [
+        "8%",
+        "约 88% 未能投入生产，且失败集中在运行时而非推理",
+        "约 50%",
+        "无一失败"
+      ],
+      "correct": 1,
+      "explanation": "《Harness Engineering for Language Agents》预印本将失败归因于运行时问题（陈旧状态、脆弱重试、膨胀的上下文）。"
+    },
+    {
+      "stage": "check",
+      "question": "在长上下文条件下，WebAgent 基线准确率表现如何？",
+      "options": [
+        "保持平稳",
+        "从 40-50% 降至 10% 以下，主要源于无限循环和目标丢失",
+        "上升 30%",
+        "减半但仍高于 30%"
+      ],
+      "correct": 1,
+      "explanation": "长上下文崩溃正是 Ralph Loop 和 handoff packet 所要吸收的问题。"
+    },
+    {
+      "stage": "post",
+      "question": "这课关于假阴性（即仅用提示词更快的情况）说了什么？",
+      "options": [
+        "它们不存在",
+        "单步事实性任务、单行代码检查、格式化工具运行等用仅提示词更快；如实列举它们，以免工作台被说成杀鸡用牛刀",
+        "它们证明工作台失败了",
+        "它们推翻了测试框架的论点"
+      ],
+      "correct": 1,
+      "explanation": "如实列举仅提示词最快的情况，能让测试框架的论点保持可信。"
+    },
+    {
+      "stage": "post",
+      "question": "你在这课中从哪里引用了该报告？",
+      "options": [
+        "内部人力资源评审",
+        "当有人想‘就这个冲刺周期’跳过验证关卡时，或当新智能体产品发布并需要一个可移植的省时基准时",
+        "仅在营销演示中",
+        "仅在黑客松中"
+      ],
+      "correct": 1,
+      "explanation": "数字比解释传得更远；当压力试图抄近路绕过这些场景时，引用该报告。"
+    }
+  ]
+}

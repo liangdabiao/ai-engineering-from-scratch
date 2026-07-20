@@ -1,0 +1,102 @@
+{
+  "lesson": "13-question-answering",
+  "title": "问答系统",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "抽取式问答(Extractive QA)预测什么？",
+      "options": [
+        "一个生成的自然语言答案",
+        "仅一个置信度分数",
+        "给定段落中答案片段的起始和结束词元索引",
+        "一个检索到的段落ID"
+      ],
+      "correct": 2,
+      "explanation": "抽取式问答输出包含答案的段落片段。"
+    },
+    {
+      "stage": "pre",
+      "question": "一个基础的RAG流水线由哪两个组件定义？",
+      "options": [
+        "一个联合训练的编码器和解码器",
+        "一个重排序器和一个翻译器",
+        "分词器和词性标注器",
+        "一个检索器（查找相关段落）和一个阅读器（抽取或生成答案）"
+      ],
+      "correct": 3,
+      "explanation": "RAG = 检索器（查找相关上下文）加上阅读器（从中作答）。"
+    },
+    {
+      "stage": "check",
+      "question": "在SQuAD上，精确匹配(Exact Match, EM)衡量什么？",
+      "options": [
+        "编辑距离",
+        "逐词重叠度",
+        "预测是否在归一化（小写、去除标点、移除冠词）后与参考答案完全一致",
+        "词元级F1"
+      ],
+      "correct": 2,
+      "explanation": "EM是在定义的归一化步骤后的严格相等；部分匹配得分为零。"
+    },
+    {
+      "stage": "check",
+      "question": "deepset/roberta-base-squad2 相比 SQuAD 1.1 模型增加了什么？",
+      "options": [
+        "多语言支持",
+        "在不可回答问题上的训练，使模型能预测空答案",
+        "更大的上下文窗口",
+        "跨语言检索"
+      ],
+      "correct": 1,
+      "explanation": "SQuAD 2.0 包含不可回答项；在其上训练的模型可以预测“无答案”。"
+    },
+    {
+      "stage": "check",
+      "question": "哪个 RAGAS 维度专门针对幻觉？",
+      "options": [
+        "答案相关性",
+        "上下文召回率",
+        "忠实度，通过答案主张与检索上下文之间的自然语言推理(NLI)蕴含关系衡量",
+        "上下文精确度"
+      ],
+      "correct": 2,
+      "explanation": "Faithfulness checks each answer claim against retrieved context via NLI entailment."
+    },
+    {
+      "stage": "post",
+      "question": "Why should you measure retrieval recall before evaluating reader accuracy?",
+      "options": [
+        "Required by transformers",
+        "Recall determines ROUGE",
+        "Reader latency depends on it",
+        "If the correct passage is not in the top-k, the reader cannot succeed regardless of how good it is"
+      ],
+      "correct": 3,
+      "explanation": "A reader cannot answer when the right passage is missing; retrieval recall bounds reader performance."
+    },
+    {
+      "stage": "post",
+      "question": "Which prompt pattern reduces hallucinations in RAG generation?",
+      "options": [
+        "Telling the model to answer only from the provided context and to reply 'I don't know' when the context is insufficient",
+        "Including more passages",
+        "Asking the model to be creative",
+        "Removing the question"
+      ],
+      "correct": 0,
+      "explanation": "Grounding + explicit refusal instructions cuts hallucination rates substantially."
+    },
+    {
+      "stage": "post",
+      "question": "When is extractive QA still preferred over generative RAG in 2026?",
+      "options": [
+        "Conversational QA",
+        "Regulated domains (legal, medical, audit) where literal quotation from authoritative sources is required",
+        "多语言支持",
+        "Open-domain trivia"
+      ],
+      "correct": 1,
+      "explanation": "Extractive QA gives verbatim quotes from an authoritative corpus, which compliance contexts demand."
+    }
+  ]
+}

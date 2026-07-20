@@ -1,0 +1,78 @@
+{
+  "lesson": "76-collective-ops-from-scratch",
+  "title": "从零开始实现集合操作",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "对于在 N 个秩(rank)上大小为 T 字节的张量(tensor)，环形全规约(ring allreduce)的每个秩的带宽开销是多少？",
+      "options": [
+        "T 字节",
+        "N * T 字节",
+        "2T(N-1)/N 字节",
+        "T log2(N) 字节"
+      ],
+      "correct": 2,
+      "explanation": "环形全规约将大小为 T/N 的 N-1 个块移动两次（先 reduce-scatter 再 allgather）；每个秩的总量为 2T(N-1)/N，与集群规模无关。"
+    },
+    {
+      "stage": "pre",
+      "question": "为什么本课中的队列网格(queue mesh)能如实代表真实集群上的 NCCL？",
+      "options": [
+        "它在 CUDA 核心上运行",
+        "它对归约(reduction)进行硬件卸载",
+        "它实现了相同的连线模式（围绕环的有序点对点发送），只是介质不同",
+        "它对消息进行压缩"
+      ],
+      "correct": 2,
+      "explanation": "算法正确性取决于连线模式，而非介质；队列环暴露了与 NCCL 环形全规约相同的竞争形态和分块调度。"
+    },
+    {
+      "stage": "check",
+      "question": "在环形全规约的 reduce-scatter 阶段之后，秩 r 持有的是什么？",
+      "options": [
+        "什么也不会发生",
+        "未归约的完整张量",
+        "一个块（张量的 N 分之一）的归约和",
+        "两个块的归约和"
+      ],
+      "correct": 2,
+      "explanation": "reduce-scatter 将一个块的求和结果存放在一个秩上；随后 allgather 阶段将这些已完成的块绕环旋转。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么使用树形广播而不是从源端直接发送 N-1 次？",
+      "options": [
+        "树结构使用更少内存",
+        "树结构每轮使持有者集合翻倍；深度为 log2(N)，因此延迟随 log 而非 N 扩展",
+        "树结构在 PyTorch 中是强制要求的",
+        "直接发送会丢包"
+      ],
+      "correct": 1,
+      "explanation": "当每跳延迟成为瓶颈时，log2(N) 跳占主导；N-1 次顺序发送要支付该延迟下限 N 次。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么要在相同输入上与 torch.distributed gloo 进行验证？",
+      "options": [
+        "Gloo 更快",
+        "Gloo 是集合语义的法定参考；字节级一致的输出证明你的算法在真实集群运行前符合规范",
+        "Gloo 自动写入 JSONL",
+        "Gloo 无需设置"
+      ],
+      "correct": 1,
+      "explanation": "没有参考实现时，该原语看似正确，直到真实训练运行的第 10000 步才暴露问题；gloo 在 CPU 上提供字节级一致的基准真值。"
+    },
+    {
+      "stage": "post",
+      "question": "树形 allreduce 何时优于环形 allreduce？",
+      "options": [
+        "总是",
+        "当消息较大时",
+        "小消息或高延迟链路；在交叉点以下，log2(N) 跳数优于带宽项 2T(N-1)/N",
+        "从不"
+      ],
+      "correct": 2,
+      "explanation": "NCCL 在约 1 MB 以上选择环形，以下选择树形；该交叉点是在给定集群拓扑上的带宽与延迟的权衡。"
+    }
+  ]
+}

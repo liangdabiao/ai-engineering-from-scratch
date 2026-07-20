@@ -1,0 +1,78 @@
+{
+  "lesson": "37-loading-pretrained-weights",
+  "title": "加载预训练权重",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么加载器需要一个名称映射？",
+      "options": [
+        "预训练张量和本地参数共享相同的名称",
+        "已发布的 GPT-2 权重使用诸如 wte、wpe、h.N.attn.c_attn 这样的名称；本地模型使用 tok_embed、pos_embed、blocks.N.attn.qkv；加载器将其中一种名称映射到另一种",
+        "Safetensors 文件是加密的",
+        "Torch 需要它"
+      ],
+      "correct": 1,
+      "explanation": "这两种命名约定是不同的历史产物；该映射是一个按层展开的普通字典(dict)。"
+    },
+    {
+      "stage": "check",
+      "question": "什么是 conv1d 转置，哪些张量需要它？",
+      "options": [
+        "所有权重张量",
+        "已发布的 GPT-2 以 tensorflow conv1d 布局存储 c_attn、c_proj 和 c_fc 权重，该布局与 nn.Linear.weight 所期望的布局互为转置；加载器在赋值时对这些权重调用 .t()",
+        "仅嵌入层",
+        "仅 LayerNorm 缩放参数"
+      ],
+      "correct": 1,
+      "explanation": "有三个后缀需要转置；偏置(biases)和 LayerNorm 已经具有正确的形状。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么 LM 头不在 safetensors 文件中？",
+      "options": [
+        "它是在运行时根据 logits 计算得出的",
+        "权重绑定(Weight tying)：LM 头与词元嵌入(wte)共享存储，因此在加载后加载 wte 并将 lm_head.weight = tok_embed.weight 设为别名即可重建该头",
+        "它太大了",
+        "它是从单独的文件中加载的"
+      ],
+      "correct": 1,
+      "explanation": "在 wte 就位后将 lm_head.weight = tok_embed.weight 恢复别名；若使用复制则会令参数数量翻倍。"
+    },
+    {
+      "stage": "check",
+      "question": "加载器在形状不匹配时会做什么？",
+      "options": [
+        "对较小的张量进行填充",
+        "将不匹配记录到 LoadReport.shape_mismatch 中并拒绝赋值，保持本地参数不变",
+        "使进程崩溃",
+        "截断较大的张量"
+      ],
+      "correct": 1,
+      "explanation": "半加载的模型是静默失败的机器；拒绝赋值能让报告保持诚实。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么演示用的桩(stub)夹具不是真正的 GPT-2 下载？",
+      "options": [
+        "真实文件不是 safetensors 格式",
+        "演示必须能离线且快速地运行；该桩使用与预训练完全相同的命名约定，因此加载器代码路径一致，换成真实文件也不会改变加载器的任何行为",
+        "真实权重是加密的",
+        "Safetensors 无法存储大张量"
+      ],
+      "correct": 1,
+      "explanation": "相同的代码路径，更小的负载；加载器在两种情况下都能工作。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么在加载前后都生成一个样本？",
+      "options": [
+        "为了测量推理速度",
+        "如果加载后的样本与加载前的样本完全相同，说明加载并未改变模型，这意味着映射在无声中漏掉了每一个张量(tensor)。",
+        "为了预热 GPU 缓存",
+        "为了设置随机种子"
+      ],
+      "correct": 1,
+      "explanation": "健全性生成是最便宜的关卡：一个未能发生变化的样本指纹会暴露出一次损坏的加载，而 LoadReport 摘要本身无法捕捉到这种情况。"
+    }
+  ]
+}

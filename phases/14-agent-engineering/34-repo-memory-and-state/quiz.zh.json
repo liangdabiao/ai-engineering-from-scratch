@@ -1,0 +1,90 @@
+{
+  "lesson": "34-repo-memory-and-state",
+  "title": "仓库记忆与持久状态",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "决定某条信息是否应存入仓库记忆的持久性测试是什么？",
+      "options": [
+        "它是否为 JSON",
+        "三个月后在一次 CI 重新运行时是否仍有用；如果是，存入仓库；如果否，存入遥测数据",
+        "用户是否将其标记为重要",
+        "它是否能放入 4 kB"
+      ],
+      "correct": 1,
+      "explanation": "仓库记忆用于持久、三个月后仍有用的状态；瞬时数据是遥测数据。"
+    },
+    {
+      "stage": "pre",
+      "question": "哪个模式字段承载智能体的契约版本？",
+      "options": [
+        "schema_version",
+        "build_hash",
+        "model_id",
+        "session_uuid"
+      ],
+      "correct": 0,
+      "explanation": "schema_version 是整型的契约；管理器拒绝从未知版本加载。"
+    },
+    {
+      "stage": "check",
+      "question": "原子写入是如何工作的？",
+      "options": [
+        "在同一目录下使用 tempfile.mkstemp，写入，fsync，再用 os.replace（原子重命名）覆盖目标文件",
+        "先截断再写入目标文件",
+        "仅追加并带 CRC",
+        "加密并覆盖"
+      ],
+      "correct": 0,
+      "explanation": "在 POSIX 和 Windows 上的原子重命名可防止部分写入损坏。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么非幂等的工具调用需要幂等键？",
+      "options": [
+        "用于计费",
+        "如果智能体在工具调用后、但在将结果写入检查点前崩溃，可安全重试；在执行前记录调用 ID，重试时跳过该调用",
+        "用于对日志去重",
+        "用于缩短输出"
+      ],
+      "correct": 1,
+      "explanation": "pending_calls.jsonl 携带调用 ID；恢复时会检查并跳过已执行的工作。"
+    },
+    {
+      "stage": "check",
+      "question": "大型工件（CSV、长转录文本、生成的文件）相对于状态应存放在何处？",
+      "options": [
+        "内联在 agent_state.json 中",
+        "作为独立文件（或对象存储），状态中仅保留路径，从而使检查点保持小巧快速",
+        "在环境变量中",
+        "拼接成一个巨大的日志"
+      ],
+      "correct": 1,
+      "explanation": "独立的产物与状态解耦而各自演进；检查点保持低廉的读写成本。"
+    },
+    {
+      "stage": "post",
+      "question": "用于审计的事件溯源加上用于恢复的快照，能为你带来什么？",
+      "options": [
+        "更低的磁盘占用",
+        "通过读取快照然后重放其后的事件，逐字重放智能体决策；其形态与 Postgres WAL 相同",
+        "更快的推理",
+        "原生语音支持"
+      ],
+      "correct": 1,
+      "explanation": "在每次变更时追加到 state.events.jsonl；定期快照到 state.json；重放快照时间戳之后的事件。"
+    },
+    {
+      "stage": "post",
+      "question": "该课(lesson)提到当 schema_version 不匹配时会发生什么？",
+      "options": [
+        "管理器静默升级",
+        "在 tools/migrate_state.py 中的迁移脚本运行之前，管理器拒绝加载",
+        "状态被删除",
+        "智能体重试"
+      ],
+      "correct": 1,
+      "explanation": "模式迁移或拒绝加载；绝不静默升级。"
+    }
+  ]
+}

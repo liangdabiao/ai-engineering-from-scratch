@@ -1,0 +1,78 @@
+{
+  "lesson": "17-disaggregated-prefill-decode",
+  "title": "分离式预填充/解码 — NVIDIA Dynamo 与 llm-d",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么预填充和解码需要不同的最优 GPU 配置？",
+      "options": [
+        "预填充必须在 AMD 上运行，解码必须在 NVIDIA 上运行",
+        "预填充受限于矩阵乘法吞吐量的计算瓶颈；解码受限于 HBM 带宽的内存瓶颈，因此将它们放置在一起会浪费其中一种资源",
+        "它们使用不同的模型权重",
+        "解码需要更多的网络带宽"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "NVIDIA Dynamo 使用什么传输方式在预填充和解码池之间移动 KV 缓存？",
+      "options": [
+        "普通 HTTP",
+        "仅 gRPC 双向流",
+        "NFS 上的共享文件系统",
+        "NIXL（可用时使用 RDMA/InfiniBand，回退至 TCP）"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "根据本课内容，分离式在什么时候不划算？",
+      "options": [
+        "Blackwell 上的 MoE 工作负载",
+        "具有共享系统提示的多租户服务",
+        "带有 8K+ 前缀的 RAG",
+        "提示少于 512 token 且输出少于 200 token 的情况，此时 KV 传输开销超过了收益"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "Dynamo 与 llm-d 的核心架构区别是什么？",
+      "options": [
+        "Dynamo 是开源的；llm-d 是闭源的",
+        "Dynamo 运行在 CPU 上；llm-d 运行在 GPU 上",
+        "Dynamo 是构建于 vLLM/SGLang/TRT-LLM 之上的堆栈上层编排器；llm-d 是 Kubernetes 原生的，将预填充/解码/路由器作为独立的 Services",
+        "Dynamo 需要 AMD；llm-d 需要 NVIDIA"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "哪些 Dynamo 组件会自动为 SLO 调整预填充:解码比例？",
+      "options": [
+        "Sidecar 代理与 Envoy 过滤器",
+        "Planner Profiler 与 SLA Planner",
+        "Cluster Autoscaler",
+        "Marlin kernels"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "分离式如何与第 17 · 11 阶段的缓存感知路由相互作用？",
+      "options": [
+        "分离式完全禁用了 KV 缓存复用",
+        "缓存感知路由器可以将请求调度到已持有其前缀的解码池上；未命中时则流经 预填充 -> 解码，因此二者是复合关系",
+        "它们互斥",
+        "缓存感知路由仅适用于同址服务"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "lesson": "20-agent-harness-loop-contract",
+  "title": "Agent 工具链循环契约",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么将工具链循环建模为显式状态机，而不是带标志位的 while 循环？",
+      "options": [
+        "它让工具链在一个地方拒绝非法转换，并从事件日志重放会话",
+        "它在 CPython 上更快",
+        "它避免了编写测试的需要",
+        "它是模型能调用的唯一形态"
+      ],
+      "correct": 0,
+      "explanation": "状态机将合法性规则放在一个转换函数中。相同的输入序列会复现相同的状态，这正是会话重放得以实现的原因。"
+    },
+    {
+      "stage": "pre",
+      "question": "循环中的拉取点(pull point)代表什么？",
+      "options": [
+        "循环让出控制权并等待调用方提供输入的点",
+        "返回工具名称的模型调用",
+        "每 N 秒触发一次的定时器",
+        "变更负载的钩子订阅者"
+      ],
+      "correct": 0,
+      "explanation": "拉取点是返回，不是异常。调用方获取工具链所请求的内容，并调用 resume()。"
+    },
+    {
+      "stage": "check",
+      "question": "哪个状态是工具调用唯一合法的拉取点？",
+      "options": [
+        "EXECUTING",
+        "AWAITING_TOOL",
+        "REFLECTING",
+        "PLANNING"
+      ],
+      "correct": 1,
+      "explanation": "只有 AWAITING_TOOL 产生工具拉取点。当一个步骤需要工具时，EXECUTING 会转换进入该状态。"
+    },
+    {
+      "stage": "check",
+      "question": "当钩子在 before_tool_call 中抛出 HookAbort 时会发生什么？",
+      "options": [
+        "会话立即转换到 DONE",
+        "工具调用被跳过，on_error 触发，循环进入 REFLECTING",
+        "钩子被注销",
+        "预算被重置"
+      ],
+      "correct": 1,
+      "explanation": "HookAbort 取消正在进行的工具调度，以中止原因触发 on_error，并继续执行。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么钩子(hooks)和事件(events)被作为独立关注点？",
+      "options": [
+        "因为事件类型是字节而钩子是字符串",
+        "钩子是命令式的，可以变更或中止。事件是观察式的，且只追加。",
+        "因为审计脚本禁止订阅者",
+        "因为事件日志无法存储字典"
+      ],
+      "correct": 1,
+      "explanation": "Hooks 改变行为。Events 描述行为。将二者混用会把策略与遥测耦合在一起，而这正是我们要避免的问题。"
+    },
+    {
+      "stage": "post",
+      "question": "当超过挂钟时间预算时，下一个状态是什么？",
+      "options": [
+        "DONE —— 会话被终止",
+        "EXECUTING —— 循环重试",
+        "IDLE —— 返回一个带有 budget_exceeded 原因的拉取点",
+        "PLANNING —— 起草一个新计划"
+      ],
+      "correct": 2,
+      "explanation": "预算耗尽是一种让出(yield)。该 harness 转换到 IDLE 状态，触发 on_budget_exceeded，并返回一个 PullRequest，以便调用方可以决定是否延长或关闭。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么本课的 planner 使用桩(stub)而不是调用模型？",
+      "options": [
+        "因为模型在本地调用很慢",
+        "为了在任何模型绑定之前，使循环契约可测试且具确定性",
+        "因为模型无法返回工具调用",
+        "为了节省 tokens"
+      ],
+      "correct": 1,
+      "explanation": "先固定循环契约，可以让后续的课在无需重新协商状态机的情况下，替换进真实的 planners、registries 和 dispatchers。"
+    }
+  ]
+}

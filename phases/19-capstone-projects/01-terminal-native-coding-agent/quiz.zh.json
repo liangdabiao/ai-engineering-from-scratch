@@ -1,0 +1,90 @@
+{
+  "lesson": "01-terminal-native-coding-agent",
+  "title": "顶点项目 01 — 终端原生编码智能体",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "2026 年的终端编码智能体共享哪种循环形态？",
+      "options": [
+        "规划、行动、观察、恢复",
+        "编码、解码、采样、流式传输",
+        "训练、评估、部署、监控",
+        "抓取、嵌入、排序、综合"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为什么测试框架要在 E2B 或 Daytona 沙箱中运行每个任务？",
+      "options": [
+        "为了将文件系统和工具执行与宿主隔离，以便工作树在完成后可被拆除",
+        "为了绕过模型提供商的速率限制",
+        "为了在冷缓存上基准测试令牌吞吐量",
+        "为了给智能体循环提供 GPU 访问"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "哪个内置钩子是阻止破坏性 shell 命令执行前运行的自然位置？",
+      "options": [
+        "PreToolUse",
+        "SessionStart",
+        "Stop",
+        "PostToolUse"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "该顶点项目将每个工具结果限制在大约 4k 令牌。这主要防止了哪种失败模式？",
+      "options": [
+        "通过恶意 shell 元字符进行沙箱逃逸",
+        "当工具返回大量转储时的上下文污染与成本失控",
+        "跨恢复会话的陈旧规划状态",
+        "模型对工具调用轨迹的过拟合"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "PreCompact 钩子在 150k 令牌标记处做了什么？",
+      "options": [
+        "取消运行并退还用户预算",
+        "将较早的轮次总结为先前状态块，以便规划和新观察仍可容纳",
+        "强制推送当前分支以备份进度",
+        "将后备模型切换为较小的草稿模型"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "该顶点项目在 30 个问题的 SWE-bench Pro 子集上将其测试框架与哪个基线比较？",
+      "options": [
+        "OpenCode",
+        "mini-swe-agent",
+        "Live-SWE-agent",
+        "Aider"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "交付物是在对照哪一组指标进行测量？",
+      "options": [
+        "WER、MOS 和首音频输出(first-audio-out)",
+        "困惑度(Perplexity)、BLEU 和 ROUGE",
+        "pass@1、每任务轮数(turns-per-task) 和每任务成本(dollar-per-task)",
+        "MRR@10 和 nDCG@10"
+      ],
+      "correct": 2,
+      "explanation": ""
+    }
+  ]
+}

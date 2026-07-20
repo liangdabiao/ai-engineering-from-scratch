@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§01 一个循环颠覆了整个行业 · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="active" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>§01 一个循环颠覆了整个行业</h2>
+<h3>01.1 我亲历的转折点</h3>
+<p>2022 年 10 月。我刷到一篇论文。标题很长。核心就一句话：让模型先"想"再"动"。</p>
+<p>你看现在的 Claude Code、Cursor、Devin。它们看似天差地别。其实祖宗是同一个。</p>
+<p>那个祖宗，叫 ReAct。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：先懂祖宗，再学框架</p>
+<p>我 2023 年直接啃 LangChain。卡了三周。回头读了 ReAct 原文，两小时全通。框架是祖宗的壳。</p>
+</blockquote>
+<h3>01.2 旧世界 vs 新世界</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>旧方案（纯 LLM）</th>
+<th>新方案（Agent 循环）</th>
+<th>标叔的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能不能查资料</td>
+<td>不能，靠训练记忆</td>
+<td>能，调工具实时查</td>
+<td>差一个时代</td>
+</tr>
+<tr>
+<td>算错能改吗</td>
+<td>不能，嘴硬到底</td>
+<td>能，看到结果再想</td>
+<td>关键差距</td>
+</tr>
+<tr>
+<td>多步任务</td>
+<td>一步到位才赢</td>
+<td>一步步试错也行</td>
+<td>容错性天差地别</td>
+</tr>
+<tr>
+<td>2026 现状</td>
+<td>只剩聊天框</td>
+<td>跑通真实仓库</td>
+<td>没循环=玩具</td>
+</tr>
+</tbody>
+</table>
+<h3>01.3 核心洞察：Agent 不是魔法</h3>
+<p>很多人以为 Agent 很玄。其实它就是个 while 循环。</p>
+<p>模型想一步。调个工具。看返回。再想。再调。直到说"完了"。</p>
+<p>你看，多朴素。朴素到我会带你手写一遍（§02）。</p>
+<blockquote>
+<p><strong>核心建议</strong>：别神话 Agent</p>
+<p>它 = LLM + 工具 + 循环。三样缺一不可。少一样就是聊天机器人。</p>
+</blockquote>
+<h3>01.4 这本书适合谁</h3>
+<p>如果你是：会调 API、但说不清底层的开发者 → 读。
+如果你想从"调包"进阶到"造 Agent" → 读。
+如果你只想复制粘贴 prompt → 别读，浪费时间。</p>
+<p>[向前桥接] 道理讲完了。下一章，我们亲手把那个 while 循环写出来。</p>
+<hr>
+<div class="pager"><a class="prev" href="../index.html"><div class="lbl">← 目录</div><div class="ttl">回到封面</div></a><a class="next" href="02-react-loop.html"><div class="lbl">下一章 →</div><div class="ttl">§02 ReAct 循环：Observe→Think→Act</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{
+  "lesson": "11-machine-translation",
+  "title": "Machine Translation",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What does BLEU measure?",
+      "options": [
+        "Language identification accuracy",
+        "N-gram precision (typically 1-4) between hypothesis and reference, with a brevity penalty",
+        "Character-level F-score",
+        "Embedding cosine similarity"
+      ],
+      "correct": 1,
+      "explanation": "BLEU is the geometric mean of 1-4-gram precision against references, plus a brevity penalty."
+    },
+    {
+      "stage": "pre",
+      "question": "Why use sacrebleu instead of rolling your own BLEU?",
+      "options": [
+        "It is more accurate",
+        "It runs on GPU",
+        "It normalizes tokenization so scores are comparable across papers and runs",
+        "It supports streaming"
+      ],
+      "correct": 2,
+      "explanation": "sacrebleu freezes tokenization, removing a common source of incomparable BLEU numbers."
+    },
+    {
+      "stage": "check",
+      "question": "Which NLLB-specific setting controls the target language during decoding?",
+      "options": [
+        "length_penalty",
+        "forced_bos_token_id set to the target language code's token id",
+        "num_beams",
+        "src_lang"
+      ],
+      "correct": 1,
+      "explanation": "NLLB forces the first decoded token to a target-language code via forced_bos_token_id."
+    },
+    {
+      "stage": "check",
+      "question": "Which metric family is the 2026 default for production MT quality where labeled data exists?",
+      "options": [
+        "BLEU alone",
+        "Token edit distance",
+        "Learned metrics such as COMET (and BERTScore/BLEURT) trained on human judgment",
+        "Latency"
+      ],
+      "correct": 2,
+      "explanation": "Learned metrics like COMET correlate more strongly with human judgment than BLEU/chrF alone."
+    },
+    {
+      "stage": "check",
+      "question": "When does chrF tend to be more informative than BLEU?",
+      "options": [
+        "For morphologically rich languages where character-level matches catch inflectional variants BLEU misses",
+        "When using beam search",
+        "On very short sentences",
+        "Whenever a reference exists"
+      ],
+      "correct": 0,
+      "explanation": "字符级 F 值(Character F-score)能捕捉词级 BLEU 低估的部分形态匹配。"
+    },
+    {
+      "stage": "post",
+      "question": "多语言机器翻译中的离目标生成(off-target generation)是什么？",
+      "options": [
+        "丢弃了命名实体的输出",
+        "遗漏了标点的输出",
+        "模型解码到了错误的目标语言（例如请求法语时 NLLB 输出了西班牙语）",
+        "过短的输出"
+      ],
+      "correct": 2,
+      "explanation": "离目标生成在罕见语言对上很常见；翻译后的语言识别(language-ID)检查可捕获它。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么用几千条高质量领域平行句对微调，常常能胜过大得多的噪声网络数据？",
+      "options": [
+        "更大的数据会使 GPU 显存溢出",
+        "更小的数据集训练更快",
+        "网络数据使用违法",
+        "质量与领域匹配胜过数量；噪声平行数据会引入偏移(drift)和幻觉(hallucination)"
+      ],
+      "correct": 3,
+      "explanation": "干净的领域对齐句对是最大的生产杠杆；噪声数据会损害适配(adaptation)。"
+    },
+    {
+      "stage": "post",
+      "question": "何时大语言模型(LLM)（例如 GPT-4）在 2026 年可能优于专用机器翻译模型？",
+      "options": [
+        "最高吞吐量的批量翻译",
+        "延迟关键的浏览器翻译",
+        "习惯用语内容、长上下文、通过提示(prompting)进行的文体适配，或需要语气控制的内容",
+        "拥有数百万平行句对的少量语言对"
+      ],
+      "correct": 2,
+      "explanation": "大语言模型在习惯用语、长上下文或风格受控的翻译上胜出；专用机器翻译在吞吐量和延迟上胜出。"
+    }
+  ]
+}

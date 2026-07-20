@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在 shell 命令中，管道操作符 '|' 的作用是什么？",
+      "options": [
+        "并行运行两个命令",
+        "将一个命令的标准输出作为标准输入传递给下一个命令",
+        "将命令的输出保存到文件中",
+        "将两个文件合并为一个"
+      ],
+      "correct": 1,
+      "explanation": "管道操作符将命令连接成管道。例如，'cat log.txt | grep error' 将 log.txt 的内容作为输入发送给 grep，由它筛选出包含 'error' 的行。"
+    },
+    {
+      "stage": "pre",
+      "question": "当你关闭启动某个运行中的进程的终端时，会发生什么？",
+      "options": [
+        "该进程在后台继续运行",
+        "该进程收到挂断信号（SIGHUP）并通常会终止",
+        "该进程暂停，直到你打开一个新终端",
+        "该进程自动迁移为系统服务"
+      ],
+      "correct": 1,
+      "explanation": "关闭终端会向子进程发送 SIGHUP，默认会导致它们终止。tmux、nohup 或 screen 等工具可防止这种情况。"
+    },
+    {
+      "stage": "post",
+      "question": "对于长时间运行的训练任务，tmux 相比使用 'nohup command &' 的主要优势是什么？",
+      "options": [
+        "tmux 比 nohup 占用更少的 CPU",
+        "tmux 让你可以分离、重新连接，并在多个窗格中查看实时输出",
+        "tmux 自动重启失败的程序",
+        "tmux 压缩进程输出以节省磁盘空间"
+      ],
+      "correct": 1,
+      "explanation": "tmux 创建持久会话，你可以从中分离并在之后重新连接，多个窗格中可见实时输出。nohup 仅记录到文件，无法交互或重新连接。"
+    },
+    {
+      "stage": "post",
+      "question": "'python train.py > output.log 2>&1' 实现了什么？",
+      "options": [
+        "运行 train.py 并仅将错误保存到 output.log",
+        "运行 train.py 并将标准输出和标准错误都重定向到 output.log",
+        "运行 train.py 两次并记录第二次运行",
+        "以双倍内存分配运行 train.py"
+      ],
+      "correct": 1,
+      "explanation": "'> output.log' 将 stdout 重定向到文件。'2>&1' 将 stderr 发送到与 stdout 相同的地方。结果是正常输出和错误都被捕获到一个文件中。"
+    },
+    {
+      "stage": "post",
+      "question": "哪个命令可以让你从本地浏览器访问运行在 GPU 机器 8888 端口上的远程 Jupyter notebook？",
+      "options": [
+        "scp -P 8888 user@gpu-box:~/notebook.ipynb",
+        "ssh -L 8888:localhost:8888 user@gpu-box",
+        "rsync -avz user@gpu-box:8888 localhost:8888",
+        "ssh user@gpu-box --forward-port 8888"
+      ],
+      "correct": 1,
+      "explanation": "SSH 本地端口转发（-L）将远程端口映射到你的本地机器。运行此命令后，在浏览器中打开 localhost:8888 即可访问远程 Jupyter 服务器。"
+    }
+  ]
+}

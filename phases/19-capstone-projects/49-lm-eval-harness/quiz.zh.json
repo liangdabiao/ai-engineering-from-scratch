@@ -1,0 +1,78 @@
+{
+  "lesson": "49-lm-eval-harness",
+  "title": "语言模型评估框架",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "在该框架的 JSONL 格式中，什么四个字段定义了一个任务示例？",
+      "options": [
+        "name、score、payload、vendor",
+        "id、prompt、targets、metric，以及一个可选的 extras 字典用于存放 metric 所需的附带数据",
+        "input 和 output",
+        "weights 和 bias"
+      ],
+      "correct": 1,
+      "explanation": "JSONL 行即契约。extras 字段让 code_exec 指标在不污染 prompt 的情况下传递 io_pairs。"
+    },
+    {
+      "stage": "pre",
+      "question": "为什么指标函数签名为 (prediction, targets, extras) -> float？",
+      "options": [
+        "随机选择",
+        "它是能处理单目标字符串匹配、多参考 rouge-l 以及带附带数据的 code_exec，同时将分数保持在可比较的 [0.0, 1.0] 范围内的最小签名",
+        "它返回一个整数",
+        "它需要模型对象"
+      ],
+      "correct": 1,
+      "explanation": "[0,1] 范围内的浮点数意味着每任务和整体分数是可解释的平均值。extras 槽是 code_exec 获取其 io_pairs 的方式。"
+    },
+    {
+      "stage": "check",
+      "question": "code_exec 指标如何抵御恶意预测？",
+      "options": [
+        "它不抵御",
+        "它用一个被剥离的 __builtins__ 字典运行预测，因此命名空间只暴露少数安全名称；import 语句会失败，因为导入器不在作用域内",
+        "它使用沙箱容器",
+        "它拒绝任何包含 def 的内容"
+      ],
+      "correct": 1,
+      "explanation": "该课的命名空间安全机制将内置函数剥离到少数几个名称。测试断言 import os 返回分数 0.0 而不是被执行。"
+    },
+    {
+      "stage": "check",
+      "question": "模型适配器抽象为你带来了什么？",
+      "options": [
+        "什么也不会发生",
+        "它是框架中唯一模型相关的代码；更换适配器以指向新 vendor，而任务、指标、运行器和排行榜格式保持不变",
+        "它让模型更快",
+        "torch 要求它"
+      ],
+      "correct": 1,
+      "explanation": "该课中的 ToyAdapter 是一个确定性的模式匹配器。真实 vendor 的 HttpAdapter 具有相同的 generate(prompts) -> list[str] 接口。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么排行榜 JSON 带有像 leaderboard.v1 这样的 schema 字符串？",
+      "options": [
+        "为了搜索引擎优化（SEO）",
+        "以便未来的格式变更提升版本号，下游仪表盘可以据此分发而不是静默崩溃",
+        "它是随机的",
+        "它压缩文件"
+      ],
+      "correct": 1,
+      "explanation": "与第 47 课中 checkpoint payload 的技巧相同。schema 字段就是迁移钩子。"
+    },
+    {
+      "stage": "post",
+      "question": "读取排行榜时，overall_score 是如何计算的，比较两次运行时应该注意什么？",
+      "options": [
+        "正确计数之和",
+        "各任务分数的均值（每个均在 [0,1] 内）；比较时，还需对分数发生变化的任务给出逐样本预测的差异，因为仅凭分数无法看出哪些样本出现了退步",
+        "最佳任务分数",
+        "随机样本"
+      ],
+      "correct": 1,
+      "explanation": "各任务均值的均值对所有任务等权处理。使用 --include-per-example 可将预测级别的佐证保留在分数旁，从而使退步现象可见。"
+    }
+  ]
+}

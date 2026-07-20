@@ -1,0 +1,78 @@
+{
+  "lesson": "27-data-provenance-training-governance",
+  "title": "数据溯源与训练数据治理",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "为什么训练数据治理的合规窗口在收集时，而不是训练之后？",
+      "options": [
+        "因为监管机构不审计已部署的模型",
+        "因为 cookie 同意框架禁止收集后使用",
+        "因为 GDPR 的被遗忘权不适用于 AI",
+        "一旦数据进入模型权重，手术式擦除是不可能的；从头重新训练是唯一完整的补救措施，且成本高得令人望而却步"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "California AB 2013 要求开发者在数据集摘要中发布大约多少项法定内容？",
+      "options": [
+        "3",
+        "30",
+        "12",
+        "7"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "相对于 Gebru 等人 2018 年的数据表结构，AB 2013 的哪一项是新增的？",
+      "options": [
+        "数据集的来源或所有者",
+        "系统是否使用或持续使用合成数据生成",
+        "清洗、处理或其他修改",
+        "数据收集的时间段"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "对于在公开的第一方内容上训练 LLM，2025 年 DPA 的趋同原则是什么？",
+      "options": [
+        "在所有情况下都禁止训练",
+        "只能使用合成数据",
+        "始终需要明确的用户同意",
+        "合法利益可以证明在公开的第一方内容上进行训练是合理的，前提是提供退出机制和适当保障措施；不需要同意"
+      ],
+      "correct": 3,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "以下哪一项不是课中列出的不可逆性问题的部分补救措施？",
+      "options": [
+        "机器遗忘（通过 MIA 衡量的近似移除）",
+        "基于影响函数的定位与选择性更新",
+        "GDPR 强制的自动权重删除",
+        "对源自该数据的输出进行微调抑制"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "Data Provenance Initiative 的 'Consent in Crisis'（2024 年 7 月）发现了什么？",
+      "options": [
+        "出版商正以加速的速度添加 robots.txt 限制；可公开用于训练的共享资源正在快速收缩，2023 至 2024 年间约 25% 的顶级训练来源添加了限制",
+        "合成数据已完全取代网络数据",
+        "所有来源的同意率保持稳定",
+        "Robots.txt 限制逐年减少"
+      ],
+      "correct": 0,
+      "explanation": ""
+    }
+  ]
+}

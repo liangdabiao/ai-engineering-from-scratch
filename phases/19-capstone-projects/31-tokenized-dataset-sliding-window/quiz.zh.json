@@ -1,0 +1,78 @@
+{
+  "lesson": "31-tokenized-dataset-sliding-window",
+  "title": "使用滑动窗口的分词数据集",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "因果语言模型训练批次的形状约定是什么？",
+      "options": [
+        "(B, T) 输入 id 和 (B, T) 目标 id，其中目标是输入向左移一位",
+        "(B, V) 词汇表上的独热向量",
+        "(B, T, T) 注意力掩码，输入 id 位于对角线上",
+        "(B, 2) 输入 id 和标签对"
+      ],
+      "correct": 0,
+      "explanation": "因果语言模型训练读取 (B, T) 输入 id 并预测相同形状的目标 id，其中 target[t] = input[t+1]。"
+    },
+    {
+      "stage": "check",
+      "question": "在长度为 N、步长为 S 的 id 流中，能容纳多少个长度为 T+1 的窗口？",
+      "options": [
+        "N // (T + 1)",
+        "max(0, 1 + (N - (T + 1)) // S)",
+        "(N - T) * S",
+        "N - T - S"
+      ],
+      "correct": 1,
+      "explanation": "第一个窗口从 0 开始。后续窗口从 S 的倍数开始。最后一个窗口仍须覆盖 T+1 个 id。"
+    },
+    {
+      "stage": "check",
+      "question": "将步长减半对数据集有什么影响？",
+      "options": [
+        "它将每个 epoch 的训练样本数量减半",
+        "它大致将每个 epoch 的训练样本数量加倍",
+        "它没有影响，因为窗口从不重叠",
+        "它消除了连续窗口之间的重叠"
+      ],
+      "correct": 1,
+      "explanation": "较小的步长会产生更多重叠窗口，在增加样本数量和边界多样性的同时，代价是每个 epoch 的计算量更大。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么要向 DataLoader 传递一个显式的 torch.Generator？",
+      "options": [
+        "它加速了数据加载",
+        "它消除了对批次填充的需要",
+        "它使打乱操作在相同种子下跨运行具有确定性",
+        "它支持多 GPU 训练"
+      ],
+      "correct": 2,
+      "explanation": "带种子的生成器会复现相同的打乱顺序。使用相同种子的重新运行会以相同顺序看到批次，这是进行公平超参数比较所必需的。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么数据集从每个大小为 T+1 的窗口返回 (input[:-1], input[1:])？",
+      "options": [
+        "它丢弃一个 id 以节省内存",
+        "它实现了偏移一位的目标，使损失衡量下一 token 预测",
+        "它从输入中移除一个特殊 token",
+        "这是 PyTorch 张量索引的一个怪癖"
+      ],
+      "correct": 1,
+      "explanation": "位置 t 处的目标(target)是位置 t+1 处的输入。将窗口切分为 [:-1] 和 [1:] 即表达了该约定。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么该课(Lesson)丢弃不完整的尾部窗口而不是对它们进行填充(padding)？",
+      "options": [
+        "填充(padding)会改变词表(vocabulary)大小",
+        "丢弃可让每个样本保持相同长度，因此不需要损失掩码(loss mask)",
+        "该模型不支持填充(padding)后的令牌(token)",
+        "丢弃的数据会在下一个 epoch 恢复"
+      ],
+      "correct": 1,
+      "explanation": "所有样本按构造都恰好为 T 个令牌(token)长，因此批次(batch)是一个干净的矩形张量(tensor)，且损失在无掩码的情况下统一应用。"
+    }
+  ]
+}

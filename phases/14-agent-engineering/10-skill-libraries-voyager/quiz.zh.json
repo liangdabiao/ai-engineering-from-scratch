@@ -1,0 +1,90 @@
+{
+  "lesson": "10-skill-libraries-voyager",
+  "title": "Skill Libraries and Lifelong Learning (Voyager)",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What does Voyager treat as the action space?",
+      "options": [
+        "Primitive Minecraft commands",
+        "Executable code (JavaScript functions) stored, retrieved, and composed",
+        "Text prompts only",
+        "Reinforcement learning Q-values"
+      ],
+      "correct": 1,
+      "explanation": "Voyager's contribution is making code the action: skills are programs, not raw commands."
+    },
+    {
+      "stage": "pre",
+      "question": "What three components define a Voyager agent?",
+      "options": [
+        "Encoder, decoder, value head",
+        "Automatic curriculum, skill library, iterative prompting",
+        "Planner, executor, judge",
+        "Retriever, generator, ranker"
+      ],
+      "correct": 1,
+      "explanation": "Voyager structures the agent around curriculum, skill library, and iterative prompting."
+    },
+    {
+      "stage": "check",
+      "question": "What three signals can return from a skill execution attempt?",
+      "options": [
+        "Pass, fail, retry",
+        "Success, error (with stack trace), self-verification failure",
+        "Green, yellow, red",
+        "Heartbeat, ack, nack"
+      ],
+      "correct": 1,
+      "explanation": "Voyager's iterative prompting mechanism is driven by these three signals folded back into the next version."
+    },
+    {
+      "stage": "check",
+      "question": "How does the automatic curriculum pick the next task?",
+      "options": [
+        "Random uniform over the action space",
+        "Just above current capability, based on environment state and skill inventory (the exploration sweet spot)",
+        "Always the hardest available task",
+        "User-supplied list only"
+      ],
+      "correct": 1,
+      "explanation": "The proposer aims for tasks just above current capability so progress is steady."
+    },
+    {
+      "stage": "check",
+      "question": "Which 2026 product is the lesson's clearest match for the Voyager skill?",
+      "options": [
+        "OpenAI fine-tuning",
+        "Claude Agent SDK skills: named, retrievable code plus instructions loaded on demand",
+        "Pinecone indices",
+        "AWS Lambda layers"
+      ],
+      "correct": 1,
+      "explanation": "Agent SDK 的 skills 匹配 Voyager 的命名-可检索-可组合代码模式。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么该课(Lesson)推荐对 skill 库执行写时去重(dedup on write)？",
+      "options": [
+        "磁盘很昂贵",
+        "不去重的话，同一个 skill 会以略微不同的描述被多次添加；检索应当返回一个规范版本",
+        "提供商拒绝重复项",
+        "Git 阻止重复项"
+      ],
+      "correct": 1,
+      "explanation": "近似重复的描述会归并为一个规范 skill，从而保持检索整洁。"
+    },
+    {
+      "stage": "post",
+      "question": "组合 skill 漂移(composed-skill drift)描述了什么问题？",
+      "options": [
+        "某个 skill 在 Python 升级后无法编译",
+        "父 skill 静默地采用了它从未测试过的精炼子版本；修复方法是固定 skill 版本",
+        "Skills 在存储中被加密",
+        "检索返回空结果"
+      ],
+      "correct": 1,
+      "explanation": "若不固定版本，对子项的精炼会静默改变父项的行为。"
+    }
+  ]
+}

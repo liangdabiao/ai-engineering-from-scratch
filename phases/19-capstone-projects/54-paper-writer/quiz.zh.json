@@ -1,0 +1,78 @@
+{
+  "lesson": "54-paper-writer",
+  "title": "Paper Writer",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why does the writer declare sections, figures, and citations as data before any prose is written?",
+      "options": [
+        "Because LaTeX requires a forward declaration",
+        "Because the structure is the contract: the harness can validate completeness before prose generation",
+        "Because the model needs a system prompt",
+        "Because BibTeX cannot resolve forward references"
+      ],
+      "correct": 1,
+      "explanation": "Structure-first lets the harness validate uniqueness, citation coverage, and figure coverage before invoking the prose generator. The skeleton is the contract."
+    },
+    {
+      "stage": "pre",
+      "question": "What does the figure-injection step produce from an experiment manifest?",
+      "options": [
+        "A PDF compiled from artifacts",
+        "A list of Figure records with stable ids and paths normalised to the paper directory",
+        "A model prompt with figure descriptions",
+        "A bibliography stub"
+      ],
+      "correct": 1,
+      "explanation": "read_experiment_manifest returns Figure records. Ids are deterministic, paths are normalised, captions come from the manifest."
+    },
+    {
+      "stage": "check",
+      "question": "Which validation failure raises PaperValidationError before any file is written?",
+      "options": [
+        "An odd number of authors",
+        "A section that cites a key not declared in the bibliography",
+        "An abstract longer than 200 words",
+        "A figure path that does not exist on disk"
+      ],
+      "correct": 1,
+      "explanation": "Missing bibliography keys, duplicate figure ids, empty title, empty abstract, and unknown figure refs all raise PaperValidationError. Existence on disk is not enforced because the LaTeX compiler enforces it later."
+    },
+    {
+      "stage": "check",
+      "question": "Why is the prose generator a callable injected into PaperWriter rather than a method on it?",
+      "options": [
+        "Because Python does not allow methods to take Paper as an argument",
+        "Because tests can swap a deterministic MockProseGenerator for a model call without touching the writer",
+        "Because LaTeX requires a callback",
+        "Because the dataclass cannot hold state"
+      ],
+      "correct": 1,
+      "explanation": "The writer takes the prose generator as a dependency. The test substitutes MockProseGenerator. Production substitutes a model call. The writer is unchanged."
+    },
+    {
+      "stage": "post",
+      "question": "What three files does PaperWriter.write emit on success?",
+      "options": [
+        "paper.tex, paper.pdf, references.bib",
+        "paper.tex, references.bib, manifest.json",
+        "outline.json, paper.tex, figures.tar",
+        "manifest.json, prose.txt, paper.pdf"
+      ],
+      "correct": 1,
+      "explanation": "paper.tex 是 LaTeX 源文件。references.bib 是参考文献库。manifest.json 是批评循环下一步读取的结构化产物。"
+    },
+    {
+      "stage": "post",
+      "question": "为什么 manifest 是作者契约的一部分，而不只是 LaTeX 文件？",
+      "options": [
+        "因为 LaTeX 太大，难以解析",
+        "因为下游工具（批评器、仪表盘）读取的是结构化 manifest，而不是 LaTeX",
+        "因为 manifest.json 是 BibTeX 唯一接受的文件",
+        "因为 LaTeX 编译器会拒绝无类型标记的部分"
+      ],
+      "correct": 1,
+      "explanation": "manifest 是面向下游阶段的稳定接口。批评器和仪表盘检查 manifest.json。LaTeX 是人类可读的产物，而非机器接口。"
+    }
+  ]
+}

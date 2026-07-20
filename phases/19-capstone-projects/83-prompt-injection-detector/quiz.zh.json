@@ -1,0 +1,78 @@
+{
+  "lesson": "83-prompt-injection-detector",
+  "title": "顶点项目 83 — 提示注入检测器",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "检测器针对一个提示返回什么？",
+      "options": [
+        "仅一个布尔阻断决策",
+        "规则库中每一条规则的列表",
+        "一个类别以及 [0, 1] 范围内的置信度",
+        "模型的完整系统提示"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "pre",
+      "question": "为什么 normalize 要在 substring 和 regex 规则之前运行？",
+      "options": [
+        "因为 regex 比 substring 慢",
+        "因为 normalize 降低了磁盘上的文件大小",
+        "因为 normalize 将 base64、rot13 和零宽插入等隐藏令牌暴露给下游规则",
+        "因为标准库禁止在原始文本上运行规则"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "给定类别 C 的真阳性 = 6、假阳性 = 2，精确率是多少？",
+      "options": [
+        "0.50",
+        "0.60",
+        "0.75",
+        "0.86"
+      ],
+      "correct": 2,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "为什么良性提示语料库是评估的一部分？",
+      "options": [
+        "为了虚高准确率数值",
+        "为了测量安全文本上的假阳性率并捕获过于宽泛的规则",
+        "为了预训练规则",
+        "为了计算攻击的召回率"
+      ],
+      "correct": 1,
+      "explanation": ""
+    },
+    {
+      "stage": "check",
+      "question": "当没有规则触发时，analyze 方法做什么？",
+      "options": [
+        "以置信度 0.0 返回类别 benign",
+        "抛出异常",
+        "返回最近尝试过的规则的类别",
+        "返回一个随机类别"
+      ],
+      "correct": 0,
+      "explanation": ""
+    },
+    {
+      "stage": "post",
+      "question": "为什么本课认为检测器不是安全网关？",
+      "options": [
+        "因为检测器是用 Python 实现的",
+        "因为检测器是网关将组合的几个信号之一，每个信号以不同方式在精确率和召回率之间权衡",
+        "因为检测器太快而没用",
+        "因为规则是作为数据来存储的"
+      ],
+      "correct": 1,
+      "explanation": ""
+    }
+  ]
+}

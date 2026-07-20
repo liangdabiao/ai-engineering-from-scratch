@@ -1,0 +1,90 @@
+{
+  "lesson": "33-instructions-as-executable-constraints",
+  "title": "将智能体指令作为可执行约束",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "愿望性规则与操作性规则的区别是什么？",
+      "options": [
+        "愿望性规则需要付出代价；操作性规则是免费的",
+        "愿望性规则没有检查（'要小心'）；操作性规则带有一个机器可检查的函数，工作台可以运行它",
+        "操作性规则更长",
+        "愿望性规则需要一名管理者"
+      ],
+      "correct": 1,
+      "explanation": "操作性规则是可测试的；愿望性规则只是愿望。"
+    },
+    {
+      "stage": "pre",
+      "question": "本课涵盖大多数规则的五个类别是什么？",
+      "options": [
+        "启动、禁止、完成定义、不确定性、审批",
+        "读、写、执行、分叉、退出",
+        "计划、行动、反思、改进、发布",
+        "低、中、高、严重、致命"
+      ],
+      "correct": 0,
+      "explanation": "启动、禁止、完成定义、不确定性处理、审批边界是这五个。"
+    },
+    {
+      "stage": "check",
+      "question": "哪个严重度标签会停止执行并需要操作员覆盖？",
+      "options": [
+        "信息",
+        "警告",
+        "阻断",
+        "软"
+      ],
+      "correct": 2,
+      "explanation": "block 是硬失败；warn 是标注；info 是报告。"
+    },
+    {
+      "stage": "check",
+      "question": "为什么本课推荐在写入时标记严重度？",
+      "options": [
+        "在 markdown 中看起来更好看",
+        "团队在早期会夸大严重度，并在截止日期压力下弱化它；预先写严重度迫使进行校准",
+        "Linters 要求这样做",
+        "它节省 tokens"
+      ],
+      "correct": 1,
+      "explanation": "严重度校准必须是审慎的，而不是在压力下事后补加。"
+    },
+    {
+      "stage": "check",
+      "question": "markdown 即源、JSON 即缓存模式做了什么？",
+      "options": [
+        "替换 markdown",
+        "agent-rules.md 是编写的文件；agent-rules.lock.json 是由 pre-commit 钩子重新生成的热路径缓存（与 package.json + lock 同形）",
+        "加密规则",
+        "禁用审查"
+      ],
+      "correct": 1,
+      "explanation": "Markdown 保持可审阅；JSON 解析不进入热路径。"
+    },
+    {
+      "stage": "post",
+      "question": "什么是规则过期作为一种强制函数(forcing function)？",
+      "options": [
+        "超过 24 小时的规则按失败关闭(fail closed)处理",
+        "每条规则携带一个 expires_at（默认 90 天）；未触发的规则会触发季度审阅，以证明其合理性、弱化或删除它们",
+        "当缓存已满时规则过期",
+        "规则自动过期；无需审阅"
+      ],
+      "correct": 1,
+      "explanation": "Cloudflare 的数据表明，带过期的规则集保持在 30 条以下；不带过期的增长到 80+ 条未使用的。"
+    },
+    {
+      "stage": "post",
+      "question": "规则如何与框架护栏(guardrails)相关联？",
+      "options": [
+        "规则替代护栏",
+        "护栏在运行时强制执行规则；规则集是这些护栏所实现的人类可读契约",
+        "护栏是规则的一种替代方案",
+        "只需其中任意一个"
+      ],
+      "correct": 1,
+      "explanation": "两者都需要：运行时捕获违规；规则集证明运行时在做正确的事。"
+    }
+  ]
+}
