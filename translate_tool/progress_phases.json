@@ -309,9 +309,7 @@
       "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\56-iteration-scheduler\\quiz.json",
       "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\57-end-to-end-research-demo\\quiz.json",
       "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\58-vision-encoder-patches\\quiz.json",
-      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\59-vit-transformer\\quiz.json"
-    ],
-    "failed": [
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\59-vit-transformer\\quiz.json",
       "D:\\ai-engineering-from-scratch-main\\phases\\02-ml-fundamentals\\01-what-is-machine-learning\\quiz.json",
       "D:\\ai-engineering-from-scratch-main\\phases\\02-ml-fundamentals\\02-linear-regression\\quiz.json",
       "D:\\ai-engineering-from-scratch-main\\phases\\02-ml-fundamentals\\03-logistic-regression\\quiz.json",
@@ -367,7 +365,8 @@
       "D:\\ai-engineering-from-scratch-main\\phases\\11-llm-engineering\\11-caching-cost\\quiz.json",
       "D:\\ai-engineering-from-scratch-main\\phases\\11-llm-engineering\\12-guardrails\\quiz.json",
       "D:\\ai-engineering-from-scratch-main\\phases\\11-llm-engineering\\13-production-app\\quiz.json"
-    ]
+    ],
+    "failed": []
   },
   "lessons": {
     "done": [
@@ -850,7 +849,30 @@
       "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\61-cross-attention-fusion\\docs\\en.md",
       "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\62-vision-language-pretraining\\docs\\en.md",
       "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\63-multimodal-eval\\docs\\en.md",
-      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\64-chunking-strategies-advanced\\docs\\en.md"
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\64-chunking-strategies-advanced\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\65-hybrid-retrieval-bm25-dense\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\66-reranker-cross-encoder\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\67-query-rewriting-hyde\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\68-rag-eval-precision-recall\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\69-end-to-end-rag-system\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\70-task-spec-format\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\71-classical-metrics\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\72-code-exec-metric\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\73-perplexity-calibration\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\74-leaderboard-aggregation\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\75-end-to-end-eval-runner\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\76-collective-ops-from-scratch\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\77-data-parallel-ddp\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\78-zero-parameter-sharding\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\79-pipeline-parallel\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\80-checkpoint-sharded-resume\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\81-end-to-end-distributed-train\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\82-jailbreak-taxonomy\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\83-prompt-injection-detector\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\84-refusal-evaluation\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\85-content-classifier-integration\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\86-constitutional-rules-engine\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\19-capstone-projects\\87-end-to-end-safety-gate\\docs\\en.md"
     ],
     "failed": []
   }

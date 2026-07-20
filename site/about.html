@@ -194,7 +194,16 @@
       });
     })();
   </script>
-  <script src="data.js?v=20260525a"></script>
+  <script>
+    (function() {
+      var url = new URLSearchParams(location.search);
+      var stored = (function(){ try { return localStorage.getItem('aifs_lang'); } catch(e) { return null; } })();
+      var browser = (navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+      var lang = url.get('lang') || stored || browser;
+      var src = lang === 'zh' ? 'data.zh.js' : 'data.js';
+      document.write('<script src="' + src + '?v=20260525a"><\/script>');
+    })();
+  </script>
   <script src="progress.js?v=20260525a"></script>
   <script src="header.js?v=20260525a" defer></script>
   <script src="cmdpalette.js?v=20260525a" defer></script>
