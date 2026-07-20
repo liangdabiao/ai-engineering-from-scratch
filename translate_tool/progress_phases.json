@@ -630,7 +630,27 @@
       "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\09-mcp-transports\\docs\\en.md",
       "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\10-mcp-resources-and-prompts\\docs\\en.md",
       "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\11-mcp-sampling\\docs\\en.md",
-      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\12-mcp-roots-and-elicitation\\docs\\en.md"
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\12-mcp-roots-and-elicitation\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\13-mcp-async-tasks\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\14-mcp-apps\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\15-mcp-security-tool-poisoning\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\16-mcp-security-oauth-2-1\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\17-mcp-gateways-and-registries\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\18-mcp-auth-production\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\19-a2a-protocol\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\20-opentelemetry-genai\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\21-llm-routing-layer\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\22-skills-and-agent-sdks\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\13-tools-and-protocols\\23-capstone-tool-ecosystem\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\14-agent-engineering\\01-the-agent-loop\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\14-agent-engineering\\02-rewoo-plan-and-execute\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\14-agent-engineering\\03-reflexion-verbal-rl\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\14-agent-engineering\\04-tree-of-thoughts-lats\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\14-agent-engineering\\05-self-refine-and-critic\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\14-agent-engineering\\06-tool-use-and-function-calling\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\14-agent-engineering\\07-memory-virtual-context-memgpt\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\14-agent-engineering\\08-memory-blocks-sleep-time-compute\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\14-agent-engineering\\09-hybrid-memory-mem0\\docs\\en.md"
     ],
     "failed": []
   }
