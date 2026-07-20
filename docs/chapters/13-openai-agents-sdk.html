@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§13 OpenAI Agents SDK 实战：交接与护栏 · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="active" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>§13 OpenAI Agents SDK 实战：交接与护栏</h2>
+<p>我用 Responses API 手写过交接。后来发现 SDK 把交接封装成"工具"，脑子一下清了。</p>
+<h3>13.1 五个原语</h3>
+<p>Agent、Handoff、Guardrail、Session、Tracing。</p>
+<p>基于 Responses API，轻量。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：交接即工具</p>
+<p>我一开始以为 handoff 是特殊机制。后来发现：它就是个名叫 <code>transfer_to_x</code> 的工具。</p>
+</blockquote>
+<h3>13.2 Handoff：把"委派"当工具</h3>
+<p>模型看到 <code>transfer_to_billing_agent</code>，调用它，运行时复制上下文、加载目标 agent。</p>
+<p>本质是把 supervisor 模式产品化。</p>
+<h3>13.3 Guardrail：三道防线</h3>
+<ul>
+<li>输入护栏：第一个 agent 的输入，先拦不安全/越界。</li>
+<li>输出护栏：最后一个 agent 的输出，抓 PII 泄露。</li>
+<li>工具护栏：每个函数工具的参数校验。</li>
+</ul>
+<p>两种模式：</p>
+<ul>
+<li>并行（默认）：护栏与主模型同时跑，延迟低，但跳闸会浪费主模型 token。</li>
+<li>阻塞：护栏先跑，跳闸就不花主模型 token。</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：护栏能被绕过</p>
+<p>工具护栏只对 function tool 生效。内置工具（读文件、抓网页）要另配策略。</p>
+</blockquote>
+<h3>13.4 Tracing 默认开</h3>
+<p>每次生成、工具调用、handoff、guardrail 都发 span。<code>OPENAI_AGENTS_DISABLE_TRACING=1</code> 可关。</p>
+<h3>13.5 Session</h3>
+<p><code>Runner.run(agent, input, session=session)</code> 自动加载/追加历史。SQLite、Redis 都行。</p>
+<p>[向前桥接] 框架两家讲完。下一章，最野的场景：让 Agent 操作电脑。</p>
+<hr>
+<div class="pager"><a class="prev" href="12-claude-agent-sdk.html"><div class="lbl">← 上一章</div><div class="ttl">§12 Claude Agent SDK 实战：子代理与生命周期</div></a><a class="next" href="14-computer-use.html"><div class="lbl">下一章 →</div><div class="ttl">§14 计算机使用：让 Agent 动鼠标</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>

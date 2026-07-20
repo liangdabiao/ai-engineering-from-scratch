@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§20 Capstone：能跑真仓库的 Agent 工作台 · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="active" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>§20 Capstone：能跑真仓库的 Agent 工作台</h2>
+<h3>20.1 一句判断：最小工作台是三个文件</h3>
+<p>2025 年我看过太多团队：写个 3000 行的 AGENTS.md，就当工作台做完了。</p>
+<p>模型加载它，忽略大半，照样在老地方翻车。</p>
+<p>结论是反的：一个短根文件做路由，一份状态文件每轮读写，一块任务板记录进退。</p>
+<p>三个文件。各司其职。够小，以后能长成真系统。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：三文件救过一个 monorepo</p>
+<p>一个 80 万行的仓库，Agent 每次都从头读全局规则，越跑越偏。我换成 AGENTS.md 路由 + state + board，首轮就少跑 40% 无关文件。模型像换了个人。</p>
+</blockquote>
+<h3>20.2 三文件长这样</h3>
+<p><code>AGENTS.md</code> 是路由，不是手册。它只指路：</p>
+<pre><code class="language-markdown"># AGENTS.md（路由版，别写长）
+- 你在哪：读 agent_state.json
+- 还差啥：读 task_board.json
+- 深规则：docs/agent-rules.md
+- 怎么算成：跑 `pytest -q`
+</code></pre>
+<p><code>agent_state.json</code> 是系统记录。记：当前任务、动过的文件、假设、阻塞、下一步。</p>
+<p><code>task_board.json</code> 是队列。每条带 id、goal、owner（<code>builder</code>/<code>reviewer</code>/<code>human</code>）、验收标准。</p>
+<p>状态落文件，因为聊天历史不可靠。会话会死，对话会被截。文件不会。</p>
+<h3>20.3 验收闸门：Agent 不能自己判自己完工</h3>
+<p>Agent 太容易喊"弄好了"。</p>
+<p>三种谎最常见："看着对""测试过了""验收达成"。</p>
+<p>对策：一个确定性闸门，读已有产物，给 pass/fail。</p>
+<p>闸门不靠 LLM 判。LLM 判留给 reviewer。</p>
+<pre><code class="language-python"># 验收闸门：确定性函数，不概率
+def verify(artifacts):
+    findings = []
+    if not artifacts[&quot;acceptance_ran&quot;]:        # 验收命令跑过没
+        findings.append((&quot;block&quot;, &quot;验收未执行&quot;))
+    if artifacts[&quot;exit_code&quot;] != 0:            # 退出码为零吗
+        findings.append((&quot;block&quot;, &quot;验收非零退出&quot;))
+    if artifacts[&quot;forbidden_write&quot;]:           # 写了禁写区吗
+        findings.append((&quot;block&quot;, &quot;越权写文件&quot;))
+    blocked = any(sev == &quot;block&quot; for sev, _ in findings)
+    return {&quot;passed&quot;: not blocked, &quot;findings&quot;: findings}
+</code></pre>
+<p><code>block</code> 级发现，Agent 改不了。只能人签字 override，记原因和工号。</p>
+<p>闸门接到 CI：没 <code>passed: true</code>，不准合。它是工作台的决定性一刀。</p>
+<h3>20.4 Reviewer：写代码的手，不能打分</h3>
+<p>闸门说 <code>passed: true</code>。你合了。两天后发现它解错了半道题。</p>
+<p>验收必要，不充分。reviewer 问闸门问不了的问题：</p>
+<p>这解的是对的题吗？范围悄悄扩了吗？假设写下来了吗？下个会话接得上吗？</p>
+<p>reviewer 是另一个循环，不同系统提示，只读不写。</p>
+<p>五维打分，每维 0–2，满分 10。低于 7 软挂，低于 5 硬挂。</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>它问的是</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>问题契合</td>
+<td>解的是题，还是隔壁题</td>
+</tr>
+<tr>
+<td>范围纪律</td>
+<td>改在契约内，还是偷偷长大</td>
+</tr>
+<tr>
+<td>假设</td>
+<td>隐藏假设写下来没</td>
+</tr>
+<tr>
+<td>验收质量</td>
+<td>命令真证了目标，还是证了弱版</td>
+</tr>
+<tr>
+<td>交接就绪</td>
+<td>下个会话接得住吗</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>谁来评</th>
+<th>确定性</th>
+<th>定性</th>
+<th>标叔的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>验收闸门</td>
+<td>是</td>
+<td>否</td>
+<td>管"做没做对"</td>
+</tr>
+<tr>
+<td>Reviewer</td>
+<td>否</td>
+<td>是</td>
+<td>管"做的对不对"</td>
+</tr>
+<tr>
+<td>二者都上</td>
+<td>—</td>
+<td>—</td>
+<td>缺一不可</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注意</strong>：reviewer 不能改 diff</p>
+<p>它读 diff、写报告，不补丁 diff。要改，下一轮 builder 改，reviewer 再评。混角色，那道缝隙就没了。</p>
+</blockquote>
+<h3>20.5 多会话交接：让下个会话第一分钟就干活</h3>
+<p>会话要结束。活没完。</p>
+<p>糟糕交接的代价，每次会话都付：下个 Agent 问"上回到哪了"，答案没了，重跑半小时。</p>
+<p>交接包自动生成，七字段：</p>
+<ol>
+<li><code>summary</code>：做了啥（一段）。</li>
+<li><code>changed_files</code>：diff 一览。</li>
+<li><code>commands_run</code>：真跑过啥。</li>
+<li><code>failed_attempts</code>：试过啥、为啥挂。</li>
+<li><code>open_risks</code>：下回会咬人的风险。</li>
+<li><code>next_action</code>：下回第一步干啥。</li>
+<li><code>verdict_pointer</code>：验收+评审报告路径。</li>
+</ol>
+<p><code>next_action</code> 是承重墙。没有它，那是状态报告，不是交接。</p>
+<pre><code class="language-python"># 交接生成器：从产物打包，不手写
+def generate_handoff(state, verdict, review, feedback, last_k=10):
+    tail = feedback[-last_k:] + [f for f in feedback if f[&quot;exit&quot;] != 0]
+    return {
+        &quot;summary&quot;: state[&quot;summary&quot;],
+        &quot;changed_files&quot;: state[&quot;touched&quot;],
+        &quot;next_action&quot;: state[&quot;next_action&quot;],   # 下回第一步
+        &quot;verdict_pointer&quot;: verdict[&quot;path&quot;],
+        &quot;failed_attempts&quot;: tail,
+    }
+</code></pre>
+<p>交接前先清理：改动提交了、临时文件删了、测试绿了、board 状态真。</p>
+<p>脏树上的交接，是把烂摊子转寄出去。</p>
+<h3>20.6 把它们装一起</h3>
+<p>一个 turn 的完整流：</p>
+<ol>
+<li>读 <code>agent_state.json</code>，空就拉 <code>task_board</code> 下一条。</li>
+<li>在范围内改一个文件。</li>
+<li>跑验收命令，写 <code>feedback_record</code>。</li>
+<li>闸门 <code>verify</code> 产物，出 <code>verification_report</code>。</li>
+<li>不过，退给人；过，reviewer 评分出 <code>review_report</code>。</li>
+<li>都过，清理，生成 <code>handoff.md</code> + <code>handoff.json</code>。</li>
+<li>写回 <code>agent_state.json</code>，收工。</li>
+</ol>
+<p>这就是全书能力的落点：循环（§02）、工具（§03）、记忆（§06）、规划（§07）、反思（§08）、框架（§11–§13）、安全（§16）、可观测（§15）、成本（§19）。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：工作台是能力的总和</p>
+<p>我搭第一个工作台时，只接了循环和工具。后面每学一章，就往里塞一块：记忆、闸门、reviewer、交接。它慢慢从"能跑"变成"敢上生产"。你也应该这么长。</p>
+</blockquote>
+<h3>20.7 先给结论</h3>
+<p>三文件起步，闸门兜底，reviewer 把关，交接续命。</p>
+<p>这就是生产级 Agent 工作台的样子。</p>
+<p>[全书收尾] 从 ReAct 一个循环，到能跑真仓库的工作台。你已走完这条矿脉。剩下的，是去挖你自己的。</p>
+<hr>
+<div class="pager"><a class="prev" href="19-production-runtime-cost.html"><div class="lbl">← 上一章</div><div class="ttl">§19 生产运行时：选错形状，钱和稳定性一起崩</div></a><a class="next" href="90-appendices.html"><div class="lbl">下一章 →</div><div class="ttl">附录 A 核心概念速查表</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>

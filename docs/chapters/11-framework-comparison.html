@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§11 框架横评：五个主流怎么选 · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="active" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>§11 框架横评：五个主流怎么选</h2>
+<p>2025 年我连换三个框架。最后发现：框架差在循环外的那一圈，不在循环本身。</p>
+<h3>11.1 先说结论</h3>
+<p>循环都一样（§02）。框架差在"循环外面那圈"。</p>
+<p>标叔的选法：看你要状态、并发，还是角色。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：别追新框架</p>
+<p>我 2024 踩过 LangChain 的坑。后来明白：框架是循环的外壳，不是魔法。</p>
+</blockquote>
+<h3>11.2 五家对照</h3>
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>内核模型</th>
+<th>强项</th>
+<th>标叔的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LangGraph</td>
+<td>状态图 + 检查点</td>
+<td>可恢复、确定性</td>
+<td>要断点续跑选它</td>
+</tr>
+<tr>
+<td>AutoGen v0.4</td>
+<td>Actor 模型</td>
+<td>高并发消息传递</td>
+<td>海量并发选它</td>
+</tr>
+<tr>
+<td>CrewAI</td>
+<td>角色 + 任务</td>
+<td>协作草稿快</td>
+<td>探索性多选它</td>
+</tr>
+<tr>
+<td>Agno</td>
+<td>轻量运行时</td>
+<td>启动快、简单</td>
+<td>小项目首选</td>
+</tr>
+<tr>
+<td>Mastra</td>
+<td>TS 原生</td>
+<td>TypeScript 栈</td>
+<td>前端栈选它</td>
+</tr>
+</tbody>
+</table>
+<h3>11.3 LangGraph：状态即一等公民</h3>
+<p>Agent 是状态机。节点是函数，边是转移，状态每步落盘（checkpoint）。</p>
+<p>第 38 步挂了？<code>resume(session_id)</code> 从第 39 步起。Klarna、Uber、摩根大通都在用。</p>
+<p>三种拓扑：supervisor（中央路由）、swarm（点对点交接）、hierarchical（嵌套子图）。</p>
+<h3>11.4 CrewAI：角色驱动</h3>
+<p>四个原语：Agent（role+goal+backstory）、Task、Crew、Process。</p>
+<p>两种形态，文档写得很直白："生产环境，从 Flow 开始。"</p>
+<ul>
+<li>Crew：LLM 自主协作，适合调研、草稿。难回放。</li>
+<li>Flow：事件驱动、确定性、可测。生产用这个。</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：Hierarchical 多一个 manager LLM 调用</p>
+<p>五步任务变六次调用，token 能翻三倍。顺序固定就别用。</p>
+</blockquote>
+<h3>11.5 SDK 也算框架</h3>
+<p>Claude / OpenAI Agents SDK 不是图，是"harness 即库"（§12、§13）。横评时别漏。</p>
+<h3>11.6 按场景推荐</h3>
+<ul>
+<li>要断点续跑、严格顺序 → LangGraph</li>
+<li>要高并发、容错隔离 → AutoGen</li>
+<li>要角色协作、快速草稿 → CrewAI（包 Flow）</li>
+<li>要轻量、TS 栈 → Agno / Mastra</li>
+</ul>
+<p>[向前桥接] 横评完。下一章，用 Claude Agent SDK 真写一个。</p>
+<hr>
+<div class="pager"><a class="prev" href="10-failure-modes.html"><div class="lbl">← 上一章</div><div class="ttl">§10 失败模式：Agent 为什么崩</div></a><a class="next" href="12-claude-agent-sdk.html"><div class="lbl">下一章 →</div><div class="ttl">§12 Claude Agent SDK 实战：子代理与生命周期</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>

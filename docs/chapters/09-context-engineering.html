@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§09 上下文工程：比 prompt 更重要的事 · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="active" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>§09 上下文工程：比 prompt 更重要的事</h2>
+<h3>09.1 一个被低估的事实</h3>
+<p>2026 年最强的工程师，不是写 prompt 的。是管上下文的。</p>
+<p>prompt 是你打的字。上下文是塞进窗口的<strong>一切</strong>：系统指令、工具定义、检索文档、历史、示例、还有那句 prompt。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：窗口是 RAM 不是磁盘</p>
+<p>我一度觉得 200K 够随便塞。后来实测：精心策展的 10K，胜过乱塞的 100K。</p>
+</blockquote>
+<h3>09.2 丢失在中间</h3>
+<p>Liu 等人（2023，arXiv:2307.03172）实测：相关信息放开头结尾，准确率 85–90%；放中间（第 10/20 位）掉到 60–70%。</p>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>注意力</th>
+<th>标叔的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–20%</td>
+<td>高</td>
+<td>放系统指令</td>
+</tr>
+<tr>
+<td>40–70%</td>
+<td>低</td>
+<td>最不重要的丢这</td>
+</tr>
+<tr>
+<td>90–100%</td>
+<td>高</td>
+<td>放当前问题</td>
+</tr>
+</tbody>
+</table>
+<h3>09.3 token 预算</h3>
+<p>真实拆解（编码助手）：系统 500 + 50 个工具 8000 + 检索 4000 + 历史 6000 + 问题 200 + 生成预留 4000 = 22700。才占 128K 的 18%。</p>
+<p>但注意力不随长度线性。每多一个无关工具、一段废历史，模型就差一点。</p>
+<pre><code class="language-python">class ContextBudget:                 # 标叔的预算器
+    def __init__(self, max_tokens=128000, gen=4000):
+        self.avail = max_tokens - gen # 先留生成空间
+    def allocate(self, name, text, cap=None):
+        ... # 超 cap 就截断，超总量就丢掉
+</code></pre>
+<h3>09.4 三个压缩招</h3>
+<ul>
+<li>历史摘要：10 轮压成 100 字。超阈值就压。</li>
+<li>相关性过滤：检索 10 块只留 3 块相关的。</li>
+<li>工具裁剪：按意图只装相关工具，省 60–80%。</li>
+</ul>
+<blockquote>
+<p><strong>核心建议</strong>：动态组装，别静态堆</p>
+<p>不同问题要不同上下文。分类意图→选工具→检索→排序：重要者首尾，次要者中间。</p>
+</blockquote>
+<h3>09.5 RAG 就是上下文工程</h3>
+<p>检索增强生成，本质是把"往窗口塞什么"工程化。切块、向量、重排，全为这一件事。</p>
+<p>[向前桥接] 上下文喂对了，Agent 还会崩。下一章，拆五种必崩的姿势。</p>
+<hr>
+<div class="pager"><a class="prev" href="08-reflection.html"><div class="lbl">← 上一章</div><div class="ttl">§08 反思：Agent 也会吃一堑长一智</div></a><a class="next" href="10-failure-modes.html"><div class="lbl">下一章 →</div><div class="ttl">§10 失败模式：Agent 为什么崩</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>

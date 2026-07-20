@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>附录 A 核心概念速查表 · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="active" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>附录 A 核心概念速查表</h2>
+<blockquote>
+<p>复用课程 <code>glossary/terms.md</code> 的"人话 vs 真相"表。挑了本书高频词。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>人话</th>
+<th>真相</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent</td>
+<td>自主思考行动的 AI</td>
+<td>一个 while 循环：LLM 决定调哪个工具，执行，看结果，重复</td>
+</tr>
+<tr>
+<td>LLM</td>
+<td>AI / 大脑</td>
+<td>预测下一个 token 的 transformer，数十亿参数</td>
+</tr>
+<tr>
+<td>Context Window</td>
+<td>AI 能记多少</td>
+<td>单次 API 调用能装的最大 token 数，不是记忆，每调用重置</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>一个词</td>
+<td>子词单元，英文约 3–4 字符；"unbelievable" 可能是 3 个 token</td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td>现代 AI 架构</td>
+<td>用自注意力处理序列，不靠循环，可大规模并行</td>
+</tr>
+<tr>
+<td>Attention</td>
+<td>AI 专注重点</td>
+<td>每个 token 对所有 token 算加权求和，权重由 query·key 决定</td>
+</tr>
+<tr>
+<td>RAG</td>
+<td>会搜索的 AI</td>
+<td>检索相关文档（embedding 相似度），塞进提示，让 LLM 据此答</td>
+</tr>
+<tr>
+<td>Function Calling</td>
+<td>AI 能用工具</td>
+<td>用 JSON Schema 定义工具，模型输出结构化调用，你执行，结果回传</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>AI 连工具的标准</td>
+<td>开放协议（JSON-RPC），统一 AI 应用接外部数据源和工具</td>
+</tr>
+<tr>
+<td>Prompt Injection</td>
+<td>用话黑 AI</td>
+<td>输入里的恶意文本覆盖系统提示；间接注入藏在检索内容里，无完美解</td>
+</tr>
+<tr>
+<td>Hallucination</td>
+<td>AI 在撒谎</td>
+<td>生成听着合理但不基于训练或上下文的内容；是补全，不是检索</td>
+</tr>
+<tr>
+<td>Embedding</td>
+<td>把词变数字</td>
+<td>把离散项映射到向量空间，相似的近，用于语义搜索</td>
+</tr>
+<tr>
+<td>Cosine Similarity</td>
+<td>两向量多像</td>
+<td>夹角余弦：dot(a,b)/(‖a‖·‖b‖)，-1 到 1，只看方向不看大小</td>
+</tr>
+<tr>
+<td>Guardrails</td>
+<td>AI 安全滤网</td>
+<td>输入输出校验层，拦有害内容、注入、PII、跑题</td>
+</tr>
+<tr>
+<td>Streaming</td>
+<td>逐字蹦答案</td>
+<td>边生成边发 token，用 SSE/WebSocket，首 token 延迟低</td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>创意档</td>
+<td>除 logits 再 softmax；高=随机，0=最确定（贪心）</td>
+</tr>
+<tr>
+<td>System Prompt</td>
+<td>AI 的指令</td>
+<td>对话开头的特殊消息，定行为、人设、约束，开发者设</td>
+</tr>
+<tr>
+<td>Quantization</td>
+<td>把模型变小</td>
+<td>权重从 float32 降到 int8/int4，精度微损，内存省 4–8 倍</td>
+</tr>
+<tr>
+<td>LoRA</td>
+<td>高效微调</td>
+<td>插小低秩矩阵只训它们，内存省 10–100 倍</td>
+</tr>
+<tr>
+<td>Fine-tuning</td>
+<td>用你的数据训</td>
+<td>从预训练权重接着训小数据集，只更新已有权重</td>
+</tr>
+</tbody>
+</table>
+<h2>附录 B 常见错误与解法</h2>
+<blockquote>
+<p>每章"注意"框的汇总。踩过的坑，别再踩。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>章节</th>
+<th>错误</th>
+<th>解法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>§02</td>
+<td>无限循环不收敛</td>
+<td>设轮次预算 + 停止条件</td>
+</tr>
+<tr>
+<td>§05</td>
+<td>reasoning 泄露到用户面</td>
+<td>内部思考走字段，只显动作/最终答</td>
+</tr>
+<tr>
+<td>§06</td>
+<td>把存档当长期记忆全塞</td>
+<td>分层：工作/情景/语义，按时清</td>
+</tr>
+<tr>
+<td>§08</td>
+<td>单模型自省陷入群体思维</td>
+<td>换多实例交叉批驳（§17）</td>
+</tr>
+<tr>
+<td>§09</td>
+<td>长上下文中段信息丢失</td>
+<td>重要放头尾，压缩中段，RAG 即上下文工程</td>
+</tr>
+<tr>
+<td>§10</td>
+<td>90% 陷阱：随机动作</td>
+<td>写 trace 检测器，定位首错步</td>
+</tr>
+<tr>
+<td>§13</td>
+<td>过度用 handoff 互踢</td>
+<td>加跳数计数器，超 3 跳拒绝</td>
+</tr>
+<tr>
+<td>§14</td>
+<td>把 CUA 当完全自主</td>
+<td>不可信输入契约 + 逐步安全评估</td>
+</tr>
+<tr>
+<td>§16</td>
+<td>只靠系统提示防注入</td>
+<td>护栏 + PVE 验证器前置</td>
+</tr>
+<tr>
+<td>§17</td>
+<td>拓扑优先，不问为何</td>
+<td>先单后多，Anthropic 决策顺序</td>
+</tr>
+<tr>
+<td>§18</td>
+<td>不打断（barge-in）</td>
+<td>UPSTREAM 取消帧停 TTS</td>
+</tr>
+<tr>
+<td>§19</td>
+<td>选请求-响应跑 5 分钟任务</td>
+<td>超 30 秒用队列/持久执行</td>
+</tr>
+<tr>
+<td>§19</td>
+<td>不装成本追踪</td>
+<td>先接 CostTracker，再谈省</td>
+</tr>
+<tr>
+<td>§20</td>
+<td>Agent 自己判完工</td>
+<td>确定性验收闸门 + 签名 override</td>
+</tr>
+</tbody>
+</table>
+<h2>附录 C 阅读指南（按天分组）</h2>
+<blockquote>
+<p>标叔建议你这么读。每天 1–2 小时，六天走完。</p>
+</blockquote>
+<p><strong>Day 1 · 跑通</strong>：§01 → §05。亲手写循环、工具、第一个真 Agent。目标：能在终端跑起来。</p>
+<p><strong>Day 2–3 · 核心</strong>：§06 记忆 → §10 失败模式。搞懂 Agent 的五脏六腑，为什么崩。</p>
+<p><strong>Day 4–5 · 框架</strong>：§11 横评 → §16 安全。挑一个框架实战，接可观测，补安全。</p>
+<p><strong>Day 6 · 进阶</strong>：§17 多智能体 → §20 Capstone。按场景上多体、语音、成本，装出工作台。</p>
+<p><strong>随时翻</strong>：附录 A 查词，附录 B 避坑，附录 D 追源。</p>
+<h2>附录 D 参考文献</h2>
+<blockquote>
+<p>书中引用的论文与来源。课程内论文为主，附关键官方文档。</p>
+</blockquote>
+<p><strong>论文（arXiv）</strong></p>
+<ul>
+<li>ReAct: Yao et al., <em>ReAct: Synergizing Reasoning and Acting in Language Models</em> (2022, arXiv:2210.03629)</li>
+<li>MemGPT: Packer et al., <em>MemGPT: Towards LLMs as Operating Systems</em> (arXiv:2310.08560)</li>
+<li>Mem0: Mem0 Team, <em>Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory</em> (arXiv:2504.19413)</li>
+<li>ReWOO: Xu et al., <em>ReWOO: Decoupling Reasoning from Observations</em> (arXiv:2305.18323)</li>
+<li>ToT: Yao et al., <em>Tree of Thoughts</em> (arXiv:2305.10601)</li>
+<li>LATS: Zhou et al., <em>Language Agent Tree Search</em> (arXiv:2310.04406)</li>
+<li>Reflexion: Shinn et al., <em>Reflexion: Language Agents with Verbal Reinforcement</em> (arXiv:2303.11366)</li>
+<li>Self-Refine: Madaan et al., <em>Self-Refine</em> (arXiv:2303.17651)</li>
+<li>CRITIC: Gou et al., <em>CRITIC: Large Language Models Can Self-Correct</em> (arXiv:2305.11738)</li>
+<li>Lost in the Middle: Liu et al. (arXiv:2307.03172)</li>
+<li>MASFT: "Mitigating Agentic System Failure Taxonomy" (Berkeley, arXiv:2503.13657)</li>
+<li>Society of Minds: Du et al. (ICML 2024, arXiv:2305.14325)</li>
+<li>Sparse Topology: arXiv:2406.11776</li>
+<li>Indirect Prompt Injection: Greshake et al. (AISec 2023, arXiv:2302.12173)</li>
+<li>AlphaEvolve: arXiv:2506.13131</li>
+</ul>
+<p><strong>官方文档与来源</strong></p>
+<ul>
+<li>Anthropic, <em>Building Effective Agents</em>（五模式 + agent vs workflow）</li>
+<li>Anthropic, <em>Prompt Caching</em> 指南（cache_control，90% 折扣）</li>
+<li>OpenAI, <em>Agents SDK</em>（Handoffs / Guardrails / Sessions / Tracing）</li>
+<li>OpenAI, <em>Prompt Caching</em>（自动前缀匹配，50% 折扣）</li>
+<li>LangGraph 文档（supervisor / swarm / hierarchical）</li>
+<li>CrewAI 文档（Crew vs Flow）</li>
+<li>Pipecat 文档（帧管线、processor、transport）</li>
+<li>LiveKit Agents 文档（WebRTC + 语音原语）</li>
+<li>Cloudflare, <em>Orchestrating AI Code Review at Scale</em>（13 万次/30 天）</li>
+<li>agents.md — 开放规范（Cursor / Codex / Claude Code / Copilot 共用）</li>
+<li>课程仓库：ai-engineering-from-scratch（Phase 11 · 14 · 13）</li>
+</ul>
+<hr>
+<div class="pager"><a class="prev" href="20-capstone-agent-workbench.html"><div class="lbl">← 上一章</div><div class="ttl">§20 Capstone：能跑真仓库的 Agent 工作台</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>

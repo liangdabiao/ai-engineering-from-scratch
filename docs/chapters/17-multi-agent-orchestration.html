@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>§17 多智能体：先问要不要，再问怎么编 · 智能体工程实战</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="../index.html">智能体工程实战</a></div>
+  <nav><a href="../index.html">目录</a><a href="../index.html#parts">分卷</a></nav>
+</header>
+<div class="layout">
+<aside class="toc"><div class="pt">Part 1：起步 —— 亲手跑通第一个 Agent</div>
+<a class="" href="01-the-loop-changed-an-industry.html"><span class="num">01</span>§01 一个循环颠覆了整个行业</a>
+<a class="" href="02-react-loop.html"><span class="num">02</span>§02 ReAct 循环：Observe→Think→Act</a>
+<a class="" href="03-tool-registry.html"><span class="num">03</span>§03 工具注册表与停止条件：把 LLM 接上真实世界</a>
+<a class="" href="04-first-real-agent.html"><span class="num">04</span>§04 第一个真实 Agent：stdlib 写个能查能算的助手</a>
+<a class="" href="05-from-toy-to-real.html"><span class="num">05</span>§05 从 Toy 到真实模型：原生推理来了</a>
+<div class="pt">Part 2：核心能力 —— Agent 的五脏六腑</div>
+<a class="" href="06-memory.html"><span class="num">06</span>§06 记忆：Agent 为什么忘了你</a>
+<a class="" href="07-planning.html"><span class="num">07</span>§07 规划：先想清楚，再动手</a>
+<a class="" href="08-reflection.html"><span class="num">08</span>§08 反思：Agent 也会吃一堑长一智</a>
+<a class="" href="09-context-engineering.html"><span class="num">09</span>§09 上下文工程：比 prompt 更重要的事</a>
+<a class="" href="10-failure-modes.html"><span class="num">10</span>§10 失败模式：Agent 为什么崩</a>
+<div class="pt">Part 3：工程化与框架 —— Use It</div>
+<a class="" href="11-framework-comparison.html"><span class="num">11</span>§11 框架横评：五个主流怎么选</a>
+<a class="" href="12-claude-agent-sdk.html"><span class="num">12</span>§12 Claude Agent SDK 实战：子代理与生命周期</a>
+<a class="" href="13-openai-agents-sdk.html"><span class="num">13</span>§13 OpenAI Agents SDK 实战：交接与护栏</a>
+<a class="" href="14-computer-use.html"><span class="num">14</span>§14 计算机使用：让 Agent 动鼠标</a>
+<a class="" href="15-observability.html"><span class="num">15</span>§15 可观测性：看不见的 Agent 最危险</a>
+<a class="" href="16-prompt-injection-defense.html"><span class="num">16</span>§16 安全：提示注入是 Agent 的头号病</a>
+<div class="pt">Part 4：进阶与多智能体 —— 案例集</div>
+<a class="active" href="17-multi-agent-orchestration.html"><span class="num">17</span>§17 多智能体：先问要不要，再问怎么编</a>
+<a class="" href="18-voice-agents.html"><span class="num">18</span>§18 语音 Agent：不是文本循环套个 TTS</a>
+<a class="" href="19-production-runtime-cost.html"><span class="num">19</span>§19 生产运行时：选错形状，钱和稳定性一起崩</a>
+<a class="" href="20-capstone-agent-workbench.html"><span class="num">20</span>§20 Capstone：能跑真仓库的 Agent 工作台</a>
+<div class="pt">附录</div>
+<a class="" href="90-appendices.html"><span class="num">90</span>附录 A 核心概念速查表</a></aside>
+<main><div class="wrap"><article>
+<h2>§17 多智能体：先问要不要，再问怎么编</h2>
+<h3>17.1 一个判断：多数场景用不着多智能体</h3>
+<p>2024 年 ICML。Du 等人发了《Society of Minds》。</p>
+<p>他们让 N 个模型各提一版答案，再互相批驳 R 轮。</p>
+<p>结果：事实性、守规则、推理都变好了。</p>
+<p>但我先给结论：你大概率不需要多智能体。</p>
+<p>单智能体加五条工作流（Part 3 讲过），能解决八成问题。</p>
+<p>真要上多智能体，先想清楚：它解决的是哪个单智能体解决不了的痛点。</p>
+<blockquote>
+<p><strong>标叔的经验</strong>：一次翻车让我收手</p>
+<p>2025 年初，我给客服机器人硬上了 3 个 agent。延迟翻倍，成本三倍。最后拆回 1 个加路由。用户没觉得变差，账单笑了。</p>
+</blockquote>
+<h3>17.2 辩论协议：N 个提案，R 轮交叉批驳</h3>
+<p>辩论不是单模型自省（§08 的 Self-Refine）。</p>
+<p>它是多个实例，互相看对方的答案，再改自己的。</p>
+<p>协议长这样：</p>
+<ol>
+<li>N 个模型各自独立给出答案。</li>
+<li>第 1 轮，每人读别人的提案，写批驳。</li>
+<li>按批驳更新自己的答案。</li>
+<li>重复 R 轮，返回收敛的那个答案。</li>
+</ol>
+<p>原论文用了 N=3、R=2（受成本限制）。</p>
+<p>难题上，越多 agent、越多轮，准确率越高（MMLU、GSM8K、棋步合法性）。</p>
+<p>关键发现：混模型比单模型强。ChatGPT + Bard 一起，胜过各自单打。</p>
+<h3>17.3 稀疏拓扑：不是人人都要看人人</h3>
+<p>2024 年的 arXiv:2406.11776 说：全连通辩论不是最优。</p>
+<p>全连通（full mesh）：每个辩论者每轮读全部同伴。</p>
+<p>稀疏（sparse）：星形、环形、轮辐，每人只看一部分同伴。</p>
+<p>算一笔账：</p>
+<ul>
+<li>全连通 N=5、R=3：15 次提案，每人读 4 个同伴 = 60 次批驳运算。</li>
+<li>星形 N=5、R=3：15 次提案，辐条只读中心 = 12 次批驳运算。</li>
+</ul>
+<p>精度差不多，token 省了一大截。</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>全连通</th>
+<th>稀疏拓扑</th>
+<th>标叔的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>精度</td>
+<td>高</td>
+<td>接近</td>
+<td>稀疏不亏精度</td>
+</tr>
+<tr>
+<td>Token 成本</td>
+<td>60 次运算</td>
+<td>12 次运算</td>
+<td>省 80% 算力</td>
+</tr>
+<tr>
+<td>可控性</td>
+<td>难追源</td>
+<td>中心好查</td>
+<td>星形更好调试</td>
+</tr>
+<tr>
+<td>适用</td>
+<td>高难推理</td>
+<td>多数场景</td>
+<td>默认上稀疏</td>
+</tr>
+</tbody>
+</table>
+<h3>17.4 四种编排模式</h3>
+<p>全连通辩论只是其中一种拓扑。</p>
+<p>2026 年反复出现的，是这四种：</p>
+<ul>
+<li><strong>Supervisor-worker</strong>：中央路由 LLM 派活给专家。专家互不说话，全走主管。</li>
+<li><strong>Swarm / 点对点</strong>：agent 直接互相移交，无中央路由。延迟低，难推理。</li>
+<li><strong>Hierarchical</strong>：主管管主管，再管 worker。人口多了才上。</li>
+<li><strong>Debate</strong>：并行提案 + 交叉批驳（就是 17.2 那套）。</li>
+</ul>
+<p>注意：CrewAI 还分 Flow 和 Crew。</p>
+<p>Flow 是确定性事件驱动，生产首选。Crew 是自治角色协作。</p>
+<h3>17.5 Anthropic 的决策顺序</h3>
+<p>Anthropic 说得好："成功不是造最复杂的系统，是造对的系统。"</p>
+<p>我的决策顺序是这样的：</p>
+<ol>
+<li>单智能体 + 工作流。先上这个。</li>
+<li>Supervisor-worker。当你有 2–4 个专家。</li>
+<li>Swarm。当延迟比推理清晰度更重要。</li>
+<li>Hierarchical。只有当主管的上下文装不下所有专家。</li>
+<li>Debate。当精度比成本重要。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>你的情况</th>
+<th>该选</th>
+<th>别选</th>
+<th>标叔的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 个专家就够</td>
+<td>单智能体</td>
+<td>任何多体</td>
+<td>别过度设计</td>
+</tr>
+<tr>
+<td>2–4 个专家</td>
+<td>Supervisor</td>
+<td>Swarm</td>
+<td>主管最清晰</td>
+</tr>
+<tr>
+<td>延迟敏感</td>
+<td>Swarm</td>
+<td>Hierarchical</td>
+<td>少一跳少 200ms</td>
+</tr>
+<tr>
+<td>上下文爆了</td>
+<td>Hierarchical</td>
+<td>Supervisor</td>
+<td>嵌套子图救场</td>
+</tr>
+<tr>
+<td>精度至上</td>
+<td>Debate</td>
+<td>Swarm</td>
+<td>贵但准</td>
+</tr>
+</tbody>
+</table>
+<h3>17.6 手写一个稀疏辩论</h3>
+<p>不引库。用 stdlib 跑通核心循环：</p>
+<pre><code class="language-python"># 稀疏辩论：星形拓扑，辐条只读中心
+class SparseDebate:
+    def __init__(self, debaters, hub):
+        self.spokes = debaters   # 辐条：普通模型
+        self.hub = hub           # 中心：更强的模型
+
+    def run(self, question, rounds=2):
+        answers = [self.hub.ask(question)]          # 中心先答
+        for _ in range(rounds):
+            updated = []
+            for s in self.spokes:
+                # 辐条只看到中心的答案，省 token
+                crit = s.critique(question, answers[0])
+                updated.append(crit)
+            answers = updated + [self.hub.ask(question)]
+        return self.hub.synthesize(answers)         # 中心汇总收敛
+</code></pre>
+<p>全连通版把 <code>answers[0]</code> 换成"全部答案"。差别只在看多少同伴。</p>
+<blockquote>
+<p><strong>注意</strong>：收敛坍塌是真风险</p>
+<p>所有 agent 第一轮就附和同一个错答，后面越批越稳。对策：强制第一轮各自给出不同提案。</p>
+</blockquote>
+<h3>17.7 先给结论</h3>
+<p>多智能体是工具，不是目标。</p>
+<p>先单后多，先稀疏后全连通。拓扑错了，钱和延迟一起崩。</p>
+<p>[向前桥接] 编排讲完了。下一章换种感官：让 Agent 开口说话。</p>
+<hr>
+<div class="pager"><a class="prev" href="16-prompt-injection-defense.html"><div class="lbl">← 上一章</div><div class="ttl">§16 安全：提示注入是 Agent 的头号病</div></a><a class="next" href="18-voice-agents.html"><div class="lbl">下一章 →</div><div class="ttl">§18 语音 Agent：不是文本循环套个 TTS</div></a></div>
+</article></div></main>
+</div>
+<footer class="foot">标叔 · 智能体工程实战 · 基于 ai-engineering-from-scratch 开源课程蒸馏</footer>
+</body>
+</html>
