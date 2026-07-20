@@ -440,7 +440,27 @@
       "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\02-convolutions-from-scratch\\docs\\en.md",
       "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\03-cnns-lenet-to-resnet\\docs\\en.md",
       "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\04-image-classification\\docs\\en.md",
-      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\05-transfer-learning\\docs\\en.md"
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\05-transfer-learning\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\06-object-detection-yolo\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\07-semantic-segmentation-unet\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\08-instance-segmentation-mask-rcnn\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\09-image-generation-gans\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\10-image-generation-diffusion\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\11-stable-diffusion\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\12-video-understanding\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\13-3d-vision-nerf\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\14-vision-transformers\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\15-real-time-edge\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\16-vision-pipeline-capstone\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\17-self-supervised-vision\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\18-open-vocab-clip\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\19-ocr-document-understanding\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\20-image-retrieval-metric\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\21-keypoint-pose\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\22-3d-gaussian-splatting\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\23-diffusion-transformers-rectified-flow\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\24-sam3-open-vocab-segmentation\\docs\\en.md",
+      "D:\\ai-engineering-from-scratch-main\\phases\\04-computer-vision\\25-vision-language-models\\docs\\en.md"
     ],
     "failed": []
   }
