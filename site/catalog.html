@@ -179,6 +179,26 @@
       color: var(--text-muted);
     }
 
+    .catalog-code {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .catalog-code:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
     .catalog-phase-label {
       font-family: var(--font-mono);
       font-size: 0.8rem;
@@ -425,16 +445,21 @@
           countEl.textContent = '共 ' + rows.length + ' / ' + allRows.length + ' 节课';
 
           if (rows.length === 0) {
-            bodyEl.innerHTML = '<tr><td colspan="5" class="catalog-empty">没有符合筛选条件的课程。</td></tr>';
+            bodyEl.innerHTML = '<tr><td colspan="6" class="catalog-empty">没有符合筛选条件的课程。</td></tr>';
             return;
           }
 
           var html = '';
           for (var i = 0; i < rows.length; i++) {
             var r = rows[i];
+            // 课程 title 跳 lesson.html（阅读页）
+            var pathMatch = r.url ? r.url.match(/(phases\/[^/]+\/[^/]+)\/?$/) : null;
+            var lessonPath = pathMatch ? pathMatch[1] : '';
             html += '<tr>';
             html += '<td><span class="catalog-phase-label">' + String(r.phase).padStart(2, '0') + '</span></td>';
-            if (r.url) {
+            if (lessonPath) {
+              html += '<td><a href="lesson.html?path=' + lessonPath + '">' + escapeHtml(r.name) + '</a></td>';
+            } else if (r.url) {
               html += '<td><a href="' + r.url + '" target="_blank" rel="noopener">' + escapeHtml(r.name) + '</a></td>';
             } else {
               html += '<td>' + escapeHtml(r.name) + '</td>';
@@ -442,6 +467,12 @@
             html += '<td>' + escapeHtml(r.type) + '</td>';
             html += '<td><span class="catalog-lang">' + escapeHtml(r.lang) + '</span></td>';
             html += '<td><span class="catalog-status-dot ' + r.status + '"></span>' + r.status + '</td>';
+            // 操作列：代码按钮跳 GitHub
+            if (r.url) {
+              html += '<td><a class="catalog-code" href="' + r.url + '" target="_blank" rel="noopener">代码</a></td>';
+            } else {
+              html += '<td></td>';
+            }
             html += '</tr>';
           }
           bodyEl.innerHTML = html;
