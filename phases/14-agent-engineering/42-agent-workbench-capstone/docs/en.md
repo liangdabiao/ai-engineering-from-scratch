@@ -142,7 +142,7 @@ The pack is the recipe. Each install is a serving.
 ## Further Reading
 
 - Phases 14 · 31 to 14 · 41 — every surface this pack bundles
-- [SkillKit](https://github.com/rohitg00/skillkit) — install this skill across 32 AI agents
+- [SkillKit](https://github.com/liangdabiao/skillkit) — install this skill across 32 AI agents
 - [Nx Blog, Teach Your AI Agent How to Work in a Monorepo](https://nx.dev/blog/nx-ai-agent-skills) — single-source generator across six tools
 - [agents.md — the open spec](https://agents.md/) — what your pack's router must implement
 - [HKUDS/OpenHarness](https://github.com/HKUDS/OpenHarness) — reference implementation of a pack-equivalent

@@ -10,7 +10,7 @@
   <a href="https://aiengineeringfromscratch.com"><img src="https://img.shields.io/badge/web-aiengineeringfromscratch.com-3553ff?style=flat-square&labelColor=fafaf5" alt="Website"></a>
 </p>
 
-## From the creator of [Agent Memory - #1 Persistent memory ⭐](https://github.com/rohitg00/agentmemory) <a href="https://github.com/rohitg00/agentmemory/stargazers"><img src="https://img.shields.io/github/stars/rohitg00/agentmemory?style=flat-square&labelColor=fafaf5&color=3553ff" alt="GitHub stars"></a> which naturally works with any agents or chat assistants.
+## From the creator of [Agent Memory - #1 Persistent memory ⭐](https://github.com/liangdabiao/agentmemory) <a href="https://github.com/liangdabiao/agentmemory/stargazers"><img src="https://img.shields.io/github/stars/rohitg00/agentmemory?style=flat-square&labelColor=fafaf5&color=3553ff" alt="GitHub stars"></a> which naturally works with any agents or chat assistants.
 
 检验一门实战课的标准其实只有一个：大家跟着课程里的步骤，能不能亲手把结果做出来。
 
@@ -1192,7 +1192,7 @@ If this manual helped you, star the repo. It keeps the project alive.
 MIT. Use it however you want — fork it, teach it, sell it, ship it. Attribution appreciated,
 not required.
 
-Maintained by [Rohit Ghumare](https://github.com/rohitg00) and the community.
+Maintained by [Rohit Ghumare](https://github.com/liangdabiao) and the community.
 
 <sub>
   <a href="https://x.com/ghumare64">@ghumare64</a> &nbsp;·&nbsp;

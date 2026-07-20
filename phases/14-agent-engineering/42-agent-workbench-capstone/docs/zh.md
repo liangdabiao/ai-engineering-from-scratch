@@ -142,13 +142,13 @@ python3 code/main.py
 ## 延伸阅读
 
 - 第14.31阶段至第14.41阶段——该包打包的每个表面
-- [SkillKit](https://github.com/rohitg00/skillkit) — 将此技能安装到32个AI代理上
-- [SkillKit](https://github.com/rohitg00/skillkit) — 跨六个工具的单一源生成器
-- [SkillKit](https://github.com/rohitg00/skillkit) — 你的包的路由器必须实现的内容
-- [SkillKit](https://github.com/rohitg00/skillkit) — 包等效物的参考实现
-- [SkillKit](https://github.com/rohitg00/skillkit) — 基于Redis的参考实现及评估套件
-- [SkillKit](https://github.com/rohitg00/skillkit) — 包文档质量门槛
-- [SkillKit](https://github.com/rohitg00/skillkit)
-- [SkillKit](https://github.com/rohitg00/skillkit)
+- [SkillKit](https://github.com/liangdabiao/skillkit) — 将此技能安装到32个AI代理上
+- [SkillKit](https://github.com/liangdabiao/skillkit) — 跨六个工具的单一源生成器
+- [SkillKit](https://github.com/liangdabiao/skillkit) — 你的包的路由器必须实现的内容
+- [SkillKit](https://github.com/liangdabiao/skillkit) — 包等效物的参考实现
+- [SkillKit](https://github.com/liangdabiao/skillkit) — 基于Redis的参考实现及评估套件
+- [SkillKit](https://github.com/liangdabiao/skillkit) — 包文档质量门槛
+- [SkillKit](https://github.com/liangdabiao/skillkit)
+- [SkillKit](https://github.com/liangdabiao/skillkit)
 - 第14.30阶段——基于评估的代理开发，消耗该包的验证门
 - 第14.41阶段——该包改进的前后基准测试

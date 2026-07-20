@@ -48,4 +48,4 @@ End with "what to read next" pointing to:
 
 - Lesson 41 for the before/after benchmark this pack improves on.
 - Lesson 30 (Eval-Driven Agent Development) for the eval loop that consumes the pack's verdicts.
-- [SkillKit](https://github.com/rohitg00/skillkit) for distributing the pack across 32 AI agents.
+- [SkillKit](https://github.com/liangdabiao/skillkit) for distributing the pack across 32 AI agents.

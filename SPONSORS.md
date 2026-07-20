@@ -1,7 +1,7 @@
 # Sponsorship
 
 `ai-engineering-from-scratch` is a free, MIT-licensed curriculum. 428 lessons across 20
-phases. The work is built and maintained by [Rohit Ghumare](https://github.com/rohitg00).
+phases. The work is built and maintained by [Rohit Ghumare](https://github.com/liangdabiao).
 
 Sponsorships fund the time it takes to ship lessons, keep the site running, and reply to the
 issue queue. Cash only. Credits-in-kind, equity, or "we'll write your content" arrangements
